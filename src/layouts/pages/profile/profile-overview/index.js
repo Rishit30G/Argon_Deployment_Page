@@ -67,10 +67,10 @@ function Overview() {
       <Header />
       <ArgonBox mt={5} mb={3}>
         <Grid container spacing={3}>
-          <Grid item xs={12} md={6} xl={4}>
+          {/* <Grid item xs={12} md={6} xl={4}>
             <PlatformSettings />
-          </Grid>
-          <Grid item xs={12} md={6} xl={4}>
+          </Grid> */}
+          <Grid item xs={12} md={12} xl={12}>
             <ProfileInfoCard
               title="profile information"
               description="Hi, I'm Alec Thompson, Decisions: If you can't decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality)."
@@ -100,9 +100,9 @@ function Overview() {
               action={{ route: "", tooltip: "Edit Profile" }}
             />
           </Grid>
-          <Grid item xs={12} xl={4}>
+          {/* <Grid item xs={12} xl={4}>
             <ProfilesList title="conversations" profiles={profilesListData} />
-          </Grid>
+          </Grid> */}
         </Grid>
       </ArgonBox>
       <ArgonBox mb={3}>
