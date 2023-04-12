@@ -14,6 +14,7 @@
   "plugins": ["react", "react-hooks", "import", "prettier"],
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/no-unknown-property": [ "error", {"ignore": ["mask-type", "sx"]} ],
     "react/require-default-props": "off",
     "no-param-reassign": "off",
     "jsx-a11y/alt-text": "off",
