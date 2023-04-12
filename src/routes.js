@@ -527,81 +527,81 @@ const routes = [
   },
   { type: "divider", key: "divider-1" },
   { type: "title", title: "Docs", key: "title-docs" },
-  {
-    type: "collapse",
-    name: "Basic",
-    key: "basic",
-    icon: <ArgonBox component="i" color="inherit" fontSize="14px" className="ni ni-spaceship" />,
-    collapse: [
-      {
-        name: "Getting Started",
-        key: "getting-started",
-        collapse: [
-          {
-            name: "Overview",
-            key: "overview",
-            href: "https://www.creative-tim.com/learning-lab/react/overview/argon-dashboard/",
-          },
-          {
-            name: "License",
-            key: "license",
-            href: "https://www.creative-tim.com/learning-lab/react/license/argon-dashboard/",
-          },
-          {
-            name: "Quick Start",
-            key: "quick-start",
-            href: "https://www.creative-tim.com/learning-lab/react/quick-start/argon-dashboard/",
-          },
-          {
-            name: "Build Tools",
-            key: "build-tools",
-            href: "https://www.creative-tim.com/learning-lab/react/build-tools/argon-dashboard/",
-          },
-        ],
-      },
-      {
-        name: "Foundation",
-        key: "foundation",
-        collapse: [
-          {
-            name: "Colors",
-            key: "colors",
-            href: "https://www.creative-tim.com/learning-lab/react/colors/argon-dashboard/",
-          },
-          {
-            name: "Grid",
-            key: "grid",
-            href: "https://www.creative-tim.com/learning-lab/react/grid/argon-dashboard/",
-          },
-          {
-            name: "Typography",
-            key: "base-typography",
-            href: "https://www.creative-tim.com/learning-lab/react/base-typography/argon-dashboard/",
-          },
-          {
-            name: "Borders",
-            key: "borders",
-            href: "https://www.creative-tim.com/learning-lab/react/borders/argon-dashboard/",
-          },
-          {
-            name: "Box Shadows",
-            key: "box-shadows",
-            href: "https://www.creative-tim.com/learning-lab/react/box-shadows/argon-dashboard/",
-          },
-          {
-            name: "Functions",
-            key: "functions",
-            href: "https://www.creative-tim.com/learning-lab/react/functions/argon-dashboard/",
-          },
-          {
-            name: "Routing System",
-            key: "routing-system",
-            href: "https://www.creative-tim.com/learning-lab/react/routing-system/argon-dashboard/",
-          },
-        ],
-      },
-    ],
-  },
+  // {
+  //   type: "collapse",
+  //   name: "Basic",
+  //   key: "basic",
+  //   icon: <ArgonBox component="i" color="inherit" fontSize="14px" className="ni ni-spaceship" />,
+  //   collapse: [
+  //     {
+  //       name: "Getting Started",
+  //       key: "getting-started",
+  //       collapse: [
+  //         {
+  //           name: "Overview",
+  //           key: "overview",
+  //           href: "https://www.creative-tim.com/learning-lab/react/overview/argon-dashboard/",
+  //         },
+  //         {
+  //           name: "License",
+  //           key: "license",
+  //           href: "https://www.creative-tim.com/learning-lab/react/license/argon-dashboard/",
+  //         },
+  //         {
+  //           name: "Quick Start",
+  //           key: "quick-start",
+  //           href: "https://www.creative-tim.com/learning-lab/react/quick-start/argon-dashboard/",
+  //         },
+  //         {
+  //           name: "Build Tools",
+  //           key: "build-tools",
+  //           href: "https://www.creative-tim.com/learning-lab/react/build-tools/argon-dashboard/",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       name: "Foundation",
+  //       key: "foundation",
+  //       collapse: [
+  //         {
+  //           name: "Colors",
+  //           key: "colors",
+  //           href: "https://www.creative-tim.com/learning-lab/react/colors/argon-dashboard/",
+  //         },
+  //         {
+  //           name: "Grid",
+  //           key: "grid",
+  //           href: "https://www.creative-tim.com/learning-lab/react/grid/argon-dashboard/",
+  //         },
+  //         {
+  //           name: "Typography",
+  //           key: "base-typography",
+  //           href: "https://www.creative-tim.com/learning-lab/react/base-typography/argon-dashboard/",
+  //         },
+  //         {
+  //           name: "Borders",
+  //           key: "borders",
+  //           href: "https://www.creative-tim.com/learning-lab/react/borders/argon-dashboard/",
+  //         },
+  //         {
+  //           name: "Box Shadows",
+  //           key: "box-shadows",
+  //           href: "https://www.creative-tim.com/learning-lab/react/box-shadows/argon-dashboard/",
+  //         },
+  //         {
+  //           name: "Functions",
+  //           key: "functions",
+  //           href: "https://www.creative-tim.com/learning-lab/react/functions/argon-dashboard/",
+  //         },
+  //         {
+  //           name: "Routing System",
+  //           key: "routing-system",
+  //           href: "https://www.creative-tim.com/learning-lab/react/routing-system/argon-dashboard/",
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
   {
     type: "collapse",
     name: "Components",
