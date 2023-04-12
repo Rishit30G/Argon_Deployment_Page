@@ -695,14 +695,14 @@ const routes = [
       },
     ],
   },
-  {
-    type: "collapse",
-    name: "Change Log",
-    key: "changelog",
-    href: "https://github.com/creativetimofficial/ct-argon-dashboard-pro-material-ui/blob/main/CHANGELOG.md",
-    icon: <ArgonBox component="i" color="inherit" fontSize="14px" className="ni ni-align-left-2" />,
-    noCollapse: true,
-  },
+  // {
+  //   type: "collapse",
+  //   name: "Change Log",
+  //   key: "changelog",
+  //   href: "https://github.com/creativetimofficial/ct-argon-dashboard-pro-material-ui/blob/main/CHANGELOG.md",
+  //   icon: <ArgonBox component="i" color="inherit" fontSize="14px" className="ni ni-align-left-2" />,
+  //   noCollapse: true,
+  // },
 ];
 
 export default routes;

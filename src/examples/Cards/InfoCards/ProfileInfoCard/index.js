@@ -67,22 +67,22 @@ function ProfileInfoCard({ title, description, info, social, action }) {
   ));
 
   // Render the card social media icons
-  const renderSocial = social.map(({ link, icon, color }) => (
-    <ArgonBox
-      key={color}
-      component="a"
-      href={link}
-      target="_blank"
-      rel="noreferrer"
-      fontSize={size.lg}
-      color={socialMediaColors[color].main}
-      pr={1}
-      pl={0.5}
-      lineHeight={1}
-    >
-      {icon}
-    </ArgonBox>
-  ));
+  // const renderSocial = social.map(({ link, icon, color }) => (
+  //   <ArgonBox
+  //     key={color}
+  //     component="a"
+  //     href={link}
+  //     target="_blank"
+  //     rel="noreferrer"
+  //     fontSize={size.lg}
+  //     color={socialMediaColors[color].main}
+  //     pr={1}
+  //     pl={0.5}
+  //     lineHeight={1}
+  //   >
+  //     {icon}
+  //   </ArgonBox>
+  // ));
 
   return (
     <Card sx={{ height: "100%" }}>
@@ -107,12 +107,12 @@ function ProfileInfoCard({ title, description, info, social, action }) {
         </ArgonBox>
         <ArgonBox>
           {renderItems}
-          <ArgonBox display="flex" py={1} pr={2}>
+          {/* <ArgonBox display="flex" py={1} pr={2}>
             <ArgonTypography variant="button" fontWeight="bold" textTransform="capitalize">
               social: &nbsp;
             </ArgonTypography>
             {renderSocial}
-          </ArgonBox>
+          </ArgonBox> */}
         </ArgonBox>
       </ArgonBox>
     </Card>
