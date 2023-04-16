@@ -30,6 +30,13 @@ const form = {
       placeholder: "eg. Prior",
       errorMsg: "Last name is required.",
     },
+    interest: {
+      name: "Interest",
+      label: "interests",
+      type: "text",
+      placeholder: "eg. Etherium",
+      errorMsg: "Atleast type one interest.",
+    },
     company: {
       name: "company",
       label: "company",

@@ -59,6 +59,10 @@ function Kanban() {
   return (
     <DashboardLayout>
       <DashboardNavbar />
+      <ArgonBox px={3} py={3}>
+        <ArgonTypography variant="h2" style={{marginBottom: '15px'}}>Project Tracker</ArgonTypography>
+        <ArgonTypography variant="h5">Highlight in Progress, Completed and Closed</ArgonTypography>
+      </ArgonBox>
       <ArgonBox py={3}>
         <ArgonBox display="flex" justifyContent="flex-end" m={2}>
           <Header />

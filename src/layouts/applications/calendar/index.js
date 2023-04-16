@@ -33,11 +33,24 @@ import ProductivityChart from "layouts/applications/calendar/components/Producti
 
 // Data
 import calendarEventsData from "layouts/applications/calendar/data/calendarEventsData";
+import ArgonTypography from "components/ArgonTypography";
 
 function Calendar() {
   return (
     <DashboardLayout>
       <DashboardNavbar />
+      <ArgonBox mb={3} >
+        <Grid container spacing={3}>
+          <Grid item xs={12} md={6} sx={{marginTop: '40px'}}>
+            <ArgonTypography variant="h2">Proposal Calender</ArgonTypography>
+          </Grid>
+          <Grid item xs={12} md={6} sx={{marginTop: '40px'}}>
+            <ArgonTypography variant="p" >
+              EVERYTHING YOU NEED IN WEB 3.0 DEFI CALENDAR
+            </ArgonTypography>
+          </Grid>
+        </Grid>
+      </ArgonBox>
       <ArgonBox pt={3}>
         <ArgonBox display="flex" justifyContent="flex-end" mt={1} mb={4} mx={2}>
           <Header />
@@ -60,9 +73,6 @@ function Calendar() {
           <Grid item xs={12} xl={3}>
             <ArgonBox mb={3}>
               <NextEvents />
-            </ArgonBox>
-            <ArgonBox mb={3}>
-              <ProductivityChart />
             </ArgonBox>
           </Grid>
         </Grid>

@@ -105,7 +105,7 @@ function NewUser() {
       <ArgonBox py={3} mb={20}>
         <Grid container justifyContent="center" sx={{ height: "100%" }}>
           <Grid item xs={12} lg={8}>
-            <Card
+            {/* <Card
               sx={{
                 display: "grid",
                 alignItems: "center",
@@ -122,7 +122,7 @@ function NewUser() {
                   </Step>
                 ))}
               </Stepper>
-            </Card>
+            </Card> */}
             <Formik
               initialValues={initialValues}
               validationSchema={currentValidation}
@@ -140,20 +140,14 @@ function NewUser() {
                           errors,
                         })}
                         <ArgonBox mt={2} width="100%" display="flex" justifyContent="space-between">
-                          {activeStep === 0 ? (
-                            <ArgonBox />
-                          ) : (
-                            <ArgonButton variant="gradient" color="light" onClick={handleBack}>
-                              Back
-                            </ArgonButton>
-                          )}
+                          
                           <ArgonButton
                             disabled={isSubmitting}
                             type="submit"
                             variant="gradient"
                             color="dark"
                           >
-                            {isLastStep ? "Send" : "Next"}
+                            Submit
                           </ArgonButton>
                         </ArgonBox>
                       </ArgonBox>

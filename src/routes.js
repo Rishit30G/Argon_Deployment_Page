@@ -94,6 +94,19 @@ import Error500 from "layouts/authentication/error/500";
 
 // Argon Dashboard 2 PRO MUI components
 import ArgonBox from "components/ArgonBox";
+import GrantsandProposals from "layouts/pages/grants-proposals";
+import JobProfile from "layouts/pages/job-profile";
+import Grants from "layouts/pages/grants-proposals/Grant";
+import Proposals from "layouts/pages/grants-proposals/Proposals";
+import Jobs from "layouts/pages/grants-proposals/Jobs";
+import Reputation from "layouts/pages/profile/reputation";
+import PastExperience from "layouts/pages/profile/past-experience";
+import Overview2 from "layouts/pages/profile/overview";
+import Articles from "layouts/pages/articles";
+import ArticleMain from "layouts/pages/article-main";
+import ProposalDiscussion from "layouts/pages/proposal-discussion";
+import JobListing from "layouts/pages/job-listing";
+
 
 const routes = [
   {
@@ -164,6 +177,24 @@ const routes = [
             route: "/pages/profile/profile-overview",
             component: <ProfileOverview />,
           },
+          {
+            name: "Overview",
+            key: "overview",
+            route: "/pages/profile/overview",
+            component: <Overview2/>
+          },
+          {
+            name: "Reputation",
+            key: "reputation",
+            route: "/pages/profile/reputation",
+            component: <Reputation />,
+          }, 
+          {
+            name: "Past Experience",
+            key: "past-experience",
+            route: "/pages/profile/past-experience",
+            component: <PastExperience/>
+          }
           // {
           //   name: "Teams",
           //   key: "teams",
@@ -250,6 +281,67 @@ const routes = [
           // },
         ],
       },
+      {
+        name: "Grants and Proposals",
+        key: "grants and proposals",
+        collapse: [
+          {
+            name: "Grants and Proposal",
+            key: "protocol grants and proposals",
+            route: "/pages/grantsandproposals",
+            component: <GrantsandProposals />,
+          },
+          {
+            name: "Proposals",
+            key: "proposals",
+            route: "/pages/grantsandproposals/grantproposals",
+            component: <Proposals />,
+          }, 
+          {
+            name: "Grants",
+            key: "grants",
+            route: "/pages/grantsandproposals/grants",
+            component: <Grants />,
+          }, 
+          {
+            name: "Jobs",
+            key: "jobs",
+            route: "/pages/grantsandproposals/jobs",
+            component: <Jobs />,
+          }
+        ],
+      },
+      {
+        name: "Job Profiling",
+        key: "job profiling",
+        route: "/pages/projects/jobprofiling",
+        component: <JobProfile />,
+      },
+      {
+        name:"Article Main",
+        key: "article main", 
+        route: "/pages/article-main",
+        component: <ArticleMain/>
+      }, 
+      {
+        name:"Article",
+        key: "article",
+        route: "/pages/article",
+        component: <Articles/>
+      }, 
+      {
+        name:"Proposal Discussion",
+        key: "proposal discussion",
+        route: "/pages/proposal-disucssion",
+        component: <ProposalDiscussion/>
+      }, 
+      {
+        name:"Job Listing",
+        key: "job listing",
+        route: "/pages/job-listing",
+        component: <JobListing/>
+      }, 
+
       // {
       //   name: "Pricing Page",
       //   key: "pricing-page",
@@ -525,8 +617,8 @@ const routes = [
       },
     ],
   },
-  { type: "divider", key: "divider-1" },
-  { type: "title", title: "Docs", key: "title-docs" },
+  // { type: "divider", key: "divider-1" },
+  // { type: "title", title: "Docs", key: "title-docs" },
   // {
   //   type: "collapse",
   //   name: "Basic",
@@ -602,99 +694,99 @@ const routes = [
   //     },
   //   ],
   // },
-  {
-    type: "collapse",
-    name: "Components",
-    key: "components",
-    icon: <ArgonBox component="i" color="inherit" fontSize="14px" className="ni ni-app" />,
-    collapse: [
-      {
-        name: "Alerts",
-        key: "alerts",
-        href: "https://www.creative-tim.com/learning-lab/react/alerts/argon-dashboard/",
-      },
-      {
-        name: "Avatar",
-        key: "avatar",
-        href: "https://www.creative-tim.com/learning-lab/react/avatar/argon-dashboard/",
-      },
-      {
-        name: "Badge",
-        key: "badge",
-        href: "https://www.creative-tim.com/learning-lab/react/badge/argon-dashboard/",
-      },
-      {
-        name: "Badge Dot",
-        key: "badge-dot",
-        href: "https://www.creative-tim.com/learning-lab/react/badge-dot/argon-dashboard/",
-      },
-      {
-        name: "Box",
-        key: "box",
-        href: "https://www.creative-tim.com/learning-lab/react/box/argon-dashboard/",
-      },
-      {
-        name: "Buttons",
-        key: "buttons",
-        href: "https://www.creative-tim.com/learning-lab/react/buttons/argon-dashboard/",
-      },
-      {
-        name: "Date Picker",
-        key: "date-picker",
-        href: "https://www.creative-tim.com/learning-lab/react/datepicker/argon-dashboard/",
-      },
-      {
-        name: "Dropzone",
-        key: "dropzone",
-        href: "https://www.creative-tim.com/learning-lab/react/dropzone/argon-dashboard/",
-      },
-      {
-        name: "Editor",
-        key: "editor",
-        href: "https://www.creative-tim.com/learning-lab/react/quill/argon-dashboard/",
-      },
-      {
-        name: "Input",
-        key: "input",
-        href: "https://www.creative-tim.com/learning-lab/react/input/argon-dashboard/",
-      },
-      {
-        name: "Pagination",
-        key: "pagination",
-        href: "https://www.creative-tim.com/learning-lab/react/pagination/argon-dashboard/",
-      },
-      {
-        name: "Progress",
-        key: "progress",
-        href: "https://www.creative-tim.com/learning-lab/react/progress/argon-dashboard/",
-      },
-      {
-        name: "Select",
-        key: "select",
-        href: "https://www.creative-tim.com/learning-lab/react/select/argon-dashboard/",
-      },
-      {
-        name: "Snackbar",
-        key: "snackbar",
-        href: "https://www.creative-tim.com/learning-lab/react/snackbar/argon-dashboard/",
-      },
-      {
-        name: "Social Button",
-        key: "social-button",
-        href: "https://www.creative-tim.com/learning-lab/react/social-buttons/argon-dashboard/",
-      },
-      {
-        name: "Tag Input",
-        key: "tag-input",
-        href: "https://www.creative-tim.com/learning-lab/react/tag-input/argon-dashboard/",
-      },
-      {
-        name: "Typography",
-        key: "typography",
-        href: "https://www.creative-tim.com/learning-lab/react/typography/argon-dashboard/",
-      },
-    ],
-  },
+  // {
+  //   type: "collapse",
+  //   name: "Components",
+  //   key: "components",
+  //   icon: <ArgonBox component="i" color="inherit" fontSize="14px" className="ni ni-app" />,
+  //   collapse: [
+  //     {
+  //       name: "Alerts",
+  //       key: "alerts",
+  //       href: "https://www.creative-tim.com/learning-lab/react/alerts/argon-dashboard/",
+  //     },
+  //     {
+  //       name: "Avatar",
+  //       key: "avatar",
+  //       href: "https://www.creative-tim.com/learning-lab/react/avatar/argon-dashboard/",
+  //     },
+  //     {
+  //       name: "Badge",
+  //       key: "badge",
+  //       href: "https://www.creative-tim.com/learning-lab/react/badge/argon-dashboard/",
+  //     },
+  //     {
+  //       name: "Badge Dot",
+  //       key: "badge-dot",
+  //       href: "https://www.creative-tim.com/learning-lab/react/badge-dot/argon-dashboard/",
+  //     },
+  //     {
+  //       name: "Box",
+  //       key: "box",
+  //       href: "https://www.creative-tim.com/learning-lab/react/box/argon-dashboard/",
+  //     },
+  //     {
+  //       name: "Buttons",
+  //       key: "buttons",
+  //       href: "https://www.creative-tim.com/learning-lab/react/buttons/argon-dashboard/",
+  //     },
+  //     {
+  //       name: "Date Picker",
+  //       key: "date-picker",
+  //       href: "https://www.creative-tim.com/learning-lab/react/datepicker/argon-dashboard/",
+  //     },
+  //     {
+  //       name: "Dropzone",
+  //       key: "dropzone",
+  //       href: "https://www.creative-tim.com/learning-lab/react/dropzone/argon-dashboard/",
+  //     },
+  //     {
+  //       name: "Editor",
+  //       key: "editor",
+  //       href: "https://www.creative-tim.com/learning-lab/react/quill/argon-dashboard/",
+  //     },
+  //     {
+  //       name: "Input",
+  //       key: "input",
+  //       href: "https://www.creative-tim.com/learning-lab/react/input/argon-dashboard/",
+  //     },
+  //     {
+  //       name: "Pagination",
+  //       key: "pagination",
+  //       href: "https://www.creative-tim.com/learning-lab/react/pagination/argon-dashboard/",
+  //     },
+  //     {
+  //       name: "Progress",
+  //       key: "progress",
+  //       href: "https://www.creative-tim.com/learning-lab/react/progress/argon-dashboard/",
+  //     },
+  //     {
+  //       name: "Select",
+  //       key: "select",
+  //       href: "https://www.creative-tim.com/learning-lab/react/select/argon-dashboard/",
+  //     },
+  //     {
+  //       name: "Snackbar",
+  //       key: "snackbar",
+  //       href: "https://www.creative-tim.com/learning-lab/react/snackbar/argon-dashboard/",
+  //     },
+  //     {
+  //       name: "Social Button",
+  //       key: "social-button",
+  //       href: "https://www.creative-tim.com/learning-lab/react/social-buttons/argon-dashboard/",
+  //     },
+  //     {
+  //       name: "Tag Input",
+  //       key: "tag-input",
+  //       href: "https://www.creative-tim.com/learning-lab/react/tag-input/argon-dashboard/",
+  //     },
+  //     {
+  //       name: "Typography",
+  //       key: "typography",
+  //       href: "https://www.creative-tim.com/learning-lab/react/typography/argon-dashboard/",
+  //     },
+  //   ],
+  // },
   // {
   //   type: "collapse",
   //   name: "Change Log",

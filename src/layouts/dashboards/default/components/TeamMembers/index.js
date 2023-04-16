@@ -19,21 +19,16 @@ import team4 from "assets/images/team-4.jpg";
 
 // Data
 const data = [
-  { img: team1, name: "John Michael", status: "online", badge: "success" },
-  { img: team2, name: "Alex Smith", status: "in meeting", badge: "warning" },
-  { img: team3, name: "Samantha Ivy", status: "offline", badge: "error" },
-  { img: team4, name: "John Michael", status: "online", badge: "success" },
+  { img: team1, name: "Etherium", status: "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo", count: '44'},
+  { img: team2, name: "Uniswap", status: "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo", count: '34'},
+  { img: team3, name: "Bitcoin", status: "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo", count: '54'},
+  { img: team4, name: "PancakeSwap", status: "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo", count: '65'},
 ];
 
 function TeamMembers() {
   return (
     <Card sx={{ height: "100%", overflow: "hidden" }}>
-      <ArgonBox p={3}>
-        <ArgonTypography variant="h5" textTransform="capitalize">
-          Team members
-        </ArgonTypography>
-      </ArgonBox>
-      <ArgonBox pb={3} px={3}>
+      <ArgonBox pb={3} px={3} py={3}>
         <ArgonBox
           component="ul"
           display="flex"
@@ -42,27 +37,21 @@ function TeamMembers() {
           p={0}
           sx={{ listStyle: "none" }}
         >
-          {data.map(({ img, name, status, badge }, key) => (
+          {data.map(({ img, name, status, count }, key) => (
             <Fragment key={key}>
               <ArgonBox component="li" py={1}>
                 <Grid container spacing={3} alignItems="center">
                   <Grid item alignItems="center">
                     <ArgonAvatar src={img} alt={name} variant="rounded" />
                   </Grid>
-                  <Grid item lineHeight={1.4}>
-                    <ArgonTypography variant="h6">{name}</ArgonTypography>
-                    <ArgonBadge
-                      variant="contained"
-                      color={badge}
-                      badgeContent={status}
-                      size="xs"
-                      container
-                    />
-                  </Grid>
                   <Grid item ml="auto">
-                    <ArgonButton variant="outlined" color="info" size="small">
-                      Add
-                    </ArgonButton>
+                    <ArgonTypography variant="h3">
+                      {count}
+                    </ArgonTypography>
+                  </Grid>
+                  <Grid item lineHeight={1.4}>
+                    <ArgonTypography variant="h4">{name}</ArgonTypography>
+                    <ArgonTypography variant="h6">{status}</ArgonTypography>
                   </Grid>
                 </Grid>
               </ArgonBox>

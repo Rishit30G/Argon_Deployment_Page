@@ -49,6 +49,8 @@ import team1 from "assets/images/team-1.jpg";
 import team2 from "assets/images/team-2.jpg";
 import team3 from "assets/images/team-3.jpg";
 import team4 from "assets/images/team-4.jpg";
+import ArgonButton from "components/ArgonButton";
+import { Stack } from "@mui/material";
 const bgImage =
   "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/profile-layout-header.jpg";
 
@@ -64,110 +66,64 @@ function Overview() {
         backgroundPositionY: "50%",
       }}
     >
-      <Header />
-      <ArgonBox mt={5} mb={3}>
-        <Grid container spacing={3}>
-          {/* <Grid item xs={12} md={6} xl={4}>
-            <PlatformSettings />
-          </Grid> */}
-          <Grid item xs={12} md={12} xl={12}>
-            <ProfileInfoCard
-              title="profile information"
-              description="Hi, I'm Alec Thompson, Decisions: If you can't decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality)."
-              info={{
-                fullName: "Alec M. Thompson",
-                email: "alecthompson@mail.com",
-              }}
-              action={{ route: "", tooltip: "Edit Profile" }}
-            />
-          </Grid>
-          {/* <Grid item xs={12} xl={4}>
-            <ProfilesList title="conversations" profiles={profilesListData} />
-          </Grid> */}
-        </Grid>
-      </ArgonBox>
-      <ArgonBox mb={3}>
-        <Card>
-          <ArgonBox pt={2} px={2}>
-            <ArgonBox mb={0.5}>
-              <ArgonTypography variant="h6" fontWeight="medium">
-                Projects
-              </ArgonTypography>
-            </ArgonBox>
-            <ArgonBox mb={1}>
-              <ArgonTypography variant="button" fontWeight="regular" color="text">
-                Architects design houses
-              </ArgonTypography>
-            </ArgonBox>
-          </ArgonBox>
-          <ArgonBox p={2}>
-            <Grid container spacing={3}>
-              <Grid item xs={12} md={6} xl={3}>
-                <DefaultProjectCard
-                  image={homeDecor1}
-                  label="project #2"
-                  title="modern"
-                  description="As Uber works through a huge amount of internal management turmoil."
-                  action={{
-                    type: "internal",
-                    route: "/pages/profile/profile-overview",
-                    color: "info",
-                    label: "View Project",
-                  }}
-                  authors={[
-                    { image: team1, name: "Elena Morison" },
-                    { image: team2, name: "Ryan Milly" },
-                    { image: team3, name: "Nick Daniel" },
-                    { image: team4, name: "Peterson" },
-                  ]}
-                />
-              </Grid>
-              <Grid item xs={12} md={6} xl={3}>
-                <DefaultProjectCard
-                  image={homeDecor2}
-                  label="project #1"
-                  title="scandinavian"
-                  description="Music is something that every person has his or her own specific opinion about."
-                  action={{
-                    type: "internal",
-                    route: "/pages/profile/profile-overview",
-                    color: "info",
-                    label: "View Project",
-                  }}
-                  authors={[
-                    { image: team3, name: "Nick Daniel" },
-                    { image: team4, name: "Peterson" },
-                    { image: team1, name: "Elena Morison" },
-                    { image: team2, name: "Ryan Milly" },
-                  ]}
-                />
-              </Grid>
-              <Grid item xs={12} md={6} xl={3}>
-                <DefaultProjectCard
-                  image={homeDecor3}
-                  label="project #3"
-                  title="minimalist"
-                  description="Different people have different taste, and various types of music."
-                  action={{
-                    type: "internal",
-                    route: "/pages/profile/profile-overview",
-                    color: "info",
-                    label: "View Project",
-                  }}
-                  authors={[
-                    { image: team4, name: "Peterson" },
-                    { image: team3, name: "Nick Daniel" },
-                    { image: team2, name: "Ryan Milly" },
-                    { image: team1, name: "Elena Morison" },
-                  ]}
-                />
-              </Grid>
-              <Grid item xs={12} md={6} xl={3}>
-                <PlaceholderCard title={{ variant: "h5", text: "New project" }} outlined />
-              </Grid>
+      <Card sx={{ height: "40%", overflow: "hidden", marginTop: "170px" }}>
+        <ArgonBox px={3} py={3}>
+          <Grid container>
+            <Grid item xs={12} md={6} lg={4} style={{ display: "flex", justifyContent: "center" }}>
+              <img
+                src="https://via.placeholder.com/200"
+                alt="placeholder"
+                style={{ marginRight: "20px" }}
+              />
             </Grid>
-          </ArgonBox>
-        </Card>
+            <Grid item xs={12} md={6} lg={8}>
+              <Stack spacing={3}>
+                <Grid
+                  container
+                  direction="row"
+                  justifyContent="space-between"
+                  alignItems="flex-start"
+                >
+                  <ArgonTypography variant="h2">James Harden</ArgonTypography>
+                  <ArgonButton style={{ height: "40px", width: "180px", marginRight: "15px" }}>
+                    Contact
+                  </ArgonButton>
+                </Grid>
+                <ArgonTypography variant="h5">Eth Trader</ArgonTypography>
+                <ArgonTypography variant="subtitle2">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                </ArgonTypography>
+                <Grid container direction="row" justifyContent="flex-start" alignItems="center">
+                  <ArgonButton style={{ height: "40px", width: "180px", marginRight: "15px" }}>
+                    Salary
+                  </ArgonButton>
+                  <ArgonButton style={{ height: "40px", width: "180px", marginRight: "15px" }}>
+                    View
+                  </ArgonButton>
+                  <ArgonButton style={{ height: "5px", width: "220px" }}>
+                    Badges and XP Earned
+                  </ArgonButton>
+                </Grid>
+              </Stack>
+            </Grid>
+          </Grid>
+        </ArgonBox>
+      </Card>
+
+      <ArgonBox px={3} py={3}>
+        <Stack direction="row">
+          <ArgonButton style={{ height: "40px", width: "180px", marginRight: "15px" }}>
+            Overview
+          </ArgonButton>
+          <ArgonButton style={{ height: "40px", width: "180px", marginRight: "15px" }}>
+            Reputation
+          </ArgonButton>
+          <ArgonButton style={{ height: "5px", width: "180px" }}>
+            Past Experience
+          </ArgonButton>
+        </Stack>
       </ArgonBox>
 
       <Footer />

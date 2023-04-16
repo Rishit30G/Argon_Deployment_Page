@@ -28,12 +28,12 @@ import FormField from "layouts/pages/users/new-user/components/FormField";
 
 function UserInfo({ formData }) {
   const { formField, values, errors, touched } = formData;
-  const { firstName, lastName, company, email, password, repeatPassword } = formField;
+  const { firstName, lastName, email, password, repeatPassword, interest } = formField;
   const {
     firstName: firstNameV,
     lastName: lastNameV,
-    company: companyV,
     email: emailV,
+    interest: interestV,
     password: passwordV,
     repeatPassword: repeatPasswordV,
   } = values;
@@ -76,11 +76,12 @@ function UserInfo({ formData }) {
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
             <FormField
-              type={company.type}
-              label={company.label}
-              name={company.name}
-              value={companyV}
-              placeholder={company.placeholder}
+              type={interest.type}
+              label={interest.label}
+              name={interest.name}
+              value={interestV}
+              placeholder={interest.placeholder}
+              error={errors.interest && touched.interest}
             />
           </Grid>
           <Grid item xs={12} sm={6}>

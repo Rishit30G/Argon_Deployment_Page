@@ -53,21 +53,22 @@ import salesTableData from "layouts/dashboards/default/data/salesTableData";
 import authorsTableData from "layouts/dashboards/default/data/authorsTableData";
 import categoriesListData from "layouts/dashboards/default/data/categoriesListData";
 import { Rowing } from "@mui/icons-material";
+import { GrantCard } from "examples/Cards/GrantCard";
 
 function Default() {
   const { size } = typography;
   return (
     <DashboardLayout>
       <DashboardNavbar />
-      <ArgonBox py={3}>
-      <ArgonTypography variant="h2" fontWeight="bold" textTransform="capitalize">
+      <ArgonBox py={3} px={3}>
+      <ArgonTypography variant="h2" fontWeight="bold" textTransform="capitalize" style={{marginBottom: '15px'}}>
              App Metrics 
-            </ArgonTypography>
+        </ArgonTypography>
         <Grid container spacing={3} mb={3}>
           <Grid item xs={12} md={6} lg={3}>
             <DetailedStatisticsCard
               title="Dao's Tracked"
-              count="$53,000"
+              count="24"
               icon={{ color: "info", component: <i className="ni ni-money-coins" /> }}
               percentage={{ color: "success", count: "+55%", text: "since yesterday" }}
             />
@@ -75,7 +76,7 @@ function Default() {
           <Grid item xs={12} md={6} lg={3}>
             <DetailedStatisticsCard
               title="Jobs Disbursed"
-              count="2,300"
+              count="54"
               icon={{ color: "error", component: <i className="ni ni-world" /> }}
               // percentage={{ color: "success", count: "+3%", text: "since last week" }}
             />
@@ -83,7 +84,7 @@ function Default() {
           <Grid item xs={12} md={6} lg={3}>
             <DetailedStatisticsCard
               title="XP Earned"
-              count="+3,462"
+              count="3,462"
               icon={{ color: "success", component: <i className="ni ni-paper-diploma" /> }}
               // percentage={{ color: "error", count: "-2%", text: "since last quarter" }}
             />
@@ -91,34 +92,18 @@ function Default() {
           <Grid item xs={12} md={6} lg={3}>
             <DetailedStatisticsCard
               title="Live Proposals"
-              count="$103,430"
+              count="24"
               icon={{ color: "warning", component: <i className="ni ni-cart" /> }}
               // percentage={{ color: "success", count: "+5%", text: "than last month" }}
             />
           </Grid>
         </Grid>
-        <ArgonTypography variant="h2" fontWeight="bold" textTransform="capitalize">
+        <ArgonTypography variant="h2" fontWeight="bold" textTransform="capitalize" style={{marginBottom: '15px'}}>
               Grants and Proposal Calender
             </ArgonTypography>
         <Grid container spacing={3} mb={3}>
           <Grid item xs={12} lg={7}>
-            <GradientLineChart
-              title="Sales Overview"
-              description={
-                <ArgonBox display="flex" alignItems="center">
-                  <ArgonBox fontSize={size.lg} color="success" mb={0.3} mr={0.5} lineHeight={0}>
-                    <Icon sx={{ fontWeight: "bold" }}>arrow_upward</Icon>
-                  </ArgonBox>
-                  <ArgonTypography variant="button" color="text" fontWeight="medium">
-                    4% more{" "}
-                    <ArgonTypography variant="button" color="text" fontWeight="regular">
-                      in 2022
-                    </ArgonTypography>
-                  </ArgonTypography>
-                </ArgonBox>
-              }
-              chart={gradientLineChartData}
-            />
+             <GrantCard></GrantCard>
           </Grid>
           <Grid item xs={12} lg={5}>
             <Slider />
@@ -126,23 +111,23 @@ function Default() {
         </Grid>
 
         <Grid container spacing={3} style={{ display: "flex" }}>
+        <Grid item xs={12} md={4} lg={4}>
+            <ArgonTypography variant="h2" fontWeight="bold" textTransform="capitalize" style={{marginBottom: '15px'}}>
+              Top Discussions
+            </ArgonTypography>
+            <Post />
+          </Grid>
           <Grid item xs={12} md={4} lg={4}>
-            <ArgonTypography variant="h2" fontWeight="bold" textTransform="capitalize">
+            <ArgonTypography variant="h2" fontWeight="bold" textTransform="capitalize" style={{marginBottom: '15px'}}>
               Top Proposals
             </ArgonTypography>
             <TeamMembers />
           </Grid>
           <Grid item xs={12} md={4} lg={4}>
-            <ArgonTypography variant="h2" fontWeight="bold" textTransform="capitalize">
-              Top Discussions
-            </ArgonTypography>
-            <TodoList />
-          </Grid>
-          <Grid item xs={12} md={4} lg={4}>
-            <ArgonTypography variant="h2" fontWeight="bold" textTransform="capitalize">
+            <ArgonTypography variant="h2" fontWeight="bold" textTransform="capitalize" style={{marginBottom: '15px'}}>
               Top Articles
             </ArgonTypography>
-            <Post />
+            <TodoList />
           </Grid>
         </Grid>
       </ArgonBox>
