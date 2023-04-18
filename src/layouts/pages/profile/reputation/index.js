@@ -10,8 +10,7 @@ import ReactGithubCalendar from 'react-github-calendar';
 
 const Reputation = () => {
   return (
-    <DashboardLayout>
-      <DashboardNavbar />
+    <>
       <ArgonBox mb={3}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
@@ -47,7 +46,7 @@ const Reputation = () => {
           </ArgonBox> 
         </Card>
       </ArgonBox>
-    </DashboardLayout>
+    </>
   );
 };
 

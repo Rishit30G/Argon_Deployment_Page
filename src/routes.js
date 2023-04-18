@@ -106,6 +106,11 @@ import Articles from "layouts/pages/articles";
 import ArticleMain from "layouts/pages/article-main";
 import ProposalDiscussion from "layouts/pages/proposal-discussion";
 import JobListing from "layouts/pages/job-listing";
+import NewDAOProtocol from "layouts/pages/dao-protocol";
+import ProtocolDiscussion from "layouts/pages/dao-protocol/protocol-discussion";
+import RelatedProtocols from "layouts/pages/dao-protocol/related-protocols";
+import OrganizationOverview from "layouts/pages/profile/organization-overview";
+import ProposalList from "layouts/pages/proposal-list";
 
 
 const routes = [
@@ -115,12 +120,6 @@ const routes = [
     key: "dashboards",
     icon: <ArgonBox component="i" color="primary" fontSize="14px" className="ni ni-shop" />,
     collapse: [
-      {
-        name: "Landing",
-        key: "landing",
-        route: "/dashboards/landing",
-        component: <Landing />,
-      },
       {
         name: "Default",
         key: "default",
@@ -178,23 +177,12 @@ const routes = [
             component: <ProfileOverview />,
           },
           {
-            name: "Overview",
-            key: "overview",
-            route: "/pages/profile/overview",
-            component: <Overview2/>
-          },
-          {
-            name: "Reputation",
-            key: "reputation",
-            route: "/pages/profile/reputation",
-            component: <Reputation />,
-          }, 
-          {
-            name: "Past Experience",
-            key: "past-experience",
-            route: "/pages/profile/past-experience",
-            component: <PastExperience/>
+            name: "Organization Overview", 
+            key: "organization-overview", 
+            route: "/pages/profile/organization-overview",
+            component: <OrganizationOverview/>
           }
+          
           // {
           //   name: "Teams",
           //   key: "teams",
@@ -312,12 +300,6 @@ const routes = [
         ],
       },
       {
-        name: "Job Profiling",
-        key: "job profiling",
-        route: "/pages/projects/jobprofiling",
-        component: <JobProfile />,
-      },
-      {
         name:"Article Main",
         key: "article main", 
         route: "/pages/article-main",
@@ -336,11 +318,41 @@ const routes = [
         component: <ProposalDiscussion/>
       }, 
       {
-        name:"Job Listing",
-        key: "job listing",
-        route: "/pages/job-listing",
-        component: <JobListing/>
+        name:"Proposal Listing",
+        key: "proposal listing",
+        route: "/pages/proposal-listing",
+        component: <ProposalList/>
       }, 
+      {
+        name:"New DAO Protocol", 
+        key: "new dao job",
+        route: "/pages/new-dao-job",
+        component: <NewDAOProtocol/>
+      },
+      {
+        name: "DAO Protocol Discussion",
+        key: "dao protocol discussion",
+        route: "/pages/dao-protocol-discussion",
+        component: <ProtocolDiscussion/>
+      },
+      {
+        name: "Related Protocols", 
+        key: "related protocols", 
+        route: "/pages/related-protocols",
+        component: <RelatedProtocols/>
+      }, 
+      {
+        name: "Job Profiling",
+        key: "job profiling",
+        route: "/pages/jobprofiling",
+        component: <JobProfile />,
+      },
+      {
+        name: "Job Listing",
+        key: "job listing",
+        route: "/pages/joblisting",
+        component: <JobListing/>
+      }
 
       // {
       //   name: "Pricing Page",

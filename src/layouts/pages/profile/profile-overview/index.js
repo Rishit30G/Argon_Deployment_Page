@@ -21,6 +21,8 @@ import Card from "@mui/material/Card";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import {TabContext, TabList, TabPanel} from '@material-ui/lab';
+import Tab from '@mui/material/Tab';
 
 // Argon Dashboard 2 PRO MUI components
 import ArgonBox from "components/ArgonBox";
@@ -50,11 +52,23 @@ import team2 from "assets/images/team-2.jpg";
 import team3 from "assets/images/team-3.jpg";
 import team4 from "assets/images/team-4.jpg";
 import ArgonButton from "components/ArgonButton";
-import { Stack } from "@mui/material";
+import { Box, Stack } from "@mui/material";
+import React, { useState } from "react";
+import Overview2 from "../overview";
+import Reputation from "../reputation";
+import PastExperience from "../past-experience";
+
 const bgImage =
   "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/profile-layout-header.jpg";
 
 function Overview() {
+
+  const [value, setValue] = React.useState('1');
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   return (
     <DashboardLayout
       sx={{
@@ -112,18 +126,19 @@ function Overview() {
         </ArgonBox>
       </Card>
 
-      <ArgonBox px={3} py={3}>
-        <Stack direction="row">
-          <ArgonButton style={{ height: "40px", width: "180px", marginRight: "15px" }}>
-            Overview
-          </ArgonButton>
-          <ArgonButton style={{ height: "40px", width: "180px", marginRight: "15px" }}>
-            Reputation
-          </ArgonButton>
-          <ArgonButton style={{ height: "5px", width: "180px" }}>
-            Past Experience
-          </ArgonButton>
-        </Stack>
+      <ArgonBox mt={3} >
+        <TabContext value={value}>
+          <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+            <TabList onChange={handleChange} aria-label="lab API tabs example">
+              <Tab label="Overview" value="1" />
+              <Tab label="Reputation" value="2" />
+              <Tab label="Past Experience" value="3" />
+            </TabList>
+          </Box>
+          <TabPanel value="1"><Overview2/></TabPanel>
+          <TabPanel value="2"><Reputation/></TabPanel>
+          <TabPanel value="3"><PastExperience/></TabPanel>
+        </TabContext>
       </ArgonBox>
 
       <Footer />

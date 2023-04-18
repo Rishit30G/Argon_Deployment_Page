@@ -11,8 +11,7 @@ import { ContentPaste, PersonOffOutlined } from "@mui/icons-material";
 
 const Overview2 = () => {
   return (
-    <DashboardLayout>
-      <DashboardNavbar />
+    <>
       <ArgonBox mb={3}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
@@ -33,61 +32,61 @@ const Overview2 = () => {
             <Card sx={{ overflow: "hidden", height: "100%" }}>
               <ArgonBox my={3} mx={3}>
                 <Grid item>
-                  <Grid container direction="row">
+                  <Grid container direction="row" spacing={2}>
                     <Grid item>
-                      <Person style={{ fontSize: "3rem", color: "white" }}></Person>
+                      <Person style={{ fontSize: "33px", color: "white" }}></Person>
                     </Grid>
                     <Grid item>
-                      <ArgonTypography variant="h3">Name</ArgonTypography>
+                      <ArgonTypography variant="h4">Name</ArgonTypography>
                     </Grid>
                   </Grid>
                 </Grid>
                 <Grid item>
-                  <ArgonTypography variant="h4">John Doe</ArgonTypography>
+                  <ArgonTypography variant="h3">John Doe</ArgonTypography>
                 </Grid>
               </ArgonBox>
               <ArgonBox my={3} mx={3}>
                 <Grid item>
-                  <Grid container direction="row">
+                  <Grid container direction="row" spacing={2}>
                     <Grid item>
-                      <Work style={{ fontSize: "3rem", color: "white" }}></Work>
+                      <Work style={{ fontSize: "33px", color: "white" }}></Work>
                     </Grid>
                     <Grid item>
                       
-                        <ArgonTypography variant="h3">Skills and Experience</ArgonTypography>
+                        <ArgonTypography variant="h4">Skills and Experience</ArgonTypography>
                       
                     </Grid>
                   </Grid>
                 </Grid>
                 <Grid item>
                 <Stack>
-                  <ArgonTypography variant="h4">HTML</ArgonTypography>
-                    <ArgonTypography variant="h4">CSS</ArgonTypography>
-                    <ArgonTypography variant="h4">JavaScript</ArgonTypography>
-                    <ArgonTypography variant="h4">4+ Years Experience</ArgonTypography>
+                    <ArgonTypography variant="h5">HTML</ArgonTypography>
+                    <ArgonTypography variant="h5">CSS</ArgonTypography>
+                    <ArgonTypography variant="h5">JavaScript</ArgonTypography>
+                    <ArgonTypography variant="h5">4+ Years Experience</ArgonTypography>
                   </Stack>
                 </Grid>
               </ArgonBox>
               <ArgonBox my={3} mx={3}>
                 <Grid item>
-                  <Grid container direction="row">
+                  <Grid container direction="row" spacing={2}>
                     <Grid item>
-                    <ContentPaste style={{ fontSize: "3rem", color: "white" }}></ContentPaste>
+                    <ContentPaste style={{ fontSize: "33px", color: "white" }}></ContentPaste>
                     </Grid>
                     <Grid item>
-                      <ArgonTypography variant="h3">Miscellaneous Information</ArgonTypography>
+                      <ArgonTypography variant="h4">Miscellaneous Information</ArgonTypography>
                     </Grid>
                   </Grid>
                 </Grid>
                 <Grid item>
-                  <ArgonTypography variant="h4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vulputate, leo at pharetra finibus, nisi nibh commodo turpis, quis tincidunt elit elit ut magna. Sed ut ipsum enim. Sed fermentum magna quis turpis varius, ac aliquet ipsum auctor. Sed lacinia purus id nisl pharetra, nec congue sapien pulvinar</ArgonTypography>
+                  <ArgonTypography variant="body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vulputate, leo at pharetra finibus, nisi nibh commodo turpis, quis tincidunt elit elit ut magna. Sed ut ipsum enim. Sed fermentum magna quis turpis varius, ac aliquet ipsum auctor. Sed lacinia purus id nisl pharetra, nec congue sapien pulvinar</ArgonTypography>
                 </Grid>
               </ArgonBox>
             </Card>
           </Grid>
         </ArgonBox>
       </Grid>
-    </DashboardLayout>
+    </>
   );
 };
 

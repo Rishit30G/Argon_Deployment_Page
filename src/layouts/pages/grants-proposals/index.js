@@ -43,23 +43,23 @@ function GrantsAndProposals() {
       </ArgonBox>
 
       <ArgonBox>
-        <Card sx={{ height: "100%", overflow: "hidden" }}>
+        <Card>
           <ArgonBox px={3} py={3}>
             <Grid container>
               <Grid
                 item
                 xs={12}
                 md={3}
-                lg={4}
-                style={{ display: "flex", justifyContent: "center" }}
+                lg={2}
+                style={{ display: "flex", justifyContent: "center"}}
               >
                 <img
                   src="https://via.placeholder.com/200"
                   alt="placeholder"
-                  style={{ marginRight: "20px" }}
+                  style={{ borderRadius: '50%'}}
                 />
               </Grid>
-              <Grid item xs={12} md={9} lg={8}>
+              <Grid item xs={12} md={9} lg={10}>
                 <Stack spacing={3}>
                   <ArgonTypography variant="h2">Title</ArgonTypography>
                   <ArgonTypography variant="subtitle2">
@@ -73,9 +73,9 @@ function GrantsAndProposals() {
             <Grid container style={{marginTop: '50px'}}>
               <Grid item>
                 <Stack spacing={3} direction="row">
-                  <ArgonButton style={{ height: "60px", width: "220px" }}>Proposals</ArgonButton>
-                  <ArgonButton style={{ height: "60px", width: "220px" }}>Grants</ArgonButton>
-                  <ArgonButton style={{ height: "60px", width: "220px" }}>Jobs</ArgonButton>
+                  <ArgonButton style={{ height: "48px", width: "220px" }}>Proposals</ArgonButton>
+                  <ArgonButton style={{ height: "48px", width: "220px" }}>Grants</ArgonButton>
+                  <ArgonButton style={{ height: "48px", width: "220px" }}>Jobs</ArgonButton>
                 </Stack>
               </Grid>
             </Grid>

@@ -8,8 +8,7 @@ import ArgonButton from "components/ArgonButton";
 
 const PastExperience = () => {
   return (
-    <DashboardLayout>
-      <DashboardNavbar />
+    <>
       <ArgonBox mb={3} px={3} py={3}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
@@ -44,7 +43,7 @@ const PastExperience = () => {
           </Grid>
         </ArgonBox>
       </Card>
-    </DashboardLayout>
+    </>
   );
 };
 

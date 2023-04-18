@@ -61,7 +61,6 @@ function Configurator() {
     setDarkSidenav(dispatch, !darkMode);
     setDarkMode(dispatch, !darkMode);
   };
-
   return (
     <ConfiguratorRoot variant="permanent" ownerState={{ openConfigurator }}>
       <ArgonBox
