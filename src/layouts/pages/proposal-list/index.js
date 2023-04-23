@@ -11,17 +11,15 @@ const ProposalList = () => {
     <DashboardLayout>
       <DashboardNavbar />
       <ArgonBox mb={3} px={3} py={3}>
-        <Grid container spacing={3}>
+        <Grid container spacing={3} style={{marginBottom: '40px'}}>
           <Grid item xs={12} md={6}>
             <ArgonTypography variant="h2">Proposal Listing Page</ArgonTypography>
           </Grid>
         </Grid>
-      </ArgonBox>
-
-      <Grid container justifyContent="space-between" spacing={3}> 
+      <Grid container justifyContent="space-around"  alignItems="center" spacing={3}> 
         <Grid item lg={3}>
-          <Card style={{ width: "350px" }}>
-            <ArgonBox px={2} py={2}>
+          <Card style={{ width: "330px" }}>
+            <ArgonBox px={5} py={2}>
               <CardContent>
                 <Grid container spacing={3} direction="column">
                   <Grid item>
@@ -41,13 +39,13 @@ const ProposalList = () => {
           </Card>
         </Grid>
         <Grid item lg={3}>
-          <Card style={{ width: "350px" }}>
-            <ArgonBox px={2} py={2}>
+        <Card style={{ width: "330px" }}>
+            <ArgonBox px={5} py={2}>
               <CardContent>
                 <Grid container spacing={3} direction="column">
                   <Grid item>
-                    <ArgonTypography variant="h3">Balancer</ArgonTypography>
-                    <ArgonTypography variant="h4">Tracking the system</ArgonTypography>
+                    <ArgonTypography variant="h3">Uniswap</ArgonTypography>
+                    <ArgonTypography variant="h4">Etherium Tracker</ArgonTypography>
                   </Grid>
                   <Grid item>
                     <Avatar
@@ -62,13 +60,13 @@ const ProposalList = () => {
           </Card>
         </Grid>
         <Grid item lg={3}>
-          <Card style={{ width: "350px" }}>
-            <ArgonBox px={2} py={2}>
+        <Card style={{ width: "330px" }}>
+            <ArgonBox px={5} py={2}>
               <CardContent>
                 <Grid container spacing={3} direction="column">
                   <Grid item>
-                    <ArgonTypography variant="h3">Arbitrum</ArgonTypography>
-                    <ArgonTypography variant="h4">Eth Coin Tracker</ArgonTypography>
+                    <ArgonTypography variant="h3">Uniswap</ArgonTypography>
+                    <ArgonTypography variant="h4">Etherium Tracker</ArgonTypography>
                   </Grid>
                   <Grid item>
                     <Avatar
@@ -83,13 +81,13 @@ const ProposalList = () => {
           </Card>
         </Grid>
         <Grid item lg={3}>
-          <Card style={{ width: "350px" }}>
-            <ArgonBox px={2} py={2}>
+        <Card style={{ width: "330px" }}>
+            <ArgonBox px={5} py={2}>
               <CardContent>
                 <Grid container spacing={3} direction="column">
                   <Grid item>
-                    <ArgonTypography variant="h3">Yoginith</ArgonTypography>
-                    <ArgonTypography variant="h4">Blockchain Invention</ArgonTypography>
+                    <ArgonTypography variant="h3">Uniswap</ArgonTypography>
+                    <ArgonTypography variant="h4">Etherium Tracker</ArgonTypography>
                   </Grid>
                   <Grid item>
                     <Avatar
@@ -104,6 +102,7 @@ const ProposalList = () => {
           </Card>
         </Grid>
       </Grid>
+      </ArgonBox>
     </DashboardLayout>
   );
 };

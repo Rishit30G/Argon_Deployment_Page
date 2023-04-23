@@ -27,6 +27,7 @@ import ArgonTypography from "components/ArgonTypography";
 
 // Argon Dashboard 2 PRO MUI contexts
 import { useArgonController } from "context";
+import CountUp from 'react-countup';
 
 function DetailedStaticsCard({ bgColor, title, count, percentage, icon, direction }) {
   const [controller] = useArgonController();
@@ -73,20 +74,20 @@ function DetailedStaticsCard({ bgColor, title, count, percentage, icon, directio
             <Grid item xs={8}>
               <ArgonBox ml={direction === "left" ? 2 : 0} lineHeight={1}>
                 <ArgonTypography
-                  variant="button"
+                  variant="h4"
                   color={bgColor === "white" ? "text" : "white"}
-                  textTransform="uppercase"
                   fontWeight="medium"
+                  mb={2}
                 >
                   {title}
                 </ArgonTypography>
                 <ArgonTypography
-                  variant="h5"
+                  variant="h3"
                   fontWeight="bold"
                   color={bgColor === "white" ? "dark" : "white"}
                   mb={1}
                 >
-                  {count}
+                  <CountUp end={count} duration={5}></CountUp>
                 </ArgonTypography>
               </ArgonBox>
             </Grid>

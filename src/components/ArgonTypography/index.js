@@ -21,6 +21,7 @@ import PropTypes from "prop-types";
 // Custom styles for ArgonTypography
 import ArgonTypographyRoot from "components/ArgonTypography/ArgonTypographyRoot";
 
+
 // Argon Dashboard 2 PRO MUI context
 import { useArgonController } from "context";
 

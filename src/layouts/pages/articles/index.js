@@ -36,7 +36,7 @@ const Articles = () => {
           </Grid>
           <Grid item xs={12} md={4} lg={4}>
             <img
-                src="https://picsum.photos/400/400"
+                src="https://picsum.photos/600/400"
                 alt="placeholder"
                 style={{ marginLeft: '425px'}}
              />

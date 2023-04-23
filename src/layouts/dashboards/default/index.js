@@ -61,7 +61,7 @@ function Default() {
     <DashboardLayout>
       <DashboardNavbar />
       <ArgonBox py={3} px={3}>
-      <ArgonTypography variant="h2" fontWeight="bold" textTransform="capitalize" style={{marginBottom: '15px'}}>
+      <ArgonTypography variant="h2" style={{marginBottom: '15px',fontFamily: 'Poppins, sans-serif'}}>
              App Metrics 
         </ArgonTypography>
         <Grid container spacing={3} mb={3}>
@@ -70,7 +70,6 @@ function Default() {
               title="Dao's Tracked"
               count="24"
               icon={{ color: "info", component: <i className="ni ni-money-coins" /> }}
-              percentage={{ color: "success", count: "+55%", text: "since yesterday" }}
             />
           </Grid>
           <Grid item xs={12} md={6} lg={3}>
@@ -84,7 +83,7 @@ function Default() {
           <Grid item xs={12} md={6} lg={3}>
             <DetailedStatisticsCard
               title="XP Earned"
-              count="3,462"
+              count="10"
               icon={{ color: "success", component: <i className="ni ni-paper-diploma" /> }}
               // percentage={{ color: "error", count: "-2%", text: "since last quarter" }}
             />
@@ -98,8 +97,8 @@ function Default() {
             />
           </Grid>
         </Grid>
-        <ArgonTypography variant="h2" fontWeight="bold" textTransform="capitalize" style={{marginBottom: '15px'}}>
-              Grants and Proposal Calender
+        <ArgonTypography variant="h2" fontWeight="bold" textTransform="capitalize" style={{marginBottom: '15px', fontFamily: 'Poppins, sans-serif'}}>
+              Grants & Proposal Calender
             </ArgonTypography>
         <Grid container spacing={3} mb={3}>
           <Grid item xs={12} lg={7}>

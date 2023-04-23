@@ -111,6 +111,7 @@ import ProtocolDiscussion from "layouts/pages/dao-protocol/protocol-discussion";
 import RelatedProtocols from "layouts/pages/dao-protocol/related-protocols";
 import OrganizationOverview from "layouts/pages/profile/organization-overview";
 import ProposalList from "layouts/pages/proposal-list";
+import GrantMainPage from "layouts/pages/grants-proposals/Grant-Main";
 
 
 const routes = [
@@ -292,6 +293,12 @@ const routes = [
             component: <Grants />,
           }, 
           {
+            name: "Grants Main Page", 
+            key: "grants main page", 
+            route: "/pages/grants-main-page", 
+            component: <GrantMainPage/>
+          },
+          {
             name: "Jobs",
             key: "jobs",
             route: "/pages/grantsandproposals/jobs",
@@ -352,7 +359,7 @@ const routes = [
         key: "job listing",
         route: "/pages/joblisting",
         component: <JobListing/>
-      }
+      }, 
 
       // {
       //   name: "Pricing Page",
