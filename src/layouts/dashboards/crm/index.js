@@ -77,7 +77,6 @@ function CRM() {
             </Grid>
           </Grid>
         </ArgonBox>
-      <Footer />
     </DashboardLayout>
   );
 }

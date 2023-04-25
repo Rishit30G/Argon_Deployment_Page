@@ -46,6 +46,7 @@ function PageLayout({ background, children }) {
       sx={{ overflowX: "hidden" }}
     >
       {children}
+      
     </ArgonBox>
   );
 }

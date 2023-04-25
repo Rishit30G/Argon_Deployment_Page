@@ -54,6 +54,7 @@ import brandDark from "assets/images/logo-ct-dark.png";
 // Icon Fonts
 import "assets/css/nucleo-icons.css";
 import "assets/css/nucleo-svg.css";
+import Footer from "examples/Footer";
 
 export default function App() {
   const [controller, dispatch] = useArgonController();
@@ -163,6 +164,7 @@ export default function App() {
           {getRoutes(routes)}
           <Route path="*" element={<Navigate to="/dashboards/default" />} />
         </Routes>
+      <Footer/>
       </ThemeProvider>
     </CacheProvider>
   ) : (
@@ -187,6 +189,8 @@ export default function App() {
         {getRoutes(routes)}
         <Route path="*" element={<Navigate to="/dashboards/default" />} />
       </Routes>
+      
+      <Footer/>
     </ThemeProvider>
   );
 }

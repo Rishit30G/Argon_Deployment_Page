@@ -1,5 +1,5 @@
 import React from "react";
-import { Avatar, Card, Grid, Icon, Stack } from "@mui/material";
+import { Avatar, Card, CardContent, Grid, Icon, Stack } from "@mui/material";
 import ArgonBox from "components/ArgonBox";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
@@ -21,47 +21,45 @@ const Grants = () => {
         </Grid>
       </ArgonBox>
 
-      <Grid
-        container
-        spacing={3}
-        direction="column"
-        justifyContent="flex-start"
-        alignItems="flex-start"
-      >
-        <Grid item xs={12} sm={6} md={4}>
-          <Card sx={{ height: "100%", overflow: "hidden" }}>
+      <Grid container spacing={3} direction="column">
+        <Grid item>
+          <Card>
+            <CardContent>
             <ArgonBox my={3} mx={3}>
               <Grid container xs={12} sm={12} md={12}>
                 <ArgonBox style={{ marginTop: "10px" }}>
                   <Grid container spacing={2}>
                     <Grid item>
-                      <Avatar></Avatar>
+                      <Avatar src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png" sx={{ width: 56, height: 56 }}></Avatar>
                     </Grid>
                     <Grid item>
-                      <ArgonTypography variant="h2">Title</ArgonTypography>
+                      <ArgonTypography variant="h2">Uniswap</ArgonTypography>
                     </Grid>
                   </Grid>
-                  <ArgonTypography variant="body1" style={{ marginBottom: "15px" }}>
-                    Text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                    convallis mi ut quam dictum, eget rutrum ipsum ultrices.
-                  </ArgonTypography>
-                  <Grid
-                    container
-                    direction="row"
-                    justifyContent="space-between"
-                    alignItems="flex-start"
-                  >
+                  <Grid container style={{marginTop: '15px'}}>
                     <Grid item>
-                      <ArgonTypography variant="body1">Amount Requested: $240</ArgonTypography>
+                      <ArgonTypography variant="body1" style={{ marginBottom: "15px" }}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Morbi convallis mi ut quam dictum, eget rutrum ipsum ultrices.Text goes
+                        here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                        convallis mi ut quam dictum, eget rutrum ipsum ultrices.
+                      </ArgonTypography>
+                    </Grid>
+                  </Grid>
+                  <Grid container direction="row" justifyContent="space-between" style={{marginTop:'10px'}}>
+                    <Grid item>
+                      <Card style={{ backgroundColor: "#232f59" }}>
+                        <CardContent>
+                          <ArgonTypography variant="h5" fontWeight="medium" style={{marginTop: '12px'}}>Amount Requested: $240</ArgonTypography>
+                        </CardContent>
+                      </Card>
                     </Grid>
                     <Grid item>
-                      <Stack direction="row" spacing={3}>
+                      <Stack direction="row" spacing={2} style={{marginTop: '13px'}}>
                         <ArgonTypography>
-                          {" "}
                           <Heart></Heart> 15 Likes
                         </ArgonTypography>
                         <ArgonButton>
-                          {" "}
                           <ArrowUpward></ArrowUpward> 15 Upvotes
                         </ArgonButton>
                       </Stack>
@@ -70,42 +68,47 @@ const Grants = () => {
                 </ArgonBox>
               </Grid>
             </ArgonBox>
+            </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={12} sm={6} md={4}>
-          <Card sx={{ height: "100%", overflow: "hidden" }}>
+        <Grid item>
+          <Card>
+            <CardContent>
             <ArgonBox my={3} mx={3}>
               <Grid container xs={12} sm={12} md={12}>
                 <ArgonBox style={{ marginTop: "10px" }}>
                   <Grid container spacing={2}>
                     <Grid item>
-                      <Avatar></Avatar>
+                      <Avatar src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png" sx={{ width: 56, height: 56 }}></Avatar>
                     </Grid>
                     <Grid item>
-                      <ArgonTypography variant="h2">Title</ArgonTypography>
+                      <ArgonTypography variant="h2">Uniswap</ArgonTypography>
                     </Grid>
                   </Grid>
-                  <ArgonTypography variant="body1" style={{ marginBottom: "15px" }}>
-                    Text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                    convallis mi ut quam dictum, eget rutrum ipsum ultrices.
-                  </ArgonTypography>
-                  <Grid
-                    container
-                    direction="row"
-                    justifyContent="space-between"
-                    alignItems="flex-start"
-                  >
+                  <Grid container style={{marginTop: '15px'}}>
                     <Grid item>
-                      <ArgonTypography variant="body1">Amount Requested: $240</ArgonTypography>
+                      <ArgonTypography variant="body1" style={{ marginBottom: "15px" }}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Morbi convallis mi ut quam dictum, eget rutrum ipsum ultrices.Text goes
+                        here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                        convallis mi ut quam dictum, eget rutrum ipsum ultrices.
+                      </ArgonTypography>
+                    </Grid>
+                  </Grid>
+                  <Grid container direction="row" justifyContent="space-between" style={{marginTop:'10px'}}>
+                    <Grid item>
+                      <Card style={{ backgroundColor: "#232f59" }}>
+                        <CardContent>
+                          <ArgonTypography variant="h5" fontWeight="medium" style={{marginTop: '12px'}}>Amount Requested: $240</ArgonTypography>
+                        </CardContent>
+                      </Card>
                     </Grid>
                     <Grid item>
-                      <Stack direction="row" spacing={3}>
+                      <Stack direction="row" spacing={2} style={{marginTop: '15px'}}>
                         <ArgonTypography>
-                          {" "}
                           <Heart></Heart> 15 Likes
                         </ArgonTypography>
                         <ArgonButton>
-                          {" "}
                           <ArrowUpward></ArrowUpward> 15 Upvotes
                         </ArgonButton>
                       </Stack>
@@ -114,6 +117,7 @@ const Grants = () => {
                 </ArgonBox>
               </Grid>
             </ArgonBox>
+            </CardContent>
           </Card>
         </Grid>
       </Grid>

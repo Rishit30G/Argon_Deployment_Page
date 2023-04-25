@@ -16,14 +16,14 @@ const Jobs = () => {
       <Card sx={{ height: "40%", overflow: "hidden" }}>
         <ArgonBox px={3} py={3}>
           <Grid container>
-            <Grid item xs={12} md={6} lg={4} style={{ display: "flex", justifyContent: "center" }}>
+            <Grid item xs={12} md={3} lg={2} style={{ display: "flex", justifyContent: "center" }}>
               <img
-                src="https://via.placeholder.com/200"
+                src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png"
                 alt="placeholder"
-                style={{ marginRight: "20px" }}
+                style={{ marginRight: "20px", height: '200px', weight: '200px' }}
               />
             </Grid>
-            <Grid item xs={12} md={6} lg={8}>
+            <Grid item xs={12} md={9} lg={10}>
               <Stack spacing={3}>
                 <ArgonTypography variant="h2">Algorithm Trader</ArgonTypography>
                 <ArgonTypography variant="subtitle2">

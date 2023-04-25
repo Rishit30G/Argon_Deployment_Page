@@ -26,6 +26,11 @@ import ArgonTypography from "components/ArgonTypography";
 
 // Argon Dashboard 2 PRO MUI base styles
 import typography from "assets/theme/base/typography";
+import { Grid } from "@mui/material";
+import ArgonButton from "components/ArgonButton";
+import { Article, DensityMedium, Telegram, Twitter } from "@mui/icons-material";
+import { Discord, Github } from "@web3uikit/icons";
+import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 
 function Footer({ company, links }) {
   const { href, name } = company;
@@ -43,56 +48,33 @@ function Footer({ company, links }) {
     ));
 
   return (
-    <ArgonBox
-      width="100%"
-      display="flex"
-      flexDirection={{ xs: "column", lg: "row" }}
-      justifyContent="space-between"
-      alignItems="center"
-      px={1.5}
-    >
-      <ArgonBox
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        flexWrap="wrap"
-        color="text"
-        fontSize={size.sm}
-        px={1.5}
-      >
-        &copy; {new Date().getFullYear()}, made with
-        <ArgonBox fontSize={size.md} color="text" mb={-0.5} mx={0.25}>
-          <Icon color="inherit" fontSize="inherit">
-            favorite
-          </Icon>
-        </ArgonBox>
-        by
-        <Link href={href} target="_blank">
-          <ArgonTypography variant="button" fontWeight="medium">
-            &nbsp;{name}&nbsp;
-          </ArgonTypography>
-        </Link>
-        for a better web.
-      </ArgonBox>
-      <ArgonBox
-        component="ul"
-        sx={({ breakpoints }) => ({
-          display: "flex",
-          flexWrap: "wrap",
-          alignItems: "center",
-          justifyContent: "center",
-          listStyle: "none",
-          mt: 3,
-          mb: 0,
-          p: 0,
-
-          [breakpoints.up("lg")]: {
-            mt: 0,
-          },
-        })}
-      >
-        {renderLinks()}
-      </ArgonBox>
+    <ArgonBox mx={9} my={2}>
+      <DashboardLayout>
+      <Grid container direction="row" justifyContent="space-between" alignItems="flex-end">
+        <Grid item>
+          <ArgonTypography variant="body2" >Copyright @{new Date().getFullYear()} | All rights reserved</ArgonTypography>
+        </Grid>
+        <Grid item>
+          <Grid container direction="row" spacing={2} alignItems="flex-end" >
+            <Grid item>
+              <ArgonTypography variant="body2">Join the community:</ArgonTypography>
+            </Grid>
+            <Grid item>
+              <ArgonButton size="medium"> <Telegram/>  Telegram</ArgonButton>
+            </Grid>
+            <Grid item>
+              <ArgonButton size="medium"> <Twitter/>  Twitter</ArgonButton>
+            </Grid>
+            <Grid item>
+              <ArgonButton size="medium"> <Discord/>   Discord</ArgonButton>
+            </Grid>
+            <Grid item>
+              <ArgonButton size="medium"> <Article/>   Medium</ArgonButton>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+      </DashboardLayout>
     </ArgonBox>
   );
 }

@@ -42,7 +42,7 @@ const JobListing = () => {
 
       <ArgonBox px={3} py={3}>
         <Grid container spacing={3}>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} >
             <HoverCard>
               <Hover>
               <ArgonBox px={3} py={3}>
@@ -91,7 +91,7 @@ const JobListing = () => {
                     <img
                       src="https://i.postimg.cc/1t6jZ2yq/822711-user-512x512.png"
                       alt="placeholder"
-                      style={{ marginRight: "20px", borderRadius: "50%", width: '200px', height: '200px' }}
+                      style={{ marginRight: "20px", borderRadius: "50%", width: '200px', height: '200px', }}
                     />
                   </Grid>
                   <Grid item xs={12} md={9} lg={9}>

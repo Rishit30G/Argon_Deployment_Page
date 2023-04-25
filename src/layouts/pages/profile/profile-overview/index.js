@@ -83,14 +83,14 @@ function Overview() {
       <Card sx={{ height: "40%", overflow: "hidden", marginTop: "170px" }}>
         <ArgonBox px={3} py={3}>
           <Grid container>
-            <Grid item xs={12} md={6} lg={4} style={{ display: "flex", justifyContent: "center" }}>
+            <Grid item xs={12} md={4} lg={4} style={{ display: "flex", justifyContent: "center" }}>
               <img
-                src="https://via.placeholder.com/200"
+                src="https://i.postimg.cc/1t6jZ2yq/822711-user-512x512.png"
                 alt="placeholder"
-                style={{ marginRight: "20px" }}
+                style={{ marginRight: "20px", height: '250px', width: '250px' }}
               />
             </Grid>
-            <Grid item xs={12} md={6} lg={8}>
+            <Grid item xs={12} md={8} lg={8}>
               <Stack spacing={3}>
                 <Grid
                   container

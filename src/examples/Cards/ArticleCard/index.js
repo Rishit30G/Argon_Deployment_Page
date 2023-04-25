@@ -6,16 +6,16 @@ import ArgonTypography from "components/ArgonTypography";
 
 const ArticleCard = () => {
   return (
-    <Card sx={{ maxWidth: 455, maxHeight: 600 }}>
+    <Card sx={{ maxWidth: 455, maxHeight: 600, backgroundColor: '#232F59' }} >
       <CardActionArea>
         <CardMedia component="img" image="https://picsum.photos/420/260"/>
         <CardContent>
-          <ArgonTypography variant="h4" style={{ marginTop: "30px", marginBottom: "20px" }}>
+          <ArgonTypography style={{ marginTop: "30px", marginBottom: "20px", fontFamily: 'Lora', fontSize: '30px'  }}>
             ETH Stakers are Withdrawing Rewards, Not Principal
           </ArgonTypography>
           <Stack direction="row" spacing={2}>
             <ArgonTypography variant="body1">Aleksandar Gilbert</ArgonTypography>
-            <ArgonTypography variant="body1">4 hrs ago</ArgonTypography>
+            <ArgonTypography variant="body1">• 4 hrs ago</ArgonTypography>
           </Stack>
         </CardContent>
       </CardActionArea>

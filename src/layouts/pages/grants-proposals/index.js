@@ -23,7 +23,6 @@ import ArgonTypography from "components/ArgonTypography";
 // Argon Dashboard 2 PRO MUI example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import Footer from "examples/Footer";
 import { CardContent, CardMedia, Typography, Button, makeStyles } from "@material-ui/core";
 import { Card, Stack } from "@mui/material";
 import ArgonButton from "components/ArgonButton";
@@ -54,9 +53,9 @@ function GrantsAndProposals() {
                 style={{ display: "flex", justifyContent: "center"}}
               >
                 <img
-                  src="https://via.placeholder.com/200"
+                  src="https://i.postimg.cc/GpLgWgBX/image.png"
                   alt="placeholder"
-                  style={{ borderRadius: '50%'}}
+                  style={{ borderRadius: '50%', width: '200px', height: '200px'}}
                 />
               </Grid>
               <Grid item xs={12} md={9} lg={10}>
@@ -82,8 +81,6 @@ function GrantsAndProposals() {
           </ArgonBox>
         </Card>
       </ArgonBox>
-
-      <Footer />
     </DashboardLayout>
   );
 }

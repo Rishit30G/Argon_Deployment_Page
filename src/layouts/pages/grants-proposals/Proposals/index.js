@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Grid, Icon, Avatar, Stack } from "@mui/material";
+import { Card, Grid, Icon, Avatar, Stack, CardContent } from "@mui/material";
 import ArgonBox from "components/ArgonBox";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
@@ -23,25 +23,28 @@ const Proposals = () => {
         container
         spacing={3}
         direction="column"
-        justifyContent="flex-start"
-        alignItems="flex-start"
       >
-        <Grid item xs={12} sm={6} md={4}>
-          <Card sx={{ height: "100%", overflow: "hidden" }}>
+        <Grid item>
+          <Card>
+            <CardContent>
             <ArgonBox my={3} mx={3}>
               <Grid container xs={12} sm={12} md={12}>
                 <ArgonBox style={{ marginTop: "10px" }}>
-                  <Grid container spacing={2}>
-                    <Grid item>
-                      <Avatar></Avatar>
+                  <Grid container spacing={2} style={{marginBottom: '10px'}}>
+                  <Grid item>
+                      <Avatar src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png" sx={{ width: 56, height: 56 }}></Avatar>
                     </Grid>
                     <Grid item>
-                      <ArgonTypography variant="h2">Title</ArgonTypography>
+                      <ArgonTypography variant="h2">Uniswap</ArgonTypography>
                     </Grid>
                   </Grid>
                   <ArgonTypography variant="body1">
                     Text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
                     convallis mi ut quam dictum, eget rutrum ipsum ultrices.
+                    convallis mi ut quam dictum, eget rutrum ipsum ultrices.
+                    convallis mi ut quam dictum, eget rutrum ipsum ultrices.
+                    convallis mi ut quam dictum, eget rutrum ipsum ultrices.
+
                   </ArgonTypography>
                   <Stack direction="row-reverse" spacing={2} style={{ marginTop: "25px"}}>
                     <ArgonTypography variant="body1">
@@ -57,24 +60,30 @@ const Proposals = () => {
                 </ArgonBox>
               </Grid>
             </ArgonBox>
+            </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={12} sm={6} md={4}>
-          <Card sx={{ height: "100%", overflow: "hidden" }}>
+        <Grid item>
+          <Card>
+            <CardContent>
             <ArgonBox my={3} mx={3}>
               <Grid container xs={12} sm={12} md={12}>
                 <ArgonBox style={{ marginTop: "10px" }}>
-                  <Grid container spacing={2}>
-                    <Grid item>
-                      <Avatar></Avatar>
+                  <Grid container spacing={2} style={{marginBottom: '10px'}}>
+                  <Grid item>
+                      <Avatar src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png" sx={{ width: 56, height: 56 }}></Avatar>
                     </Grid>
                     <Grid item>
-                      <ArgonTypography variant="h2">Title</ArgonTypography>
+                      <ArgonTypography variant="h2">Uniswap</ArgonTypography>
                     </Grid>
                   </Grid>
                   <ArgonTypography variant="body1">
                     Text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
                     convallis mi ut quam dictum, eget rutrum ipsum ultrices.
+                    convallis mi ut quam dictum, eget rutrum ipsum ultrices.
+                    convallis mi ut quam dictum, eget rutrum ipsum ultrices.
+                    convallis mi ut quam dictum, eget rutrum ipsum ultrices.
+
                   </ArgonTypography>
                   <Stack direction="row-reverse" spacing={2} style={{ marginTop: "25px"}}>
                     <ArgonTypography variant="body1">
@@ -90,6 +99,7 @@ const Proposals = () => {
                 </ArgonBox>
               </Grid>
             </ArgonBox>
+            </CardContent>
           </Card>
         </Grid>
       </Grid>

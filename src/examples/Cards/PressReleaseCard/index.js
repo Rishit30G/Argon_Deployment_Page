@@ -45,7 +45,7 @@ const PressReleaseCard = () => {
         <CardContent>
           <Stack direction="row" spacing={2}>
             <CardMedia component="img" image={`${testimonials[current].image}`} />
-            <ArgonTypography variant="h2" style={{ marginTop: "30px", marginBottom: "20px" }}>
+            <ArgonTypography style={{ marginTop: "30px", marginBottom: "20px", fontFamily: 'Lora', fontSize: '30px' }}>
               {testimonials[current].quote}
             </ArgonTypography>
           </Stack>
