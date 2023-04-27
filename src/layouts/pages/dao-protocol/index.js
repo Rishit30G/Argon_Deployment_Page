@@ -65,7 +65,7 @@ const NewDAOProtocol = () => {
                   </Grid>
                 </Grid>
               </ArgonBox>
-            </HoverCard>
+            </Card>
           </Grid>
           <Grid item>
              <Card>
