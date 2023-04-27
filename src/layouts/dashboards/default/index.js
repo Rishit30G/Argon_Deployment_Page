@@ -54,12 +54,16 @@ import authorsTableData from "layouts/dashboards/default/data/authorsTableData";
 import categoriesListData from "layouts/dashboards/default/data/categoriesListData";
 import { Rowing } from "@mui/icons-material";
 import { GrantCard } from "examples/Cards/GrantCard";
+import Particles from "react-tsparticles"; 
+import { loadFull } from "tsparticles"; 
+import { ParticlesBackground } from "assets/theme-dark/Particles";
 
 function Default() {
   const { size } = typography;
   return (
     <DashboardLayout>
       <DashboardNavbar />
+      <ParticlesBackground/>
       <ArgonBox py={3} px={3}>
       <ArgonTypography variant="h2" style={{marginBottom: '15px'}}>
              App Metrics 
@@ -129,7 +133,7 @@ function Default() {
             <TodoList />
           </Grid>
         </Grid>
-      </ArgonBox>
+        </ArgonBox>
     </DashboardLayout>
   );
 }

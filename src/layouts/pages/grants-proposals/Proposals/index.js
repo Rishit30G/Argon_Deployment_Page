@@ -6,6 +6,7 @@ import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import ArgonTypography from "components/ArgonTypography";
 import { Heart } from "@web3uikit/icons";
 import { Reply, Share } from "@mui/icons-material";
+import HoverCard from "components/HoverCard";
 
 const Proposals = () => {
   return (
@@ -25,7 +26,7 @@ const Proposals = () => {
         direction="column"
       >
         <Grid item>
-          <Card>
+          <HoverCard>
             <CardContent>
             <ArgonBox my={3} mx={3}>
               <Grid container xs={12} sm={12} md={12}>
@@ -61,7 +62,7 @@ const Proposals = () => {
               </Grid>
             </ArgonBox>
             </CardContent>
-          </Card>
+          </HoverCard>
         </Grid>
         <Grid item>
           <Card>

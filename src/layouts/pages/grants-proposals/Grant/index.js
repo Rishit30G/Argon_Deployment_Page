@@ -8,6 +8,8 @@ import { OutlinedFlag } from "@material-ui/icons";
 import ArgonButton from "components/ArgonButton";
 import { ArrowUpward } from "@mui/icons-material";
 import { Heart } from "@web3uikit/icons";
+import HoverCard from "components/HoverCard";
+
 
 const Grants = () => {
   return (
@@ -23,7 +25,7 @@ const Grants = () => {
 
       <Grid container spacing={3} direction="column">
         <Grid item>
-          <Card>
+          <HoverCard>
             <CardContent>
             <ArgonBox my={3} mx={3}>
               <Grid container xs={12} sm={12} md={12}>
@@ -48,7 +50,7 @@ const Grants = () => {
                   </Grid>
                   <Grid container direction="row" justifyContent="space-between" style={{marginTop:'10px'}}>
                     <Grid item>
-                      <Card style={{ backgroundColor: "#080808" }}>
+                      <Card style={{ backgroundColor: "#080808"}}>
                         <CardContent>
                           <ArgonTypography variant="h5" fontWeight="medium" style={{marginTop: '12px'}}>Amount Requested: $240</ArgonTypography>
                         </CardContent>
@@ -69,7 +71,7 @@ const Grants = () => {
               </Grid>
             </ArgonBox>
             </CardContent>
-          </Card>
+          </HoverCard>
         </Grid>
         <Grid item>
           <Card>

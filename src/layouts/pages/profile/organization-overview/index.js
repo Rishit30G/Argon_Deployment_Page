@@ -7,6 +7,7 @@ import { Card, CardContent, Grid, Stack } from "@mui/material";
 import { ContactMail, People, Star } from "@mui/icons-material";
 import ArgonBadgeDot from "components/ArgonBadgeDot";
 import { Language } from "@material-ui/icons";
+import HoverCard from "components/HoverCard";
 
 const bgImage =
   "https://picsum.photos/2500/500?grayscale";
@@ -24,7 +25,7 @@ const OrganizationOverview = () => {
       }}
     >
       <ArgonBox px={3} py={3} sx={{ marginTop: "270px" }}>
-        <Card>
+        <HoverCard>
           <CardContent>
             <Grid container>
               <Grid
@@ -75,7 +76,7 @@ const OrganizationOverview = () => {
               </Grid>
             </Grid>
           </CardContent>
-        </Card>
+        </HoverCard>
 
         <ArgonBox px={3} py={7}>
           <Card>

@@ -22,7 +22,9 @@ function HoverCard({
     <Card
     style={{
       ...(isHovering && {
-        boxShadow: "7px 7px 10px 0px rgba(255, 165, 0, 0.8)",
+        //Have gradiant 
+        //to left 
+        background: "linear-gradient(to right, #131313, #7303c0, #ec38bc)",
       }),
     }}
     onMouseOver={handleMouseOver}

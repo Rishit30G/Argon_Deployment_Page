@@ -5,6 +5,7 @@ import DashboardLayout from 'examples/LayoutContainers/DashboardLayout';
 import DashboardNavbar from 'examples/Navbars/DashboardNavbar';
 import ArgonTypography from 'components/ArgonTypography';
 import ArgonButton from 'components/ArgonButton';
+import HoverCard from 'components/HoverCard';
 
 const Jobs = () => {
   return (
@@ -13,7 +14,7 @@ const Jobs = () => {
       <ArgonBox px={3} py={3}>
         <ArgonTypography variant="h2">Uniswap</ArgonTypography>
       </ArgonBox>
-      <Card sx={{ height: "40%", overflow: "hidden" }}>
+      <HoverCard sx={{ height: "40%", overflow: "hidden" }}>
         <ArgonBox px={3} py={3}>
           <Grid container>
             <Grid item xs={12} md={3} lg={2} style={{ display: "flex", justifyContent: "center" }}>
@@ -40,7 +41,7 @@ const Jobs = () => {
             </Grid>
           </Grid>
         </ArgonBox>
-      </Card>
+      </HoverCard>
     </DashboardLayout>
   )
 }

@@ -57,6 +57,7 @@ import React, { useState } from "react";
 import Overview2 from "../overview";
 import Reputation from "../reputation";
 import PastExperience from "../past-experience";
+import HoverCard from "components/HoverCard";
 
 const bgImage =
   "https://picsum.photos/2600/700?grayscale";
@@ -80,7 +81,7 @@ function Overview() {
       backgroundPositionY: "50%",
     }}
     >
-      <Card sx={{ height: "40%", overflow: "hidden", marginTop: "170px" }}>
+      <HoverCard sx={{ height: "40%", overflow: "hidden", marginTop: "170px" }}>
         <ArgonBox px={3} py={3}>
           <Grid container>
             <Grid item xs={12} md={4} lg={4} style={{ display: "flex", justifyContent: "center" }}>
@@ -124,7 +125,7 @@ function Overview() {
             </Grid>
           </Grid>
         </ArgonBox>
-      </Card>
+      </HoverCard>
 
       <ArgonBox mt={3} >
         <TabContext value={value}>
