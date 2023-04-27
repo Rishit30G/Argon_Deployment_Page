@@ -34,7 +34,7 @@ const NewDAOProtocol = () => {
 
         <Grid container style={{marginTop: '20px'}} spacing={3}>
           <Grid item>
-            <HoverCard>
+            <Card>
               <ArgonBox px={3} py={3}>
                 <Grid container>
                   <Grid
@@ -68,7 +68,7 @@ const NewDAOProtocol = () => {
             </HoverCard>
           </Grid>
           <Grid item>
-             <HoverCard>
+             <Card>
               <ArgonBox px={3} py={3}>
                 <Grid container>
                   <Grid
@@ -99,7 +99,7 @@ const NewDAOProtocol = () => {
                   </Grid>
                 </Grid>
               </ArgonBox>
-            </HoverCard>
+            </Card>
           </Grid>
         </Grid>
       </ArgonBox>
