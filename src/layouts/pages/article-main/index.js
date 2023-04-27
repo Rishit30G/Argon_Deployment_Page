@@ -11,13 +11,13 @@ const ArticleMain = () => {
   return (
     <DashboardLayout>
       <DashboardNavbar />
-      <ArgonBox mx={3} my={3}>
+      {/* <ArgonBox mx={3} my={3}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
             <ArgonTypography variant="h2">Article Main</ArgonTypography>
           </Grid>
         </Grid>
-      </ArgonBox>
+      </ArgonBox> */}
 
       <ArgonBox mb={3} mx={3} my={6}>
         <ArgonTypography variant="h2" style={{ marginBottom: "30px" }}>

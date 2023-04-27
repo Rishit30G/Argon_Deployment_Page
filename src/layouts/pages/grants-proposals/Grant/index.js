@@ -48,7 +48,7 @@ const Grants = () => {
                   </Grid>
                   <Grid container direction="row" justifyContent="space-between" style={{marginTop:'10px'}}>
                     <Grid item>
-                      <Card style={{ backgroundColor: "#232f59" }}>
+                      <Card style={{ backgroundColor: "#080808" }}>
                         <CardContent>
                           <ArgonTypography variant="h5" fontWeight="medium" style={{marginTop: '12px'}}>Amount Requested: $240</ArgonTypography>
                         </CardContent>
@@ -97,7 +97,7 @@ const Grants = () => {
                   </Grid>
                   <Grid container direction="row" justifyContent="space-between" style={{marginTop:'10px'}}>
                     <Grid item>
-                      <Card style={{ backgroundColor: "#232f59" }}>
+                      <Card style={{ backgroundColor: "#080808" }}>
                         <CardContent>
                           <ArgonTypography variant="h5" fontWeight="medium" style={{marginTop: '12px'}}>Amount Requested: $240</ArgonTypography>
                         </CardContent>

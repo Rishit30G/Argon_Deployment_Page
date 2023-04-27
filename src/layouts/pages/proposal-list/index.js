@@ -17,9 +17,9 @@ const ProposalList = () => {
           </Grid>
         </Grid>
       </ArgonBox>
-      <ArgonBox px={2} py={2}>
-        <Grid container justifyContent="space-around" alignItems="center" spacing={3}>
-          <Card style={{ width: "330px" }}>
+      <ArgonBox>
+        <Grid container justifyContent="space-around" spacing={1}>
+          <Card>
             <Grid item lg={3}>
               <ArgonBox px={3} py={2}>
                 <CardContent>
@@ -40,7 +40,7 @@ const ProposalList = () => {
               </ArgonBox>
             </Grid>
           </Card>
-          <Card style={{ width: "330px" }}>
+          <Card>
             <Grid item lg={3}>
               <ArgonBox px={3} py={2}>
                 <CardContent>
@@ -61,7 +61,7 @@ const ProposalList = () => {
               </ArgonBox>
             </Grid>
           </Card>
-          <Card style={{ width: "330px" }}>
+          <Card >
             <Grid item lg={3}>
               <ArgonBox px={3} py={2}>
                 <CardContent>
@@ -82,7 +82,7 @@ const ProposalList = () => {
               </ArgonBox>
             </Grid>
           </Card>
-          <Card style={{ width: "330px" }}>
+          <Card>
             <Grid item lg={3}>
               <ArgonBox px={3} py={2}>
                 <CardContent>

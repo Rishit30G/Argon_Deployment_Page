@@ -10,7 +10,7 @@ export const GrantCard = () => {
       <ArgonBox py={3} px={3}>
         <Grid container spacing={5}>
           <Grid item xs={12} sm={12} md={6} lg={12} xl={6}>
-            <Card style={{ backgroundColor: "#1c2959" }}>
+            <Card style={{ backgroundColor: "#080808" }}>
               <ArgonBox my={1} mx={1}>
                 <CardContent>
                   <Stack
@@ -39,7 +39,7 @@ export const GrantCard = () => {
             </Card>
           </Grid>
           <Grid item xs={12} sm={12} md={6} lg={12} xl={6}>
-            <Card style={{ backgroundColor: "#1c2959" }}>
+            <Card style={{ backgroundColor: "#080808" }}>
               <ArgonBox my={1} mx={1}>
                 <CardContent>
                   <Stack
@@ -68,7 +68,7 @@ export const GrantCard = () => {
             </Card>
           </Grid>
           <Grid item xs={12} sm={12} md={6} lg={12} xl={6}>
-            <Card style={{ backgroundColor: "#1c2959" }}>
+            <Card style={{ backgroundColor: "#080808" }}>
               <ArgonBox my={1} mx={1}>
                 <CardContent>
                   <Stack
@@ -99,7 +99,7 @@ export const GrantCard = () => {
           <Grid item xs={12} sm={12} md={6} lg={12} xl={6}>
             <Card
               style={{
-                backgroundColor: "#1c2959",
+                backgroundColor: "#080808",
                 backdropFilter: "blur(10px)",
                 WebkitBackdropFilter: "blur(10px)",
               }}

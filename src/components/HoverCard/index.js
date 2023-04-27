@@ -2,7 +2,6 @@ import { Card } from "@mui/material";
 import { useState } from "react";
 
 function HoverCard({
-  hoverBackground = "linear-gradient(to right,#403B4A, #b3b594)",
   ...props
 }) {
   const [isHovering, setIsHovering] = useState(false);
@@ -21,17 +20,15 @@ function HoverCard({
 
   return (
     <Card
-      style={{
-        ...(isHovering && {
-            background: hoverBackground,
-            border: '2px solid gold ', 
-            boxShadow: "0 0 10px gold"
-        }),
-      }}
-      onMouseOver={handleMouseOver}
-      onMouseOut={handleMouseOut}
-      {...props}
-    />
+    style={{
+      ...(isHovering && {
+        boxShadow: "7px 7px 10px 0px rgba(255, 165, 0, 0.8)",
+      }),
+    }}
+    onMouseOver={handleMouseOver}
+    onMouseOut={handleMouseOut}
+    {...props}
+  />  
   );
 }
 

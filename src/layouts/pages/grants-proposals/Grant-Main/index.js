@@ -13,13 +13,13 @@ const GrantMainPage = () => {
   return (
     <DashboardLayout>
       <DashboardNavbar />
-      <ArgonBox px={3} py={3}>
+      {/* <ArgonBox px={3} py={3}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
             <ArgonTypography variant="h2">Grant Main Page</ArgonTypography>
           </Grid>
         </Grid>
-      </ArgonBox>
+      </ArgonBox> */}
 
       <ArgonBox mb={3} px={3} py={3}>
         <Grid container direction="column" spacing={3}>

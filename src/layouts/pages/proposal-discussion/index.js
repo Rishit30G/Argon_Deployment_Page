@@ -61,7 +61,7 @@ const ProposalDiscussion = () => {
                   </ArgonTypography>
                 </Stack>
               </Grid>
-              <Grid item container justifyContent="center" alignItems="center">
+              <Grid item container justifyContent="center" alignItems="center" style={{marginTop: '60px', marginBottom: '60px'}}>
                 <img src="https://picsum.photos/900/500" alt="Proposal Image" />
               </Grid>
               <Grid item>

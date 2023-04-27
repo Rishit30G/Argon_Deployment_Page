@@ -59,7 +59,7 @@ import Reputation from "../reputation";
 import PastExperience from "../past-experience";
 
 const bgImage =
-  "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/profile-layout-header.jpg";
+  "https://picsum.photos/2600/700?grayscale";
 
 function Overview() {
 
@@ -71,14 +71,14 @@ function Overview() {
 
   return (
     <DashboardLayout
-      sx={{
-        backgroundImage: ({ functions: { rgba, linearGradient }, palette: { gradients } }) =>
-          `${linearGradient(
-            rgba(gradients.info.main, 0.6),
-            rgba(gradients.info.state, 0.6)
-          )}, url(${bgImage})`,
-        backgroundPositionY: "50%",
-      }}
+    sx={{
+      backgroundImage: ({ functions: { rgba, linearGradient }, palette: { gradients } }) =>
+        `${linearGradient(
+          rgba(gradients.dark.main, 0.6),
+          rgba(gradients.dark.state, 0.6)
+        )}, url(${bgImage})`,
+      backgroundPositionY: "50%",
+    }}
     >
       <Card sx={{ height: "40%", overflow: "hidden", marginTop: "170px" }}>
         <ArgonBox px={3} py={3}>
@@ -140,8 +140,6 @@ function Overview() {
           <TabPanel value="3"><PastExperience/></TabPanel>
         </TabContext>
       </ArgonBox>
-
-      <Footer />
     </DashboardLayout>
   );
 }

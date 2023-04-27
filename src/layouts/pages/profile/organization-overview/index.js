@@ -9,7 +9,7 @@ import ArgonBadgeDot from "components/ArgonBadgeDot";
 import { Language } from "@material-ui/icons";
 
 const bgImage =
-  "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/profile-layout-header.jpg";
+  "https://picsum.photos/2500/500?grayscale";
 
 const OrganizationOverview = () => {
   return (
@@ -17,8 +17,8 @@ const OrganizationOverview = () => {
       sx={{
         backgroundImage: ({ functions: { rgba, linearGradient }, palette: { gradients } }) =>
           `${linearGradient(
-            rgba(gradients.info.main, 0.6),
-            rgba(gradients.info.state, 0.6)
+            rgba(gradients.dark.main, 0.6),
+            rgba(gradients.dark.state, 0.6)
           )}, url(${bgImage})`,
         backgroundPositionY: "50%",
       }}

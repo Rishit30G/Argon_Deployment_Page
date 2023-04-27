@@ -5,6 +5,7 @@ import ArgonBox from "components/ArgonBox";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import ArgonButton from "components/ArgonButton";
+import HoverCard from "components/HoverCard";
 
 const NewDAOProtocol = () => {
   return (
@@ -33,7 +34,7 @@ const NewDAOProtocol = () => {
 
         <Grid container style={{marginTop: '20px'}} spacing={3}>
           <Grid item>
-            <Card>
+            <HoverCard>
               <ArgonBox px={3} py={3}>
                 <Grid container>
                   <Grid
@@ -59,15 +60,15 @@ const NewDAOProtocol = () => {
                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                         consequat 
                       </ArgonTypography>
-                      <ArgonButton style={{ height: "40px", width: "180px" }}>Check Proposal</ArgonButton>
+                      <ArgonButton style={{ height: "50px", width: "190px" }}>Check Proposal</ArgonButton>
                     </Stack>
                   </Grid>
                 </Grid>
               </ArgonBox>
-            </Card>
+            </HoverCard>
           </Grid>
           <Grid item>
-             <Card>
+             <HoverCard>
               <ArgonBox px={3} py={3}>
                 <Grid container>
                   <Grid
@@ -98,7 +99,7 @@ const NewDAOProtocol = () => {
                   </Grid>
                 </Grid>
               </ArgonBox>
-            </Card>
+            </HoverCard>
           </Grid>
         </Grid>
       </ArgonBox>

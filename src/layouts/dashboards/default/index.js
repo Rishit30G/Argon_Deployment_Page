@@ -61,7 +61,7 @@ function Default() {
     <DashboardLayout>
       <DashboardNavbar />
       <ArgonBox py={3} px={3}>
-      <ArgonTypography variant="h2" style={{marginBottom: '15px',fontFamily: 'Poppins, sans-serif'}}>
+      <ArgonTypography variant="h2" style={{marginBottom: '15px'}}>
              App Metrics 
         </ArgonTypography>
         <Grid container spacing={3} mb={3}>
@@ -97,7 +97,7 @@ function Default() {
             />
           </Grid>
         </Grid>
-        <ArgonTypography variant="h2" fontWeight="bold" textTransform="capitalize" style={{marginBottom: '15px', fontFamily: 'Poppins, sans-serif'}}>
+        <ArgonTypography variant="h2" fontWeight="bold" textTransform="capitalize" style={{marginBottom: '15px'}}>
               Grants & Proposal Calender
             </ArgonTypography>
         <Grid container spacing={3} mb={3}>

@@ -6,8 +6,8 @@ import ArgonTypography from "components/ArgonTypography";
 import Grid from "@material-ui/core/Grid";
 import { Card, CardActionArea } from "@mui/material";
 import { Stack } from "@mui/material";
-import HoverCard from "components/HoverCard";
 import { styled } from "@mui/styles";
+import HoverListingCard from "components/HoverListingCard";
 
 const JobListing = () => {
 
@@ -24,7 +24,7 @@ const JobListing = () => {
       fontSize: '25px'
     },
     '&:hover .hover-typo3': {
-      fontSize: '17px'
+      fontSize: '16.5px'
     },
 
   });
@@ -43,7 +43,7 @@ const JobListing = () => {
       <ArgonBox px={3} py={3}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6} >
-            <HoverCard>
+            <HoverListingCard>
               <Hover>
               <ArgonBox px={3} py={3}>
                 <Grid container>
@@ -74,7 +74,7 @@ const JobListing = () => {
                 </Grid>
               </ArgonBox>
                 </Hover>
-            </HoverCard>
+            </HoverListingCard>
           </Grid>
 
           <Grid item xs={12} md={6}>

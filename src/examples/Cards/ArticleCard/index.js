@@ -6,7 +6,7 @@ import ArgonTypography from "components/ArgonTypography";
 
 const ArticleCard = () => {
   return (
-    <Card sx={{ maxWidth: 455, maxHeight: 600, backgroundColor: '#232F59' }} >
+    <Card sx={{ maxWidth: 455, maxHeight: 600, backgroundColor: '#080808' }} >
       <CardActionArea>
         <CardMedia component="img" image="https://picsum.photos/420/260"/>
         <CardContent>
