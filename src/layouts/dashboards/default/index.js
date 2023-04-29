@@ -54,16 +54,33 @@ import authorsTableData from "layouts/dashboards/default/data/authorsTableData";
 import categoriesListData from "layouts/dashboards/default/data/categoriesListData";
 import { Rowing } from "@mui/icons-material";
 import { GrantCard } from "examples/Cards/GrantCard";
-// import Particles from "react-tsparticles"; 
-// import { loadFull } from "tsparticles"; 
-// import { ParticlesBackground } from "assets/theme-dark/Particles";
+import Particles from "react-tsparticles"; 
+import { loadFull } from "tsparticles"; 
+import { ParticlesBackground } from "assets/theme-dark/Particles";
+// import axios from "axios";
+// import { useEffect, useState } from "react";
+
+
+// const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/appmetrics/?format=json";
+
 
 function Default() {
+
+  // const [post, setPost] = useState(null);
+
+  // useEffect(() => {
+  //   axios.get(baseURL).then((response) => {
+  //     setPost(response.data);
+  //   });
+  // }, []);
+
+  // if (!post) return null;
+
   const { size } = typography;
   return (
     <DashboardLayout>
       <DashboardNavbar />
-      {/* <ParticlesBackground/> */}
+      <ParticlesBackground/>
       <ArgonBox py={3} px={3}>
       <ArgonTypography variant="h2" style={{marginBottom: '15px'}}>
              App Metrics 
@@ -72,7 +89,7 @@ function Default() {
           <Grid item xs={12} md={6} lg={3}>
             <DetailedStatisticsCard
               title="Dao's Tracked"
-              count="24"
+              count= "12"
               icon={{ color: "info", component: <i className="ni ni-money-coins" /> }}
             />
           </Grid>
