@@ -52,7 +52,7 @@ const Grants = () => {
                     <Grid item>
                       <Card style={{ backgroundColor: "#080808"}}>
                         <CardContent>
-                          <ArgonTypography variant="h5" fontWeight="medium" style={{marginTop: '12px'}}>Amount Requested: $240</ArgonTypography>
+                          <ArgonTypography variant="h5" fontWeight="medium" style={{marginTop: '12px', color: 'green'}}>Amount Requested: $240</ArgonTypography>
                         </CardContent>
                       </Card>
                     </Grid>
