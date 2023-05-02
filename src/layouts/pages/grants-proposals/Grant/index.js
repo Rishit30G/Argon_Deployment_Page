@@ -9,9 +9,22 @@ import ArgonButton from "components/ArgonButton";
 import { ArrowUpward } from "@mui/icons-material";
 import { Heart } from "@web3uikit/icons";
 import HoverCard from "components/HoverCard";
+import axios from "axios";
+const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/grant/?format=json";
 
 
 const Grants = () => {
+
+  const [post, setPost] = React.useState(null);
+
+  React.useEffect(() => {
+    axios.get(baseURL).then((response) => {
+      setPost(response.data);
+    });
+  }, []);
+
+  if (!post) return null;
+
   return (
     <DashboardLayout>
       <DashboardNavbar />
@@ -35,7 +48,7 @@ const Grants = () => {
                       <Avatar src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png" sx={{ width: 56, height: 56 }}></Avatar>
                     </Grid>
                     <Grid item>
-                      <ArgonTypography variant="h2">Uniswap</ArgonTypography>
+                      <ArgonTypography variant="h2">{post[0].title}</ArgonTypography>
                     </Grid>
                   </Grid>
                   <Grid container style={{marginTop: '15px'}}>
@@ -52,7 +65,7 @@ const Grants = () => {
                     <Grid item>
                       <Card style={{ backgroundColor: "#080808"}}>
                         <CardContent>
-                          <ArgonTypography variant="h5" fontWeight="medium" style={{marginTop: '12px', color: 'green'}}>Amount Requested: $240</ArgonTypography>
+                          <ArgonTypography variant="h5" fontWeight="medium" style={{marginTop: '12px', color: '#32CD32'}}>Amount Requested: ${post[0].amount_required}</ArgonTypography>
                         </CardContent>
                       </Card>
                     </Grid>
@@ -62,7 +75,7 @@ const Grants = () => {
                           <Heart></Heart> 15 Likes
                         </ArgonTypography>
                         <ArgonButton>
-                          <ArrowUpward></ArrowUpward> 15 Upvotes
+                          <ArrowUpward></ArrowUpward> {post[0].upvotes} Upvotes
                         </ArgonButton>
                       </Stack>
                     </Grid>
@@ -72,55 +85,6 @@ const Grants = () => {
             </ArgonBox>
             </CardContent>
           </HoverCard>
-        </Grid>
-        <Grid item>
-          <Card>
-            <CardContent>
-            <ArgonBox my={3} mx={3}>
-              <Grid container xs={12} sm={12} md={12}>
-                <ArgonBox style={{ marginTop: "10px" }}>
-                  <Grid container spacing={2}>
-                    <Grid item>
-                      <Avatar src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png" sx={{ width: 56, height: 56 }}></Avatar>
-                    </Grid>
-                    <Grid item>
-                      <ArgonTypography variant="h2">Uniswap</ArgonTypography>
-                    </Grid>
-                  </Grid>
-                  <Grid container style={{marginTop: '15px'}}>
-                    <Grid item>
-                      <ArgonTypography variant="body1" style={{ marginBottom: "15px" }}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Morbi convallis mi ut quam dictum, eget rutrum ipsum ultrices.Text goes
-                        here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                        convallis mi ut quam dictum, eget rutrum ipsum ultrices.
-                      </ArgonTypography>
-                    </Grid>
-                  </Grid>
-                  <Grid container direction="row" justifyContent="space-between" style={{marginTop:'10px'}}>
-                    <Grid item>
-                      <Card style={{ backgroundColor: "#080808" }}>
-                        <CardContent>
-                          <ArgonTypography variant="h5" fontWeight="medium" style={{marginTop: '12px'}}>Amount Requested: $240</ArgonTypography>
-                        </CardContent>
-                      </Card>
-                    </Grid>
-                    <Grid item>
-                      <Stack direction="row" spacing={2} style={{marginTop: '15px'}}>
-                        <ArgonTypography>
-                          <Heart></Heart> 15 Likes
-                        </ArgonTypography>
-                        <ArgonButton>
-                          <ArrowUpward></ArrowUpward> 15 Upvotes
-                        </ArgonButton>
-                      </Stack>
-                    </Grid>
-                  </Grid>
-                </ArgonBox>
-              </Grid>
-            </ArgonBox>
-            </CardContent>
-          </Card>
         </Grid>
       </Grid>
     </DashboardLayout>

@@ -12,6 +12,7 @@ import HoverCard from "components/HoverCard";
 const bgImage =
   "https://picsum.photos/2500/500?grayscale";
 
+  
 const OrganizationOverview = () => {
   return (
     <DashboardLayout

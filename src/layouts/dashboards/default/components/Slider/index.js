@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 // SwiperJS
 import SwiperCore, { Autoplay, Navigation } from "swiper";
@@ -20,14 +20,35 @@ import ArgonTypography from "components/ArgonTypography";
 import bg1 from "assets/images/img-2.jpg";
 import bg2 from "assets/images/img-1.jpg";
 import bg3 from "assets/images/img-3.jpg";
+import { useEffect } from "react";
+import axios from "axios";
+
+
+const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/advertisement/?format=json";
 
 function Slider() {
+
   // install SwiperJS modules
   SwiperCore.use([Autoplay, Navigation]);
 
   // SwiperJS navigation buttons ref
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
+
+  const [post, setPost] = useState(null);
+
+  useEffect(() => {
+    axios.get(baseURL)
+      .then((response) => {
+        console.log(response.data);
+        setPost(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  if (!post) return null;
 
   return (
     <Card sx={{ position: "relative", display: "block", height: "100%", overflow: "hidden" }}>
@@ -96,7 +117,7 @@ function Slider() {
           <ArgonBox
             sx={{
               position: "relative",
-              backgroundImage: `url(${bg1})`,
+              backgroundImage: `url(${post[0].image_url})`,
               backgroundSize: "cover",
               height: "100%",
             }}
@@ -131,7 +152,7 @@ function Slider() {
           <ArgonBox
             sx={{
               position: "relative",
-              backgroundImage: `url(${bg2})`,
+              backgroundImage: `url(${post[0].image_url})`,
               backgroundSize: "cover",
               height: "100%",
             }}
@@ -166,7 +187,7 @@ function Slider() {
           <ArgonBox
             sx={{
               position: "relative",
-              backgroundImage: `url(${bg3})`,
+              backgroundImage: `url(${post[0].image_url})`,
               backgroundSize: "cover",
               height: "100%",
             }}

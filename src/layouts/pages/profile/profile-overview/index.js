@@ -53,12 +53,15 @@ import team3 from "assets/images/team-3.jpg";
 import team4 from "assets/images/team-4.jpg";
 import ArgonButton from "components/ArgonButton";
 import { Box, Stack } from "@mui/material";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Overview2 from "../overview";
 import Reputation from "../reputation";
 import PastExperience from "../past-experience";
 import HoverCard from "components/HoverCard";
+import axios from "axios";
 
+
+const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/profile/?format=json";
 const bgImage =
   "https://picsum.photos/2600/700?grayscale";
 
@@ -69,6 +72,21 @@ function Overview() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  const [post, setPost] = useState(null);
+
+  useEffect(() => {
+    axios.get(baseURL)
+      .then((response) => {
+        console.log(response.data);
+        setPost(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  if (!post) return null;
 
   return (
     <DashboardLayout
@@ -99,26 +117,27 @@ function Overview() {
                   justifyContent="space-between"
                   alignItems="flex-start"
                 >
-                  <ArgonTypography variant="h2">James Harden</ArgonTypography>
+                  <ArgonTypography variant="h2">{post[0].User_name}</ArgonTypography>
                   <ArgonButton style={{ height: "40px", width: "180px", marginRight: "15px" }}>
                     Contact
                   </ArgonButton>
                 </Grid>
-                <ArgonTypography variant="h5">Eth Trader</ArgonTypography>
+                <ArgonTypography variant="h5">{post[0].User_profession}</ArgonTypography>
                 <ArgonTypography variant="subtitle2">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                  {post[0].desc}
                 </ArgonTypography>
                 <Grid container direction="row" justifyContent="flex-start" alignItems="center">
                   <ArgonButton style={{ height: "40px", width: "180px", marginRight: "15px" }}>
-                    Salary
+                    Salary: {post[0].salary}
                   </ArgonButton>
                   <ArgonButton style={{ height: "40px", width: "180px", marginRight: "15px" }}>
                     View
                   </ArgonButton>
-                  <ArgonButton style={{ height: "5px", width: "220px" }}>
-                    Badges and XP Earned
+                  <ArgonButton style={{ height: "5px", width: "180px", marginRight: "15px" }}>
+                    {post[0].badges} Badge 
+                  </ArgonButton>
+                  <ArgonButton style={{ height: "5px", width: "180px" }}>
+                    {post[0].xp_earned} XP earned
                   </ArgonButton>
                 </Grid>
               </Stack>

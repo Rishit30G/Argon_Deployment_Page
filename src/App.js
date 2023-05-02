@@ -35,7 +35,6 @@ import theme from "assets/theme";
 import themeRTL from "assets/theme/theme-rtl";
 import themeDark from "assets/theme-dark";
 import themeDarkRTL from "assets/theme-dark/theme-rtl";
-
 // RTL plugins
 import rtlPlugin from "stylis-plugin-rtl";
 import { CacheProvider } from "@emotion/react";
@@ -140,8 +139,8 @@ export default function App() {
       </Icon>
     </ArgonBox>
   );
-
   return direction === "rtl" ? (
+   
     <CacheProvider value={rtlCache}>
       <ThemeProvider theme={darkMode ? themeDarkRTL : themeRTL}>
         <CssBaseline />

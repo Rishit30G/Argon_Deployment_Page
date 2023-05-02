@@ -5,8 +5,30 @@ import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 import { Card, Grid, Stack } from "@mui/material";
 import ArgonButton from "components/ArgonButton";
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/pastproject/?format=json";
+
+
 
 const PastExperience = () => {
+
+  const [post, setPost] = useState(null);
+
+  useEffect(() => {
+    axios.get(baseURL)
+      .then((response) => {
+        console.log(response.data);
+        setPost(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  if (!post) return null;
+
   return (
     <>
       <ArgonBox mb={3} px={3} py={3}>
@@ -29,15 +51,11 @@ const PastExperience = () => {
             </Grid>
             <Grid item xs={12} md={8} lg={9}>
               <Stack spacing={3}>
-                <ArgonTypography variant="h2">Project 1</ArgonTypography>
+                <ArgonTypography variant="h2">{post[0].project_title}</ArgonTypography>
                 <ArgonTypography variant="subtitle2">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                  {post[0].project_desc}
                 </ArgonTypography>
-                <ArgonButton style={{ height: "40px", width: "180px" }}>View Full Project</ArgonButton>
+                <ArgonButton href={post[0].project_url} style={{ height: "40px", width: "180px" }}>View Full Project</ArgonButton>
               </Stack>
             </Grid>
           </Grid>

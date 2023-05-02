@@ -23,6 +23,9 @@ import { ArgonControllerProvider } from "context";
 
 // react-perfect-scrollbar component
 import PerfectScrollbar from "react-perfect-scrollbar";
+import Particles from "react-tsparticles"; 
+import { loadFull } from "tsparticles"; 
+import { ParticlesBackground } from "assets/theme-dark/Particles";
 
 // react-perfect-scrollbar styles
 import "react-perfect-scrollbar/dist/css/styles.css";
@@ -33,6 +36,7 @@ const root = createRoot(container);
 root.render(
   <BrowserRouter>
     <ArgonControllerProvider>
+      <ParticlesBackground/>
       <PerfectScrollbar>
         <App />
       </PerfectScrollbar>

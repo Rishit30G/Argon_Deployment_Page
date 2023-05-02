@@ -54,33 +54,33 @@ import authorsTableData from "layouts/dashboards/default/data/authorsTableData";
 import categoriesListData from "layouts/dashboards/default/data/categoriesListData";
 import { Rowing } from "@mui/icons-material";
 import { GrantCard } from "examples/Cards/GrantCard";
-import Particles from "react-tsparticles"; 
-import { loadFull } from "tsparticles"; 
-import { ParticlesBackground } from "assets/theme-dark/Particles";
-// import axios from "axios";
-// import { useEffect, useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 
-// const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/appmetrics/?format=json";
-
+const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/appmetrics/?format=json";
 
 function Default() {
 
-  // const [post, setPost] = useState(null);
+  const [post, setPost] = useState(null);
 
-  // useEffect(() => {
-  //   axios.get(baseURL).then((response) => {
-  //     setPost(response.data);
-  //   });
-  // }, []);
+  useEffect(() => {
+    axios.get(baseURL)
+      .then((response) => {
+        console.log(response.data);
+        setPost(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
-  // if (!post) return null;
+  if (!post) return null;
 
   const { size } = typography;
   return (
     <DashboardLayout>
       <DashboardNavbar />
-      <ParticlesBackground/>
       <ArgonBox py={3} px={3}>
       <ArgonTypography variant="h2" style={{marginBottom: '15px'}}>
              App Metrics 
@@ -88,31 +88,31 @@ function Default() {
         <Grid container spacing={3} mb={3}>
           <Grid item xs={12} md={6} lg={3}>
             <DetailedStatisticsCard
-              title="Dao's Tracked"
-              count= "12"
+              title="DAO's Tracked"
+              count= {post[0].cnt_dao}
               icon={{ color: "info", component: <i className="ni ni-money-coins" /> }}
             />
           </Grid>
           <Grid item xs={12} md={6} lg={3}>
             <DetailedStatisticsCard
-              title="Jobs Disbursed"
-              count="54"
+              title="Protocols Live"
+              count={post[0].jobs_disbursed}
               icon={{ color: "error", component: <i className="ni ni-world" /> }}
               // percentage={{ color: "success", count: "+3%", text: "since last week" }}
             />
           </Grid>
           <Grid item xs={12} md={6} lg={3}>
             <DetailedStatisticsCard
-              title="XP Earned"
-              count="10"
+              title="Live proposals"
+              count={post[0].xp_earned}
               icon={{ color: "success", component: <i className="ni ni-paper-diploma" /> }}
               // percentage={{ color: "error", count: "-2%", text: "since last quarter" }}
             />
           </Grid>
           <Grid item xs={12} md={6} lg={3}>
             <DetailedStatisticsCard
-              title="Live Proposals"
-              count="24"
+              title="Job Listed"
+              count={post[0].live_proposal}
               icon={{ color: "warning", component: <i className="ni ni-cart" /> }}
               // percentage={{ color: "success", count: "+5%", text: "than last month" }}
             />
@@ -122,10 +122,10 @@ function Default() {
               Grants & Proposal Calender
             </ArgonTypography>
         <Grid container spacing={3} mb={3}>
-          <Grid item xs={12} lg={7}>
+          <Grid item xs={12} lg={6}>
              <GrantCard></GrantCard>
           </Grid>
-          <Grid item xs={12} lg={5}>
+          <Grid item xs={12} lg={6}>
             <Slider />
           </Grid>
         </Grid>

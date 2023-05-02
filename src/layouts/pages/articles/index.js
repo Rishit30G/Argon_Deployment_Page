@@ -4,8 +4,33 @@ import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/article/?format=json";
 
 const Articles = () => {
+
+  const [post, setPost] = useState(null);
+
+  useEffect(() => {
+    axios.get(baseURL)
+      .then((response) => {
+        console.log(response.data);
+        setPost(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  if (!post) return null;
+
+  //Make a function to calcultae cureent time and time of post
+  const time = new Date();
+  const timeOfPost = new Date(post[0].upload_time);
+  const hoursSinceUpload = (time - timeOfPost) / (1000 * 60 * 60);
+
   return (
     <DashboardLayout>
       <DashboardNavbar />
@@ -19,16 +44,16 @@ const Articles = () => {
             <Grid container direction="column" spacing={4}>
               <Grid item xs={12} md={4} lg={4}>
                 <ArgonTypography style={{ fontFamily: "Lora", fontSize: "40px" }}>
-                  Staked ETH Withdrawals Were Activated in Major Upgrade
+                  {post[0].title}
                 </ArgonTypography>
               </Grid>
               <Grid item xs={12} md={4} lg={4}>
                 <Grid container direction="row"  alignItems="center"  spacing={2}>
                   <Grid item>
-                    <ArgonTypography variant="h4">John Doe</ArgonTypography>
+                    <ArgonTypography variant="h4">{post[0].author_name}</ArgonTypography>
                   </Grid>
                   <Grid item>
-                    <ArgonTypography variant="subtitle2"> • 19 hours ago</ArgonTypography>
+                    <ArgonTypography variant="subtitle2"> • {hoursSinceUpload.toFixed(0)} hours ago</ArgonTypography>
                   </Grid>
                 </Grid>
               </Grid>
@@ -39,28 +64,13 @@ const Articles = () => {
                 lg={4}
                 style={{ display: "flex", justifyContent: "center" }}
               >
-                <img src="https://picsum.photos/600/400" alt="placeholder" />
+                <img src={post[0].image_url} alt="placeholder" />
               </Grid>
 
               <Grid item xs={12} md={4} lg={4}>
                 <Grid container>
                   <ArgonTypography variant="body4" style={{ marginBottom: "50px" }}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                    veniam, quis nostrud Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                    commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                    veniam, quis nostrud
+                  {post[0].article_desc}
                   </ArgonTypography>
                 </Grid>
               </Grid>

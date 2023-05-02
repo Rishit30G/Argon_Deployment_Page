@@ -105,7 +105,7 @@ export const GrantCard = () => {
               }}
             >
               <CardContent>
-                <ArgonBox mx={2} my={2} mb={8}>
+                <ArgonBox mx={4} my={5}>
                   <Grid
                     container
                     justifyContent="center"
