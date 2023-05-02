@@ -40,11 +40,11 @@ function Slider() {
   useEffect(() => {
     axios.get(baseURL)
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         setPost(response.data);
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
       });
   }, []);
 
