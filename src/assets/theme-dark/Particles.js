@@ -38,7 +38,7 @@ const particlesLoaded = useCallback(async container => {
                         },
                         onHover: {
                             enable: true,
-                            mode: "repulse",
+                            mode: "grab",
                         },
                         resize: true,
                     },

@@ -1,19 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 import ArgonButton from "components/ArgonButton";
-import { Card, CardContent, Grid, Stack } from "@mui/material";
+import { Box, Card, CardContent, Grid, Stack, Tab } from "@mui/material";
 import { ContactMail, People, Star } from "@mui/icons-material";
 import ArgonBadgeDot from "components/ArgonBadgeDot";
 import { Language } from "@material-ui/icons";
 import HoverCard from "components/HoverCard";
+import { TabContext, TabList, TabPanel} from "@material-ui/lab";
+import Hackathon from "layouts/pages/organisation-overview/Hackathon";
+import OrganizationJobs from "layouts/pages/organisation-overview/Organisation-Jobs";
+import OrgOverview from "layouts/pages/organisation-overview/Org-Overview";
 
-const bgImage =
-  "https://picsum.photos/2500/500?grayscale";
 
-  
+const bgImage = "https://picsum.photos/2500/500?grayscale";
+
 const OrganizationOverview = () => {
+
+  const [value, setValue] = useState('1');
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   return (
     <DashboardLayout
       sx={{
@@ -25,9 +35,9 @@ const OrganizationOverview = () => {
         backgroundPositionY: "50%",
       }}
     >
-      <ArgonBox px={3} py={3} sx={{ marginTop: "270px" }}>
+      <ArgonBox px={3} py={3} sx={{ marginTop: "170px" }}>
         <HoverCard>
-          <CardContent>
+          <CardContent style={{paddingTop: '30px', paddingBottom: '30px'}}>
             <Grid container>
               <Grid
                 item
@@ -150,6 +160,26 @@ const OrganizationOverview = () => {
               </Grid>
             </CardContent>
           </Card>
+        </ArgonBox>
+        <ArgonBox mt={3}>
+          <TabContext value={value}>
+            <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+              <TabList onChange={handleChange} aria-label="lab API tabs example">
+                <Tab label="Overview" value="1" />
+                <Tab label="Jobs" value="2" />
+                <Tab label="Hackathon" value="3" />
+              </TabList>
+            </Box>
+            <TabPanel value="1">
+              <OrgOverview />
+            </TabPanel>
+            <TabPanel value="2">
+              <OrganizationJobs/>
+            </TabPanel>
+            <TabPanel value="3">
+              <Hackathon />
+            </TabPanel>
+          </TabContext>
         </ArgonBox>
       </ArgonBox>
     </DashboardLayout>
