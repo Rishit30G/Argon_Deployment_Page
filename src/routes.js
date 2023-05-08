@@ -182,6 +182,12 @@ const routes = [
             key: "organization-overview", 
             route: "/pages/profile/organization-overview",
             component: <OrganizationOverview/>
+          }, 
+          {
+            name: "Job Description",
+            key: "job-description",
+            route: "/pages/profile/job-description",
+            component: <JobProfile />,
           }
           
           // {
@@ -348,12 +354,6 @@ const routes = [
         route: "/pages/related-protocols",
         component: <RelatedProtocols/>
       }, 
-      {
-        name: "Job Profiling",
-        key: "job profiling",
-        route: "/pages/jobprofiling",
-        component: <JobProfile />,
-      },
       {
         name: "Job Listing",
         key: "job listing",

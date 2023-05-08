@@ -32,10 +32,6 @@ const particlesLoaded = useCallback(async container => {
                 fpsLimit: 120,
                 interactivity: {
                     events: {
-                        onClick: {
-                            enable: true,
-                            mode: "push",
-                        },
                         onHover: {
                             enable: true,
                             mode: "grab",
@@ -79,7 +75,7 @@ const particlesLoaded = useCallback(async container => {
                     number: {
                         density: {
                             enable: true,
-                            area: 2300,
+                            area: 5000,
                         },
                         value: 80,
                     },
