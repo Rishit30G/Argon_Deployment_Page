@@ -69,7 +69,7 @@ const particlesLoaded = useCallback(async container => {
                             default: "bounce",
                         },
                         random: false,
-                        speed: 3,
+                        speed: 1,
                         straight: false,
                     },
                     number: {

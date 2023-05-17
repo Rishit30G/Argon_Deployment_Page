@@ -7,8 +7,14 @@ import ArgonTypography from "components/ArgonTypography";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import React from "react";
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 
 const ProposalDiscussion = () => {
+  React.useEffect(() => {
+    AOS.init();
+  },[]);
+
   return (
     <DashboardLayout>
       <DashboardNavbar />
@@ -20,20 +26,21 @@ const ProposalDiscussion = () => {
         </Grid>
       </ArgonBox> */}
 
-      <ArgonBox mb={3} px={3} py={3} mr={14}>
+      <ArgonBox mb={3} px={10} py={3}>
         <Grid container spacing={3} direction="column">
           <Grid item>
-            <ArgonTypography style={{ fontFamily: "Lora", fontSize: "40px" }}>
+            <ArgonTypography style={{ fontFamily: "Lora", fontSize: "50px", fontWeight: '300px' }}>
               Growth Experiment: Bored Town NFT Art Community
             </ArgonTypography>
           </Grid>
           <Grid item>
             <Stack direction="row" spacing={2}>
               <Avatar></Avatar>
-              <ArgonTypography varaint="h3">Author Name</ArgonTypography>
+              <ArgonTypography variant="h3">Author Name</ArgonTypography>
             </Stack>
           </Grid>
-          <Card style={{ marginTop: "30px" }}>
+          <Card style={{ marginTop: "30px" , boxShadow: '0px 0px 80px purple'}}>
+            <ArgonBox px={12} py={3}>
             <CardContent>
               <Grid item>
                 <Stack spacing={2}>
@@ -62,7 +69,7 @@ const ProposalDiscussion = () => {
                 </Stack>
               </Grid>
               <Grid item container justifyContent="center" alignItems="center" style={{marginTop: '60px', marginBottom: '60px'}}>
-                <img src="https://picsum.photos/900/500" alt="Proposal Image" />
+                <img src="https://picsum.photos/900/500" style={{borderRadius: '20px'}}alt="Proposal Image" />
               </Grid>
               <Grid item>
                 <ArgonTypography variant="h3">Bored Town X Optimism Art Contest</ArgonTypography>
@@ -97,11 +104,12 @@ const ProposalDiscussion = () => {
                 </ArgonTypography>
               </Grid>
             </CardContent>
+            </ArgonBox>
           </Card>
         </Grid>
       </ArgonBox>
 
-      <ArgonBox mb={3} mx={3} my={8}>
+      <ArgonBox px={10} py={2}>
         <ArgonTypography variant="h2" fontWeight="bold">
           Discussion Section
         </ArgonTypography>
@@ -113,17 +121,21 @@ const ProposalDiscussion = () => {
             rows={3}
             inputProps={{ style: { color: "grey", fontSize: "20px" } }}
           />
-          <ArgonButton style={{ height: "42px", width: "102px" }}>Submit</ArgonButton>
+           <ArgonButton style={{ height: "58px", width: "220px", fontSize: '20px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}> Submit </ArgonButton>
         </Stack>
+</ArgonBox>
+
+<ArgonBox mb={5} px={10} py={3}>
 
         <Grid container spacing={2}>
           <Grid item>
-            <ArgonTypography variant="h4" fontWeight="bold">
+            <ArgonTypography variant="h3" fontWeight="bold">
               Replies and Comments
             </ArgonTypography>
           </Grid>
           <Grid item>
             <Card>
+          <ArgonBox px={3} py={3}>
               <CardContent>
                 <Grid container spacing={3} justifyContent="space-between">
                   <Grid item>
@@ -158,17 +170,18 @@ const ProposalDiscussion = () => {
                   <Grid item>
                     <ArgonTypography variant="body1">
                       {" "}
-                      <Heart></Heart>12 Likes
+                      <Heart></Heart>12
                     </ArgonTypography>
                   </Grid>
                 </Grid>
               </CardContent>
+          </ArgonBox>
             </Card>
           </Grid>
         </Grid>
       </ArgonBox>
 
-      <ArgonBox mb={3} mx={3} my={8}>
+      <ArgonBox mb={3} px={10} py={3}>
         <ArgonTypography variant="h2" fontWeight="bold" style={{ marginBottom: "20px" }}>
           Related Proposals
         </ArgonTypography>

@@ -3,19 +3,26 @@ import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import React from "react";
+import React, { useEffect } from "react";
 import ArgonButton from "components/ArgonButton";
 import ArgonInput from "components/ArgonInput";
 import { ArrowDown, Heart } from "@web3uikit/icons";
+import HoverCard from "components/HoverCard";
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 
 const ProtocolDiscussion = () => {
+  useEffect(() => {
+    AOS.init();
+  },[]);
+
   return (
     <DashboardLayout>
       <DashboardNavbar />
       <ArgonBox px={3} py={3}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6} sx={{ lineHeight: 0 }}>
-            <ArgonTypography variant="h2">Protocol Discission</ArgonTypography>
+            <ArgonTypography variant="h2">Protocol Discussion</ArgonTypography>
           </Grid>
         </Grid>
       </ArgonBox>
@@ -23,48 +30,61 @@ const ProtocolDiscussion = () => {
       <ArgonBox px={3} py={3}>
         <Grid container spacing={3} direction="column">
           <Grid item xs={12} md={6}>
-            <Card sx={{ height: "100%", overflow: "hidden" }}>
-              <ArgonBox px={3} py={3}>
-                <Grid container>
-                  <Grid
-                    item
-                    xs={12}
-                    md={3}
-                    lg={3}
-                    style={{ display: "flex", justifyContent: "center" }}
-                  >
-                    <img
-                      src="https://via.placeholder.com/200"
-                      alt="placeholder"
-                      style={{ marginRight: "20px" }}
-                    />
-                  </Grid>
-                  <Grid item xs={12} md={9} lg={9}>
-                    <Stack spacing={3}>
-                      <ArgonTypography variant="h2">Protocol</ArgonTypography>
-                      <ArgonTypography variant="subtitle2">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat
-                      </ArgonTypography>
-                    </Stack>
-                  </Grid>
+          <div data-aos="fade-up" data-aos-duration="5000">
+          <HoverCard>
+            <ArgonBox px={3} py={3}>
+              <Grid container>
+                <Grid
+                  item
+                  xs={12}
+                  md={2}
+                  lg={2}
+                  style={{ display: "flex", justifyContent: "center" }}
+                >
+                  <img
+                    src="https://picsum.photos/200/200"
+                    alt="placeholder"
+                    style={{ marginRight: "20px", borderRadius: '50%' }}
+                  />
                 </Grid>
-              </ArgonBox>
-            </Card>
+                <Grid item xs={12} md={10} lg={10}>
+               
+                  <Stack spacing={3}>
+                    <ArgonTypography variant="h1">Protocol</ArgonTypography>
+                    <ArgonTypography variant="body2">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+
+                    </ArgonTypography>
+                  </Stack>
+                </Grid>
+              </Grid>
+            </ArgonBox>
+          </HoverCard>
+                  </div>
           </Grid>
-          <Grid item xs={12} md={6}>
+          </Grid> 
+      </ArgonBox>
+
+
+      <ArgonBox px={10} py={3}>
+        <Grid container spacing={3} direction="column">
+          <Grid item xs={12} md={6} style={{marginTop: '30px'}}> 
             <Grid container justifyContent="space-between" style={{ marginBottom: "20px" }}>
               <ArgonTypography variant="h2">Disucssion</ArgonTypography>
-              <ArgonButton variant="white" style={{ height: "50px", width: "200px", color: 'white'}}>
+              <ArgonButton variant="white" style={{ height: "50px", width: "200px", color: 'white', fontSize: '30px'}}>
                 <Avatar style={{ marginRight: "10px" }}></Avatar> Author
               </ArgonButton>
             </Grid>
-            <Card>
+
+            <Card style={{boxShadow: '0px 0px 60px purple'}}> 
               <CardContent>
+               <div data-aos="fade-up" data-aos-duration="5000">
                 <Grid container>
-                  <ArgonTypography variant="body1">
+                  <ArgonBox mx={3} my={3}>
+                  <ArgonTypography variant="body2" >
                     There are many variations of passages of Lorem Ipsum available, but the majority
                     have suffered alteration in some form, by injected humour, or randomised words
                     which don't look even slightly believable. If you are going to use a passage of
@@ -86,41 +106,48 @@ const ProtocolDiscussion = () => {
                     Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section
                     1.10.32.
                   </ArgonTypography>
+                  </ArgonBox>
                 </Grid>
+              </div>
               </CardContent>
             </Card>
           </Grid>
 
-          <Grid item xs={12} md={6} style={{ marginTop: "20px" }}>
-            <ArgonTypography variant="h3">Discussion Section</ArgonTypography>
 
+          <Grid item xs={12} md={6} style={{ marginTop: "30px" }}>
+            <ArgonTypography variant="h3">Discussion Section</ArgonTypography>
+            <div data-aos="fade-up" data-aos-duration="5000">
             <Stack
               direction="column"
               spacing={2}
               style={{ marginTop: "15px", marginBottom: "40px" }}
             >
               <ArgonInput
-                placeholder="Your opinion matters"
                 multiline
                 rows={3}
                 inputProps={{ style: { color: "grey", fontSize: "20px" } }}
               />
-              <ArgonButton style={{ height: "42px", width: "102px" }}>Submit</ArgonButton>
+            <ArgonButton style={{ height: "58px", width: "220px", fontSize: '20px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}> Reply </ArgonButton>
             </Stack>
+            </div>
 
-            <Grid container spacing={2}>
+            <Grid container spacing={2} style={{marginTop: '30px'}}>
               <Grid item>
-                <ArgonTypography variant="h5" fontWeight="bold">
+                <ArgonTypography variant="h3" fontWeight="bold">
                   Replies and Comments
                 </ArgonTypography>
               </Grid>
               <Grid item>
+                    <div data-aos="fade-up" data-aos-duration="5000">
                 <Card>
+                  <ArgonBox px={3} py={3}>
                   <CardContent>
                     <Grid container spacing={3} justifyContent="space-between">
                       <Grid item>
-                        <Avatar></Avatar>
+                        <Grid container spacing={2} direction="row" style={{marginTop: '10px'}}>
+                        <Avatar style={{marginRight: '10px'}}></Avatar>
                         <ArgonTypography>Author Name</ArgonTypography>
+                        </Grid>
                       </Grid>
                       <Grid item>
                         <ArgonTypography variant="h3">12th April</ArgonTypography>
@@ -138,23 +165,27 @@ const ProtocolDiscussion = () => {
                       <Grid item>
                         <ArgonTypography variant="body1">
                           {" "}
-                          <ArrowDown></ArrowDown>Replies
+                          <ArrowDown style={{marginRight: '10px'}}></ArrowDown>Replies
                         </ArgonTypography>
                       </Grid>
                       <Grid item>
-                        <ArgonTypography variant="body1">
+                        <ArgonTypography variant="body2" style={{fontSize: '30px'}}>
                           {" "}
-                          <Heart></Heart>12 Likes
+                          <Heart style={{marginRight: '10px'}}></Heart>
+                          12
                         </ArgonTypography>
                       </Grid>
                     </Grid>
                   </CardContent>
+                  </ArgonBox>
                 </Card>
+                  </div>
               </Grid>
             </Grid>
           </Grid>
         </Grid>
-      </ArgonBox>
+        
+      </ArgonBox> 
     </DashboardLayout>
   );
 };

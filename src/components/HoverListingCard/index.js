@@ -25,8 +25,9 @@ function HoverListingCard({
         ...(isHovering && {
             background: hoverBackground,
             border: '2px solid gold ', 
-            boxShadow: "0 0 10px gold"
+            boxShadow: "0 0 30px gold"
         }),
+        border: '1px solid #5A5A5A',
       }}
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
