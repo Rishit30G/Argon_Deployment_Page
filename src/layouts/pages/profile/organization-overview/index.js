@@ -75,13 +75,13 @@ const OrganizationOverview = () => {
                     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                     nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
                   </ArgonTypography>
-                  <Grid container direction="row" justifyContent="flex-start" alignItems="center">
-                    <ArgonButton style={{ height: "40px", width: "180px", marginRight: "15px" }}>
-                      <Star></Star> 4 Star Rating
-                    </ArgonButton>
-                    <ArgonButton style={{ height: "40px", width: "180px", marginRight: "15px" }}>
-                      <People></People> 50-100 Size
-                    </ArgonButton>
+                  <Grid container justifyContent="flex-start" alignItems="center" spacing={4}>
+                  <Grid item>
+                  <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}> <Star></Star> 4 star Rating</ArgonButton>
+                  </Grid>
+                  <Grid item>
+                  <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}> <People/> 50-100 Size</ArgonButton>
+                  </Grid>
                   </Grid>
                 </Stack>
               </Grid>

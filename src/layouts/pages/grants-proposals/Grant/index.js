@@ -34,112 +34,165 @@ const Grants = () => {
   return (
     <DashboardLayout>
       <DashboardNavbar />
-      <ArgonBox mx={3} my={3} mb={5}>
+      <ArgonBox px={10} py={3}>
         <Grid container spacing={3}>
-          <Grid item xs={12} md={6}>
+          <Grid container item xs={12} md={6} lg={2} >
+            <Card style={{justifyContent: "center"}}> 
+              <CardContent>
             <ArgonTypography variant="h2">Grants</ArgonTypography>
+            </CardContent>
+            </Card> 
           </Grid>
         </Grid>
+        <div
+        style={{
+          borderBottom: "1px solid rgba(128, 128, 128, 0.3)",
+          margin: "10px 0",
+          padding: "5px 0",
+          width: "100%",
+        }}
+      ></div>
       </ArgonBox>
 
-      <Grid container spacing={3}>
-        <Grid item xs={12} md={6} lg={6}>
+<ArgonBox px={10} py={3}>
+      <Grid container spacing={4}>
+        <Grid item xs={12} md={4} lg={4}>
           <div data-aos="fade-up" data-aos-duration="5000">
           <HoverCard>
             <CardContent>
-              <Grid container xs={12} sm={12} md={12}>
-                <ArgonBox style={{ marginTop: "10px" }}>
-                  <Grid container spacing={2}>
-                    <Grid item>
-                      <Avatar src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png" sx={{ width: 60, height: 60 }}></Avatar>
-                    </Grid>
-                    <Grid item>
-                      <ArgonTypography variant="h1">{post[0].title}</ArgonTypography>
-                    </Grid>
-                  </Grid>
-                  <Grid container style={{marginTop: '35px'}}>
-                    <Grid item>
-                      <ArgonTypography variant="body2" style={{ marginBottom: "15px" , fontSize: '20px'}}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Morbi convallis mi ut quam dictum, eget rutrum ipsum ultrices.Text goes
-                        here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                        convallis mi ut quam dictum, eget rutrum ipsum ultrices.
-                        convallis mi ut quam dictum, eget rutrum ipsum ultrices.
+              <Grid container spacing={4}>
+                <Grid container item xs={12} sm={12} md={12} alignItems="center">
+                  <ArgonTypography variant="h2">Uniswap</ArgonTypography>
+                </Grid>
+                <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
+                  <Grid item xs={8} lg={7} sm={9} md={9}>
+                    <ArgonTypography
+                      variant="body2"
+                      style={{ fontSize: "20px", color: "rgba(255, 255, 255, 0.7)" }}
+                    >
+                      Text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                      convallis mi ut quam dictum, eget rutrum ipsum ultrices. 
+                    </ArgonTypography>
+                    <Stack direction="row" spacing={2} style={{ marginTop: "25px" }}>
+                      <ArgonTypography variant="h5">
+                        <Heart style={{ marginRight: "10px" }}></Heart> 15
                       </ArgonTypography>
-                    </Grid>
+                      <ArgonTypography variant="h5">
+                        <ArrowUpward style={{ marginRight: "10px" }}></ArrowUpward> 5
+                      </ArgonTypography>
+                    </Stack>
                   </Grid>
-                  <Grid container direction="row" justifyContent="space-between" style={{marginTop:'20px'}}>
-                    <Grid item>
-                      <ArgonButton style={{backgroundColor: "#080808", border: "1px solid grey"}}> 
-                        <ArgonTypography variant="h1" fontWeight="medium" style={{color: '#32CD32'}}>$1000</ArgonTypography>
-                      </ArgonButton>
-                    </Grid>
-                    <Grid item>
-                      <Stack direction="row" spacing={2} style={{marginTop: '13px'}}>
-                        <ArgonButton variant="text" style={{fontSize: '30px'}}> 
-                          <Heart style={{marginRight: '10px'}}></Heart> 15
-                        </ArgonButton>
-                        <ArgonButton variant="text" style={{fontSize: '30px'}}>
-                          <ArrowUpward style={{marginRight: '10px'}}></ArrowUpward> 240
-                        </ArgonButton>
-                      </Stack>
-                    </Grid>
+                  <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
+                    <img
+                      src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png"
+                      style={{
+                        width: "200px",
+                        height: "200px",
+                        position: "absolute",
+                        bottom: 40,
+                        right: 0,
+                      }}
+                      alt="Uniswap logo"
+                    />
                   </Grid>
-                </ArgonBox>
+                </Grid>
               </Grid>
             </CardContent>
           </HoverCard>
           </div>
         </Grid>
-        <Grid item xs={12} md={6} lg={6}>
+        <Grid item xs={12} md={4} lg={4}>
           <div data-aos="fade-up" data-aos-duration="5000">
           <HoverCard>
             <CardContent>
-              <Grid container xs={12} sm={12} md={12}>
-                <ArgonBox style={{ marginTop: "10px" }}>
-                  <Grid container spacing={2}>
-                    <Grid item>
-                      <Avatar src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png" sx={{ width: 60, height: 60 }}></Avatar>
-                    </Grid>
-                    <Grid item>
-                      <ArgonTypography variant="h1">{post[0].title}</ArgonTypography>
-                    </Grid>
-                  </Grid>
-                  <Grid container style={{marginTop: '35px'}}>
-                    <Grid item>
-                      <ArgonTypography variant="body2" style={{ marginBottom: "15px" , fontSize: '20px'}}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Morbi convallis mi ut quam dictum, eget rutrum ipsum ultrices.Text goes
-                        here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                        convallis mi ut quam dictum, eget rutrum ipsum ultrices.
-                        convallis mi ut quam dictum, eget rutrum ipsum ultrices.
+              <Grid container spacing={4}>
+                <Grid container item xs={12} sm={12} md={12} alignItems="center">
+                  <ArgonTypography variant="h2">Uniswap</ArgonTypography>
+                </Grid>
+                <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
+                  <Grid item xs={8} lg={7} sm={9} md={9}>
+                    <ArgonTypography
+                      variant="body2"
+                      style={{ fontSize: "20px", color: "rgba(255, 255, 255, 0.7)" }}
+                    >
+                      Text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                      convallis mi ut quam dictum, eget rutrum ipsum ultrices. 
+                    </ArgonTypography>
+                    <Stack direction="row" spacing={2} style={{ marginTop: "25px" }}>
+                      <ArgonTypography variant="h5">
+                        <Heart style={{ marginRight: "10px" }}></Heart> 15
                       </ArgonTypography>
-                    </Grid>
+                      <ArgonTypography variant="h5">
+                        <ArrowUpward style={{ marginRight: "10px" }}></ArrowUpward> 5
+                      </ArgonTypography>
+                    </Stack>
                   </Grid>
-                  <Grid container direction="row" justifyContent="space-between" style={{marginTop:'20px'}}>
-                    <Grid item>
-                      <ArgonButton style={{backgroundColor: "#080808", border: "1px solid grey"}}> 
-                        <ArgonTypography variant="h1" fontWeight="medium" style={{color: '#32CD32'}}>$1200</ArgonTypography>
-                      </ArgonButton>
-                    </Grid>
-                    <Grid item>
-                      <Stack direction="row" spacing={2} style={{marginTop: '13px'}}>
-                        <ArgonButton variant="text" style={{fontSize: '30px'}}> 
-                          <Heart style={{marginRight: '10px'}}></Heart> 15
-                        </ArgonButton>
-                        <ArgonButton variant="text" style={{fontSize: '30px'}}>
-                          <ArrowUpward style={{marginRight: '10px'}}></ArrowUpward> 240
-                        </ArgonButton>
-                      </Stack>
-                    </Grid>
+                  <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
+                    <img
+                      src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png"
+                      style={{
+                        width: "200px",
+                        height: "200px",
+                        position: "absolute",
+                        bottom: 40,
+                        right: 0,
+                      }}
+                      alt="Uniswap logo"
+                    />
                   </Grid>
-                </ArgonBox>
+                </Grid>
+              </Grid>
+            </CardContent>
+          </HoverCard>
+          </div>
+        </Grid>
+        <Grid item xs={12} md={4} lg={4}>
+          <div data-aos="fade-up" data-aos-duration="5000">
+          <HoverCard>
+            <CardContent>
+              <Grid container spacing={4}>
+                <Grid container item xs={12} sm={12} md={12} alignItems="center">
+                  <ArgonTypography variant="h2">Uniswap</ArgonTypography>
+                </Grid>
+                <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
+                  <Grid item xs={8} lg={7} sm={9} md={9}>
+                    <ArgonTypography
+                      variant="body2"
+                      style={{ fontSize: "20px", color: "rgba(255, 255, 255, 0.7)" }}
+                    >
+                      Text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                      convallis mi ut quam dictum, eget rutrum ipsum ultrices. 
+                    </ArgonTypography>
+                    <Stack direction="row" spacing={2} style={{ marginTop: "25px" }}>
+                      <ArgonTypography variant="h5">
+                        <Heart style={{ marginRight: "10px" }}></Heart> 15
+                      </ArgonTypography>
+                      <ArgonTypography variant="h5">
+                        <ArrowUpward style={{ marginRight: "10px" }}></ArrowUpward> 5
+                      </ArgonTypography>
+                    </Stack>
+                  </Grid>
+                  <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
+                    <img
+                      src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png"
+                      style={{
+                        width: "200px",
+                        height: "200px",
+                        position: "absolute",
+                        bottom: 40,
+                        right: 0,
+                      }}
+                      alt="Uniswap logo"
+                    />
+                  </Grid>
+                </Grid>
               </Grid>
             </CardContent>
           </HoverCard>
           </div>
         </Grid>
       </Grid>
+      </ArgonBox>
     </DashboardLayout>
   );
 };

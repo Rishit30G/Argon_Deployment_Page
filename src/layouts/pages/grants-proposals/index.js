@@ -26,13 +26,17 @@ import AOS from 'aos';
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import { CardContent, CardMedia, Typography, Button, makeStyles } from "@material-ui/core";
-import { Card, Stack } from "@mui/material";
+import { Card, CardActionArea, IconButton, Stack } from "@mui/material";
 import ArgonButton from "components/ArgonButton";
 import ArgonSocialButton from "components/ArgonSocialButton";
 import LanguageIcon from '@mui/icons-material/Language';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import HoverCard from "components/HoverCard";
 import { useEffect, useState } from "react";
+import Proposals from "./Proposals";
+import { useNavigate } from "react-router-dom";
+import { ArrowBack, DiscFullOutlined } from "@mui/icons-material";
+import { Twitter } from "@web3uikit/icons";
 
 
 // Data
@@ -41,83 +45,208 @@ function GrantsAndProposals() {
   useEffect(() => {
     AOS.init();
   },[]);
+
   
-  const [isHovered, setIsHovered] = useState(false);
+  const [showProposal, setShowProposal] = useState(false);
 
-  const handleMouseEnter = () => {
-    setIsHovered(true);
+  const toggleProposal = () => {
+    setShowProposal(!showProposal);
   };
 
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
-
+  
   return (
     <DashboardLayout>
       <DashboardNavbar />
-      <ArgonBox px={3} py={3}>
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={6} sx={{ lineHeight: 0 }}>
+      <ArgonBox px={10} py={3}>
+        <Grid container spacing={3} alignItems="center">
+          <Grid item xs={10} md={6} lg={4}>
+            <Card> 
+              <CardContent> 
             <ArgonTypography variant="h2">Protocol Grants and Proposals</ArgonTypography>
+            </CardContent>
+            </Card> 
           </Grid>
         </Grid>
+        <div
+        style={{
+          borderBottom: "1px solid rgba(128, 128, 128, 0.3)",
+          margin: "10px 0",
+          padding: "5px 0",
+          width: "100%",
+        }}
+      ></div>
       </ArgonBox>
 
-      <ArgonBox px={3} py={3}>
-        <div data-aos="fade-up" data-aos-duration="5000">
-        <HoverCard>
-          <CardContent>
-            <Grid container>
-              <Grid
-                item
-                xs={12}
-                md={2}
-                lg={2}
-                xl={2}
-                style={{ display: "flex", justifyContent: "center"}}
-              >
-                <img
-                  src="https://i.postimg.cc/GpLgWgBX/image.png"
-                  alt="placeholder"
-                  style={{borderRadius: '50%', width: '150px', height: '150px', marginTop: '25px'}}
-                />
+      <ArgonBox px={10} py={3}>
+        <Grid container spacing={3}>
+        <Grid item xs={12} md={4} lg={4} xl={4}>
+          <div data-aos="fade-up" data-aos-duration="5000">
+          <HoverCard>
+            <CardContent>
+              <CardActionArea>
+            <ArgonBox px={1} py={1}> 
+              <Grid container spacing={4}>
+                <Grid container item xs={12} sm={12} md={12} justifyContent="space-between" alignItems="center">
+                  <ArgonTypography variant="h2">Uniswap</ArgonTypography>
+                </Grid>
+                <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
+                  <Grid item xs={8} lg={7} sm={9} md={9}>
+                    <ArgonTypography
+                      variant="body2"
+                      style={{ fontSize: "20px", color: "rgba(255, 255, 255, 0.7)" }}
+                    >
+                      Text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                      convallis mi ut quam dictum, eget rutrum ipsum ultrices. 
+                     
+                    </ArgonTypography>
+
+                    <ArgonBox style={{fontSize: '30px', marginTop: '10px'}}>
+                    <a
+                      href="https://twitter.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ fontSize: '20px', marginTop: '10px' }}
+                    >
+                      <Twitter style={{ color: '#1DA1F2' }} />
+                    </a>
+                    <a
+                      href="https://google.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ fontSize: '20px', marginTop: '10px', marginLeft: '10px' }}
+                    >
+                      <LanguageIcon style={{ color: '#808080' }} />
+                    </a>
+                      <img src="https://i.postimg.cc/NG2GnXwh/defi-lama-logo-freelogovectors-net.png" style={{width: '20px', height: '20px', marginLeft: '10px'}}/>
+                  
+                    </ArgonBox>
+                  </Grid>
+                
+
+
+                  <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
+                    <img
+                      src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png"
+                      style={{
+                        width: "200px",
+                        height: "200px",
+                        position: "absolute",
+                        bottom: 0,
+                        right: 0,
+                      }}
+                      alt="Uniswap logo"
+                    />
+                  </Grid>
+                </Grid>
+                <Grid item xs={12} sm={12} md={12} justifyContent="space-around" >
+                <Stack spacing={3} direction="row" >
+                    <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}} onClick={toggleProposal}>Proposals</ArgonButton>
+                    <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>Grants</ArgonButton>
+                    <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>Jobs</ArgonButton>
+                  </Stack>
+                </Grid> 
               </Grid>
-              <Grid item xs={12} md={10} lg={10} xl={10}>
-                <Stack spacing={5} style={{marginBottom: '10px'}}>
-                  <ArgonTypography variant="h1">Title</ArgonTypography>
-                  <ArgonTypography variant="body1">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
-                  </ArgonTypography>
-                </Stack>
-                <Stack spacing={2} direction="row"> 
-                    <ArgonButton varaint="h4" variant="text">
-                    <LanguageIcon style={{marginRight: '5px'}}></LanguageIcon> Website
-                    </ArgonButton>
-                    <ArgonButton varaint="h4" variant="text">
-                      <img src="https://i.postimg.cc/1td6PCMj/defi-lama-logo-freelogovectors-net.png" style={{width: '20px', width: '20px', marginRight: '5px'}}/>Defillama
-                    </ArgonButton>
-                    <ArgonButton varaint="h4" variant="text">
-                    <TwitterIcon style={{marginRight: '5px'}}></TwitterIcon> Twitter
-                    </ArgonButton>
-                </Stack>
+            </ArgonBox>
+            </CardActionArea>
+            </CardContent>
+          </HoverCard>
+          </div>
+          </Grid>
+          <Grid item xs={12} md={4} lg={4} xl={4}>
+          <div data-aos="fade-up" data-aos-duration="5000">
+          <HoverCard>
+            <CardContent>
+            <ArgonBox px={1} py={1}> 
+              <Grid container spacing={4}>
+                <Grid container item xs={12} sm={12} md={12} justifyContent="space-between" alignItems="center">
+                  <ArgonTypography variant="h2">Uniswap</ArgonTypography>
+                </Grid>
+                <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
+                  <Grid item xs={8} lg={7} sm={9} md={9}>
+                    <ArgonTypography
+                      variant="body2"
+                      style={{ fontSize: "20px", color: "rgba(255, 255, 255, 0.7)" }}
+                    >
+                      Text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                      convallis mi ut quam dictum, eget rutrum ipsum ultrices. 
+                    </ArgonTypography>
+                  </Grid>
+                  <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
+                    <img
+                      src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png"
+                      style={{
+                        width: "200px",
+                        height: "200px",
+                        position: "absolute",
+                        bottom: 0,
+                        right: 0,
+                      }}
+                      alt="Uniswap logo"
+                    />
+                  </Grid>
+                </Grid>
+                <Grid item xs={12} sm={12} md={12} justifyContent="space-around" >
+                <Stack spacing={3} direction="row" >
+                    <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}} onClick={toggleProposal}>Proposals</ArgonButton>
+                    <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>Grants</ArgonButton>
+                    <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>Jobs</ArgonButton>
+                  </Stack>
+                </Grid> 
               </Grid>
-            </Grid>
-            <Grid container style={{marginTop: '50px'}}>
-              <Grid item>
-                  <div data-aos="fade-up">
-                <Stack spacing={3} direction="row">
-                  <ArgonButton style={{ height: "58px", width: "220px", fontSize: '20px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>Proposals</ArgonButton>
-                  <ArgonButton style={{ height: "58px", width: "220px", fontSize: '20px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>Grants</ArgonButton>
-                  <ArgonButton style={{ height: "58px", width: "220px", fontSize: '20px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>Jobs</ArgonButton>
-                </Stack>
-                  </div>
+            </ArgonBox>
+            </CardContent>
+          </HoverCard>
+          </div>
+          </Grid>
+          <Grid item xs={12} md={4} lg={4} xl={4}>
+          <div data-aos="fade-up" data-aos-duration="5000">
+          <HoverCard>
+            <CardContent>
+            <ArgonBox px={1} py={1}> 
+              <Grid container spacing={4}>
+                <Grid container item xs={12} sm={12} md={12} justifyContent="space-between" alignItems="center">
+                  <ArgonTypography variant="h2">Uniswap</ArgonTypography>
+                </Grid>
+                <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
+                  <Grid item xs={8} lg={7} sm={9} md={9}>
+                    <ArgonTypography
+                      variant="body2"
+                      style={{ fontSize: "20px", color: "rgba(255, 255, 255, 0.7)" }}
+                    >
+                      Text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                      convallis mi ut quam dictum, eget rutrum ipsum ultrices. 
+                    </ArgonTypography>
+                  </Grid>
+                  <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
+                    <img
+                      src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png"
+                      style={{
+                        width: "200px",
+                        height: "200px",
+                        position: "absolute",
+                        bottom: 0,
+                        right: 0,
+                      }}
+                      alt="Uniswap logo"
+                    />
+                  </Grid>
+                </Grid>
+                <Grid item xs={12} sm={12} md={12} justifyContent="space-around" >
+                <Stack spacing={3} direction="row" >
+                    <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}} onClick={toggleProposal}>Proposals</ArgonButton>
+                    <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>Grants</ArgonButton>
+                    <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>Jobs</ArgonButton>
+                  </Stack>
+                </Grid> 
               </Grid>
-            </Grid>
-          </CardContent>
-        </HoverCard>
-        </div>
+            </ArgonBox>
+            </CardContent>
+          </HoverCard>
+          </div>
+          </Grid>
+        </Grid>
+          
+          {showProposal && <div data-aos="fade-up" data-aos-duration="5000"><Proposals/></div>}
       </ArgonBox>
     </DashboardLayout>
   );

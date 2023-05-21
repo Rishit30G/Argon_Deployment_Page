@@ -4,13 +4,13 @@ import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 import Grid from "@material-ui/core/Grid";
-import { Box, Card, CardActionArea, Tab } from "@mui/material";
+import { Box, Card, CardActionArea, CardContent, Tab } from "@mui/material";
 import { Stack } from "@mui/material";
 import { styled } from "@mui/styles";
-import HoverListingCard from "components/HoverListingCard";
 import { TabContext, TabList, TabPanel } from "@material-ui/lab";
 import "aos/dist/aos.css";
 import AOS from "aos";
+import HoverCard from "components/HoverCard";
 
 const JobListing = () => {
   useEffect(() => {
@@ -23,409 +23,255 @@ const JobListing = () => {
     setValue(newValue);
   };
 
-  const Hover = styled(ArgonBox)({
-    transition: "transform 0.5s, font-size 0.2s",
-    transform: "translateY(0)",
-    "&:hover": {
-      transform: "translateY(-5px)",
-    },
-    "&:hover .hover-typo1": {
-      fontSize: "33px",
-    },
-    "&:hover .hover-typo2": {
-      fontSize: "22px",
-    },
-    "&:hover .hover-typo3": {
-      // fontSize: "16.5px",
-    },
-  });
-
   return (
     <DashboardLayout>
       <DashboardNavbar />
-      <ArgonBox mb={3} px={3} py={3}>
+      <ArgonBox mb={3} px={15} py={3}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
-            <ArgonTypography variant="h3">Job Listing</ArgonTypography>
+            <ArgonTypography variant="h2">Job Listing</ArgonTypography>
           </Grid>
         </Grid>
       </ArgonBox>
 
-      <ArgonBox px={3} py={3}>
-        {/* <Grid container spacing={3}>
-          <Grid item xs={12} md={6}>
-            <HoverListingCard>
-              <Hover>
-                <ArgonBox px={1} py={1}>
-                  <Grid container>
-                    <Grid
-                      item
-                      xs={12}
-                      md={3}
-                      lg={3}
-                      style={{ display: "flex", justifyContent: "center" }}
-                    >
-                      <img
-                        src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png"
-                        style={{
-                          marginRight: "20px",
-                          borderRadius: "50%",
-                          width: "150px",
-                          height: "150px",
-                        }}
-                      />
-                    </Grid>
-                    <Grid item xs={12} md={9} lg={9}>
-                      <Stack spacing={3}>
-                        <ArgonTypography
-                          variant="h3"
-                          className="hover-typo1"
-                          style={{ fontFamily: "Poppins", fontWeight: "600px" }}
-                        >
-                          Uniswap
-                        </ArgonTypography>
-                        <ArgonTypography variant="h5" className="hover-typo2" fontWeight="medium">
-                          Blockchain Developer
-                        </ArgonTypography>
-                        <ArgonTypography
-                          variant="subtitle2"
-                          className="hover-typo3"
-                          fontWeight="light"
-                        >
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                          commodo consequat
-                        </ArgonTypography>
-                      </Stack>
-                    </Grid>
-                  </Grid>
-                </ArgonBox>
-              </Hover>
-            </HoverListingCard>
-          </Grid>
+<ArgonBox px={3} py={3}>
 
-          <Grid item xs={12} md={6}>
-            <Card sx={{ height: "100%", overflow: "hidden" }}>
-              <ArgonBox px={1} py={1}>
-                <Grid container>
-                  <Grid
-                    item
-                    xs={12}
-                    md={3}
-                    lg={3}
-                    style={{ display: "flex", justifyContent: "center" }}
-                  >
-                    <img
-                      src="https://i.postimg.cc/1t6jZ2yq/822711-user-512x512.png"
-                      alt="placeholder"
-                      style={{
-                        marginRight: "20px",
-                        borderRadius: "50%",
-                        width: "160px",
-                        height: "160px",
-                      }}
-                    />
-                  </Grid>
-                  <Grid item xs={12} md={9} lg={9}>
-                    <Stack spacing={3}>
-                      <ArgonTypography variant="h3">James Harden</ArgonTypography>
-                      <ArgonTypography variant="h5">Etherium Developer</ArgonTypography>
-                      <ArgonTypography variant="subtitle2">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat
-                      </ArgonTypography>
-                    </Stack>
-                  </Grid>
-                </Grid>
-              </ArgonBox>
-            </Card>
-          </Grid>
-        </Grid> */}
-        {/* <Grid container spacing={3} style={{ marginTop: "10px" }}>
-          <Grid item xs={12} md={6}>
-            <Card sx={{ height: "100%", overflow: "hidden" }}>
-              <ArgonBox px={1} py={1}>
-                <Grid container>
-                  <Grid
-                    item
-                    xs={12}
-                    md={3}
-                    lg={3}
-                    style={{ display: "flex", justifyContent: "center" }}
-                  >
-                    <img
-                      src="https://i.postimg.cc/KcM9K6Sk/the-balancer-protocol-and-the-bal-cryptocurrency.webp"
-                      alt="placeholder"
-                      style={{
-                        marginRight: "20px",
-                        borderRadius: "50%",
-                        width: "160px",
-                        height: "160px",
-                      }}
-                    />
-                  </Grid>
-                  <Grid item xs={12} md={9} lg={9}>
-                    <Stack spacing={3}>
-                      <ArgonTypography variant="h3">Balancer</ArgonTypography>
-                      <ArgonTypography variant="h5">Algorithm Trader</ArgonTypography>
-                      <ArgonTypography variant="subtitle2">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat
-                      </ArgonTypography>
-                    </Stack>
-                  </Grid>
-                </Grid>
-              </ArgonBox>
-            </Card>
-          </Grid>
+</ArgonBox>
 
-          <Grid item xs={12} md={6}>
-            <Card sx={{ height: "100%", overflow: "hidden" }}>
-              <ArgonBox px={1} py={1}>
-                <Grid container>
-                  <Grid
-                    item
-                    xs={12}
-                    md={3}
-                    lg={3}
-                    style={{ display: "flex", justifyContent: "center" }}
-                  >
-                    <img
-                      src="https://i.postimg.cc/TwXKt51X/pancakeswap-cake-logo.png"
-                      alt="placeholder"
-                      style={{
-                        marginRight: "20px",
-                        borderRadius: "50%",
-                        width: "150px",
-                        height: "150px",
-                      }}
-                    />
-                  </Grid>
-                  <Grid item xs={12} md={9} lg={9}>
-                    <Stack spacing={3}>
-                      <ArgonTypography variant="h3">Pancake Swap</ArgonTypography>
-                      <ArgonTypography variant="h5">Algorithm Trader</ArgonTypography>
-                      <ArgonTypography variant="subtitle2">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat
-                      </ArgonTypography>
-                    </Stack>
-                  </Grid>
-                </Grid>
-              </ArgonBox>
-            </Card>
-          </Grid>
-        </Grid> */}
-      </ArgonBox>
-
+      <ArgonBox px={15}>
       <TabContext value={value}>
-        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+        <Box sx={{ borderBottom: 1, borderColor: "divider", marginBottom: '40px' }}>
           <TabList onChange={handleChange} aria-label="lab API tabs example">
             <Tab label="Organization" value="1" />
             <Tab label="Individual" value="2" />
           </TabList>
         </Box>
         <TabPanel value="1">
-          <Grid container spacing={6}>
-            <Grid item xs={12} lg={6} xl={6} md={12}>
-              <Grid item>
-                <HoverListingCard>
-                  <div data-aos="fade-up" data-aos-duration="5000">
-                    <Hover>
-                      <ArgonBox px={1} py={1}>
-                        <Grid container>
-                          <Grid
-                            item
-                            xs={12}
-                            md={3}
-                            lg={3}
-                            style={{ display: "flex", justifyContent: "center" }}
-                          >
-                            <img
-                              src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png"
-                              style={{
-                                marginRight: "20px",
-                                borderRadius: "50%",
-                                width: "150px",
-                                height: "150px",
-                              }}
-                            />
-                          </Grid>
-                          <Grid item xs={12} md={9} lg={9}>
-                            <Stack spacing={3}>
-                              <ArgonTypography
-                                variant="h1"
-                                className="hover-typo1"
-                                style={{ fontFamily: "Poppins", fontWeight: "600px" }}
-                              >
-                                Uniswap
-                              </ArgonTypography>
-                              <ArgonTypography
-                                variant="h3"
-                                className="hover-typo2"
-                                fontWeight="medium"
-                              >
-                                Blockchain Developer
-                              </ArgonTypography>
-                              <ArgonTypography
-                                variant="subtitle2"
-                                className="hover-typo3"
-                                fontWeight="light"
-                              >
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                                ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat
-                              </ArgonTypography>
-                            </Stack>
-                          </Grid>
-                        </Grid>
-                      </ArgonBox>
-                    </Hover>
-                  </div>
-                </HoverListingCard>
+          <Grid container spacing={4}>
+            <Grid item xs={12} lg={4} xl={4} md={12}>
+              <HoverCard>
+            <CardContent>
+              <Grid container spacing={8}>
+                <Grid container item xs={12} sm={12} md={12} justifyContent="space-between" alignItems="center">
+                  <ArgonTypography variant="h2">Uniswap</ArgonTypography>
+                  <ArgonTypography variant="h4">Blockchain Developer</ArgonTypography>
+                </Grid>
+                <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
+                  <Grid item xs={8} lg={7} sm={9} md={9}>
+                    <ArgonTypography
+                      variant="body2"
+                      style={{ fontSize: "20px", color: "rgba(255, 255, 255, 0.7)" }}
+                    >
+                      Text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                      convallis mi ut quam dictum, eget rutrum ipsum ultrices. 
+                    </ArgonTypography>
+                  </Grid>
+                  <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
+                    <img
+                      src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png"
+                      style={{
+                        width: "200px",
+                        height: "200px",
+                        position: "absolute",
+                        bottom: 0,
+                        right: 0,
+                      }}
+                      alt="Uniswap logo"
+                    />
+                  </Grid>
+                </Grid>
               </Grid>
+            </CardContent>
+              </HoverCard>
             </Grid>
-            <Grid item xs={12} lg={6} xl={6} md={12}>
-              <Grid item>
-                <HoverListingCard>
-                  <div data-aos="fade-up" data-aos-duration="5000">
-                    <ArgonBox px={1} py={1}>
-                      <Grid container>
-                        <Grid
-                          item
-                          xs={12}
-                          md={3}
-                          lg={3}
-                          style={{ display: "flex", justifyContent: "center" }}
-                        >
-                          <img
-                            src="https://i.postimg.cc/TwXKt51X/pancakeswap-cake-logo.png"
-                            alt="placeholder"
-                            style={{
-                              marginRight: "20px",
-                              borderRadius: "50%",
-                              width: "150px",
-                              height: "150px",
-                            }}
-                          />
-                        </Grid>
-                        <Grid item xs={12} md={9} lg={9}>
-                          <Stack spacing={3}>
-                            <ArgonTypography variant="h1">Pancake Swap</ArgonTypography>
-                            <ArgonTypography variant="h3">Algorithm Trader</ArgonTypography>
-                            <ArgonTypography variant="subtitle2">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                              minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                              aliquip ex ea commodo consequat
-                            </ArgonTypography>
-                          </Stack>
-                        </Grid>
-                      </Grid>
-                    </ArgonBox>
-                  </div>
-                </HoverListingCard>
+            <Grid item xs={12} lg={4} xl={4} md={12}>
+             <HoverCard>
+            <CardContent>
+              <Grid container spacing={8}>
+                <Grid container item xs={12} sm={12} md={12} justifyContent="space-between" alignItems="center">
+                  <ArgonTypography variant="h2">Uniswap</ArgonTypography>
+                  <ArgonTypography variant="h4">Blockchain Developer</ArgonTypography>
+                </Grid>
+                <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
+                  <Grid item xs={8} lg={7} sm={9} md={9}>
+                    <ArgonTypography
+                      variant="body2"
+                      style={{ fontSize: "20px", color: "rgba(255, 255, 255, 0.7)" }}
+                    >
+                      Text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                      convallis mi ut quam dictum, eget rutrum ipsum ultrices. 
+                    </ArgonTypography>
+                  </Grid>
+                  <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
+                    <img
+                      src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png"
+                      style={{
+                        width: "200px",
+                        height: "200px",
+                        position: "absolute",
+                        bottom: 0,
+                        right: 0,
+                      }}
+                      alt="Uniswap logo"
+                    />
+                  </Grid>
+                </Grid>
               </Grid>
+            </CardContent>
+              </HoverCard>
+            </Grid>
+            <Grid item xs={12} lg={4} xl={4} md={12}>
+           <HoverCard>
+            <CardContent>
+              <Grid container spacing={8}>
+                <Grid container item xs={12} sm={12} md={12} justifyContent="space-between" alignItems="center">
+                  <ArgonTypography variant="h2">Uniswap</ArgonTypography>
+                  <ArgonTypography variant="h4">Blockchain Developer</ArgonTypography>
+                </Grid>
+                <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
+                  <Grid item xs={8} lg={7} sm={9} md={9}>
+                    <ArgonTypography
+                      variant="body2"
+                      style={{ fontSize: "20px", color: "rgba(255, 255, 255, 0.7)" }}
+                    >
+                      Text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                      convallis mi ut quam dictum, eget rutrum ipsum ultrices. 
+                    </ArgonTypography>
+                  </Grid>
+                  <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
+                    <img
+                      src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png"
+                      style={{
+                        width: "200px",
+                        height: "200px",
+                        position: "absolute",
+                        bottom: 0,
+                        right: 0,
+                      }}
+                      alt="Uniswap logo"
+                    />
+                  </Grid>
+                </Grid>
+              </Grid>
+            </CardContent>
+              </HoverCard>
             </Grid>
           </Grid>
         </TabPanel>
         <TabPanel value="2">
-          <Grid container spacing={6}>
-            <Grid item xs={12} lg={6} xl={6} md={12}>
-              <Grid item>
-                <HoverListingCard>
-                  <div data-aos="fade-up" data-aos-duration="5000">
-                    <ArgonBox px={1} py={1}>
-                      <Grid container>
-                        <Grid
-                          item
-                          xs={12}
-                          md={3}
-                          lg={3}
-                          style={{ display: "flex", justifyContent: "center" }}
-                        >
-                          <img
-                            src="https://i.postimg.cc/1t6jZ2yq/822711-user-512x512.png"
-                            alt="placeholder"
-                            style={{
-                              marginRight: "20px",
-                              borderRadius: "50%",
-                              width: "160px",
-                              height: "160px",
-                            }}
-                          />
-                        </Grid>
-                        <Grid item xs={12} md={9} lg={9}>
-                          <Stack spacing={3}>
-                            <ArgonTypography variant="h3">James Harden</ArgonTypography>
-                            <ArgonTypography variant="h5">Etherium Developer</ArgonTypography>
-                            <ArgonTypography variant="subtitle2">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                              minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                              aliquip ex ea commodo consequat
-                            </ArgonTypography>
-                          </Stack>
-                        </Grid>
-                      </Grid>
-                    </ArgonBox>
-                  </div>
-                </HoverListingCard>
+        <Grid container spacing={4}>
+            <Grid item xs={12} lg={4} xl={4} md={12}>
+              <HoverCard>
+            <CardContent>
+              <Grid container spacing={8}>
+                <Grid container item xs={12} sm={12} md={12} justifyContent="space-between" alignItems="center">
+                  <ArgonTypography variant="h2">John Doe</ArgonTypography>
+                  <ArgonTypography variant="h4">Etherium Developer</ArgonTypography>
+                </Grid>
+                <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
+                  <Grid item xs={8} lg={7} sm={9} md={9}>
+                    <ArgonTypography
+                      variant="body2"
+                      style={{ fontSize: "20px", color: "rgba(255, 255, 255, 0.7)" }}
+                    >
+                      Text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                      convallis mi ut quam dictum, eget rutrum ipsum ultrices. 
+                    </ArgonTypography>
+                  </Grid>
+                  <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
+                    <img
+                      src=  "https://i.postimg.cc/6QM3WvHG/147142.png"
+                      style={{
+                        width: "180px",
+                        height: "180px",
+                        position: "absolute",
+                        bottom: 0,
+                        right: 0,
+                      }}
+                      alt="Uniswap logo"
+                    />
+                  </Grid>
+                </Grid>
               </Grid>
+            </CardContent>
+              </HoverCard>
             </Grid>
-            <Grid item xs={12} lg={6} xl={6} md={12}>
-              <Grid item>
-                <HoverListingCard>
-                  <div data-aos="fade-up" data-aos-duration="5000">
-                    <ArgonBox px={1} py={1}>
-                      <Grid container>
-                        <Grid
-                          item
-                          xs={12}
-                          md={3}
-                          lg={3}
-                          style={{ display: "flex", justifyContent: "center" }}
-                        >
-                          <img
-                            src="https://i.postimg.cc/1t6jZ2yq/822711-user-512x512.png"
-                            alt="placeholder"
-                            style={{
-                              marginRight: "20px",
-                              borderRadius: "50%",
-                              width: "160px",
-                              height: "160px",
-                            }}
-                          />
-                        </Grid>
-                        <Grid item xs={12} md={9} lg={9}>
-                          <Stack spacing={3}>
-                            <ArgonTypography variant="h3">James Harden</ArgonTypography>
-                            <ArgonTypography variant="h5">Etherium Developer</ArgonTypography>
-                            <ArgonTypography variant="subtitle2">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                              minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                              aliquip ex ea commodo consequat
-                            </ArgonTypography>
-                          </Stack>
-                        </Grid>
-                      </Grid>
-                    </ArgonBox>
-                  </div>
-                </HoverListingCard>
+            <Grid item xs={12} lg={4} xl={4} md={12}>
+              <HoverCard>
+            <CardContent>
+              <Grid container spacing={8}>
+                <Grid container item xs={12} sm={12} md={12} justifyContent="space-between" alignItems="center">
+                  <ArgonTypography variant="h2">John Doe</ArgonTypography>
+                  <ArgonTypography variant="h4">Etherium Developer</ArgonTypography>
+                </Grid>
+                <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
+                  <Grid item xs={8} lg={7} sm={9} md={9}>
+                    <ArgonTypography
+                      variant="body2"
+                      style={{ fontSize: "20px", color: "rgba(255, 255, 255, 0.7)" }}
+                    >
+                      Text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                      convallis mi ut quam dictum, eget rutrum ipsum ultrices. 
+                    </ArgonTypography>
+                  </Grid>
+                  <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
+                    <img
+                      src=  "https://i.postimg.cc/6QM3WvHG/147142.png"
+                      style={{
+                        width: "180px",
+                        height: "180px",
+                        position: "absolute",
+                        bottom: 0,
+                        right: 0,
+                      }}
+                      alt="Uniswap logo"
+                    />
+                  </Grid>
+                </Grid>
               </Grid>
+            </CardContent>
+              </HoverCard>
+            </Grid>
+            <Grid item xs={12} lg={4} xl={4} md={12}>
+              <HoverCard>
+            <CardContent>
+              <Grid container spacing={8}>
+                <Grid container item xs={12} sm={12} md={12} justifyContent="space-between" alignItems="center">
+                  <ArgonTypography variant="h2">John Doe</ArgonTypography>
+                  <ArgonTypography variant="h4">Etherium Developer</ArgonTypography>
+                </Grid>
+                <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
+                  <Grid item xs={8} lg={7} sm={9} md={9}>
+                    <ArgonTypography
+                      variant="body2"
+                      style={{ fontSize: "20px", color: "rgba(255, 255, 255, 0.7)" }}
+                    >
+                      Text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                      convallis mi ut quam dictum, eget rutrum ipsum ultrices. 
+                    </ArgonTypography>
+                  </Grid>
+                  <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
+                    <img
+                      src=  "https://i.postimg.cc/6QM3WvHG/147142.png"
+                      style={{
+                        width: "180px",
+                        height: "180px",
+                        position: "absolute",
+                        bottom: 0,
+                        right: 0,
+                      }}
+                      alt="Uniswap logo"
+                    />
+                  </Grid>
+                </Grid>
+              </Grid>
+            </CardContent>
+              </HoverCard>
             </Grid>
           </Grid>
         </TabPanel>
       </TabContext>
+      </ArgonBox>
     </DashboardLayout>
   );
 };

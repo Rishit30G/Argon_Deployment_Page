@@ -31,9 +31,8 @@ const OrganizationJobs = () => {
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                     Ipsum has been the industry's standard dummy text ever since the 1500s
                   </ArgonTypography>
-                  <ArgonButton style={{height: '30px', width: '180px'}}>
-                    Read More
-                  </ArgonButton>
+                  <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}> Read More </ArgonButton>
+
                 </Stack>
               </CardContent>
             </ArgonBox>

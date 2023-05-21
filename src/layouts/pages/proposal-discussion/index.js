@@ -26,8 +26,11 @@ const ProposalDiscussion = () => {
         </Grid>
       </ArgonBox> */}
 
-      <ArgonBox mb={3} px={10} py={3}>
-        <Grid container spacing={3} direction="column">
+      <ArgonBox mb={3} px={20} py={3}>
+        <Card style={{boxShadow: '0px 0px 80px purple'}}> 
+          <CardContent>
+            <ArgonBox px={3} py={3}>
+          <Grid container spacing={3} direction="column">
           <Grid item>
             <ArgonTypography style={{ fontFamily: "Lora", fontSize: "50px", fontWeight: '300px' }}>
               Growth Experiment: Bored Town NFT Art Community
@@ -39,8 +42,8 @@ const ProposalDiscussion = () => {
               <ArgonTypography variant="h3">Author Name</ArgonTypography>
             </Stack>
           </Grid>
-          <Card style={{ marginTop: "30px" , boxShadow: '0px 0px 80px purple'}}>
-            <ArgonBox px={12} py={3}>
+          <Card style={{ marginTop: "30px", backgroundColor: '#242424', marginLeft: '20px' }}>
+            <ArgonBox px={10} py={3}>
             <CardContent>
               <Grid item>
                 <Stack spacing={2}>
@@ -68,7 +71,7 @@ const ProposalDiscussion = () => {
                   </ArgonTypography>
                 </Stack>
               </Grid>
-              <Grid item container justifyContent="center" alignItems="center" style={{marginTop: '60px', marginBottom: '60px'}}>
+              <Grid container item justifyContent="center" alignItems="center" style={{marginTop: '60px', marginBottom: '60px'}}>
                 <img src="https://picsum.photos/900/500" style={{borderRadius: '20px'}}alt="Proposal Image" />
               </Grid>
               <Grid item>
@@ -107,6 +110,10 @@ const ProposalDiscussion = () => {
             </ArgonBox>
           </Card>
         </Grid>
+        </ArgonBox>
+          </CardContent>
+        </Card>
+        
       </ArgonBox>
 
       <ArgonBox px={10} py={2}>

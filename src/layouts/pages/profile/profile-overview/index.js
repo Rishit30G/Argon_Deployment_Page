@@ -52,7 +52,7 @@ import team2 from "assets/images/team-2.jpg";
 import team3 from "assets/images/team-3.jpg";
 import team4 from "assets/images/team-4.jpg";
 import ArgonButton from "components/ArgonButton";
-import { Box, Stack } from "@mui/material";
+import { Box, Divider, Stack } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import Overview2 from "../overview";
 import Reputation from "../reputation";
@@ -102,15 +102,15 @@ function Overview() {
       <HoverCard sx={{ height: "40%", overflow: "hidden", marginTop: "170px" }}>
         <ArgonBox px={3} py={3}>
           <Grid container>
-            <Grid item xs={12} md={4} lg={4} style={{ display: "flex", justifyContent: "center" }}>
+            <Grid item xs={12} md={4} lg={3} style={{ display: "flex", justifyContent: "center" }}>
               <img
                 src="https://i.postimg.cc/1t6jZ2yq/822711-user-512x512.png"
                 alt="placeholder"
                 style={{ marginRight: "20px", height: '250px', width: '250px' }}
               />
             </Grid>
-            <Grid item xs={12} md={8} lg={8}>
-              <Stack spacing={3}>
+            <Grid item xs={12} md={8} lg={9}>
+              <Stack spacing={2}>
                 <Grid
                   container
                   direction="row"
@@ -118,27 +118,26 @@ function Overview() {
                   alignItems="flex-start"
                 >
                   <ArgonTypography variant="h2">{post[0].User_name}</ArgonTypography>
-                  <ArgonButton style={{ height: "40px", width: "180px", marginRight: "15px" }}>
-                    Contact
-                  </ArgonButton>
+                  <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>Contact</ArgonButton>
+                 
                 </Grid>
                 <ArgonTypography variant="h5">{post[0].User_profession}</ArgonTypography>
                 <ArgonTypography variant="subtitle2">
                   {post[0].desc}
                 </ArgonTypography>
-                <Grid container direction="row" justifyContent="flex-start" alignItems="center">
-                  <ArgonButton style={{ height: "40px", width: "180px", marginRight: "15px" }}>
-                    Salary: {post[0].salary}
-                  </ArgonButton>
-                  <ArgonButton style={{ height: "40px", width: "180px", marginRight: "15px" }}>
-                    View
-                  </ArgonButton>
-                  <ArgonButton style={{ height: "5px", width: "180px", marginRight: "15px" }}>
-                    {post[0].badges} Badge 
-                  </ArgonButton>
-                  <ArgonButton style={{ height: "5px", width: "180px" }}>
-                    {post[0].xp_earned} XP earned
-                  </ArgonButton>
+                <Grid container spacing={2}>
+                  <Grid item>
+                <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>Salary: {post[0].salary}</ArgonButton>
+                </Grid>
+                <Grid item>
+                <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>View</ArgonButton>
+                </Grid>
+                <Grid item>
+                <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>{post[0].badges} Badge</ArgonButton>
+                </Grid>
+                <Grid item>
+                <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>{post[0].xp_earned} XP Earned</ArgonButton>
+                </Grid>
                 </Grid>
               </Stack>
             </Grid>

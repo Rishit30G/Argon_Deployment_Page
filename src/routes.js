@@ -286,12 +286,12 @@ const routes = [
             route: "/pages/grantsandproposals",
             component: <GrantsandProposals />,
           },
-          {
-            name: "Proposals",
-            key: "proposals",
-            route: "/pages/grantsandproposals/grantproposals",
-            component: <Proposals />,
-          }, 
+          // {
+          //   name: "Proposals",
+          //   key: "proposals",
+          //   route: "/pages/grantsandproposals/grantproposals",
+          //   component: <Proposals />,
+          // }, 
           {
             name: "Grants",
             key: "grants",

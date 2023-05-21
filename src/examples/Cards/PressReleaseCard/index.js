@@ -1,22 +1,33 @@
 import React, { useState } from "react";
-import { Card, CardMedia, CardActionArea, CardContent, Grid, Stack } from "@mui/material";
+import {
+  Card,
+  CardMedia,
+  CardActionArea,
+  CardContent,
+  Grid,
+  Stack,
+  IconButton,
+} from "@mui/material";
 import ArgonTypography from "components/ArgonTypography";
 import ArgonButton from "components/ArgonButton";
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import ArgonBox from "components/ArgonBox";
 
 const testimonials = [
   {
     id: 1,
     name: "John Doe",
     title: "Happy Customer",
-    quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "https://picsum.photos/420/250",
+    quote: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    image: "https://picsum.photos/310/260",
   },
   {
     id: 2,
     name: "Jane Smith",
     title: "Satisfied Customer",
-    quote: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: "https://picsum.photos/420/240",
+    quote: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat..",
+    image: "https://picsum.photos/310/260",
   },
   {
     id: 3,
@@ -24,43 +35,94 @@ const testimonials = [
     title: "Loyal Customer",
     quote:
       "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image: "https://picsum.photos/420/260",
+    image: "https://picsum.photos/310/260",
+  },
+  {
+    id: 4,
+    name: "Bob Johnson",
+    title: "Loyal Customer",
+    quote:
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    image: "https://picsum.photos/310/260",
+  },
+  {
+    id: 5,
+    name: "Bob Johnson",
+    title: "Loyal Customer",
+    quote:
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consedljd.",
+    image: "https://picsum.photos/310/260",
+  },
+  {
+    id: 6,
+    name: "Bob Johnson",
+    title: "Loyal Customer",
+    quote:
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo csequat.",
+    image: "https://picsum.photos/310/260",
+  },
+  {
+    id: 7,
+    name: "Bob Johnson",
+    title: "Loyal Customer",
+    quote:
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    image: "https://picsum.photos/310/260",
   },
 ];
 
 const PressReleaseCard = () => {
-  const [current, setCurrent] = useState(0);
-
-  const handlePrev = () => {
-    setCurrent(current === 0 ? testimonials.length - 1 : current - 1);
-  };
+  const [startIndex, setStartIndex] = useState(0);
+  const visibleTestimonials = testimonials.slice(startIndex, startIndex + 4);
 
   const handleNext = () => {
-    setCurrent(current === testimonials.length - 1 ? 0 : current + 1);
+    const nextIndex = startIndex + 1;
+    if (nextIndex <= testimonials.length - 4) {
+      setStartIndex(nextIndex);
+    }
+  };
+
+  const handlePrev = () => {
+    const prevIndex = startIndex - 1;
+    if (prevIndex >= 0) {
+      setStartIndex(prevIndex);
+    }
   };
 
   return (
-    <Card>
-      <CardActionArea>
-        <CardContent>
-          <Stack direction="row" spacing={2}>
-            <CardMedia component="img" image={`${testimonials[current].image}`} />
-            <ArgonTypography style={{ marginTop: "30px", marginBottom: "20px", fontFamily: 'Lora', fontSize: '30px' }}>
-              {testimonials[current].quote}
-            </ArgonTypography>
-          </Stack>
-        </CardContent>
-      </CardActionArea>
-
-      <Stack direction="row" justifyContent="center" alignItems="center" spacing={5}>
-        <ArgonButton onClick={handlePrev} style={{ height: "52px", width: "92px" }}>
-          Prev
-        </ArgonButton>
-        <ArgonButton onClick={handleNext} style={{ height: "52px", width: "92px" }}>
-          Next
-        </ArgonButton>
-      </Stack>
+    <Card style={{border: '1px solid grey'}}>
+      <CardContent> 
+        <ArgonBox px={15} py={3}>
+      <Grid container spacing={2}>
+      {visibleTestimonials.map((testimonial) => (
+        <Grid item xs={12} sm={6} md={3} key={testimonial.id}>
+          <Card style={{ border: "3px solid #2b2b2b" }}>
+            <CardActionArea>
+              <CardMedia component="img" image={testimonial.image} />
+              <CardContent>
+                <ArgonTypography>{testimonial.quote}</ArgonTypography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Grid>
+      ))}
+      <Grid container justifyContent="center" style={{marginTop: '20px'}}>
+        <IconButton onClick={handlePrev} disabled={startIndex === 0} style={{ color: "white" }}>
+          <KeyboardArrowLeftIcon />
+        </IconButton>
+        <IconButton
+          onClick={handleNext}
+          disabled={startIndex >= testimonials.length - 4}
+          style={{ color: "white" }}
+        >
+          <KeyboardArrowRightIcon />
+        </IconButton>
+      </Grid>
+    </Grid>
+    </ArgonBox>
+      </CardContent>
     </Card>
+   
   );
 };
 

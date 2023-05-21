@@ -46,18 +46,18 @@ const Articles = () => {
 
       <ArgonBox px={20} py={3}>
         <div data-aos="fade-up" data-aos-duration="5000">
-          <Card style={{ boxShadow: "0px 0px 100px #B721BE" }}>
+          <Card style={{ boxShadow: "0px 0px 60px #B721BE" }}>
             <ArgonBox px={10} py={3}>
               <CardContent>
                 <Grid container direction="column" spacing={4}>
-                  <Grid item xs={12} md={4} lg={4}>
+                  <Grid item xs={12} md={12} lg={12}>
                     <div data-aos="fade-up" data-aos-duration="5000">
                       <ArgonTypography style={{ fontFamily: "Lora", fontSize: "50px" }}>
                         {post[0].title}
                       </ArgonTypography>
                     </div>
                   </Grid>
-                  <Grid item xs={12} md={4} lg={4}>
+                  <Grid item xs={12} md={12} lg={12}>
                       <div data-aos="fade-up" data-aos-duration="5000">
                     <Grid container direction="row" alignItems="center" spacing={2}>
                         <Grid item>
@@ -72,11 +72,18 @@ const Articles = () => {
                     </Grid>
                       </div>
                   </Grid>
+                </Grid>
+          
+                <Grid container direction="column" spacing={4} style={{marginTop: '10px'}}>
+                <Card style={{ marginTop: "30px", backgroundColor: '#242424', marginLeft: '20px' }}>
+                    <ArgonBox px={10} py={3}>
+                    <CardContent>
+
                   <Grid
                     item
                     xs={12}
-                    md={4}
-                    lg={4}
+                    md={12}
+                    lg={12}
                     style={{ display: "flex", justifyContent: "center" }}
                   >
                     <div data-aos="zoom-out" data-aos-duration="5000">
@@ -88,7 +95,7 @@ const Articles = () => {
                     </div>
                   </Grid>
 
-                  <Grid item xs={12} md={4} lg={4}>
+                  <Grid item xs={12} md={12} lg={12}>
                     <Grid container>
                       <div data-aos="fade-up" data-aos-duration="5000">
                       <ArgonTypography variant="body4" style={{ marginBottom: "50px" }}>
@@ -97,7 +104,12 @@ const Articles = () => {
                       </div>
                     </Grid>
                   </Grid>
+
+                 </CardContent>
+                  </ArgonBox>
+                </Card>
                 </Grid>
+
               </CardContent>
             </ArgonBox>
           </Card>

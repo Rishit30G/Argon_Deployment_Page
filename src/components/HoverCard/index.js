@@ -21,12 +21,11 @@ function HoverCard({
   return (
     <Card
       style={{
-        background: isHovering
-          ? "linear-gradient(to right, #131313, #7303c0, #ec38bc)"
-          : "rgba(0, 0, 0, 0.3)",
+         backgroundColor: "#2a2a2a", 
+         boxShadow: isHovering ? "0px 0px 10px #545454" : "0px 0px 140px #303030",
+
+          // linear-gradient(to right, #131313, #7303c0, #ec38bc)
         border: isHovering ? "1px solid #8d8d8d" : "1px solid #414141",
-        backdropFilter: isHovering ? "blur(20px)" : "blur(10px)",
-        transition: "background 0.3s ease, backdrop-filter 0.3s ease",
       }}
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}

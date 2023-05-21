@@ -16,7 +16,7 @@ Coded by www.creative-tim.com
 import { useState, useEffect } from "react";
 
 // react-router components
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link, useNavigate } from "react-router-dom";
 
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
@@ -58,6 +58,7 @@ import {
 // Images
 import team2 from "assets/images/team-2.jpg";
 import logoSpotify from "assets/images/small-logos/logo-spotify.svg";
+import { ArrowBack } from "@mui/icons-material";
 
 function DashboardNavbar({ absolute, light, isMini }) {
   const [navbarType, setNavbarType] = useState();
@@ -65,6 +66,11 @@ function DashboardNavbar({ absolute, light, isMini }) {
   const { miniSidenav, transparentNavbar, fixedNavbar, openConfigurator } = controller;
   const [openMenu, setOpenMenu] = useState(false);
   const route = useLocation().pathname.split("/").slice(1);
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate(-1);
+  };
 
   useEffect(() => {
     // Setting the navbar type
@@ -148,6 +154,9 @@ function DashboardNavbar({ absolute, light, isMini }) {
           mb={{ xs: 1, md: 0 }}
           sx={(theme) => navbarRow(theme, { isMini })}
         >
+          <IconButton onClick={handleGoBack} style={{ marginRight: "20px" }}>
+            <ArrowBack style={{ color: "white" }} />
+          </IconButton>
           <Breadcrumbs
             icon="home"
             title={route[route.length - 1]}
@@ -220,7 +229,6 @@ function DashboardNavbar({ absolute, light, isMini }) {
             </ArgonBox>
           </ArgonBox>
         )}
-        
       </Toolbar>
       <div
         style={{
