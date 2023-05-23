@@ -22,6 +22,7 @@ import bg2 from "assets/images/img-1.jpg";
 import bg3 from "assets/images/img-3.jpg";
 import { useEffect } from "react";
 import axios from "axios";
+import HoverCard from "components/HoverCard";
 
 
 const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/advertisement/?format=json";
@@ -51,7 +52,7 @@ function Slider() {
   if (!post) return null;
 
   return (
-    <Card sx={{ position: "relative", display: "block", height: "100%", overflow: "hidden" }}>
+    <HoverCard sx={{ position: "relative", display: "block", height: "100%", overflow: "hidden" }}>
       <Swiper
         onInit={({ params, navigation }) => {
           const { navigation: nav } = params;
@@ -219,7 +220,7 @@ function Slider() {
           </ArgonBox>
         </SwiperSlide>
       </Swiper>
-    </Card>
+    </HoverCard>
   );
 }
 

@@ -18,6 +18,7 @@ import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import "aos/dist/aos.css";
 import AOS from "aos";
+import HoverCard from "components/HoverCard";
 
 const ArticleMain = () => {
   React.useEffect(() => {
@@ -87,8 +88,45 @@ const ArticleMain = () => {
       <DashboardNavbar />
 
       <ArgonBox mb={3} mx={15} my={3}>
+        <HoverCard>
+          <CardContent>
+            <ArgonBox px={3} py={3}>
+              <Grid container spacing={2} direction="row">
+                <Grid item xs={12} md={5}>
+                  <img
+                    src="https://picsum.photos/600/300"
+                    alt="Placeholder"
+                  />
+                </Grid>
+                <Grid item xs={12} md={7}>
+                  <ArgonTypography variant="h2">
+                    Stakers are Withdrawing Rewards, Not Principals
+                  </ArgonTypography>
+                  <ArgonTypography variant="h5" style={{marginTop: '10px'}}> 
+                    Aleksandar Gilbert • 4 hrs ago
+                 </ArgonTypography>
+                  <ArgonTypography variant="body2" style={{marginTop: '20px',  color: "rgba(255, 255, 255, 0.7)"}}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nulla nec purus feugiat, molestie ipsum et, consequat nibh.
+                    Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum
+                    accumsan in in leo. Fusce malesuada vulputate faucibus.
+                    Integer in hendrerit nisi. Praesent a hendrerit urna. In
+                    non imperdiet elit, sed molestie odio. Fusce ac metus
+                    finibus, facilisis arcu eu, luctus sapien. Pellentesque
+                    cursus maximus felis, pharetra porta purus aliquet viverra.
+                    Sed nec malesuada arcu.
+                  </ArgonTypography>
+                 
+                </Grid>
+              </Grid>
+            </ArgonBox>
+          </CardContent>
+        </HoverCard>
+      </ArgonBox>
+
+      <ArgonBox mb={3} mx={15} my={3}>
         <ArgonTypography variant="h2" style={{ marginBottom: "10px" }}>
-              Latest Releases
+          Latest Releases
         </ArgonTypography>
       </ArgonBox>
 
@@ -102,7 +140,7 @@ const ArticleMain = () => {
                     <Grid container spacing={4}>
                       {visibleItems.map((item, index) => (
                         <Grid item xs={12} md={6} lg={3} key={index}>
-                          <Card style={{border: "3px solid #2b2b2b"}}>
+                          <Card style={{ border: "3px solid #2b2b2b" }}>
                             <CardActionArea>
                               <CardMedia component="img" image={item.image} />
                               <CardContent>
@@ -171,9 +209,9 @@ const ArticleMain = () => {
         }}
       ></div>
 
-<ArgonBox mb={3} mx={15} my={3}>
+      <ArgonBox mb={3} mx={15} my={3}>
         <ArgonTypography variant="h2" style={{ marginBottom: "10px" }}>
-              Defi Analysis
+          Defi Analysis
         </ArgonTypography>
       </ArgonBox>
 
@@ -187,7 +225,7 @@ const ArticleMain = () => {
                     <Grid container spacing={4}>
                       {visibleItems.map((item, index) => (
                         <Grid item xs={12} md={6} lg={3} key={index}>
-                          <Card style={{border: "3px solid #2b2b2b"}}>
+                          <Card style={{ border: "3px solid #2b2b2b" }}>
                             <CardActionArea>
                               <CardMedia component="img" image={item.image} />
                               <CardContent>
@@ -240,7 +278,6 @@ const ArticleMain = () => {
           width: "100%",
         }}
       ></div>
-
     </DashboardLayout>
   );
 };

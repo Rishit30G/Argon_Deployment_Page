@@ -3,6 +3,7 @@ import { Card, Grid, Stack, CardContent } from "@mui/material";
 import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 import ArgonButton from "components/ArgonButton";
+import HoverCard from "components/HoverCard";
 
 export const GrantCard = () => {
   return (
@@ -10,7 +11,7 @@ export const GrantCard = () => {
       <ArgonBox py={3} px={3}>
         <Grid container spacing={5}>
           <Grid item xs={12} sm={12} md={6} lg={12} xl={6}>
-            <Card style={{ backgroundColor: "#080808" }}>
+            <HoverCard>
               <ArgonBox my={1} mx={1}>
                 <CardContent>
                   <Stack
@@ -36,10 +37,10 @@ export const GrantCard = () => {
                   </Stack>
                 </CardContent>
               </ArgonBox>
-            </Card>
+            </HoverCard>
           </Grid>
           <Grid item xs={12} sm={12} md={6} lg={12} xl={6}>
-            <Card style={{ backgroundColor: "#080808" }}>
+            <HoverCard>
               <ArgonBox my={1} mx={1}>
                 <CardContent>
                   <Stack
@@ -65,10 +66,10 @@ export const GrantCard = () => {
                   </Stack>
                 </CardContent>
               </ArgonBox>
-            </Card>
+            </HoverCard>
           </Grid>
           <Grid item xs={12} sm={12} md={6} lg={12} xl={6}>
-            <Card style={{ backgroundColor: "#080808" }}>
+            <HoverCard>
               <ArgonBox my={1} mx={1}>
                 <CardContent>
                   <Stack
@@ -94,27 +95,20 @@ export const GrantCard = () => {
                   </Stack>
                 </CardContent>
               </ArgonBox>
-            </Card>
+            </HoverCard>
           </Grid>
           <Grid item xs={12} sm={12} md={6} lg={12} xl={6}>
-            <Card
-              style={{
-                backgroundColor: "#080808",
-                backdropFilter: "blur(10px)",
-                WebkitBackdropFilter: "blur(10px)",
-              }}
-            >
+            <HoverCard>
+              <ArgonBox my={4} mx={4}>
               <CardContent>
-                <ArgonBox mx={4} my={5}>
                   <Grid
                     container
                     justifyContent="center"
                     alignItems="center"
-                    spacing={3}
-                    style={{ paddingRight: "10px", paddingLeft: "10px", marginTop: "35px" }}
+                    spacing={2}
                   >
                     <Grid item>
-                      <ArgonButton>Unlock for More</ArgonButton>
+                    <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}> Unlock for More </ArgonButton>
                     </Grid>
                     <Grid item>
                       <ArgonTypography variant="body2">
@@ -123,9 +117,9 @@ export const GrantCard = () => {
                       </ArgonTypography>
                     </Grid>
                   </Grid>
-                </ArgonBox>
               </CardContent>
-            </Card>
+              </ArgonBox>
+            </HoverCard>
           </Grid>
         </Grid>
       </ArgonBox>

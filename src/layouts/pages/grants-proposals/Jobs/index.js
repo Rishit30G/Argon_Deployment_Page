@@ -16,24 +16,13 @@ const Jobs = () => {
   },[]);
 
   return (
-    <DashboardLayout>
-      <DashboardNavbar />
+    <>
       <ArgonBox px={10} py={3}>
         <Grid container spacing={3}>
-          <Grid container item xs={12} md={6} lg={4} >
-        <Card> 
-          <CardContent>
-          <Stack direction="row" spacing={2} alignItems="center">
-          <img
-            src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png"
-            alt="placeholder"
-            style={{height: "80px", weight: "80px" }}
-          />
-          <ArgonTypography variant="h1">Uniswap</ArgonTypography>
-        </Stack>
-          </CardContent>
-        </Card>
-      
+          <Grid container item xs={12} md={12} lg={12} >
+            <ArgonTypography variant="h2">
+              Jobs
+            </ArgonTypography>
           </Grid>
           <div
         style={{
@@ -231,7 +220,7 @@ const Jobs = () => {
           </Grid>
         </Grid>
       </ArgonBox>
-    </DashboardLayout>
+      </>
   );
 };
 

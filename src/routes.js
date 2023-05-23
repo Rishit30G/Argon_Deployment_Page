@@ -112,6 +112,7 @@ import RelatedProtocols from "layouts/pages/dao-protocol/related-protocols";
 import OrganizationOverview from "layouts/pages/profile/organization-overview";
 import ProposalList from "layouts/pages/proposal-list";
 import GrantMainPage from "layouts/pages/grants-proposals/Grant-Main";
+import OrganizationJobs from "layouts/pages/organisation-overview/Organisation-Jobs";
 
 
 const routes = [
@@ -292,24 +293,24 @@ const routes = [
           //   route: "/pages/grantsandproposals/grantproposals",
           //   component: <Proposals />,
           // }, 
-          {
-            name: "Grants",
-            key: "grants",
-            route: "/pages/grantsandproposals/grants",
-            component: <Grants />,
-          }, 
+          // {
+          //   name: "Grants",
+          //   key: "grants",
+          //   route: "/pages/grantsandproposals/grants",
+          //   component: <Grants />,
+          // }, 
           {
             name: "Grants Main Page", 
             key: "grants main page", 
             route: "/pages/grants-main-page", 
             component: <GrantMainPage/>
           },
-          {
-            name: "Jobs",
-            key: "jobs",
-            route: "/pages/grantsandproposals/jobs",
-            component: <Jobs />,
-          }
+          // {
+          //   name: "Jobs",
+          //   key: "jobs",
+          //   route: "/pages/grantsandproposals/jobs",
+          //   component: <Jobs />,
+          // }
         ],
       },
       {
@@ -360,7 +361,6 @@ const routes = [
         route: "/pages/joblisting",
         component: <JobListing/>
       }, 
-
       // {
       //   name: "Pricing Page",
       //   key: "pricing-page",

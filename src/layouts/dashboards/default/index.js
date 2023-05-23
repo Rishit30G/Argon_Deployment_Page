@@ -56,6 +56,7 @@ import { Rowing } from "@mui/icons-material";
 import { GrantCard } from "examples/Cards/GrantCard";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import HoverCard from "components/HoverCard";
 
 
 const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/appmetrics/?format=json";
@@ -87,35 +88,43 @@ function Default() {
         </ArgonTypography>
         <Grid container spacing={3} mb={3}>
           <Grid item xs={12} md={6} lg={3}>
+            <HoverCard>
             <DetailedStatisticsCard
               title="DAO's Tracked"
               count= {post[0].cnt_dao}
               icon={{ color: "info", component: <i className="ni ni-money-coins" /> }}
             />
+            </HoverCard>
           </Grid>
           <Grid item xs={12} md={6} lg={3}>
+            <HoverCard>
             <DetailedStatisticsCard
               title="Protocols Live"
               count={post[0].jobs_disbursed}
               icon={{ color: "error", component: <i className="ni ni-world" /> }}
               // percentage={{ color: "success", count: "+3%", text: "since last week" }}
             />
+            </HoverCard>
           </Grid>
           <Grid item xs={12} md={6} lg={3}>
+            <HoverCard>
             <DetailedStatisticsCard
               title="Live proposals"
               count={post[0].xp_earned}
               icon={{ color: "success", component: <i className="ni ni-paper-diploma" /> }}
               // percentage={{ color: "error", count: "-2%", text: "since last quarter" }}
             />
+            </HoverCard>
           </Grid>
           <Grid item xs={12} md={6} lg={3}>
+            <HoverCard>
             <DetailedStatisticsCard
               title="Job Listed"
               count={post[0].live_proposal}
               icon={{ color: "warning", component: <i className="ni ni-cart" /> }}
               // percentage={{ color: "success", count: "+5%", text: "than last month" }}
             />
+            </HoverCard>
           </Grid>
         </Grid>
         <ArgonTypography variant="h2" fontWeight="bold" textTransform="capitalize" style={{marginBottom: '15px'}}>
@@ -126,6 +135,8 @@ function Default() {
              <GrantCard></GrantCard>
           </Grid>
           <Grid item xs={12} lg={6}>
+      
+
             <Slider />
           </Grid>
         </Grid>

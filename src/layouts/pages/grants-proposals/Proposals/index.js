@@ -30,9 +30,7 @@ const Proposals = () => {
   const classes = useStyles();
   return (
     <>
-      <ArgonBox px={4} py={3} mb={5} mt={5}>
-        <Card>
-          <CardContent>
+      <ArgonBox px={4} py={3} >
             <Grid container spacing={3}>
               <Grid item xs={12} md={5}>
                 <ArgonTypography variant="h2" style={{marginLeft: '20px'}}>Proposals</ArgonTypography>
@@ -227,8 +225,6 @@ const Proposals = () => {
                 </Grid>
               </Grid>
             </ArgonBox>
-          </CardContent>
-        </Card>
       </ArgonBox>
     </>
   );

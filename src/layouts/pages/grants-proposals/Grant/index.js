@@ -32,16 +32,11 @@ const Grants = () => {
   if (!post) return null;
 
   return (
-    <DashboardLayout>
-      <DashboardNavbar />
+    <>
       <ArgonBox px={10} py={3}>
         <Grid container spacing={3}>
-          <Grid container item xs={12} md={6} lg={2} >
-            <Card style={{justifyContent: "center"}}> 
-              <CardContent>
+          <Grid container item xs={12} md={12} lg={12} >
             <ArgonTypography variant="h2">Grants</ArgonTypography>
-            </CardContent>
-            </Card> 
           </Grid>
         </Grid>
         <div
@@ -193,7 +188,7 @@ const Grants = () => {
         </Grid>
       </Grid>
       </ArgonBox>
-    </DashboardLayout>
+      </>
   );
 };
 

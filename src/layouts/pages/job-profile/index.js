@@ -10,7 +10,7 @@ import React from "react";
 const JobProfile = () => {
   return (
     <DashboardLayout>
-      <DashboardNavbar />
+      <DashboardNavbar/>
       <ArgonBox px={3} py={3}>
         <Stack direction="row" spacing={3} alignItems="center">
           <img
