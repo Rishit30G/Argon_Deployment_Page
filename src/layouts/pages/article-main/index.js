@@ -19,6 +19,7 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import HoverCard from "components/HoverCard";
+import DefaultDivider from "components/Divider";
 
 const ArticleMain = () => {
   React.useEffect(() => {
@@ -124,13 +125,14 @@ const ArticleMain = () => {
         </HoverCard>
       </ArgonBox>
 
-      <ArgonBox mb={3} mx={15} my={3}>
+      <ArgonBox pt={5} mx={15} my={3}>
         <ArgonTypography variant="h2" style={{ marginBottom: "10px" }}>
           Latest Releases
         </ArgonTypography>
+        <DefaultDivider/>
       </ArgonBox>
 
-      <ArgonBox mb={3} mx={15} my={3}>
+      <ArgonBox mx={15} my={3}>
         <div data-aos="fade-up" data-aos-duration="5000">
           <Card style={{ border: "1px solid grey" }}>
             <ArgonBox px={3} py={3}>
@@ -140,7 +142,7 @@ const ArticleMain = () => {
                     <Grid container spacing={4}>
                       {visibleItems.map((item, index) => (
                         <Grid item xs={12} md={6} lg={3} key={index}>
-                          <Card style={{ border: "3px solid #2b2b2b" }}>
+                          <HoverCard>
                             <CardActionArea>
                               <CardMedia component="img" image={item.image} />
                               <CardContent>
@@ -158,7 +160,7 @@ const ArticleMain = () => {
                                 </Stack>
                               </CardContent>
                             </CardActionArea>
-                          </Card>
+                          </HoverCard>
                         </Grid>
                       ))}
                     </Grid>
@@ -185,34 +187,22 @@ const ArticleMain = () => {
           </Card>
         </div>
       </ArgonBox>
-      <div
-        style={{
-          borderBottom: "1px solid rgba(128, 128, 128, 0.3)",
-          margin: "10px 0",
-          padding: "5px 0",
-          width: "100%",
-        }}
-      ></div>
-      <ArgonBox mb={3} mx={15} my={3}>
-        <ArgonTypography variant="h2" style={{ marginBottom: "30px" }}>
+      <ArgonBox pt={5} mx={15} my={3}>
+        <ArgonTypography variant="h2" style={{ marginBottom: "10px" }}>
           Press Release
         </ArgonTypography>
+        <DefaultDivider/>
+        
         <PressReleaseCard />
       </ArgonBox>
 
-      <div
-        style={{
-          borderBottom: "1px solid rgba(128, 128, 128, 0.3)",
-          margin: "10px 0",
-          padding: "5px 0",
-          width: "100%",
-        }}
-      ></div>
+      
 
-      <ArgonBox mb={3} mx={15} my={3}>
+      <ArgonBox pt={5} mx={15} my={3}>
         <ArgonTypography variant="h2" style={{ marginBottom: "10px" }}>
           Defi Analysis
         </ArgonTypography>
+        <DefaultDivider/>
       </ArgonBox>
 
       <ArgonBox mb={3} mx={15} my={3}>
@@ -225,7 +215,7 @@ const ArticleMain = () => {
                     <Grid container spacing={4}>
                       {visibleItems.map((item, index) => (
                         <Grid item xs={12} md={6} lg={3} key={index}>
-                          <Card style={{ border: "3px solid #2b2b2b" }}>
+                          <HoverCard>
                             <CardActionArea>
                               <CardMedia component="img" image={item.image} />
                               <CardContent>
@@ -243,7 +233,7 @@ const ArticleMain = () => {
                                 </Stack>
                               </CardContent>
                             </CardActionArea>
-                          </Card>
+                          </HoverCard>
                         </Grid>
                       ))}
                     </Grid>
@@ -270,14 +260,6 @@ const ArticleMain = () => {
           </Card>
         </div>
       </ArgonBox>
-      <div
-        style={{
-          borderBottom: "1px solid rgba(128, 128, 128, 0.3)",
-          margin: "10px 0",
-          padding: "5px 0",
-          width: "100%",
-        }}
-      ></div>
     </DashboardLayout>
   );
 };

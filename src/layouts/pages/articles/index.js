@@ -8,6 +8,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "aos/dist/aos.css";
 import AOS from "aos";
+import ArgonBadge from "components/ArgonBadge";
+import Footer from "examples/Footer";
 
 const markdownIt = require("markdown-it");
 
@@ -47,16 +49,13 @@ const Articles = () => {
   return (
     <DashboardLayout>
       <DashboardNavbar />
-      <ArgonBox px={15} py={3}>
-        <ArgonTypography variant="h1">Article</ArgonTypography>
-      </ArgonBox>
-
+      
       <ArgonBox px={20} py={3}>
         <div data-aos="fade-up" data-aos-duration="5000">
-          <Card style={{ boxShadow: "0px 0px 60px #B721BE" }}>
+          <Card style={{ boxShadow: "0px 0px 80px purple" }}>
             <ArgonBox px={10} py={3}>
               <CardContent>
-                <Grid container direction="column" spacing={4}>
+                <Grid container direction="column" spacing={2}>
                   <Grid item xs={12} md={12} lg={12}>
                     <div data-aos="fade-up" data-aos-duration="5000">
                       <ArgonTypography style={{ fontFamily: "Lora", fontSize: "50px" }}>
@@ -77,6 +76,12 @@ const Articles = () => {
                           </ArgonTypography>
                         </Grid>
                       </Grid>
+                    </div>
+                  </Grid>
+                  <Grid item xs={12} md={12} lg={12}>
+                    <div data-aos="fade-up" data-aos-duration="5000">
+                    <ArgonBadge badgeContent="Web Development" variant="contained" color="dark" container style={{marginRight: '10px'}}/>
+                    <ArgonBadge badgeContent="Python" variant="contained" color="dark" container />
                     </div>
                   </Grid>
                 </Grid>

@@ -55,8 +55,9 @@ import {
   setOpenConfigurator,
 } from "context";
 
-import { ArrowBack } from "@mui/icons-material";
+import { ArrowBack, ArrowBackIosRounded } from "@mui/icons-material";
 import ArgonButton from "components/ArgonButton";
+import { Stack } from "@mui/material";
 
 function DashboardNavbar({ absolute, light, isMini }) {
   const [navbarType, setNavbarType] = useState();
@@ -115,25 +116,28 @@ function DashboardNavbar({ absolute, light, isMini }) {
           mb={{ xs: 1, md: 0 }}
           sx={(theme) => navbarRow(theme, { isMini })}
         >
-          <IconButton onClick={handleGoBack} style={{ marginRight: "20px" }}>
-            <ArrowBack style={{ color: "white" }} />
-          </IconButton>
-          <Breadcrumbs
+          <ArgonBox>
+          <ArgonButton onClick={handleGoBack} variant="text" >
+         
+            <ArrowBackIosRounded style={{ color: "white", marginRight: '10px'}}/>
+            <ArgonTypography style={{ color: "white"}}>Back</ArgonTypography>
+          
+          </ArgonButton>
+          </ArgonBox>
+          {/* <Breadcrumbs
             icon="home"
             title={route[route.length - 1]}
             route={route}
             light={transparentNavbar ? light : false}
-          />
-          <Icon fontSize="medium" sx={navbarDesktopMenu} onClick={handleMiniSidenav}>
+          /> */}
+          {/* <Icon fontSize="medium" sx={navbarDesktopMenu} onClick={handleMiniSidenav}>
             {miniSidenav ? "menu_open" : "menu"}
-          </Icon>
+          </Icon> */}
         </ArgonBox>
         {isMini ? null : (
           <ArgonBox sx={(theme) => navbarRow(theme, { isMini })}>
             <ArgonBox pr={1}>
-              <ArgonButton size="large" style={{fontSize: '18px'}}>
-                Connect Wallet
-              </ArgonButton>
+            <ArgonButton style={{ height: "68px", width: "280px", fontSize: '20px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}} > Connect Wallet </ArgonButton>
             </ArgonBox>
           </ArgonBox>
         )}

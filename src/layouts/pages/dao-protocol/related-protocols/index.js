@@ -18,12 +18,9 @@ const RelatedProtocols = () => {
       <DashboardNavbar />
       <ArgonBox px={15} py={3}>
         <Grid container spacing={3}>
-          <Grid item xs={12} md={3} sx={{ lineHeight: 0 }}>
-            <Card>
-              <CardContent>
+          <Grid item xs={12} md={12} xl={12} lg={12}>
+       
             <ArgonTypography variant="h2">Related Protocols</ArgonTypography>
-              </CardContent>
-            </Card>
           </Grid>
         </Grid>
         <div
@@ -74,11 +71,12 @@ const RelatedProtocols = () => {
         </Grid>
       </ArgonBox>
       <ArgonBox px={15} py={3}>
-        <Grid container spacing={3}>
+        <Grid container spacing={4}>
         <Grid item xs={12} lg={4} md={4}>
             <div data-aos="fade-up" data-aos-duration="5000">
             <HoverCard>
             <CardContent>
+              <ArgonBox pt={1}>
               <Grid container spacing={8}>
                 <Grid container item xs={12} sm={12} md={12} justifyContent="space-between" alignItems="center">
                   <ArgonTypography variant="h2">Uniswap</ArgonTypography>
@@ -108,6 +106,7 @@ const RelatedProtocols = () => {
                   </Grid>
                 </Grid>
               </Grid>
+              </ArgonBox> 
             </CardContent>
           </HoverCard>
             </div>
@@ -117,6 +116,7 @@ const RelatedProtocols = () => {
             <div data-aos="fade-up" data-aos-duration="5000">
             <HoverCard>
             <CardContent>
+              <ArgonBox pt={1}>
               <Grid container spacing={8}>
                 <Grid container item xs={12} sm={12} md={12} justifyContent="space-between" alignItems="center">
                   <ArgonTypography variant="h2">Uniswap</ArgonTypography>
@@ -146,6 +146,7 @@ const RelatedProtocols = () => {
                   </Grid>
                 </Grid>
               </Grid>
+              </ArgonBox> 
             </CardContent>
           </HoverCard>
             </div>
@@ -155,6 +156,7 @@ const RelatedProtocols = () => {
             <div data-aos="fade-up" data-aos-duration="5000">
             <HoverCard>
             <CardContent>
+              <ArgonBox pt={1}>
               <Grid container spacing={8}>
                 <Grid container item xs={12} sm={12} md={12} justifyContent="space-between" alignItems="center">
                   <ArgonTypography variant="h2">Uniswap</ArgonTypography>
@@ -184,6 +186,7 @@ const RelatedProtocols = () => {
                   </Grid>
                 </Grid>
               </Grid>
+              </ArgonBox> 
             </CardContent>
           </HoverCard>
             </div>

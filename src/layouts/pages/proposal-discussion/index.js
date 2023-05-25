@@ -116,7 +116,7 @@ const ProposalDiscussion = () => {
         
       </ArgonBox>
 
-      <ArgonBox px={10} py={2}>
+      <ArgonBox px={15} py={2}>
         <ArgonTypography variant="h2" fontWeight="bold">
           Discussion Section
         </ArgonTypography>
@@ -132,7 +132,7 @@ const ProposalDiscussion = () => {
         </Stack>
 </ArgonBox>
 
-<ArgonBox mb={5} px={10} py={3}>
+<ArgonBox mb={5} px={15} py={3}>
 
         <Grid container spacing={2}>
           <Grid item>
@@ -188,7 +188,7 @@ const ProposalDiscussion = () => {
         </Grid>
       </ArgonBox>
 
-      <ArgonBox mb={3} px={10} py={3}>
+      <ArgonBox mb={3} px={15} py={3}>
         <ArgonTypography variant="h2" fontWeight="bold" style={{ marginBottom: "20px" }}>
           Related Proposals
         </ArgonTypography>

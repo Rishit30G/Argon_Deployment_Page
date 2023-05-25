@@ -11,7 +11,7 @@ const JobProfile = () => {
   return (
     <DashboardLayout>
       <DashboardNavbar/>
-      <ArgonBox px={3} py={3}>
+      <ArgonBox px={15} py={3}>
         <Stack direction="row" spacing={3} alignItems="center">
           <img
             src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png"
@@ -22,15 +22,23 @@ const JobProfile = () => {
         </Stack>
       </ArgonBox>
 
-      <ArgonBox px={3} py={3}>
+      <ArgonBox px={15} py={3}>
         <Card>
           <CardContent>
             <ArgonBox px={3} py={3}>
               <Grid container direction="column" spacing={4}>
                 <Grid item>
-                  <ArgonTypography variant="h2" fontWeight="bold">
-                    About the Job
-                  </ArgonTypography>
+                  <Grid container justifyContent="space-between" alignItems="center">
+                    <Grid item>
+                      <ArgonTypography variant="h2" fontWeight="bold">
+                        About the Job
+                      </ArgonTypography>
+                    </Grid>
+                    <Grid item>
+                      <ArgonButton style={{ height: "68px", width: "280px", fontSize: '20px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>Apply Now</ArgonButton>
+                    </Grid>
+                   </Grid>
+
                 </Grid>
              
                     <Grid item>
@@ -59,7 +67,7 @@ const JobProfile = () => {
                     </Grid>
                     <Divider />
                 <Grid item>
-                  <ArgonTypography variant="h4" style={{ marginBottom: "7px" }}>
+                  <ArgonTypography variant="h3" style={{ marginBottom: "7px" }}>
                     Educational Qualifications
                   </ArgonTypography>
                   <ArgonTypography variant="body2">
@@ -68,7 +76,7 @@ const JobProfile = () => {
                 </Grid>
 <Divider />
                 <Grid item>
-                  <ArgonTypography variant="h4" style={{ marginBottom: "7px" }}>
+                  <ArgonTypography variant="h3" style={{ marginBottom: "7px" }}>
                     What are we looking for ?
                   </ArgonTypography>
                   <ArgonTypography variant="body2">
@@ -86,7 +94,7 @@ const JobProfile = () => {
                 </Grid>
                 <Divider />
                 <Grid item>
-                  <ArgonTypography variant="h4" style={{ marginBottom: "7px" }}>
+                  <ArgonTypography variant="h3" style={{ marginBottom: "7px" }}>
                     How are we going to select you ?
                   </ArgonTypography>
                   <ArgonTypography variant="body2">
@@ -114,11 +122,6 @@ const JobProfile = () => {
                   </Stack>
                 </Grid>
                 <Divider />
-                <Grid item>
-                  <Grid container justifyContent="center">
-                    <ArgonButton style={{ height: "52px", width: "200px" }}>Apply Now</ArgonButton>
-                  </Grid>
-                </Grid>
               </Grid>
             </ArgonBox>
           </CardContent>

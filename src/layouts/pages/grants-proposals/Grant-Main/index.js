@@ -22,6 +22,7 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import HoverCard from "components/HoverCard";
 import "aos/dist/aos.css";
 import AOS from "aos";
+import DefaultDivider from "components/Divider";
 
 const GrantMainPage = () => {
   React.useEffect(() => {
@@ -89,34 +90,26 @@ const GrantMainPage = () => {
   return (
     <DashboardLayout>
       <DashboardNavbar />
-
-      <ArgonBox mb={3} px={10} py={3}>
-        <Card>
-          <CardContent>
-            <Grid container direction="column">
-              <Grid item xs={12} lg={3} md={12} xl={12}>
+      <ArgonBox mb={3} px={20} py={3}>
+            <Grid container>
+              <Grid item xs={12} lg={12} md={12} xl={8}>
                 <ArgonTypography variant="h1">Refi Spring 2023</ArgonTypography>
-                <div
-                  style={{
-                    borderBottom: "1px solid rgba(128, 128, 128, 0.3)",
-                    margin: "10px 0",
-                    padding: "5px 0",
-                    width: "80%",
-                  }}
-                ></div>
+                <DefaultDivider/>
               </Grid>
-              <Grid item xs={12} lg={12} md={12} xl={12}>
+            </Grid>
+            <Grid container> 
+              <Grid item xs={12} lg={12} md={12} xl={8}>
                 <div data-aos="fade-up" data-aos-duration="5000">
                   <ArgonBox>
                     <Grid container>
                       <Grid item xs={12} md={6} lg={4}>
-                        <ArgonTypography variant="h4">
+                        <ArgonTypography variant="h5">
                           {" "}
                           <Link /> Website
                         </ArgonTypography>
                       </Grid>
                       <Grid item xs={12} md={6} lg={4}>
-                        <ArgonTypography variant="h4">
+                        <ArgonTypography variant="h5">
                           {" "}
                           <Language /> Country
                         </ArgonTypography>
@@ -124,33 +117,25 @@ const GrantMainPage = () => {
                     </Grid>
                     <Grid container>
                       <Grid item xs={12} md={6} lg={4}>
-                        <ArgonTypography variant="h4">
+                        <ArgonTypography variant="h5">
                           {" "}
                           <AccessTime /> Updated 3 months{" "}
                         </ArgonTypography>
                       </Grid>
                       <Grid item xs={12} md={6} lg={4}>
-                        <ArgonTypography variant="h4">
+                        <ArgonTypography variant="h5">
                           {" "}
                           <LocalAtm /> Raised External Funding
                         </ArgonTypography>
                       </Grid>
                     </Grid>
                   </ArgonBox>
-
-                  <div
-                    style={{
-                      borderBottom: "1px solid rgba(128, 128, 128, 0.3)",
-                      margin: "10px 0",
-                      padding: "5px 0",
-                      width: "80%",
-                      borderWidth: "50%",
-                    }}
-                  ></div>
                 </div>
+               <DefaultDivider/>
               </Grid>
-
-              <Grid item xs={12} lg={12} md={12} xl={12}>
+            </Grid>
+            <Grid container style={{marginTop: '30px'}}>
+              <Grid item xs={12} lg={12} md={12} xl={8}>
                 <div data-aos="fade-up" data-aos-duration="5000">
                   <Grid container justifyContent="space-between">
                     <HoverCard>
@@ -164,26 +149,27 @@ const GrantMainPage = () => {
                       </CardContent>
                     </HoverCard>
 
-                    <Grid item style={{ marginRight: "350px" }}>
-                      <ArgonButton variant="text">
+                  
+                    <Grid item>
+                      <ArgonButton variant="text" style={{fontSize: '50px'}}>
                         {/* https://mui.com/material-ui/react-select/ */}
-                        <ArgonTypography variant="h3">Flag</ArgonTypography>
+                        <Flag /> 
                       </ArgonButton>
                     </Grid>
                   </Grid>
+                  <Grid container spacing={2} style={{marginTop: '10px'}}> 
+                  <Grid item> 
+                      <ArgonButton style={{ height: "58px", width: "240px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}} > Add to Cart </ArgonButton>
+                    </Grid>
+                    <Grid item>
+                      <ArgonButton style={{ height: "58px", width: "240px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}} >Inquire about Protocol</ArgonButton>
+                      </Grid>
+                  </Grid>
                 </div>
+              <DefaultDivider/>
               </Grid>
             </Grid>
-            <div
-              style={{
-                borderBottom: "1px solid rgba(128, 128, 128, 0.3)",
-                margin: "5px 20px",
-                padding: "5px 0",
-                width: "80%",
-              }}
-            ></div>
-          </CardContent>
-        </Card>
+           
       </ArgonBox>
 
       <ArgonBox mb={3} mx={20} my={3}>
@@ -192,7 +178,7 @@ const GrantMainPage = () => {
             <img src="https://picsum.photos/60/60" style={{ borderRadius: "50%" }} />
             <ArgonTypography variant="h1">About</ArgonTypography>
           </Stack>
-          <Card style={{ border: "1px solid grey", boxShadow: "0px 0px 50px #B721BE" }}>
+          <Card style={{ border: "1px solid grey", boxShadow: "0px 0px 30px #B721BE" }}>
             <ArgonBox px={10} py={3}>
               <CardContent>
                 <Grid container direction="column" spacing={4}>
@@ -324,20 +310,11 @@ const GrantMainPage = () => {
         </div>
        
       </ArgonBox>
-
-<ArgonBox mx={10} my={3}>
-      <div
-              style={{
-                borderBottom: "1px solid rgba(128, 128, 128, 0.3)",
-                margin: "10px 0",
-                padding: "5px 0",
-                width: "100%",
-              }}
-            ></div>
-            </ArgonBox>
+      
+      
 
       <ArgonBox mb={3} mx={10} my={3}>
-            
+        <DefaultDivider/>
         <div data-aos="fade-up" data-aos-duration="5000">
           <ArgonTypography variant="h2" style={{ marginBottom: "20px" }}>
             {" "}
@@ -351,7 +328,7 @@ const GrantMainPage = () => {
                     <Grid container spacing={4}>
                       {visibleItems.map((item, index) => (
                         <Grid item xs={12} md={6} lg={3} key={index}>
-                          <Card sx={{ maxWidth: 455, maxHeight: 600, border: "3px solid #2b2b2b" }}>
+                          <HoverCard>
                             <CardActionArea>
                               <CardMedia
                                 component="img"
@@ -373,7 +350,7 @@ const GrantMainPage = () => {
                                 </Stack>
                               </CardContent>
                             </CardActionArea>
-                          </Card>
+                          </HoverCard>
                         </Grid>
                       ))}
                     </Grid>

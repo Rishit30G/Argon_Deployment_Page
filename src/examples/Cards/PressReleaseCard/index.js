@@ -13,6 +13,7 @@ import ArgonButton from "components/ArgonButton";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import ArgonBox from "components/ArgonBox";
+import HoverCard from "components/HoverCard";
 
 const testimonials = [
   {
@@ -20,14 +21,14 @@ const testimonials = [
     name: "John Doe",
     title: "Happy Customer",
     quote: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image: "https://picsum.photos/310/260",
+    image: "https://picsum.photos/350/260",
   },
   {
     id: 2,
     name: "Jane Smith",
     title: "Satisfied Customer",
     quote: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat..",
-    image: "https://picsum.photos/310/260",
+    image: "https://picsum.photos/350/260",
   },
   {
     id: 3,
@@ -35,7 +36,7 @@ const testimonials = [
     title: "Loyal Customer",
     quote:
       "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image: "https://picsum.photos/310/260",
+    image: "https://picsum.photos/350/260",
   },
   {
     id: 4,
@@ -43,7 +44,7 @@ const testimonials = [
     title: "Loyal Customer",
     quote:
       "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image: "https://picsum.photos/310/260",
+    image: "https://picsum.photos/350/260",
   },
   {
     id: 5,
@@ -51,7 +52,7 @@ const testimonials = [
     title: "Loyal Customer",
     quote:
       "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consedljd.",
-    image: "https://picsum.photos/310/260",
+    image: "https://picsum.photos/350/260",
   },
   {
     id: 6,
@@ -59,7 +60,7 @@ const testimonials = [
     title: "Loyal Customer",
     quote:
       "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo csequat.",
-    image: "https://picsum.photos/310/260",
+    image: "https://picsum.photos/350/260",
   },
   {
     id: 7,
@@ -67,7 +68,7 @@ const testimonials = [
     title: "Loyal Customer",
     quote:
       "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image: "https://picsum.photos/310/260",
+    image: "https://picsum.photos/350/260",
   },
 ];
 
@@ -90,20 +91,20 @@ const PressReleaseCard = () => {
   };
 
   return (
-    <Card style={{border: '1px solid grey'}}>
+    <Card style={{ border: "1px solid grey" }}>
       <CardContent> 
-        <ArgonBox px={15} py={3}>
+        <ArgonBox px={3} py={3}>
       <Grid container spacing={2}>
       {visibleTestimonials.map((testimonial) => (
         <Grid item xs={12} sm={6} md={3} key={testimonial.id}>
-          <Card style={{ border: "3px solid #2b2b2b" }}>
+          <HoverCard>
             <CardActionArea>
               <CardMedia component="img" image={testimonial.image} />
               <CardContent>
                 <ArgonTypography>{testimonial.quote}</ArgonTypography>
               </CardContent>
             </CardActionArea>
-          </Card>
+          </HoverCard>
         </Grid>
       ))}
       <Grid container justifyContent="center" style={{marginTop: '20px'}}>

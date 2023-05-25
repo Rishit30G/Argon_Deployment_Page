@@ -42,7 +42,7 @@ function TodoList() {
               <ArgonBox component="li" py={1}>
                 <Grid container spacing={3} alignItems="center">
                   <Grid item alignItems="center">
-                    <ArgonAvatar src={img} alt={name} variant="rounded" />
+                    <ArgonAvatar src={img} alt={name} />
                   </Grid>
                   <Grid item ml="auto">
                     <ArgonTypography variant="h6">

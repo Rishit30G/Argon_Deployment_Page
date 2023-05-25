@@ -17,7 +17,7 @@ const Jobs = () => {
 
   return (
     <>
-      <ArgonBox px={10} py={3}>
+      <ArgonBox px={4} py={3}>
         <Grid container spacing={3}>
           <Grid container item xs={12} md={12} lg={12} >
             <ArgonTypography variant="h2">
@@ -35,7 +35,7 @@ const Jobs = () => {
         </Grid>
       </ArgonBox>
 
-      <ArgonBox px={10} py={3}>
+      <ArgonBox px={4} py={3}>
         <Grid container spacing={4}>
           <Grid item xs={12} md={6} lg={4}>
             

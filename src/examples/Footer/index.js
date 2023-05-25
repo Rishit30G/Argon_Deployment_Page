@@ -1,19 +1,3 @@
-/**
-=========================================================
-* Argon Dashboard 2 PRO MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-pro-mui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
-// prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
 // @mui material components
@@ -25,14 +9,18 @@ import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 
 // Argon Dashboard 2 PRO MUI base styles
-import typography from "assets/theme/base/typography";
 import { Grid } from "@mui/material";
 import ArgonButton from "components/ArgonButton";
 import { Article, DensityMedium, Telegram, Twitter } from "@mui/icons-material";
 import { Discord, Github } from "@web3uikit/icons";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
+import typography from "assets/theme/base/typography";
+
 
 function Footer({ company, links }) {
+
+
+  
   const { href, name } = company;
   const { size } = typography;
 
@@ -48,7 +36,7 @@ function Footer({ company, links }) {
     ));
 
   return (
-    <ArgonBox mx={9} my={2}>
+    <ArgonBox mx={9} my={2} style={{ position:"realtive", bottom: 0, left: 0, width: "90%" }}>
       <DashboardLayout>
       <Grid container direction="row" justifyContent="space-between" alignItems="flex-end">
         <Grid item>

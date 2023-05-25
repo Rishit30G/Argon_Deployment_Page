@@ -38,6 +38,8 @@ import { useNavigate } from "react-router-dom";
 import { ArrowBack, DiscFullOutlined } from "@mui/icons-material";
 import Grants from "./Grant";
 import Jobs from "./Jobs";
+import DefaultDivider from "components/Divider";
+import Footer from "examples/Footer";
 
 
 // Data
@@ -68,23 +70,32 @@ function GrantsAndProposals() {
     <DashboardLayout>
       <DashboardNavbar />
       <ArgonBox px={10} py={3}>
-        <Grid container spacing={3} alignItems="center">
+        <Grid container spacing={3} justifyContent="space-between" alignItems="center">
           <Grid item xs={10} md={6} lg={4}>
-            <Card> 
-              <CardContent> 
             <ArgonTypography variant="h2">Protocol Grants and Proposals</ArgonTypography>
-            </CardContent>
-            </Card> 
           </Grid>
+          <Grid item xs={2} md={6} lg={6}>
+          <Card style={{boxShadow: '5px 5px 7px #B721BE ', border: "1px solid #8d8d8d"}}>
+          
+                  <CardContent>
+                    <ArgonTypography
+                      variant="h5"
+                      style={{
+                        marginTop: "10px",
+                        marginLeft: "10px",
+                        
+                        fontSize: "17.3px",
+                        color: "white",
+                      }}
+                    >
+                      Using this protocol? Analyze the effects of these proposals on your usability
+                      and profitability.
+                    </ArgonTypography>
+                  </CardContent>
+                  </Card>
+              </Grid>
         </Grid>
-        <div
-        style={{
-          borderBottom: "1px solid rgba(128, 128, 128, 0.3)",
-          margin: "10px 0",
-          padding: "5px 0",
-          width: "100%",
-        }}
-      ></div>
+      <DefaultDivider />
       </ArgonBox>
 
       <ArgonBox px={10} py={3}>
@@ -167,7 +178,7 @@ function GrantsAndProposals() {
 
         
       </ArgonBox>
-      <ArgonBox px={10} py={3}>
+      {/* <ArgonBox px={10} py={3}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={4} lg={4} xl={4}>
           <div data-aos="fade-up" data-aos-duration="5000">
@@ -262,8 +273,7 @@ function GrantsAndProposals() {
           </div>
           </Grid>
             </Grid>
-      </ArgonBox>
-
+      </ArgonBox> */}
     </DashboardLayout>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Grid, Icon, Stack } from "@mui/material";
+import { Card, CardContent, Grid, Icon, Stack } from "@mui/material";
 import ArgonBox from "components/ArgonBox";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
@@ -29,22 +29,8 @@ const Overview2 = () => {
       >
         <ArgonBox my={3} mx={3}>
           <Grid container>
-            <Card sx={{ overflow: "hidden", height: "100%" }}>
-              <ArgonBox my={3} mx={3}>
-                <Grid item>
-                  <Grid container direction="row" spacing={2}>
-                    <Grid item>
-                      <Person style={{ fontSize: "33px", color: "white" }}></Person>
-                    </Grid>
-                    <Grid item>
-                      <ArgonTypography variant="h4">Name</ArgonTypography>
-                    </Grid>
-                  </Grid>
-                </Grid>
-                <Grid item>
-                  <ArgonTypography variant="h3">John Doe</ArgonTypography>
-                </Grid>
-              </ArgonBox>
+            <Card>
+              <CardContent>
               <ArgonBox my={3} mx={3}>
                 <Grid item>
                   <Grid container direction="row" spacing={2}>
@@ -82,6 +68,7 @@ const Overview2 = () => {
                   <ArgonTypography variant="body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vulputate, leo at pharetra finibus, nisi nibh commodo turpis, quis tincidunt elit elit ut magna. Sed ut ipsum enim. Sed fermentum magna quis turpis varius, ac aliquet ipsum auctor. Sed lacinia purus id nisl pharetra, nec congue sapien pulvinar</ArgonTypography>
                 </Grid>
               </ArgonBox>
+              </CardContent>
             </Card>
           </Grid>
         </ArgonBox>

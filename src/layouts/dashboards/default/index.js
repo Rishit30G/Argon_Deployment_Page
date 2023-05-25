@@ -57,6 +57,7 @@ import { GrantCard } from "examples/Cards/GrantCard";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import HoverCard from "components/HoverCard";
+import DefaultDivider from "components/Divider";
 
 
 const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/appmetrics/?format=json";
@@ -82,9 +83,11 @@ function Default() {
   return (
     <DashboardLayout>
       <DashboardNavbar />
-      <ArgonBox py={3} px={3}>
-      <ArgonTypography variant="h2" style={{marginBottom: '15px'}}>
+      <ArgonBox py={3} px={15}>
+      <ArgonTypography variant="h2" style={{marginBottom: '20px'}}>
              App Metrics 
+             <DefaultDivider/>
+
         </ArgonTypography>
         <Grid container spacing={3} mb={3}>
           <Grid item xs={12} md={6} lg={3}>
@@ -127,8 +130,13 @@ function Default() {
             </HoverCard>
           </Grid>
         </Grid>
-        <ArgonTypography variant="h2" fontWeight="bold" textTransform="capitalize" style={{marginBottom: '15px'}}>
+      </ArgonBox>
+
+      <ArgonBox py={3} px={15}>
+        <ArgonTypography variant="h2" style={{marginBottom: '20px'}}>
               Grants & Proposal Calender
+              <DefaultDivider/>
+
             </ArgonTypography>
         <Grid container spacing={3} mb={3}>
           <Grid item xs={12} lg={6}>
@@ -140,23 +148,32 @@ function Default() {
             <Slider />
           </Grid>
         </Grid>
+      </ArgonBox>
 
-        <Grid container spacing={3} style={{ display: "flex" }}>
+      <ArgonBox py={3} px={15}>
+        <Grid container spacing={5} style={{ display: "flex" }}>
         <Grid item xs={12} md={4} lg={4}>
-            <ArgonTypography variant="h2" fontWeight="bold" textTransform="capitalize" style={{marginBottom: '15px'}}>
+            <ArgonTypography variant="h2"  style={{marginBottom: '20px'}}>
               Top Discussions
+              <DefaultDivider/>
             </ArgonTypography>
+            
             <Post />
           </Grid>
           <Grid item xs={12} md={4} lg={4}>
-            <ArgonTypography variant="h2" fontWeight="bold" textTransform="capitalize" style={{marginBottom: '15px'}}>
+            <ArgonTypography variant="h2"  style={{marginBottom: '20px'}}>
               Top Proposals
+              <DefaultDivider/>
+
             </ArgonTypography>
+            
             <TeamMembers />
           </Grid>
           <Grid item xs={12} md={4} lg={4}>
-            <ArgonTypography variant="h2" fontWeight="bold" textTransform="capitalize" style={{marginBottom: '15px'}}>
+            <ArgonTypography variant="h2" style={{marginBottom: '20px'}}>
               Top Articles
+              <DefaultDivider/>
+
             </ArgonTypography>
             <TodoList />
           </Grid>

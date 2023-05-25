@@ -10,6 +10,7 @@ import { ArrowDown, Heart } from "@web3uikit/icons";
 import HoverCard from "components/HoverCard";
 import "aos/dist/aos.css";
 import AOS from "aos";
+import DefaultDivider from "components/Divider";
 
 const ProtocolDiscussion = () => {
   useEffect(() => {
@@ -21,22 +22,12 @@ const ProtocolDiscussion = () => {
       <DashboardNavbar />
       <ArgonBox px={15} py={3}>
         <Grid container spacing={3}>
-          <Grid item xs={12} md={3} sx={{ lineHeight: 0 }}>
-            <Card>
-              <CardContent>
+          <Grid item xs={12} md={12} lg={12} xl={12} >
                 <ArgonTypography variant="h2">Protocol Discussion</ArgonTypography>
-              </CardContent>
-            </Card>
+              
           </Grid>
         </Grid>
-        <div
-          style={{
-            borderBottom: "1px solid rgba(128, 128, 128, 0.3)",
-            margin: "10px 0",
-            padding: "5px 0",
-            width: "100%",
-          }}
-        ></div>
+       <DefaultDivider/>
       </ArgonBox>
 
       <ArgonBox px={15} py={3}>
@@ -92,7 +83,7 @@ const ProtocolDiscussion = () => {
               </ArgonButton>
             </Grid>
 
-            <Card style={{ boxShadow: "0px 0px 60px purple" }}>
+            <Card style={{ boxShadow: "0px 0px 80px purple" }}>
               <CardContent>
                 <div data-aos="fade-up" data-aos-duration="5000">
                   <Grid container>
@@ -129,9 +120,11 @@ const ProtocolDiscussion = () => {
         </Grid>
       </ArgonBox>
 
-      <ArgonBox px={10} py={3}>
+      <ArgonBox px={15} py={3}>
         <Grid container direction="column">
+          <DefaultDivider/>
           <Grid item xs={12} md={6} style={{ marginTop: "30px" }}>
+            
             <ArgonTypography variant="h3">Discussion Section</ArgonTypography>
             <div data-aos="fade-up" data-aos-duration="5000">
               <Stack

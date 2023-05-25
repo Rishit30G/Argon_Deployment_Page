@@ -107,7 +107,7 @@ function Post() {
         py={2}
         px={3}
       >
-        <ArgonAvatar src={team4} alt="profile-image" variant="rounded" />
+        <ArgonAvatar src={team4} alt="profile-image"  />
         <ArgonBox mx={2} lineHeight={1}>
           <ArgonTypography component="a" href="#" variant="button" fontWeight="regular">
             John Snow
