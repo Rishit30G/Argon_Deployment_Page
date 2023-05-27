@@ -83,7 +83,7 @@ const ProtocolDiscussion = () => {
               </ArgonButton>
             </Grid>
 
-            <Card style={{ boxShadow: "0px 0px 80px purple" }}>
+            <Card style={{ boxShadow: "0px 0px 40px purple" }}>
               <CardContent>
                 <div data-aos="fade-up" data-aos-duration="5000">
                   <Grid container>

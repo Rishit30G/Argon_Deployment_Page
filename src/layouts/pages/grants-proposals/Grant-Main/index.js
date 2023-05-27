@@ -92,23 +92,23 @@ const GrantMainPage = () => {
       <DashboardNavbar />
       <ArgonBox mb={3} px={20} py={3}>
             <Grid container>
-              <Grid item xs={12} lg={12} md={12} xl={8}>
+              <Grid item xs={12} lg={12} md={12} xl={9}>
                 <ArgonTypography variant="h1">Refi Spring 2023</ArgonTypography>
                 <DefaultDivider/>
               </Grid>
             </Grid>
             <Grid container> 
-              <Grid item xs={12} lg={12} md={12} xl={8}>
+              <Grid item xs={12} lg={12} md={12} xl={9}>
                 <div data-aos="fade-up" data-aos-duration="5000">
                   <ArgonBox>
                     <Grid container>
-                      <Grid item xs={12} md={6} lg={4}>
+                      <Grid item xs={12} md={6} lg={5} xl={6}>
                         <ArgonTypography variant="h5">
                           {" "}
                           <Link /> Website
                         </ArgonTypography>
                       </Grid>
-                      <Grid item xs={12} md={6} lg={4}>
+                      <Grid item xs={12} md={6} lg={5} xl={6}>
                         <ArgonTypography variant="h5">
                           {" "}
                           <Language /> Country
@@ -116,13 +116,13 @@ const GrantMainPage = () => {
                       </Grid>
                     </Grid>
                     <Grid container>
-                      <Grid item xs={12} md={6} lg={4}>
+                      <Grid item xs={12} md={6} lg={5} xl={6}>
                         <ArgonTypography variant="h5">
                           {" "}
                           <AccessTime /> Updated 3 months{" "}
                         </ArgonTypography>
                       </Grid>
-                      <Grid item xs={12} md={6} lg={4}>
+                      <Grid item xs={12} md={6} lg={5} xl={6}>
                         <ArgonTypography variant="h5">
                           {" "}
                           <LocalAtm /> Raised External Funding
@@ -135,7 +135,7 @@ const GrantMainPage = () => {
               </Grid>
             </Grid>
             <Grid container style={{marginTop: '30px'}}>
-              <Grid item xs={12} lg={12} md={12} xl={8}>
+              <Grid item xs={12} lg={12} md={12} xl={9}>
                 <div data-aos="fade-up" data-aos-duration="5000">
                   <Grid container justifyContent="space-between">
                     <HoverCard>
@@ -153,16 +153,16 @@ const GrantMainPage = () => {
                     <Grid item>
                       <ArgonButton variant="text" style={{fontSize: '50px'}}>
                         {/* https://mui.com/material-ui/react-select/ */}
-                        <Flag /> 
+                        <img src="https://i.postimg.cc/cL9dM8Km/3548753-200.png" style={{height: '50px', width: '50px', filter: 'brightness(0) invert(1)'}}/> 
                       </ArgonButton>
                     </Grid>
                   </Grid>
                   <Grid container spacing={2} style={{marginTop: '10px'}}> 
                   <Grid item> 
-                      <ArgonButton style={{ height: "58px", width: "240px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}} > Add to Cart </ArgonButton>
+                      <ArgonButton style={{ height: "58px", width: "240px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE', marginRight: '20px'}} > Add to Cart </ArgonButton>
                     </Grid>
                     <Grid item>
-                      <ArgonButton style={{ height: "58px", width: "240px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}} >Inquire about Protocol</ArgonButton>
+                      <ArgonButton style={{ height: "58px", width: "240px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}} >Inquire </ArgonButton>
                       </Grid>
                   </Grid>
                 </div>

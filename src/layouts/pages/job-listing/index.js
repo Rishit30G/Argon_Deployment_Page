@@ -38,13 +38,13 @@ const JobListing = () => {
 
 
     <ArgonBox px={15} py={3}>
-      <Card>
-        <CardContent>
-          <ArgonBox px={3} py={3}>
+      {/* <Card>
+        <CardContent> */}
+          <ArgonBox px={1} py={1}>
             <TabContext value={value}>
               <Box sx={{ borderBottom: 1, borderColor: "divider", marginBottom: '40px' }}>
-                <TabList onChange={handleChange} aria-label="lab API tabs example">
-                  <Tab label="Organization" value="1" style={{fontSize: '30px'}}/>
+                <TabList onChange={handleChange}>
+                  <Tab label="Organization" value="1" style={{fontSize: '30px', textDecoration: 'italics'}}/>
                   <Tab label="Individual" value="2" style={{fontSize: '30px'}}/>
                 </TabList>
               </Box>
@@ -286,8 +286,8 @@ const JobListing = () => {
               </TabPanel>
             </TabContext>
             </ArgonBox>
-        </CardContent>
-      </Card>
+        {/* </CardContent>
+      </Card> */}
             </ArgonBox>
     </DashboardLayout>
   );

@@ -113,6 +113,7 @@ import OrganizationOverview from "layouts/pages/profile/organization-overview";
 import ProposalList from "layouts/pages/proposal-list";
 import GrantMainPage from "layouts/pages/grants-proposals/Grant-Main";
 import OrganizationJobs from "layouts/pages/organisation-overview/Organisation-Jobs";
+import DefiAnalysis from "layouts/pages/defi-analysis";
 
 
 const routes = [
@@ -319,6 +320,12 @@ const routes = [
         route: "/pages/article-main",
         component: <ArticleMain/>
       }, 
+      {
+        name: "Defi Analysis",
+        key: "defi analysis",
+        route: "/pages/defi-analysis",
+        component: <DefiAnalysis/>
+      },
       {
         name:"Article",
         key: "article",

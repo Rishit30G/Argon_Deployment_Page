@@ -7,6 +7,7 @@ import ArgonTypography from "components/ArgonTypography";
 import HoverCard from "components/HoverCard";
 import 'aos/dist/aos.css';
 import AOS from 'aos';
+import DefaultDivider from "components/Divider";
 
 const RelatedProtocols = () => {
   useEffect(() => {
@@ -21,16 +22,9 @@ const RelatedProtocols = () => {
           <Grid item xs={12} md={12} xl={12} lg={12}>
        
             <ArgonTypography variant="h2">Related Protocols</ArgonTypography>
+            <DefaultDivider/> 
           </Grid>
         </Grid>
-        <div
-        style={{
-          borderBottom: "1px solid rgba(128, 128, 128, 0.3)",
-          margin: "10px 0",
-          padding: "5px 0",
-          width: "100%",
-        }}
-      ></div>
       </ArgonBox>
      
       <ArgonBox px={15} py={3}>

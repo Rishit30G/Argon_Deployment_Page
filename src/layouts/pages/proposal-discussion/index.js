@@ -9,6 +9,9 @@ import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import React from "react";
 import 'aos/dist/aos.css';
 import AOS from 'aos';
+import ArgonAvatar from "components/ArgonAvatar";
+import DefaultDivider from "components/Divider";
+import HoverCard from "components/HoverCard";
 
 const ProposalDiscussion = () => {
   React.useEffect(() => {
@@ -32,44 +35,30 @@ const ProposalDiscussion = () => {
             <ArgonBox px={3} py={3}>
           <Grid container spacing={3} direction="column">
           <Grid item>
-            <ArgonTypography style={{ fontFamily: "Lora", fontSize: "50px", fontWeight: '300px' }}>
+            <ArgonTypography style={{ fontFamily: "Lora", fontSize: "50px"}}>
               Growth Experiment: Bored Town NFT Art Community
             </ArgonTypography>
+            <DefaultDivider/>
           </Grid>
           <Grid item>
-            <Stack direction="row" spacing={2}>
-              <Avatar></Avatar>
-              <ArgonTypography variant="h3">Author Name</ArgonTypography>
+            <Stack direction="row" spacing={2} alignItems="center">
+            <Avatar></Avatar>
+              <ArgonTypography variant="h4">Author Name</ArgonTypography>
             </Stack>
           </Grid>
+          <Grid container item direction="row-reverse">  
+             <ArgonTypography variant="h5" style={{color: 'blue', marginRight: '10px'}}> bit.ly/governance-optipisim.io </ArgonTypography>
+          </Grid>
           <Card style={{ marginTop: "30px", backgroundColor: '#242424', marginLeft: '20px' }}>
-            <ArgonBox px={10} py={3}>
+            <ArgonBox px={2} py={3}>
             <CardContent>
               <Grid item>
-                <Stack spacing={2}>
-                  <ArgonTypography variant="h3">
-                    1. What is the problem you are trying to solve?
-                  </ArgonTypography>
-                  <ArgonTypography variant="body1">
+                  <ArgonTypography variant="body2">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt, nisl
                     eget aliquam tincidunt, nisl nisl aliquam tortor, eget aliquam nisl nisl sit
                     amet nisl. Sed tincidunt, nisl eget aliquam tincidunt, nisl nisl aliquam tortor,
                     eget aliquam nisl nisl sit amet nisl.
                   </ArgonTypography>
-                  <ArgonTypography variant="body1">
-                    <ul style={{ paddingLeft: "40px" }}>
-                      <li>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt, nisl
-                        eget aliquam tincidunt, nisl nisl aliquam tortor, eget aliquam nisl nisl sit
-                        amet nisl.
-                      </li>
-                      <li>
-                        Sed tincidunt, nisl eget aliquam tincidunt, nisl nisl aliquam tortor, eget
-                        aliquam nisl nisl sit amet nisl.
-                      </li>
-                    </ul>
-                  </ArgonTypography>
-                </Stack>
               </Grid>
               <Grid container item justifyContent="center" alignItems="center" style={{marginTop: '60px', marginBottom: '60px'}}>
                 <img src="https://picsum.photos/900/500" style={{borderRadius: '20px'}}alt="Proposal Image" />
@@ -78,7 +67,7 @@ const ProposalDiscussion = () => {
                 <ArgonTypography variant="h3">Bored Town X Optimism Art Contest</ArgonTypography>
               </Grid>
               <Grid item>
-                <ArgonTypography varaint="body1">
+                <ArgonTypography variant="body2">
                   Artists are invited to create Bored Town-inspired art featuring the OP logo. The
                   contest will engage established members of the Optimism NFT community and attract
                   new collectors to vote for their favorite artworks via Snapshot in multiple
@@ -86,24 +75,6 @@ const ProposalDiscussion = () => {
                   Optimism. Additionally, a 1/1 art piece from each of the top 25 artists and
                   exclusive NFT artwork from Bored Town will be presented in the collection, further
                   enhancing the marketing prospects for both the artists and Optimism.
-                </ArgonTypography>
-              </Grid>
-              <Grid item>
-                <ArgonTypography variant="h3">Links</ArgonTypography>
-              </Grid>
-              <Grid item>
-                <ArgonTypography variant="body1">
-                  <ul style={{ paddingLeft: "40px" }}>
-                    <li>
-                      <a href="https://boredtown.xyz/">Bored Town Website</a>
-                    </li>
-                    <li>
-                      <a href="https://boredtown.xyz/">Bored Town Discord</a>
-                    </li>
-                    <li>
-                      <a href="https://boredtown.xyz/">Bored Town Twitter</a>
-                    </li>
-                  </ul>
                 </ArgonTypography>
               </Grid>
             </CardContent>
@@ -115,9 +86,10 @@ const ProposalDiscussion = () => {
         </Card>
         
       </ArgonBox>
-
+        
       <ArgonBox px={15} py={2}>
-        <ArgonTypography variant="h2" fontWeight="bold">
+      <DefaultDivider/>
+        <ArgonTypography variant="h2" fontWeight="bold" style={{marginTop: '20px'}}>
           Discussion Section
         </ArgonTypography>
 
@@ -156,7 +128,7 @@ const ProposalDiscussion = () => {
                     </Grid>
                   </Grid>
                   <Grid item>
-                    <ArgonTypography variant="h3">12th April</ArgonTypography>
+                    <ArgonTypography variant="h4">12th April</ArgonTypography>
                   </Grid>
                   <Grid item>
                     <ArgonTypography variant="body1">
@@ -169,15 +141,16 @@ const ProposalDiscussion = () => {
                 </Grid>
                 <Grid container justifyContent="space-between" sx={{ marginTop: "20px" }}>
                   <Grid item>
-                    <ArgonTypography variant="body1">
+                    <ArgonTypography variant="body2">
                       {" "}
                       <ArrowDown></ArrowDown>Replies
                     </ArgonTypography>
                   </Grid>
                   <Grid item>
-                    <ArgonTypography variant="body1">
+                    <ArgonTypography variant="h3">
                       {" "}
-                      <Heart></Heart>12
+                      <Heart></Heart>
+                      12
                     </ArgonTypography>
                   </Grid>
                 </Grid>
@@ -205,21 +178,22 @@ const ProposalDiscussion = () => {
                   <ArgonTypography variant="h5">Activity</ArgonTypography>
                 </Stack>
               </Grid>
+              <DefaultDivider/>
             </Grid>
           </Grid>
         </Grid>
         <Grid container direction="column" spacing={3}>
           <Grid item>
-            <Card>
+            <HoverCard>
               <CardContent>
                 <Grid container justifyContent="space-between">
                   <Grid item>
-                    <ArgonTypography variant="h3">
+                    <ArgonTypography variant="h3" style={{marginTop: '10px'}}>
                       Opt x PathoMap - Optimistic Healthcare
                     </ArgonTypography>
                   </Grid>
                   <Grid item>
-                    <Stack direction="row" spacing={3}>
+                    <Stack direction="row" spacing={3} style={{marginTop: '12px'}}>
                       <ArgonTypography variant="h4">9</ArgonTypography>
                       <ArgonTypography variant="h4">885</ArgonTypography>
                       <ArgonTypography variant="h4">15th Feb</ArgonTypography>
@@ -227,27 +201,7 @@ const ProposalDiscussion = () => {
                   </Grid>
                 </Grid>
               </CardContent>
-            </Card>
-          </Grid>
-          <Grid item>
-            <Card>
-              <CardContent>
-                <Grid container justifyContent="space-between">
-                  <Grid item>
-                    <ArgonTypography variant="h3">
-                      [DRAFT] [GF: Phase 1 Proposal] Optimism Africa DAO
-                    </ArgonTypography>
-                  </Grid>
-                  <Grid item>
-                    <Stack direction="row" spacing={3}>
-                      <ArgonTypography variant="h4">9</ArgonTypography>
-                      <ArgonTypography variant="h4">885</ArgonTypography>
-                      <ArgonTypography variant="h4">15th Feb</ArgonTypography>
-                    </Stack>
-                  </Grid>
-                </Grid>
-              </CardContent>
-            </Card>
+            </HoverCard>
           </Grid>
         </Grid>
       </ArgonBox>

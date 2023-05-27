@@ -16,60 +16,89 @@ import team1 from "assets/images/team-1.jpg";
 import team2 from "assets/images/team-2.jpg";
 import team3 from "assets/images/team-3.jpg";
 import team4 from "assets/images/team-4.jpg";
+import HoverCard from "components/HoverCard";
+import { CardContent } from "@mui/material";
 
 // Data
 const data = [
-  { img: team1, name: "Etherium", status: "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo", author: 'JK Rowling'},
-  { img: team2, name: "Uniswap", status: "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo", author: 'Kevin Pet'},
-  { img: team3, name: "Bitcoin", status: "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo", author: 'James Clear'},
-  { img: team4, name: "PancakeSwap", status: "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo", author: 'Lorem Ipsum'},
+  {
+    img: team1,
+    name: "Etherium",
+    status:
+      "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo",
+    author: "JK Rowling",
+  },
+  {
+    img: team2,
+    name: "Uniswap",
+    status:
+      "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo",
+    author: "Kevin Pet",
+  },
+  {
+    img: team3,
+    name: "Bitcoin",
+    status:
+      "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo",
+    author: "James Clear",
+  },
+  {
+    img: team4,
+    name: "PancakeSwap",
+    status:
+      "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo",
+    author: "Lorem Ipsum",
+  },
 ];
 
 function TodoList() {
   return (
-    <Card sx={{ height: "100%", overflow: "hidden" }}>
-      <ArgonBox pb={3} px={3} py={3}>
-        <ArgonBox
-          component="ul"
-          display="flex"
-          flexDirection="column"
-          m={0}
-          p={0}
-          sx={{ listStyle: "none" }}
-        >
-          {data.map(({ img, name, status, author }, key) => (
-            <Fragment key={key}>
-              <ArgonBox component="li" py={1}>
-                <Grid container spacing={3} alignItems="center">
-                  <Grid item alignItems="center">
-                    <ArgonAvatar src={img} alt={name} />
-                  </Grid>
-                  <Grid item ml="auto">
-                    <ArgonTypography variant="h6">
-                      {author}
-                    </ArgonTypography>
-                  </Grid>
-                  <Grid item lineHeight={2.8}>
-                    <ArgonTypography variant="h4">{name}</ArgonTypography>
-                    <ArgonTypography variant="h6">{status}</ArgonTypography>
-                  </Grid>
-                  
-                </Grid>
-              </ArgonBox>
-              {key !== data.length - 1 && (
-                <ArgonBox
-                  component="hr"
-                  sx={({ palette: { grey } }) => ({
-                    borderTop: `1px solid ${grey[300]}`,
-                    borderBottom: 0,
-                  })}
-                />
-              )}
-            </Fragment>
-          ))}
+    <HoverCard>
+      <CardContent>
+        <ArgonBox pb={3} px={1} py={1}>
+          <ArgonBox
+            component="ul"
+            display="flex"
+            flexDirection="column"
+            m={0}
+            p={0}
+            sx={{ listStyle: "none" }}
+          >
+            {data.map(({ img, name, status, author }, key) => (
+              <Fragment key={key}>
+                <ArgonBox component="li" py={1}>
+                  <Card style={{ backgroundImage: "url('https://picsum.photos/700')" }}>
+                    <CardContent>
+                      <Grid container spacing={3} alignItems="center">
+                        <Grid item alignItems="center">
+                          <ArgonAvatar src={img} alt={name} />
+                        </Grid>
+                        <Grid item ml="auto">
+                          <ArgonTypography variant="h6">{author}</ArgonTypography>
+                        </Grid>
+                        <Grid item lineHeight={2.8}>
+                          <ArgonTypography variant="h4">{name}</ArgonTypography>
+                          <ArgonTypography variant="h6">{status}</ArgonTypography>
+                        </Grid>
+                      </Grid>
+                    </CardContent>
+                  </Card>
+                </ArgonBox>
+                {key !== data.length - 1 && (
+                  <ArgonBox
+                    component="hr"
+                    sx={({ palette: { grey } }) => ({
+                      borderTop: `1px solid ${grey[300]}`,
+                      borderBottom: 0,
+                    })}
+                  />
+                )}
+              </Fragment>
+            ))}
+          </ArgonBox>
         </ArgonBox>
-      </ArgonBox>
-    </Card> 
+      </CardContent>
+    </HoverCard>
   );
 }
 

@@ -35,7 +35,7 @@ import HoverCard from "components/HoverCard";
 import { useEffect, useState } from "react";
 import Proposals from "./Proposals";
 import { useNavigate } from "react-router-dom";
-import { ArrowBack, DiscFullOutlined } from "@mui/icons-material";
+import { ArrowBack, DiscFullOutlined, Twitter } from "@mui/icons-material";
 import Grants from "./Grant";
 import Jobs from "./Jobs";
 import DefaultDivider from "components/Divider";
@@ -106,7 +106,6 @@ function GrantsAndProposals() {
           <div data-aos="fade-up" data-aos-duration="5000">
           <HoverCard>
             <CardContent>
-              <CardActionArea>
             <ArgonBox px={1} py={1}> 
               <Grid container spacing={4}>
                 <Grid container item xs={12} sm={12} md={12} justifyContent="space-between" alignItems="center">
@@ -122,6 +121,17 @@ function GrantsAndProposals() {
                       convallis mi ut quam dictum, eget rutrum ipsum ultrices. 
                      
                     </ArgonTypography>
+                    <Grid container style={{marginTop: '10px'}}> 
+                      <Grid item> 
+                        <img src="https://i.postimg.cc/DzZSdTB9/1200px-Twitter-bird-logo-2012-svg.png" style={{width: '30px', height: '25px', marginRight: '10px'}}/>
+                      </Grid>
+                      <Grid item> 
+                       <img src="https://i.postimg.cc/LX5jXPcZ/1614104-200.png" style={{width: '30px', height: '25px', marginRight: '10px'}}/>
+                      </Grid>
+                      <Grid item> 
+                          <img src="https://i.postimg.cc/hPXgrGBb/defi-lama-logo-freelogovectors-net.png" style={{width: '30px', height: '25px'}}/>
+                      </Grid>
+                    </Grid>
                   </Grid>
                 
 
@@ -130,8 +140,8 @@ function GrantsAndProposals() {
                     <img
                       src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png"
                       style={{
-                        width: "200px",
-                        height: "200px",
+                        width: "250px",
+                        height: "250px",
                         position: "absolute",
                         bottom: 0,
                         right: 0,
@@ -149,7 +159,6 @@ function GrantsAndProposals() {
                 </Grid> 
               </Grid>
             </ArgonBox>
-            </CardActionArea>
             </CardContent>
           </HoverCard>
           </div>

@@ -57,7 +57,8 @@ import {
 
 import { ArrowBack, ArrowBackIosRounded } from "@mui/icons-material";
 import ArgonButton from "components/ArgonButton";
-import { Stack } from "@mui/material";
+import { CardContent, Stack } from "@mui/material";
+import HoverCard from "components/HoverCard";
 
 function DashboardNavbar({ absolute, light, isMini }) {
   const [navbarType, setNavbarType] = useState();
@@ -117,12 +118,10 @@ function DashboardNavbar({ absolute, light, isMini }) {
           sx={(theme) => navbarRow(theme, { isMini })}
         >
           <ArgonBox>
-          <ArgonButton onClick={handleGoBack} variant="text" >
-         
-            <ArrowBackIosRounded style={{ color: "white", marginRight: '10px'}}/>
-            <ArgonTypography style={{ color: "white"}}>Back</ArgonTypography>
-          
-          </ArgonButton>
+            <ArgonButton onClick={handleGoBack} variant="text">
+              <ArrowBackIosRounded style={{ color: "white", marginRight: "10px" }} />
+              <ArgonTypography style={{ color: "white" }}>Back</ArgonTypography>
+            </ArgonButton>
           </ArgonBox>
           {/* <Breadcrumbs
             icon="home"
@@ -137,7 +136,29 @@ function DashboardNavbar({ absolute, light, isMini }) {
         {isMini ? null : (
           <ArgonBox sx={(theme) => navbarRow(theme, { isMini })}>
             <ArgonBox pr={1}>
-            <ArgonButton style={{ height: "68px", width: "280px", fontSize: '20px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}} > Connect Wallet </ArgonButton>
+              <ArgonButton variant="outlined" style={{ marginRight: "20px" }}> 
+                <ArgonTypography variant="h5" >
+                  Sign Up
+                </ArgonTypography>
+              </ArgonButton>
+              <ArgonButton variant="outlined" style={{ marginRight: "20px" }}>
+                <ArgonTypography variant="h5"> Log In </ArgonTypography>
+              </ArgonButton>
+              <ArgonButton
+                style={{
+                  height: "68px",
+                  width: "280px",
+                  fontSize: "20px",
+                  fontWeight: "400",
+                  backgroundColor: "black",
+                  border: "1px solid #8d8d8d",
+                  color: "white",
+                  boxShadow: "5px 5px 10px  #B721BE",
+                }}
+              >
+                {" "}
+                Connect Wallet{" "}
+              </ArgonButton>
             </ArgonBox>
           </ArgonBox>
         )}

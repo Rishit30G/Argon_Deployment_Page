@@ -10,6 +10,7 @@ import "aos/dist/aos.css";
 import AOS from "aos";
 import ArgonBadge from "components/ArgonBadge";
 import Footer from "examples/Footer";
+import DefaultDivider from "components/Divider";
 
 const markdownIt = require("markdown-it");
 
@@ -62,6 +63,7 @@ const Articles = () => {
                         {post[0].title}
                       </ArgonTypography>
                     </div>
+                    <DefaultDivider/>
                   </Grid>
                   <Grid item xs={12} md={12} lg={12}>
                     <div data-aos="fade-up" data-aos-duration="5000">
