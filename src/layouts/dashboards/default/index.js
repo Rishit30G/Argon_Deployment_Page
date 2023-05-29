@@ -91,41 +91,94 @@ function Default() {
         <Grid container spacing={3} mb={3}>
           <Grid item xs={12} md={6} lg={3}>
             <HoverCard>
-              <DetailedStatisticsCard
-                title="DAO's Tracked"
-                count={post[0].cnt_dao}
-                icon={{ color: "info", component: <i className="ni ni-money-coins" /> }}
-              />
+              <CardContent> 
+                <ArgonBox px={1} py={1}>
+                <Grid container spacing={3} justifyContent="space-between">
+                  <Grid item xs={12} md={8} lg={9} xl={9}>
+                  <ArgonTypography variant="h3"> DAOs Tracked </ArgonTypography>
+                  </Grid> 
+                  <Grid item xs={12} md={4} lg={3} xl={3}>
+                    <ArgonBox style={{display: "flex", justifyContent: "flex-end"}}>
+                      <img src="https://svgshare.com/i/tdt.svg" style={{borderRadius: "50%", height: '60px', width: '60px'}} />
+                    </ArgonBox>
+                  </Grid>
+                </Grid> 
+                <Grid container> 
+                   <Grid item xs={12} md={6} lg={3}>
+                     <ArgonTypography variant="h1"> {post[0].cnt_dao} </ArgonTypography>
+                    </Grid>
+                </Grid>
+                </ArgonBox>
+              </CardContent>
             </HoverCard>
           </Grid>
           <Grid item xs={12} md={6} lg={3}>
-            <HoverCard>
-              <DetailedStatisticsCard
-                title="Protocols Live"
-                count={post[0].jobs_disbursed}
-                icon={{ color: "error", component: <i className="ni ni-world" /> }}
-                // percentage={{ color: "success", count: "+3%", text: "since last week" }}
-              />
+          <HoverCard>
+              <CardContent> 
+                <ArgonBox px={1} py={1}>
+                <Grid container spacing={3} justifyContent="space-between">
+                  <Grid item xs={12} md={8} lg={9} xl={9}>
+                  <ArgonTypography variant="h3"> Protocol Live </ArgonTypography>
+                  </Grid> 
+                  <Grid item xs={12} md={4} lg={3} xl={3}>
+                    <ArgonBox style={{display: "flex", justifyContent: "flex-end"}}>
+                      <img src="https://picsum.photos/60/60" style={{borderRadius: "50%", height: '60px', width: '60px'}} />
+                    </ArgonBox>
+                  </Grid>
+                </Grid> 
+                <Grid container> 
+                   <Grid item xs={12} md={6} lg={3}>
+                     <ArgonTypography variant="h1"> {post[0].cnt_dao} </ArgonTypography>
+                    </Grid>
+                </Grid>
+                </ArgonBox>
+              </CardContent>
             </HoverCard>
           </Grid>
           <Grid item xs={12} md={6} lg={3}>
-            <HoverCard>
-              <DetailedStatisticsCard
-                title="Live proposals"
-                count={post[0].xp_earned}
-                icon={{ color: "success", component: <i className="ni ni-paper-diploma" /> }}
-                // percentage={{ color: "error", count: "-2%", text: "since last quarter" }}
-              />
+          <HoverCard>
+              <CardContent> 
+                <ArgonBox px={1} py={1}>
+                <Grid container spacing={3} justifyContent="space-between">
+                  <Grid item xs={12} md={8} lg={9} xl={9}>
+                  <ArgonTypography variant="h3"> Live Proposals </ArgonTypography>
+                  </Grid> 
+                  <Grid item xs={12} md={4} lg={3} xl={3}>
+                    <ArgonBox style={{display: "flex", justifyContent: "flex-end"}}>
+                      <img src="https://picsum.photos/60/60" style={{borderRadius: "50%", height: '60px', width: '60px'}} />
+                    </ArgonBox>
+                  </Grid>
+                </Grid> 
+                <Grid container> 
+                   <Grid item xs={12} md={6} lg={3}>
+                     <ArgonTypography variant="h1"> {post[0].cnt_dao} </ArgonTypography>
+                    </Grid>
+                </Grid>
+                </ArgonBox>
+              </CardContent>
             </HoverCard>
           </Grid>
           <Grid item xs={12} md={6} lg={3}>
-            <HoverCard>
-              <DetailedStatisticsCard
-                title="Job Listed"
-                count={post[0].live_proposal}
-                icon={{ color: "warning", component: <i className="ni ni-cart" /> }}
-                // percentage={{ color: "success", count: "+5%", text: "than last month" }}
-              />
+          <HoverCard>
+              <CardContent> 
+                <ArgonBox px={1} py={1}>
+                <Grid container spacing={3} justifyContent="space-between">
+                  <Grid item xs={12} md={8} lg={9} xl={9}>
+                  <ArgonTypography variant="h3"> Job Listing </ArgonTypography>
+                  </Grid> 
+                  <Grid item xs={12} md={4} lg={3} xl={3}>
+                    <ArgonBox style={{display: "flex", justifyContent: "flex-end"}}>
+                      <img src="https://picsum.photos/60/60" style={{borderRadius: "50%", height: '60px', width: '60px'}} />
+                    </ArgonBox>
+                  </Grid>
+                </Grid> 
+                <Grid container> 
+                   <Grid item xs={12} md={6} lg={3}>
+                     <ArgonTypography variant="h1"> {post[0].cnt_dao} </ArgonTypography>
+                    </Grid>
+                </Grid>
+                </ArgonBox>
+              </CardContent>
             </HoverCard>
           </Grid>
         </Grid>
@@ -133,25 +186,25 @@ function Default() {
 
       <ArgonBox py={3} px={15}>
         <Grid container spacing={5} style={{ display: "flex" }}>
-          <Grid item xs={12} md={4} lg={4}>
+          {/* <Grid item xs={12} md={4} lg={4}>
             <ArgonTypography variant="h2" style={{ marginBottom: "20px" }}>
               Top Discussions
               <DefaultDivider />
             </ArgonTypography>
 
             <Post />
-          </Grid>
-          <Grid item xs={12} md={4} lg={4}>
+          </Grid> */}
+          <Grid item xs={12} md={4} lg={6}>
             <ArgonTypography variant="h2" style={{ marginBottom: "20px" }}>
-              Top Proposals
+              Top DAO Proposals  
               <DefaultDivider />
             </ArgonTypography>
 
             <TeamMembers />
           </Grid>
-          <Grid item xs={12} md={4} lg={4}>
+          <Grid item xs={12} md={4} lg={6}>
             <ArgonTypography variant="h2" style={{ marginBottom: "20px" }}>
-              Top Articles
+              Latest Happenings 
               <DefaultDivider />
             </ArgonTypography>
             <TodoList />
@@ -159,7 +212,7 @@ function Default() {
         </Grid>
       </ArgonBox>
 
-      <ArgonBox mt={15} py={3} px={15}>
+      <ArgonBox mt={5} py={3} px={15}>
         <Grid container spacing={3} mb={3}>
           <Grid item xs={12} lg={6}>
             <HoverCard>

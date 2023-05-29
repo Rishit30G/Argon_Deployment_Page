@@ -30,7 +30,7 @@ const ProposalDiscussion = () => {
       </ArgonBox> */}
 
       <ArgonBox mb={3} px={20} py={3}>
-        <Card style={{boxShadow: '0px 0px 80px purple'}}> 
+        <Card style={{boxShadow: '0px 0px 80px purple', backgroundColor: ' #212529'}}> 
           <CardContent>
             <ArgonBox px={3} py={3}>
           <Grid container spacing={3} direction="column">
@@ -47,9 +47,13 @@ const ProposalDiscussion = () => {
             </Stack>
           </Grid>
           <Grid container item direction="row-reverse">  
-             <ArgonTypography variant="h5" style={{color: 'blue', marginRight: '10px'}}> bit.ly/governance-optipisim.io </ArgonTypography>
+          <Card style={{backgroundColor: '#2A2F34'}}> 
+            <CardContent>
+             <ArgonButton variant="text" style={{marginRight: '10px', marginTop: '10px', fontSize: '20px'}} href="bit.ly/governance-optipisim.io">  Forum Discussion </ArgonButton>
+            </CardContent>
+          </Card>
           </Grid>
-          <Card style={{ marginTop: "30px", backgroundColor: '#242424', marginLeft: '20px' }}>
+          <Card style={{ marginTop: "30px", backgroundColor: '#2A2F34', marginLeft: '20px' }}>
             <ArgonBox px={2} py={3}>
             <CardContent>
               <Grid item>

@@ -110,10 +110,9 @@ export const GrantCard = () => {
                     <Grid item>
                     <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}> Unlock for More </ArgonButton>
                     </Grid>
-                    <Grid item>
+                    <Grid container item justifyContent="">
                       <ArgonTypography variant="body2">
-                        KEEP UP WITH EVERYTHING GOING ON IN WEB 3.0 AND NEVER MISS ANY UPDATES,
-                        CHECK OUT NOW
+                        KEEP UP WITH EVERYTHING GOING ON IN WEB 3.0 AND NEVER MISS ANY UPDATES
                       </ArgonTypography>
                     </Grid>
                   </Grid>

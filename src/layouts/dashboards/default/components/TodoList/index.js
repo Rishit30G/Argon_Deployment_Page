@@ -67,18 +67,18 @@ function TodoList() {
             {data.map(({ img, name, status, author }, key) => (
               <Fragment key={key}>
                 <ArgonBox component="li" py={1}>
-                  <Card style={{ backgroundImage: "url('https://picsum.photos/700')" }}>
-                    <CardContent>
+                  <Card style={{ backgroundImage: "url('https://picsum.photos/1000/200')" }}>
+                    <CardContent style={{ backgroundColor: "rgba(0,0, 0, 0.65)" }}>
                       <Grid container spacing={3} alignItems="center">
                         <Grid item alignItems="center">
                           <ArgonAvatar src={img} alt={name} />
                         </Grid>
                         <Grid item ml="auto">
-                          <ArgonTypography variant="h6">{author}</ArgonTypography>
+                          <ArgonTypography variant="h6" style={{ opacity: 1 }}>{author}</ArgonTypography>
                         </Grid>
                         <Grid item lineHeight={2.8}>
-                          <ArgonTypography variant="h4">{name}</ArgonTypography>
-                          <ArgonTypography variant="h6">{status}</ArgonTypography>
+                          <ArgonTypography variant="h4" style={{ opacity: 1 }}>{name}</ArgonTypography>
+                          <ArgonTypography variant="h6" style={{ opacity: 1 }}>{status}</ArgonTypography>
                         </Grid>
                       </Grid>
                     </CardContent>

@@ -129,36 +129,6 @@ const routes = [
         route: "/dashboards/default",
         component: <Default />,
       },
-      // {
-      //   name: "Automotive",
-      //   key: "automotive",
-      //   route: "/dashboards/automotive",
-      //   component: <Automotive />,
-      // },
-      // {
-      //   name: "Smart Home",
-      //   key: "smart-home",
-      //   route: "/dashboards/smart-home",
-      //   component: <SmartHome />,
-      // },
-      // {
-      //   name: "Virtual Reality",
-      //   key: "virtual-reality",
-      //   collapse: [
-      //     {
-      //       name: "VR Default",
-      //       key: "vr-default",
-      //       route: "/dashboards/virtual-reality/default",
-      //       component: <VRDefault />,
-      //     },
-      //     {
-      //       name: "VR Info",
-      //       key: "vr-info",
-      //       route: "/dashboards/virtual-reality/info",
-      //       component: <VRInfo />,
-      //     },
-      //   ],
-      // },
       { name: "Calender", key: "crm", route: "/dashboards/crm", component: <CRM /> },
     ],
   },

@@ -125,20 +125,19 @@ function Overview() {
                 <ArgonTypography variant="subtitle2">
                   {post[0].desc}
                 </ArgonTypography>
-                <Grid container spacing={2}>
-                  <Grid item>
+                <Stack direction="row" spacing={2}>
+                 
                 <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>${post[0].salary}</ArgonButton>
-                </Grid>
-                <Grid item>
+              
+                
                 <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>View</ArgonButton>
-                </Grid>
-                <Grid item>
+                
+              
                 <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>{post[0].badges} Badge</ArgonButton>
-                </Grid>
-                <Grid item>
+                
                 <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>{post[0].xp_earned} XP Earned</ArgonButton>
-                </Grid>
-                </Grid>
+              
+                </Stack>
               </Stack>
             </Grid>
           </Grid>
