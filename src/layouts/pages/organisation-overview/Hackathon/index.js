@@ -7,6 +7,7 @@ import ArgonBadgeDot from "components/ArgonBadgeDot";
 import { Calendar } from "@web3uikit/icons";
 import { Language } from "@material-ui/icons";
 import { People } from "@mui/icons-material";
+import HoverCard from "components/HoverCard";
 
 const Hackathon = () => {
   return (
@@ -20,7 +21,7 @@ const Hackathon = () => {
       </ArgonBox>
 
       <ArgonBox px={3} py={3}>
-        <Card>
+        <HoverCard>
             <CardContent>
           <ArgonBox px={3} py={3}>
               <Grid container spacing={3} alignItems="center" justifyContent="space-between" style={{ marginBottom: "20px" }}>
@@ -79,14 +80,17 @@ const Hackathon = () => {
              <Divider/>
               <Grid container direction="column">
                 <Grid item>
-                  <ArgonTypography variant="h3" style={{ marginBottom: "10px" }}>
+                  <ArgonTypography variant="h3" style={{ marginBottom: "20px" }}>
                     Prizes
                   </ArgonTypography>
                 </Grid>
                 <Grid item>
+                  <Stack direction="row" spacing={1}>
+                  <img src="https://i.postimg.cc/zfyGcr8b/1st-prize-removebg-preview.png" width="30px" height="30px"></img>
                   <ArgonTypography variant="h5" style={{ marginBottom: "3px" }}>
-                    1st Prize
+                   1st Prize
                   </ArgonTypography>
+                  </Stack>
                   <ArgonTypography variant="h2" style={{ marginBottom: "3px" }}>
                      $10000
                   </ArgonTypography>
@@ -96,9 +100,12 @@ const Hackathon = () => {
                   </ArgonTypography>
                 </Grid>
                 <Grid item style={{marginTop: '10px'}}>
-                <ArgonTypography variant="h5" style={{ marginBottom: "3px" }}>
-                    2nd Prize
+                <Stack direction="row" spacing={1}>
+                  <img src="https://i.postimg.cc/fTypXTK9/2nd-prize-removebg-preview.png" width="30px" height="30px"></img>
+                  <ArgonTypography variant="h5" style={{ marginBottom: "3px" }}>
+                   2nd Prize
                   </ArgonTypography>
+                  </Stack>
                   <ArgonTypography variant="h3" style={{ marginBottom: "3px" }}>
                      $7500
                   </ArgonTypography>
@@ -108,9 +115,12 @@ const Hackathon = () => {
                   </ArgonTypography>
                 </Grid>
                 <Grid item style={{marginTop: '10px'}}>
-                <ArgonTypography variant="h5" style={{ marginBottom: "3px" }}>
-                    3rd Prize
+                <Stack direction="row" spacing={1}>
+                  <img src="https://i.postimg.cc/Fz55GtH4/3rd-Prize-removebg-preview.png" width="30px" height="30px"></img>
+                  <ArgonTypography variant="h5" style={{ marginBottom: "3px" }}>
+                   3rd Prize
                   </ArgonTypography>
+                  </Stack>
                   <ArgonTypography variant="h4" style={{ marginBottom: "3px" }}>
                      $5000
                   </ArgonTypography>
@@ -122,7 +132,7 @@ const Hackathon = () => {
               </Grid>
           </ArgonBox>
         </CardContent>
-        </Card>
+        </HoverCard>
       </ArgonBox>
     </>
   );

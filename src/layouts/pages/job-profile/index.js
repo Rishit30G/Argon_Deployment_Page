@@ -3,6 +3,7 @@ import { Grid, Card, Stack, CardContent, Divider } from "@mui/material";
 import ArgonBox from "components/ArgonBox";
 import ArgonButton from "components/ArgonButton";
 import ArgonTypography from "components/ArgonTypography";
+import HoverCard from "components/HoverCard";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import React from "react";
@@ -23,7 +24,7 @@ const JobProfile = () => {
       </ArgonBox>
 
       <ArgonBox px={15} py={3}>
-        <Card>
+        <HoverCard>
           <CardContent>
             <ArgonBox px={3} py={3}>
               <Grid container direction="column" spacing={4}>
@@ -125,7 +126,7 @@ const JobProfile = () => {
               </Grid>
             </ArgonBox>
           </CardContent>
-        </Card>
+        </HoverCard>
       </ArgonBox>
     </DashboardLayout>
   );

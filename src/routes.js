@@ -114,6 +114,7 @@ import ProposalList from "layouts/pages/proposal-list";
 import GrantMainPage from "layouts/pages/grants-proposals/Grant-Main";
 import OrganizationJobs from "layouts/pages/organisation-overview/Organisation-Jobs";
 import DefiAnalysis from "layouts/pages/defi-analysis";
+import NewDAOUser from "layouts/pages/users/DAO-new-user";
 
 
 const routes = [
@@ -190,7 +191,7 @@ const routes = [
             name: "New User",
             key: "new-user",
             route: "/pages/users/new-user",
-            component: <NewUser />,
+            component: <NewDAOUser/> 
           },
         ],
       },
@@ -221,30 +222,6 @@ const routes = [
           //   key: "security",
           //   route: "/pages/account/security",
           //   component: <Security />,
-          // },
-        ],
-      },
-      {
-        name: "Projects",
-        key: "projects",
-        collapse: [
-          // {
-          //   name: "General",
-          //   key: "general",
-          //   route: "/pages/projects/general",
-          //   component: <General />,
-          // },
-          {
-            name: "Timeline",
-            key: "timeline",
-            route: "/pages/projects/timeline",
-            component: <Timeline />,
-          },
-          // {
-          //   name: "New Project",
-          //   key: "new-project",
-          //   route: "/pages/projects/new-project",
-          //   component: <NewProject />,
           // },
         ],
       },

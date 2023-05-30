@@ -8,6 +8,7 @@ import ArgonButton from "components/ArgonButton";
 import { OutlinedFlag, Person, Work } from "@material-ui/icons";
 import UserInfo from "layouts/pages/users/new-user/components/UserInfo";
 import { ContentPaste, PersonOffOutlined } from "@mui/icons-material";
+import HoverCard from "components/HoverCard";
 
 const Overview2 = () => {
   return (
@@ -29,7 +30,7 @@ const Overview2 = () => {
       >
         <ArgonBox my={3} mx={3}>
           <Grid container>
-            <Card>
+            <HoverCard>
               <CardContent>
               <ArgonBox my={3} mx={3}>
                 <Grid item>
@@ -69,7 +70,7 @@ const Overview2 = () => {
                 </Grid>
               </ArgonBox>
               </CardContent>
-            </Card>
+            </HoverCard>
           </Grid>
         </ArgonBox>
       </Grid>

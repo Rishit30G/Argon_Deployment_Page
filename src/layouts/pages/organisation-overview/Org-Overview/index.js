@@ -1,6 +1,7 @@
 import { Card, CardContent, Grid } from "@mui/material";
 import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
+import HoverCard from "components/HoverCard";
 import React from "react";
 
 const OrgOverview = () => {
@@ -15,7 +16,7 @@ const OrgOverview = () => {
       </ArgonBox>
 
       <ArgonBox px={3} py={3}>
-        <Card sx={{ overflow: "hidden", height: "100%" }}>
+        <HoverCard>
           <ArgonBox px={3} py={3}>
             <CardContent>
               <Grid container>
@@ -56,7 +57,7 @@ const OrgOverview = () => {
               </Grid>
             </CardContent>
           </ArgonBox>
-        </Card>
+        </HoverCard>
       </ArgonBox>
     </>
   );

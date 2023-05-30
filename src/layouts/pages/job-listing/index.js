@@ -30,7 +30,7 @@ const JobListing = () => {
       <ArgonBox px={15} py={3}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
-            <ArgonTypography variant="h2">Job Listing</ArgonTypography>
+            <ArgonTypography variant="h3">Job Listing</ArgonTypography>
           </Grid>
         </Grid>
         <DefaultDivider/>
@@ -44,8 +44,8 @@ const JobListing = () => {
             <TabContext value={value}>
               <Box sx={{ borderBottom: 1, borderColor: "divider", marginBottom: '40px' }}>
                 <TabList onChange={handleChange}>
-                  <Tab label="Organization" value="1" style={{fontSize: '30px', textDecoration: 'italics'}}/>
-                  <Tab label="Individual" value="2" style={{fontSize: '30px'}}/>
+                  <Tab label="Organization" value="1" style={{fontSize: '30px', fontStyle: 'italic'}}/>
+                  <Tab label="Individual" value="2" style={{fontSize: '30px', fontStyle: 'italic'}}/>
                 </TabList>
               </Box>
               <TabPanel value="1">
@@ -56,14 +56,14 @@ const JobListing = () => {
                     <ArgonBox pt={1}>
                     <Grid container spacing={8}>
                       <Grid container item xs={12} sm={12} md={12} justifyContent="space-between" alignItems="center">
-                        <ArgonTypography variant="h2">Uniswap</ArgonTypography>
+                        <ArgonTypography variant="h3">Uniswap</ArgonTypography>
                         <ArgonTypography variant="h5">Blockchain Developer</ArgonTypography>
                       </Grid>
                       <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
                         <Grid item xs={8} lg={7} sm={9} md={9}>
                           <ArgonTypography
                             variant="body2"
-                            style={{ fontSize: "20px", color: "rgba(255, 255, 255, 0.7)" }}
+                            style={{ color: "rgba(255, 255, 255, 0.7)" }}
                           >
                             Text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
                             convallis mi ut quam dictum, eget rutrum ipsum ultrices. 
@@ -76,7 +76,7 @@ const JobListing = () => {
                               width: "200px",
                               height: "200px",
                               position: "absolute",
-                              bottom: 0,
+                              bottom: -10,
                               right: 0,
                             }}
                             alt="Uniswap logo"
@@ -94,14 +94,14 @@ const JobListing = () => {
                     <ArgonBox pt={1}>
                     <Grid container spacing={8}>
                       <Grid container item xs={12} sm={12} md={12} justifyContent="space-between" alignItems="center">
-                        <ArgonTypography variant="h2">Uniswap</ArgonTypography>
+                        <ArgonTypography variant="h3">Uniswap</ArgonTypography>
                         <ArgonTypography variant="h5">Blockchain Developer</ArgonTypography>
                       </Grid>
                       <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
                         <Grid item xs={8} lg={7} sm={9} md={9}>
                           <ArgonTypography
                             variant="body2"
-                            style={{ fontSize: "20px", color: "rgba(255, 255, 255, 0.7)" }}
+                            style={{ color: "rgba(255, 255, 255, 0.7)" }}
                           >
                             Text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
                             convallis mi ut quam dictum, eget rutrum ipsum ultrices. 
@@ -114,7 +114,7 @@ const JobListing = () => {
                               width: "200px",
                               height: "200px",
                               position: "absolute",
-                              bottom: 0,
+                              bottom: -10,
                               right: 0,
                             }}
                             alt="Uniswap logo"
@@ -132,14 +132,14 @@ const JobListing = () => {
                     <ArgonBox pt={1}>
                     <Grid container spacing={8}>
                       <Grid container item xs={12} sm={12} md={12} justifyContent="space-between" alignItems="center">
-                        <ArgonTypography variant="h2">Uniswap</ArgonTypography>
+                        <ArgonTypography variant="h3">Uniswap</ArgonTypography>
                         <ArgonTypography variant="h5">Blockchain Developer</ArgonTypography>
                       </Grid>
                       <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
                         <Grid item xs={8} lg={7} sm={9} md={9}>
                           <ArgonTypography
                             variant="body2"
-                            style={{ fontSize: "20px", color: "rgba(255, 255, 255, 0.7)" }}
+                            style={{ color: "rgba(255, 255, 255, 0.7)" }}
                           >
                             Text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
                             convallis mi ut quam dictum, eget rutrum ipsum ultrices. 
@@ -152,7 +152,7 @@ const JobListing = () => {
                               width: "200px",
                               height: "200px",
                               position: "absolute",
-                              bottom: 0,
+                              bottom: -10,
                               right: 0,
                             }}
                             alt="Uniswap logo"
@@ -174,14 +174,14 @@ const JobListing = () => {
                      <ArgonBox pt={1}>
                     <Grid container spacing={8}>
                       <Grid container item xs={12} sm={12} md={12} justifyContent="space-between" alignItems="center">
-                        <ArgonTypography variant="h2">John Doe</ArgonTypography>
+                        <ArgonTypography variant="h3">John Doe</ArgonTypography>
                         <ArgonTypography variant="h5">Etherium Developer</ArgonTypography>
                       </Grid>
                       <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
                         <Grid item xs={8} lg={7} sm={9} md={9}>
                           <ArgonTypography
                             variant="body2"
-                            style={{ fontSize: "20px", color: "rgba(255, 255, 255, 0.7)" }}
+                            style={{color: "rgba(255, 255, 255, 0.7)" }}
                           >
                             Text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
                             convallis mi ut quam dictum, eget rutrum ipsum ultrices. 
@@ -194,7 +194,7 @@ const JobListing = () => {
                               width: "180px",
                               height: "180px",
                               position: "absolute",
-                              bottom: 0,
+                              bottom: -10,
                               right: 0,
                             }}
                             alt="Uniswap logo"
@@ -212,14 +212,14 @@ const JobListing = () => {
                     <ArgonBox pt={1}>
                     <Grid container spacing={8}>
                       <Grid container item xs={12} sm={12} md={12} justifyContent="space-between" alignItems="center">
-                        <ArgonTypography variant="h2">John Doe</ArgonTypography>
+                        <ArgonTypography variant="h3">John Doe</ArgonTypography>
                         <ArgonTypography variant="h5">Etherium Developer</ArgonTypography>
                       </Grid>
                       <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
                         <Grid item xs={8} lg={7} sm={9} md={9}>
                           <ArgonTypography
                             variant="body2"
-                            style={{ fontSize: "20px", color: "rgba(255, 255, 255, 0.7)" }}
+                            style={{color: "rgba(255, 255, 255, 0.7)" }}
                           >
                             Text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
                             convallis mi ut quam dictum, eget rutrum ipsum ultrices. 
@@ -232,7 +232,7 @@ const JobListing = () => {
                               width: "180px",
                               height: "180px",
                               position: "absolute",
-                              bottom: 0,
+                              bottom: -10,
                               right: 0,
                             }}
                             alt="Uniswap logo"
@@ -250,14 +250,14 @@ const JobListing = () => {
                     <ArgonBox pt={1}>
                     <Grid container spacing={8}>
                       <Grid container item xs={12} sm={12} md={12} justifyContent="space-between" alignItems="center">
-                        <ArgonTypography variant="h2">John Doe</ArgonTypography>
+                        <ArgonTypography variant="h3">John Doe</ArgonTypography>
                         <ArgonTypography variant="h5">Etherium Developer</ArgonTypography>
                       </Grid>
                       <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
                         <Grid item xs={8} lg={7} sm={9} md={9}>
                           <ArgonTypography
                             variant="body2"
-                            style={{ fontSize: "20px", color: "rgba(255, 255, 255, 0.7)" }}
+                            style={{color: "rgba(255, 255, 255, 0.7)" }}
                           >
                             Text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
                             convallis mi ut quam dictum, eget rutrum ipsum ultrices. 
@@ -270,7 +270,7 @@ const JobListing = () => {
                               width: "180px",
                               height: "180px",
                               position: "absolute",
-                              bottom: 0,
+                              bottom: -10,
                               right: 0,
                             }}
                             alt="Uniswap logo"

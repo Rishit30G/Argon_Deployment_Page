@@ -91,14 +91,16 @@ const GrantMainPage = () => {
     <DashboardLayout>
       <DashboardNavbar />
       <ArgonBox mb={3} px={20} py={3}>
+        <Grid container spacing={10}>
+          <Grid item xs={12} lg={12} md={12} xl={8}>
             <Grid container>
-              <Grid item xs={12} lg={12} md={12} xl={9}>
+              <Grid item xs={12} lg={12} md={12} xl={12}>
                 <ArgonTypography variant="h1">Refi Spring 2023</ArgonTypography>
-                <DefaultDivider/>
+                <DefaultDivider />
               </Grid>
             </Grid>
-            <Grid container> 
-              <Grid item xs={12} lg={12} md={12} xl={9}>
+            <Grid container>
+              <Grid item xs={12} lg={12} md={12} xl={12}>
                 <div data-aos="fade-up" data-aos-duration="5000">
                   <ArgonBox>
                     <Grid container>
@@ -131,11 +133,11 @@ const GrantMainPage = () => {
                     </Grid>
                   </ArgonBox>
                 </div>
-               <DefaultDivider/>
+                <DefaultDivider />
               </Grid>
             </Grid>
-            <Grid container style={{marginTop: '30px'}}>
-              <Grid item xs={12} lg={12} md={12} xl={9}>
+            <Grid container style={{ marginTop: "30px" }}>
+              <Grid item xs={12} lg={12} md={12} xl={12}>
                 <div data-aos="fade-up" data-aos-duration="5000">
                   <Grid container justifyContent="space-between">
                     <HoverCard>
@@ -149,27 +151,109 @@ const GrantMainPage = () => {
                       </CardContent>
                     </HoverCard>
 
-                  
                     <Grid item>
-                      <ArgonButton variant="text" style={{fontSize: '50px'}}>
+                      <ArgonButton variant="text" style={{ fontSize: "50px" }}>
                         {/* https://mui.com/material-ui/react-select/ */}
-                        <img src="https://i.postimg.cc/cL9dM8Km/3548753-200.png" style={{height: '50px', width: '50px', filter: 'brightness(0) invert(1)'}}/> 
+                        <img
+                          src="https://i.postimg.cc/cL9dM8Km/3548753-200.png"
+                          style={{
+                            height: "50px",
+                            width: "50px",
+                            filter: "brightness(0) invert(1)",
+                          }}
+                        />
                       </ArgonButton>
                     </Grid>
                   </Grid>
-                  <Grid container spacing={2} style={{marginTop: '10px'}}> 
-                  <Grid item> 
-                      <ArgonButton style={{ height: "58px", width: "240px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE', marginRight: '20px'}} > Add to Cart </ArgonButton>
+                  <Grid container spacing={2} style={{ marginTop: "10px" }}>
+                    <Grid item>
+                      <ArgonButton
+                        style={{
+                          height: "58px",
+                          width: "240px",
+                          fontSize: "17px",
+                          fontWeight: "400",
+                          backgroundColor: "black",
+                          border: "1px solid #8d8d8d",
+                          color: "white",
+                          boxShadow: "5px 5px 10px  #B721BE",
+                          marginRight: "20px",
+                        }}
+                      >
+                        {" "}
+                        Add to Cart{" "}
+                      </ArgonButton>
                     </Grid>
                     <Grid item>
-                      <ArgonButton style={{ height: "58px", width: "240px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}} >Inquire </ArgonButton>
-                      </Grid>
+                      <ArgonButton
+                        style={{
+                          height: "58px",
+                          width: "240px",
+                          fontSize: "17px",
+                          fontWeight: "400",
+                          backgroundColor: "black",
+                          border: "1px solid #8d8d8d",
+                          color: "white",
+                          boxShadow: "5px 5px 10px  #B721BE",
+                        }}
+                      >
+                        Inquire{" "}
+                      </ArgonButton>
+                    </Grid>
                   </Grid>
                 </div>
-              <DefaultDivider/>
+                <DefaultDivider />
               </Grid>
             </Grid>
-           
+          </Grid>
+
+          <Grid item xs={12} lg={12} md={12} xl={4}>
+            <div data-aos="fade-up" data-aos-duration="5000">
+              <Stack direction="row" justifyContent="center" spacing={2} style={{ marginBottom: "20px" }}>
+                <ArgonTypography variant="h2">Team Description</ArgonTypography>
+              </Stack>
+              <Card style={{ border: "1px solid grey" }}>
+                <ArgonBox px={5} py={2}>
+                  <CardContent>
+                    <Grid container direction="column" spacing={2}>
+                      <Grid item xs={12} lg={12} md={12} xl={12}>
+                        <ArgonTypography variant="body2">
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+                          voluptatum, quibusdam, quia, quod voluptates voluptatem quos
+                          </ArgonTypography>
+                      </Grid>
+                      <Grid item xs={12} lg={12} md={12} xl={12} style={{marginTop: '30px'}}>
+                        <Grid container spacing={2} direction="row">
+                          <Grid item xl={4}>
+                            <img
+                              src="https://picsum.photos/80/80"
+                              style={{ borderRadius: "50%", boxShadow: "0px 0px 20px #D12CBD" }}
+                            />
+                            <ArgonTypography variant="h4"> David </ArgonTypography>
+                          </Grid>
+                          <Grid item xl={4}>
+                            <img
+                              src="https://picsum.photos/80/80"
+                              style={{ borderRadius: "50%", boxShadow: "0px 0px 20px #D12CBD" }}
+                            />
+                            <ArgonTypography variant="h4"> James </ArgonTypography>
+                          </Grid>
+                          <Grid item xl={4}>
+                            <img
+                              src="https://picsum.photos/80/80"
+                              style={{ borderRadius: "50%", boxShadow: "0px 0px 20px #D12CBD" }}
+                            />
+                            <ArgonTypography variant="h4"> Charlie </ArgonTypography>
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                    </Grid>
+                  </CardContent>
+                </ArgonBox>
+              </Card>
+            </div>
+          </Grid>
+        </Grid>
       </ArgonBox>
 
       <ArgonBox mb={3} mx={20} my={3}>
@@ -186,18 +270,7 @@ const GrantMainPage = () => {
                   <Grid item>
                     <ArgonTypography variant="body2">
                       Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetur adipiscing
-                      elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                      enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                      aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur
-                      adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud Lorem ipsum dolor sit amet,
-                      consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                      dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim
-                      veniam, quis nostrud Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                      commodo consequat
+                      elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                     </ArgonTypography>
                     <ArgonBox
                       px={5}
@@ -250,71 +323,8 @@ const GrantMainPage = () => {
         </div>
       </ArgonBox>
 
-      <ArgonBox mb={3} mx={20} my={10}>
-        <div data-aos="fade-up" data-aos-duration="5000">
-          <Stack direction="row" spacing={2} style={{ marginBottom: "20px" }}>
-            <img src="https://picsum.photos/60/60" style={{ borderRadius: "50%" }} />
-            <ArgonTypography variant="h2">Team Description</ArgonTypography>
-          </Stack>
-          <Card style={{ border: "1px solid grey" }}>
-            <ArgonBox px={10} py={3}>
-              <CardContent>
-                <Grid container direction="column" spacing={2}>
-                  <Grid item>
-                    <ArgonTypography variant="body2">
-                      Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetur adipiscing
-                      elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                      enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                      aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur
-                      adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud Lorem ipsum dolor sit amet,
-                      consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                      dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim
-                      veniam, quis nostrud Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                      commodo consequat
-                    </ArgonTypography>
-                  </Grid>
-                  <Grid item style={{ marginTop: "30px" }}>
-                    <Grid container spacing={4} direction="row">
-                      <Grid item>
-                        <img
-                          src="https://picsum.photos/80/80"
-                          style={{ borderRadius: "50%", boxShadow: "0px 0px 20px #D12CBD" }}
-                        />
-                        <ArgonTypography variant="h4"> David </ArgonTypography>
-                      </Grid>
-                      <Grid item>
-                        <img
-                          src="https://picsum.photos/80/80"
-                          style={{ borderRadius: "50%", boxShadow: "0px 0px 20px #D12CBD" }}
-                        />
-                        <ArgonTypography variant="h4"> James </ArgonTypography>
-                      </Grid>
-                      <Grid item>
-                        <img
-                          src="https://picsum.photos/80/80"
-                          style={{ borderRadius: "50%", boxShadow: "0px 0px 20px #D12CBD" }}
-                        />
-                        <ArgonTypography variant="h4"> Charlie </ArgonTypography>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                </Grid>
-              </CardContent>
-            </ArgonBox>
-          </Card>
-          
-        </div>
-       
-      </ArgonBox>
-      
-      
-
       <ArgonBox mb={3} mx={10} my={3}>
-        <DefaultDivider/>
+        <DefaultDivider />
         <div data-aos="fade-up" data-aos-duration="5000">
           <ArgonTypography variant="h2" style={{ marginBottom: "20px" }}>
             {" "}

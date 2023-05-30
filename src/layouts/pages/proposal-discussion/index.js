@@ -12,11 +12,16 @@ import AOS from 'aos';
 import ArgonAvatar from "components/ArgonAvatar";
 import DefaultDivider from "components/Divider";
 import HoverCard from "components/HoverCard";
+import { LanguageOutlined, Share } from "@mui/icons-material";
 
 const ProposalDiscussion = () => {
   React.useEffect(() => {
     AOS.init();
   },[]);
+
+  const handleButtonClick = () => {
+    window.open('https://www.google.com', '_blank');
+  };
 
   return (
     <DashboardLayout>
@@ -41,17 +46,26 @@ const ProposalDiscussion = () => {
             <DefaultDivider/>
           </Grid>
           <Grid item>
-            <Stack direction="row" spacing={2} alignItems="center">
-            <Avatar></Avatar>
-              <ArgonTypography variant="h4">Author Name</ArgonTypography>
-            </Stack>
-          </Grid>
-          <Grid container item direction="row-reverse">  
-          <Card style={{backgroundColor: '#2A2F34'}}> 
-            <CardContent>
-             <ArgonButton variant="text" style={{marginRight: '10px', marginTop: '10px', fontSize: '20px'}} href="bit.ly/governance-optipisim.io">  Forum Discussion </ArgonButton>
-            </CardContent>
-          </Card>
+            <Grid container justifyContent="space-between" alignItems="center">
+              <Grid item> 
+                  <Stack direction="row" spacing={2} alignItems="center">
+                  <Avatar></Avatar>
+                    <ArgonTypography variant="h4">Author Name</ArgonTypography>
+                  </Stack>
+              </Grid>
+              <Grid item> 
+                  <Stack direction="row" spacing={3} alignItems="center">
+                        <ArgonButton variant="outlined" style={{marginRight: '10px', marginTop: '10px'}} onClick={handleButtonClick}>  
+                            <LanguageOutlined style={{marginRight: '10px'}}/> 
+                            <ArgonTypography variant="h4">  Forum Discussion  </ArgonTypography> 
+                         </ArgonButton>
+                       <Share style={{color: 'white', fontSize: '40px', marginRight: '10px'}}/>
+                  </Stack>
+              </Grid>
+
+
+            </Grid>
+
           </Grid>
           <Card style={{ marginTop: "30px", backgroundColor: '#2A2F34', marginLeft: '20px' }}>
             <ArgonBox px={2} py={3}>

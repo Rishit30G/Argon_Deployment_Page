@@ -9,6 +9,7 @@ import { Verified } from "@mui/icons-material";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import HoverCard from "components/HoverCard";
+import ArgonBadge from "components/ArgonBadge";
 
 const ProposalList = () => {
   React.useEffect(() => {
@@ -20,12 +21,12 @@ const ProposalList = () => {
       <DashboardNavbar />
       <ArgonBox px={10} py={3}>
         <Grid container spacing={3}>
-          <Grid item xs={12} md={3} lg={3} xl={3}>
+          <Grid item xs={12} md={3} lg={3} xl={4}>
           <div data-aos="fade-up" data-aos-duration="5000">
           <HoverCard>
           <ArgonBox px={1} py={1}>
             <CardContent>
-              <Grid container spacing={8}>
+              <Grid container spacing={1} >
               <div
                 style={{
                   position: "absolute",
@@ -46,51 +47,59 @@ const ProposalList = () => {
                 3
               </div>
                 <Grid container item xs={12} sm={12} md={12} justifyContent="space-between" alignItems="center">
-                 
-                  <ArgonTypography variant="h4">Etherium Tracker</ArgonTypography>
-                 
+                    <Stack direction="row" spacing={2} alignItems="center">
+                      <ArgonTypography variant="h3">
+                         Uniswap
+                      </ArgonTypography>
+                    <ArgonBadge badgeContent="12k Memebers" variant="contained" color="dark" container />
+                    </Stack>
                 </Grid>
                 <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
                   <Grid item xs={8} lg={7} sm={9} md={9}>
-                    <ArgonTypography
-                      variant="body2"
-                      style={{ fontSize: "40px"}}
-                    >
-                     Uniswap
+                    <ArgonTypography variant="body2" style={{color: 'lightgrey'}}>
+                       Etherium Tracker
                     </ArgonTypography>
-                    <ArgonTypography
-                      variant="body2"
-                      style={{ fontSize: "20px", color: "rgba(255, 255, 255, 0.7)" }}
-                    >
-                      12K members
-                    </ArgonTypography>
-                  </Grid>
-                  <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
-                    <img
-                      src="https://picsum.photos/150/150"
-                      style={{
-                        position: "absolute",
-                        borderRadius: "50%",
-                        bottom: -10,
-                        right: 0,
-                      }}
-                      alt="Uniswap logo"
-                    />
-                  </Grid>
                 </Grid>
-              </Grid>
+                </Grid>
+              </Grid> 
+              <Grid container style={{marginTop: '60px'}}>
+                <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
+                    <Grid item xs={8} lg={7} sm={9} md={9}>
+                      <ArgonTypography variant="body2"> 
+                          Loda Ipsum is simply dummy text of the printing and typesetting industry.
+                      </ArgonTypography>
+                      <ArgonButton variant="outlined" style={{marginTop: '30px', width: '180px'}} > 
+                        <ArgonTypography variant="h6" >Join Now</ArgonTypography>
+                      </ArgonButton>
+                    {/* <ArgonButton style={{ height: "48px", width: "150px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE', marginTop: '20px'}}> Join Now </ArgonButton> */}
+
+                    </Grid>
+                    <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
+                      <img
+                        src="https://picsum.photos/150/150"
+                        style={{
+                          position: "absolute",
+                          borderRadius: "50%",
+                          bottom: 0,
+                          right: 0,
+                        }}
+                        alt="Uniswap logo"
+                      />
+                    </Grid>
+                  </Grid>
+              </Grid> 
             </CardContent>
           </ArgonBox>
           </HoverCard>
           </div>
           </Grid>
 
-          <Grid item xs={12} md={3} lg={3} xl={3}>
+          <Grid item xs={12} md={3} lg={3} xl={4}>
           <div data-aos="fade-up" data-aos-duration="5000">
           <HoverCard>
           <ArgonBox px={1} py={1}>
             <CardContent>
-              <Grid container spacing={8}>
+              <Grid container spacing={1} >
               <div
                 style={{
                   position: "absolute",
@@ -111,51 +120,59 @@ const ProposalList = () => {
                 3
               </div>
                 <Grid container item xs={12} sm={12} md={12} justifyContent="space-between" alignItems="center">
-                 
-                  <ArgonTypography variant="h4">Etherium Tracker</ArgonTypography>
-                 
+                    <Stack direction="row" spacing={2} alignItems="center">
+                      <ArgonTypography variant="h3">
+                         Uniswap
+                      </ArgonTypography>
+                    <ArgonBadge badgeContent="12k Memebers" variant="contained" color="dark" container />
+                    </Stack>
                 </Grid>
                 <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
                   <Grid item xs={8} lg={7} sm={9} md={9}>
-                    <ArgonTypography
-                      variant="body2"
-                      style={{ fontSize: "40px"}}
-                    >
-                     Uniswap
+                    <ArgonTypography variant="body2" style={{color: 'lightgrey'}}>
+                       Etherium Tracker
                     </ArgonTypography>
-                    <ArgonTypography
-                      variant="body2"
-                      style={{ fontSize: "20px", color: "rgba(255, 255, 255, 0.7)" }}
-                    >
-                      12K members
-                    </ArgonTypography>
-                  </Grid>
-                  <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
-                    <img
-                      src="https://picsum.photos/150/150"
-                      style={{
-                        position: "absolute",
-                        borderRadius: "50%",
-                        bottom: -10,
-                        right: 0,
-                      }}
-                      alt="Uniswap logo"
-                    />
-                  </Grid>
                 </Grid>
-              </Grid>
+                </Grid>
+              </Grid> 
+              <Grid container style={{marginTop: '60px'}}>
+                <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
+                    <Grid item xs={8} lg={7} sm={9} md={9}>
+                      <ArgonTypography variant="body2"> 
+                          Loda Ipsum is simply dummy text of the printing and typesetting industry.
+                      </ArgonTypography>
+                      <ArgonButton variant="outlined" style={{marginTop: '30px', width: '180px'}} > 
+                        <ArgonTypography variant="h6" >Join Now</ArgonTypography>
+                      </ArgonButton>
+                    {/* <ArgonButton style={{ height: "48px", width: "150px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE', marginTop: '20px'}}> Join Now </ArgonButton> */}
+
+                    </Grid>
+                    <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
+                      <img
+                        src="https://picsum.photos/150/150"
+                        style={{
+                          position: "absolute",
+                          borderRadius: "50%",
+                          bottom: 0,
+                          right: 0,
+                        }}
+                        alt="Uniswap logo"
+                      />
+                    </Grid>
+                  </Grid>
+              </Grid> 
             </CardContent>
           </ArgonBox>
           </HoverCard>
           </div>
           </Grid>
 
-          <Grid item xs={12} md={3} lg={3} xl={3}>
+          <Grid item xs={12} md={3} lg={3} xl={4}>
           <div data-aos="fade-up" data-aos-duration="5000">
           <HoverCard>
           <ArgonBox px={1} py={1}>
             <CardContent>
-              <Grid container spacing={8}>
+              <Grid container spacing={1} >
               <div
                 style={{
                   position: "absolute",
@@ -176,111 +193,52 @@ const ProposalList = () => {
                 3
               </div>
                 <Grid container item xs={12} sm={12} md={12} justifyContent="space-between" alignItems="center">
-                 
-                  <ArgonTypography variant="h4">Etherium Tracker</ArgonTypography>
-                 
+                    <Stack direction="row" spacing={2} alignItems="center">
+                      <ArgonTypography variant="h3">
+                         Uniswap
+                      </ArgonTypography>
+                    <ArgonBadge badgeContent="12k Memebers" variant="contained" color="dark" container />
+                    </Stack>
                 </Grid>
                 <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
                   <Grid item xs={8} lg={7} sm={9} md={9}>
-                    <ArgonTypography
-                      variant="body2"
-                      style={{ fontSize: "40px"}}
-                    >
-                     Uniswap
+                    <ArgonTypography variant="body2" style={{color: 'lightgrey'}}>
+                       Etherium Tracker
                     </ArgonTypography>
-                    <ArgonTypography
-                      variant="body2"
-                      style={{ fontSize: "20px", color: "rgba(255, 255, 255, 0.7)" }}
-                    >
-                      12K members
-                    </ArgonTypography>
-                  </Grid>
-                  <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
-                    <img
-                      src="https://picsum.photos/150/150"
-                      style={{
-                        position: "absolute",
-                        borderRadius: "50%",
-                        bottom: -10,
-                        right: 0,
-                      }}
-                      alt="Uniswap logo"
-                    />
-                  </Grid>
                 </Grid>
-              </Grid>
+                </Grid>
+              </Grid> 
+              <Grid container style={{marginTop: '60px'}}>
+                <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
+                    <Grid item xs={8} lg={7} sm={9} md={9}>
+                      <ArgonTypography variant="body2"> 
+                          Loda Ipsum is simply dummy text of the printing and typesetting industry.
+                      </ArgonTypography>
+                      <ArgonButton variant="outlined" style={{marginTop: '30px', width: '180px'}} > 
+                        <ArgonTypography variant="h6" >Join Now</ArgonTypography>
+                      </ArgonButton>
+                    {/* <ArgonButton style={{ height: "48px", width: "150px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE', marginTop: '20px'}}> Join Now </ArgonButton> */}
+
+                    </Grid>
+                    <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
+                      <img
+                        src="https://picsum.photos/150/150"
+                        style={{
+                          position: "absolute",
+                          borderRadius: "50%",
+                          bottom: 0,
+                          right: 0,
+                        }}
+                        alt="Uniswap logo"
+                      />
+                    </Grid>
+                  </Grid>
+              </Grid> 
             </CardContent>
           </ArgonBox>
           </HoverCard>
           </div>
           </Grid>
-
-          <Grid item xs={12} md={3} lg={3} xl={3}>
-          <div data-aos="fade-up" data-aos-duration="5000">
-          <HoverCard>
-          <ArgonBox px={1} py={1}>
-            <CardContent>
-              <Grid container spacing={8}>
-              <div
-                style={{
-                  position: "absolute",
-                  top: "5px",
-                  right: "5px",
-                  backgroundColor: "red",
-                  height: "25px",
-                  width: "25px",
-                  borderRadius: "50%",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  color: "white",
-                  fontWeight: "bold",
-                  fontSize: "12px",
-                }}
-              >
-                3
-              </div>
-                <Grid container item xs={12} sm={12} md={12} justifyContent="space-between" alignItems="center">
-                 
-                  <ArgonTypography variant="h4">Etherium Tracker</ArgonTypography>
-                 
-                </Grid>
-                <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
-                  <Grid item xs={8} lg={7} sm={9} md={9}>
-                    <ArgonTypography
-                      variant="body2"
-                      style={{ fontSize: "40px"}}
-                    >
-                     Uniswap
-                    </ArgonTypography>
-                    <ArgonTypography
-                      variant="body2"
-                      style={{ fontSize: "20px", color: "rgba(255, 255, 255, 0.7)" }}
-                    >
-                      12K members
-                    </ArgonTypography>
-                  </Grid>
-                  <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
-                    <img
-                      src="https://picsum.photos/150/150"
-                      style={{
-                        position: "absolute",
-                        borderRadius: "50%",
-                        bottom: -10,
-                        right: 0,
-                      }}
-                      alt="Uniswap logo"
-                    />
-                  </Grid>
-                </Grid>
-              </Grid>
-            </CardContent>
-          </ArgonBox>
-          </HoverCard>
-          </div>
-          </Grid>
-
-
         </Grid>
       </ArgonBox>
     </DashboardLayout>

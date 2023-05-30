@@ -3,6 +3,7 @@ import { Card, CardContent, Grid, Stack } from "@mui/material";
 import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 import ArgonButton from "components/ArgonButton";
+import HoverCard from "components/HoverCard";
 
 const OrganizationJobs = () => {
   return (
@@ -18,7 +19,7 @@ const OrganizationJobs = () => {
       <ArgonBox px={3} py={3}>
         <Grid container>
           <Grid item>
-            <Card sx={{ overflow: "hidden", height: "100%" }}>
+            <HoverCard>
             <ArgonBox px={4} py={4}>
               <CardContent>
                 <Stack spacing={3}>
@@ -35,7 +36,7 @@ const OrganizationJobs = () => {
                 </Stack>
               </CardContent>
             </ArgonBox>
-            </Card>
+            </HoverCard>
           </Grid>
         </Grid>
       </ArgonBox>

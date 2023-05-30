@@ -53,7 +53,7 @@ const Articles = () => {
       
       <ArgonBox px={20} py={3}>
         <div data-aos="fade-up" data-aos-duration="5000">
-          <Card style={{ boxShadow: "0px 0px 80px purple" }}>
+          <Card style={{ boxShadow: "0px 0px 80px purple", backgroundColor: "#212529"}}>
             <ArgonBox px={10} py={3}>
               <CardContent>
                 <Grid container direction="column" spacing={2}>
@@ -90,7 +90,7 @@ const Articles = () => {
 
                 <Grid container direction="column" spacing={4} style={{ marginTop: "10px" }}>
                   <Card
-                    style={{ marginTop: "30px", backgroundColor: "#242424", marginLeft: "20px" }}
+                    style={{ marginTop: "30px", backgroundColor: "#2A2F34", marginLeft: "20px" }}
                   >
                     <ArgonBox px={10} py={3}>
                       <CardContent>

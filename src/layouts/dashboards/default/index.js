@@ -99,7 +99,7 @@ function Default() {
                   </Grid> 
                   <Grid item xs={12} md={4} lg={3} xl={3}>
                     <ArgonBox style={{display: "flex", justifyContent: "flex-end"}}>
-                      <img src="https://svgshare.com/i/tdt.svg" style={{borderRadius: "50%", height: '60px', width: '60px'}} />
+                      <img src="https://i.postimg.cc/FRxqNtHN/DAO-Icon-removebg-preview.png" style={{borderRadius: "50%", height: '60px', width: '60px'}} />
                     </ArgonBox>
                   </Grid>
                 </Grid> 
@@ -122,7 +122,7 @@ function Default() {
                   </Grid> 
                   <Grid item xs={12} md={4} lg={3} xl={3}>
                     <ArgonBox style={{display: "flex", justifyContent: "flex-end"}}>
-                      <img src="https://picsum.photos/60/60" style={{borderRadius: "50%", height: '60px', width: '60px'}} />
+                      <img src="https://i.postimg.cc/qMYJ6F8p/Live-Proposals-removebg-preview.png" style={{borderRadius: "50%", height: '60px', width: '60px'}} />
                     </ArgonBox>
                   </Grid>
                 </Grid> 
@@ -145,7 +145,7 @@ function Default() {
                   </Grid> 
                   <Grid item xs={12} md={4} lg={3} xl={3}>
                     <ArgonBox style={{display: "flex", justifyContent: "flex-end"}}>
-                      <img src="https://picsum.photos/60/60" style={{borderRadius: "50%", height: '60px', width: '60px'}} />
+                      <img src="https://i.postimg.cc/jdj6SDhG/Live-Proposals-2-1-removebg-preview.png" style={{borderRadius: "50%", height: '60px', width: '60px'}} />
                     </ArgonBox>
                   </Grid>
                 </Grid> 
@@ -168,7 +168,7 @@ function Default() {
                   </Grid> 
                   <Grid item xs={12} md={4} lg={3} xl={3}>
                     <ArgonBox style={{display: "flex", justifyContent: "flex-end"}}>
-                      <img src="https://picsum.photos/60/60" style={{borderRadius: "50%", height: '60px', width: '60px'}} />
+                      <img src="https://i.postimg.cc/YS0TN2kV/Job-Listing-removebg-preview.png" style={{borderRadius: "50%", height: '60px', width: '60px'}} />
                     </ArgonBox>
                   </Grid>
                 </Grid> 
