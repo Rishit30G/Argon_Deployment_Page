@@ -68,19 +68,23 @@ function TodoList() {
               <Fragment key={key}>
                 <ArgonBox component="li" py={1}>
                   <Card style={{ backgroundImage: "url('https://picsum.photos/1000/200')" }}>
-                    <CardContent style={{ backgroundColor: "rgba(0,0, 0, 0.65)" }}>
+                    <CardContent style={{ backgroundColor: "rgba(0,0, 0, 0.6)" }}>
+                     <Card style={{ background: 'linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6))', boxShadow: '0 0 20px 10px rgba(255, 255, 255, 0.6)', borderRadius: '10px', marginTop: '100px' }}>
+                      <CardContent>
                       <Grid container spacing={3} alignItems="center">
                         <Grid item alignItems="center">
                           <ArgonAvatar src={img} alt={name} />
                         </Grid>
                         <Grid item ml="auto">
-                          <ArgonTypography variant="h6" style={{ opacity: 1 }}>{author}</ArgonTypography>
+                          <ArgonTypography variant="h3" style={{ opacity: 1 , color: 'black'}}>{author}</ArgonTypography>
                         </Grid>
                         <Grid item lineHeight={2.8}>
-                          <ArgonTypography variant="h4" style={{ opacity: 1 }}>{name}</ArgonTypography>
-                          <ArgonTypography variant="h6" style={{ opacity: 1 }}>{status}</ArgonTypography>
+                          <ArgonTypography variant="h3" style={{ opacity: 1 ,  color: 'black'}}>{name}</ArgonTypography>
+                          <ArgonTypography variant="body2" style={{ opacity: 1,  color: 'black'}}>{status}</ArgonTypography>
                         </Grid>
                       </Grid>
+                      </CardContent>
+                      </Card>
                     </CardContent>
                   </Card>
                 </ArgonBox>

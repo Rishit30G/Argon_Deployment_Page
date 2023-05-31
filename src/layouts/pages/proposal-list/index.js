@@ -19,9 +19,30 @@ const ProposalList = () => {
   return (
     <DashboardLayout>
       <DashboardNavbar />
+
       <ArgonBox px={10} py={3}>
+
+        <Grid container spacing={3} justifyContent="space-between" >
+          <Grid item xl={5}>
+              <ArgonTypography variant="h3" fontWeight="bold">
+                  Listing of DAOs
+              </ArgonTypography>
+          </Grid>
+          <Grid item xl={7}>
+            <HoverCard>
+              <CardContent>
+                 <ArgonTypography variant="h5" fontWeight="bold" style={{fontStyle: 'italic', direction: 'rtl', color: 'lightgrey'}}>
+                  Check out all the DAO protocols available, see what they are progressing towards and step up your dao knowledge even check the latest jobs that are added by these DAOs, isn't is amazing to work with your favorite protocol
+                 </ArgonTypography>
+              </CardContent>
+            </HoverCard>
+          </Grid>
+        </Grid>
+      </ArgonBox>
+      <ArgonBox px={{ xs: 2, sm: 3, md: 5, lg: 10 }} py={3}>
         <Grid container spacing={3}>
-          <Grid item xs={12} md={3} lg={3} xl={4}>
+      
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={4}>
           <div data-aos="fade-up" data-aos-duration="5000">
           <HoverCard>
           <ArgonBox px={1} py={1}>
@@ -32,7 +53,7 @@ const ProposalList = () => {
                   position: "absolute",
                   top: "5px",
                   right: "5px",
-                  backgroundColor: "red",
+                  backgroundColor: "#FF5A5F",
                   height: "25px",
                   width: "25px",
                   borderRadius: "50%",
@@ -66,7 +87,7 @@ const ProposalList = () => {
                 <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
                     <Grid item xs={8} lg={7} sm={9} md={9}>
                       <ArgonTypography variant="body2"> 
-                          Loda Ipsum is simply dummy text of the printing and typesetting industry.
+                          lorem Ipsum is simply dummy text of the printing and typesetting industry.
                       </ArgonTypography>
                       <ArgonButton variant="outlined" style={{marginTop: '30px', width: '180px'}} > 
                         <ArgonTypography variant="h6" >Join Now</ArgonTypography>
@@ -75,16 +96,17 @@ const ProposalList = () => {
 
                     </Grid>
                     <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
-                      <img
-                        src="https://picsum.photos/150/150"
-                        style={{
-                          position: "absolute",
-                          borderRadius: "50%",
-                          bottom: 0,
-                          right: 0,
-                        }}
-                        alt="Uniswap logo"
-                      />
+                    <img
+                      src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png"
+                      style={{
+                        width: "200px",
+                        height: "200px",
+                        position: "absolute",
+                        bottom: -40,
+                        right: -40,
+                      }}
+                      alt="Uniswap logo"
+                    />
                     </Grid>
                   </Grid>
               </Grid> 
@@ -94,7 +116,7 @@ const ProposalList = () => {
           </div>
           </Grid>
 
-          <Grid item xs={12} md={3} lg={3} xl={4}>
+          <Grid item xs={12} sm={6} md={4} lg={3} xl={4}>
           <div data-aos="fade-up" data-aos-duration="5000">
           <HoverCard>
           <ArgonBox px={1} py={1}>
@@ -105,7 +127,7 @@ const ProposalList = () => {
                   position: "absolute",
                   top: "5px",
                   right: "5px",
-                  backgroundColor: "red",
+                  backgroundColor: "#FF5A5F",
                   height: "25px",
                   width: "25px",
                   borderRadius: "50%",
@@ -139,7 +161,7 @@ const ProposalList = () => {
                 <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
                     <Grid item xs={8} lg={7} sm={9} md={9}>
                       <ArgonTypography variant="body2"> 
-                          Loda Ipsum is simply dummy text of the printing and typesetting industry.
+                          lorem Ipsum is simply dummy text of the printing and typesetting industry.
                       </ArgonTypography>
                       <ArgonButton variant="outlined" style={{marginTop: '30px', width: '180px'}} > 
                         <ArgonTypography variant="h6" >Join Now</ArgonTypography>
@@ -148,16 +170,17 @@ const ProposalList = () => {
 
                     </Grid>
                     <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
-                      <img
-                        src="https://picsum.photos/150/150"
-                        style={{
-                          position: "absolute",
-                          borderRadius: "50%",
-                          bottom: 0,
-                          right: 0,
-                        }}
-                        alt="Uniswap logo"
-                      />
+                    <img
+                      src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png"
+                      style={{
+                        width: "200px",
+                        height: "200px",
+                        position: "absolute",
+                        bottom: -40,
+                        right: -40,
+                      }}
+                      alt="Uniswap logo"
+                    />
                     </Grid>
                   </Grid>
               </Grid> 
@@ -167,7 +190,7 @@ const ProposalList = () => {
           </div>
           </Grid>
 
-          <Grid item xs={12} md={3} lg={3} xl={4}>
+          <Grid item xs={12} sm={6} md={4} lg={3} xl={4}>
           <div data-aos="fade-up" data-aos-duration="5000">
           <HoverCard>
           <ArgonBox px={1} py={1}>
@@ -178,7 +201,7 @@ const ProposalList = () => {
                   position: "absolute",
                   top: "5px",
                   right: "5px",
-                  backgroundColor: "red",
+                  backgroundColor: "#FF5A5F",
                   height: "25px",
                   width: "25px",
                   borderRadius: "50%",
@@ -212,7 +235,7 @@ const ProposalList = () => {
                 <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
                     <Grid item xs={8} lg={7} sm={9} md={9}>
                       <ArgonTypography variant="body2"> 
-                          Loda Ipsum is simply dummy text of the printing and typesetting industry.
+                          lorem Ipsum is simply dummy text of the printing and typesetting industry.
                       </ArgonTypography>
                       <ArgonButton variant="outlined" style={{marginTop: '30px', width: '180px'}} > 
                         <ArgonTypography variant="h6" >Join Now</ArgonTypography>
@@ -221,16 +244,17 @@ const ProposalList = () => {
 
                     </Grid>
                     <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
-                      <img
-                        src="https://picsum.photos/150/150"
-                        style={{
-                          position: "absolute",
-                          borderRadius: "50%",
-                          bottom: 0,
-                          right: 0,
-                        }}
-                        alt="Uniswap logo"
-                      />
+                    <img
+                      src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png"
+                      style={{
+                        width: "200px",
+                        height: "200px",
+                        position: "absolute",
+                        bottom: -40,
+                        right: -40,
+                      }}
+                      alt="Uniswap logo"
+                    />
                     </Grid>
                   </Grid>
               </Grid> 

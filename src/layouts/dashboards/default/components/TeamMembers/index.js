@@ -68,7 +68,7 @@ function TeamMembers() {
                 <ArgonBox component="li" py={1}>
                    <Card style={{ backgroundImage: "url('https://picsum.photos/1000/400')" }}>
                      <CardContent style={{ backgroundColor: "rgba(0,0, 0, 0.6)" }}>
-                     <Card style={{ background: 'linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7))', boxShadow: '0 0 20px 10px rgba(255, 255, 255, 0.8)', borderRadius: '10px', marginTop: '100px' }}>
+                     <Card style={{ background: 'linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6))', boxShadow: '0 0 20px 10px rgba(255, 255, 255, 0.6)', borderRadius: '10px', marginTop: '100px' }}>
                           <CardContent>
                           <Grid container spacing={3} alignItems="center"> 
                             <Grid item>
@@ -80,10 +80,10 @@ function TeamMembers() {
                               </ArgonTypography>
                             </Grid>
                             <Grid item lineHeight={1.4}>
-                              <ArgonTypography variant="h4" style={{ opacity: 1, color: 'black' }}>
+                              <ArgonTypography variant="h3" style={{ opacity: 1, color: 'black' }}>
                                 {name}
                               </ArgonTypography>
-                              <ArgonTypography variant="h6" style={{ opacity: 1, color: 'black' }}>
+                              <ArgonTypography variant="body2" style={{ opacity: 1, color: 'black' }}>
                                 {status}
                               </ArgonTypography>
                             </Grid>

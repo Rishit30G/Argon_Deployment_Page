@@ -163,7 +163,7 @@ const ProtocolDiscussion = () => {
               </Grid>
               <Grid item>
                 <div data-aos="fade-up" data-aos-duration="5000">
-                  <Card>
+                  <HoverCard>
                     <ArgonBox px={2} py={2}>
                       <CardContent>
                         <Grid
@@ -218,7 +218,7 @@ const ProtocolDiscussion = () => {
                         </Grid>
                       </CardContent>
                     </ArgonBox>
-                  </Card>
+                  </HoverCard>
                 </div>
               </Grid>
             </Grid>

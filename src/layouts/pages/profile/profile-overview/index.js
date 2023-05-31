@@ -23,7 +23,6 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import {TabContext, TabList, TabPanel} from '@material-ui/lab';
 import Tab from '@mui/material/Tab';
-
 // Argon Dashboard 2 PRO MUI components
 import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
@@ -52,7 +51,7 @@ import team2 from "assets/images/team-2.jpg";
 import team3 from "assets/images/team-3.jpg";
 import team4 from "assets/images/team-4.jpg";
 import ArgonButton from "components/ArgonButton";
-import { Box, Divider, Stack } from "@mui/material";
+import { Box, Divider, Stack, Tabs } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import Overview2 from "../overview";
 import Reputation from "../reputation";
@@ -147,7 +146,7 @@ function Overview() {
       <ArgonBox mt={3} >
         <TabContext value={value}>
           <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-            <TabList onChange={handleChange} aria-label="lab API tabs example">
+            <TabList onChange={handleChange}>
               <Tab label="Overview" value="1" />
               <Tab label="Reputation" value="2" />
               <Tab label="Past Experience" value="3" />

@@ -131,7 +131,7 @@ const ProposalDiscussion = () => {
             </ArgonTypography>
           </Grid>
           <Grid item>
-            <Card>
+            <HoverCard>
           <ArgonBox px={3} py={3}>
               <CardContent>
                 <Grid container spacing={3} justifyContent="space-between">
@@ -174,7 +174,7 @@ const ProposalDiscussion = () => {
                 </Grid>
               </CardContent>
           </ArgonBox>
-            </Card>
+            </HoverCard>
           </Grid>
         </Grid>
       </ArgonBox>

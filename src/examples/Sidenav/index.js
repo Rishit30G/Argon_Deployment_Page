@@ -217,10 +217,10 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
             <ArgonBox
               component="img"
               //Add picsum.photos/200/300 to the src attribute to add a random image
-              src = "https://i.postimg.cc/ZqhPxVrd/DAO-Realm-Template-1920x1080-1-removebg-preview.png"
-              height="50px"
-              width="50px"
-              style={{ borderRadius: "50%" }}
+              src = "https://i.postimg.cc/4dkvfGYL/Final-Logo-Concept-Dice-2-Extended.png"
+              height="40px"
+              width="40px"
+              style={{marginRight: '5px'}}
               /> 
               
           )}

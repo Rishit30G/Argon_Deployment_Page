@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardContent, Grid, Icon, Stack } from "@mui/material";
+import { Card, CardContent, Divider, Grid, Icon, Stack } from "@mui/material";
 import ArgonBox from "components/ArgonBox";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
@@ -9,6 +9,7 @@ import { OutlinedFlag, Person, Work } from "@material-ui/icons";
 import UserInfo from "layouts/pages/users/new-user/components/UserInfo";
 import { ContentPaste, PersonOffOutlined } from "@mui/icons-material";
 import HoverCard from "components/HoverCard";
+import DefaultDivider from "components/Divider";
 
 const Overview2 = () => {
   return (
@@ -47,13 +48,14 @@ const Overview2 = () => {
                 </Grid>
                 <Grid item>
                 <Stack>
-                    <ArgonTypography variant="h5">HTML</ArgonTypography>
-                    <ArgonTypography variant="h5">CSS</ArgonTypography>
-                    <ArgonTypography variant="h5">JavaScript</ArgonTypography>
-                    <ArgonTypography variant="h5">4+ Years Experience</ArgonTypography>
+                    <ArgonTypography variant="body2">HTML</ArgonTypography>
+                    <ArgonTypography variant="body2">CSS</ArgonTypography>
+                    <ArgonTypography variant="body2">JavaScript</ArgonTypography>
+                    <ArgonTypography variant="body2">4+ Years Experience</ArgonTypography>
                   </Stack>
                 </Grid>
               </ArgonBox>
+              <Divider/>
               <ArgonBox my={3} mx={3}>
                 <Grid item>
                   <Grid container direction="row" spacing={2}>
@@ -66,7 +68,7 @@ const Overview2 = () => {
                   </Grid>
                 </Grid>
                 <Grid item>
-                  <ArgonTypography variant="body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vulputate, leo at pharetra finibus, nisi nibh commodo turpis, quis tincidunt elit elit ut magna. Sed ut ipsum enim. Sed fermentum magna quis turpis varius, ac aliquet ipsum auctor. Sed lacinia purus id nisl pharetra, nec congue sapien pulvinar</ArgonTypography>
+                  <ArgonTypography variant="body2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vulputate, leo at pharetra finibus, nisi nibh commodo turpis, quis tincidunt elit elit ut magna. Sed ut ipsum enim. Sed fermentum magna quis turpis varius, ac aliquet ipsum auctor. Sed lacinia purus id nisl pharetra, nec congue sapien pulvinar</ArgonTypography>
                 </Grid>
               </ArgonBox>
               </CardContent>

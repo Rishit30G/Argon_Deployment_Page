@@ -262,11 +262,10 @@ const GrantMainPage = () => {
             <img src="https://picsum.photos/60/60" style={{ borderRadius: "50%" }} />
             <ArgonTypography variant="h1">About</ArgonTypography>
           </Stack>
-          <Card style={{ border: "1px solid grey", boxShadow: "0px 0px 30px #B721BE" }}>
+          <Card style={{ border: "1px solid grey", boxShadow: "0px 0px 30px #B721BE", backgroundColor: '#212529' }}>
             <ArgonBox px={10} py={3}>
               <CardContent>
                 <Grid container direction="column" spacing={4}>
-                  <Grid item></Grid>
                   <Grid item>
                     <ArgonTypography variant="body2">
                       Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetur adipiscing
