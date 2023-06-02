@@ -89,47 +89,53 @@ const ArticleMain = () => {
       <DashboardNavbar />
 
       <ArgonBox mb={3} mx={15} my={3}>
-        <HoverCard>
-          <CardContent>
-            <ArgonBox px={3} py={3}>
-              <Grid container spacing={2} direction="row">
-                <Grid item xs={12} md={5}>
-                  <img
-                    src="https://picsum.photos/600/300"
-                    alt="Placeholder"
-                  />
-                </Grid>
-                <Grid item xs={12} md={7}>
-                  <ArgonTypography variant="h2">
-                    Stakers are Withdrawing Rewards, Not Principals
-                  </ArgonTypography>
-                  <ArgonTypography variant="h5" style={{marginTop: '10px'}}> 
-                    Aleksandar Gilbert • 4 hrs ago
-                 </ArgonTypography>
-                  <ArgonTypography variant="body2" style={{marginTop: '20px',  color: "rgba(255, 255, 255, 0.7)"}}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nulla nec purus feugiat, molestie ipsum et, consequat nibh.
-                    Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum
-                    accumsan in in leo. Fusce malesuada vulputate faucibus.
-                    Integer in hendrerit nisi. Praesent a hendrerit urna. In
-                    non imperdiet elit, sed molestie odio. Fusce ac metus
-                    finibus, facilisis arcu eu, luctus sapien. Pellentesque
-                    cursus maximus felis, pharetra porta purus aliquet viverra.
-                    Sed nec malesuada arcu.
-                  </ArgonTypography>
-                 
-                </Grid>
-              </Grid>
-            </ArgonBox>
-          </CardContent>
-        </HoverCard>
+      <HoverCard>
+  <CardContent>
+    <ArgonBox px={3} py={3}>
+      <Grid container spacing={6} direction="row">
+        <Grid item xs={12} sm={12} md={5}>
+          <CardMedia
+            component="img"
+            image = " https://picsum.photos/600/250"
+            style={{
+              width: "100%",
+              height: "auto",
+            }}
+            >
+          </CardMedia>
+        </Grid>
+        <Grid item xs={12} sm={12} md={7}>
+          <ArgonTypography variant="h2">
+            Stakers are Withdrawing Rewards, Not Principals
+          </ArgonTypography>
+          <ArgonTypography variant="h5" style={{ marginTop: "10px" }}>
+            Aleksandar Gilbert • 4 hrs ago
+          </ArgonTypography>
+          <ArgonTypography
+            variant="body2"
+            style={{ marginTop: "20px", color: "rgba(255, 255, 255, 0.7)" }}
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus
+            feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros
+            sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus.
+            Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed
+            molestie odio. Fusce ac metus finibus, facilisis arcu eu, luctus sapien.
+            Pellentesque cursus maximus felis, pharetra porta purus aliquet viverra. Sed nec
+            malesuada arcu.
+          </ArgonTypography>
+        </Grid>
+      </Grid>
+    </ArgonBox>
+  </CardContent>
+</HoverCard>
+
       </ArgonBox>
 
       <ArgonBox pt={5} mx={15} my={3}>
         <ArgonTypography variant="h2" style={{ marginBottom: "10px" }}>
           Latest Releases
         </ArgonTypography>
-        <DefaultDivider/>
+        <DefaultDivider />
       </ArgonBox>
 
       <ArgonBox mx={15} my={3}>
@@ -144,7 +150,18 @@ const ArticleMain = () => {
                         <Grid item xs={12} md={6} lg={3} key={index}>
                           <HoverCard>
                             <CardActionArea>
-                              <CardMedia component="img" image={item.image} />
+                              <CardMedia
+                                component="img"
+                                image={item.image}
+                                style={{
+                                  objectFit: "cover",
+                                  maxHeight: "100%",
+                                  maxWidth: "100%",
+                                  display: "block",
+                                  marginLeft: "auto",
+                                  marginRight: "auto",
+                                }}
+                              />
                               <CardContent>
                                 <ArgonTypography
                                   variant="h4"
@@ -191,18 +208,16 @@ const ArticleMain = () => {
         <ArgonTypography variant="h2" style={{ marginBottom: "10px" }}>
           Press Release
         </ArgonTypography>
-        <DefaultDivider/>
-        
+        <DefaultDivider />
+
         <PressReleaseCard />
       </ArgonBox>
-
-      
 
       <ArgonBox pt={5} mx={15} my={3}>
         <ArgonTypography variant="h2" style={{ marginBottom: "10px" }}>
           Defi Analysis
         </ArgonTypography>
-        <DefaultDivider/>
+        <DefaultDivider />
       </ArgonBox>
 
       <ArgonBox mb={3} mx={15} my={3}>
@@ -217,7 +232,18 @@ const ArticleMain = () => {
                         <Grid item xs={12} md={6} lg={3} key={index}>
                           <HoverCard>
                             <CardActionArea>
-                              <CardMedia component="img" image={item.image} />
+                              <CardMedia
+                                component="img"
+                                image={item.image}
+                                style={{
+                                  objectFit: "cover",
+                                  maxHeight: "100%",
+                                  maxWidth: "100%",
+                                  display: "block",
+                                  marginLeft: "auto",
+                                  marginRight: "auto",
+                                }}
+                              />
                               <CardContent>
                                 <ArgonTypography
                                   variant="h4"

@@ -137,7 +137,7 @@ const NewDAOProtocol = () => {
                       </Grid>
                       <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
                         <img
-                          src="https://picsum.photos/180/180"
+                          src="https://picsum.photos/150/150"
                           style={{
                             position: "absolute",
                             borderRadius: "50%",
@@ -196,7 +196,7 @@ const NewDAOProtocol = () => {
                       </Grid>
                       <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
                         <img
-                          src="https://picsum.photos/180/180"
+                          src="https://picsum.photos/150/150"
                           style={{
                             position: "absolute",
                             borderRadius: "50%",
@@ -255,7 +255,7 @@ const NewDAOProtocol = () => {
                       </Grid>
                       <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
                         <img
-                          src="https://picsum.photos/180/180"
+                          src="https://picsum.photos/150/150"
                           style={{
                             position: "absolute",
                             borderRadius: "50%",

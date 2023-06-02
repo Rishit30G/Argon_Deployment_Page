@@ -101,7 +101,16 @@ const DefiAnalysisCard = () => {
           <CardContent>
               <Grid container direction="column" spacing={2}>
                 <Grid item>
-                  <CardMedia component="img" image={testimonial.image} />
+                  <CardMedia component="img" image={testimonial.image} 
+                  style={{
+                    objectFit: 'cover', 
+                    maxHeight: '100%', 
+                    maxWidth: '100%',
+                    display: 'block',
+                    marginLeft: 'auto',
+                    marginRight: 'auto' 
+                  }}
+                  />
                 </Grid>
                 <Grid item>
                   <ArgonTypography variant="body2">{testimonial.quote}</ArgonTypography>

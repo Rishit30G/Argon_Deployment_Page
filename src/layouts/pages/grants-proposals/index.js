@@ -123,13 +123,13 @@ function GrantsAndProposals() {
                     </ArgonTypography>
                     <Grid container style={{marginTop: '10px'}}> 
                       <Grid item> 
-                        <img src="https://i.postimg.cc/DzZSdTB9/1200px-Twitter-bird-logo-2012-svg.png" style={{width: '30px', height: '25px', marginRight: '10px'}}/>
+                        <TwitterIcon style={{color: '#1DA1F2', marginRight: '10px'}}/>
                       </Grid>
                       <Grid item> 
-                       <img src="https://i.postimg.cc/LX5jXPcZ/1614104-200.png" style={{width: '30px', height: '25px', marginRight: '10px'}}/>
+                       <LanguageIcon style={{color: '#8d8d8d', marginRight: '10px'}}/>
                       </Grid>
                       <Grid item> 
-                          <img src="https://i.postimg.cc/hPXgrGBb/defi-lama-logo-freelogovectors-net.png" style={{width: '30px', height: '25px'}}/>
+                          <img src="https://i.postimg.cc/hPXgrGBb/defi-lama-logo-freelogovectors-net.png" style={{width: '18px', height: '20px'}}/>
                       </Grid>
                     </Grid>
                   </Grid>

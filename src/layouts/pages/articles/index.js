@@ -92,31 +92,36 @@ const Articles = () => {
                   <Card
                     style={{ marginTop: "30px", backgroundColor: "#2A2F34", marginLeft: "20px" }}
                   >
-                    <ArgonBox px={10} py={3}>
+                    <ArgonBox px={17} py={3}>
                       <CardContent>
-                        <Grid
-                          item
-                          xs={12}
-                          md={12}
-                          lg={12}
-                          style={{ display: "flex", justifyContent: "center" }}
-                        >
-                          <div data-aos="zoom-out" data-aos-duration="5000">
-                            <img
-                              src="https://picsum.photos/1100/600"
-                              style={{ borderRadius: "10px" }}
-                              alt="placeholder"
-                            />
-                          </div>
-                        </Grid>
-
-                        <Grid item xs={12} md={12} lg={12}>
-                          <Grid container>
+                        <Grid container direction="column" justifyContainer="center"  alignItems="center" spacing={2} >
+                          <Grid item xs={12} md={12} lg={12}>
                             <div data-aos="fade-up" data-aos-duration="5000">
-                              <ArgonTypography style={{ marginBottom: "50px" }}>
+                              <img src="https://picsum.photos/1300/700" 
+                              alt="article"
+                              style={{ width: "100%", height: "auto", borderRadius: '14px' }}/>
+                            </div>
+                          </Grid>
+                          <Grid item xs={12} md={12} lg={12}>
+                            <div data-aos="fade-up" data-aos-duration="5000">
+                            <ArgonTypography style={{ marginBottom: "50px" }}>
                                 <div dangerouslySetInnerHTML={{ __html: html }} />
                               </ArgonTypography>
+                            </div> 
+                          </Grid>
+                          <Grid item xs={12} md={12} lg={12}>
+                             <div data-aos="fade-up" data-aos-duration="5000">
+                              <img src="https://picsum.photos/700/400" 
+                              alt="article"
+                              style={{ width: "100%", height: "auto", borderRadius: '14px' }}/>
                             </div>
+                          </Grid>
+                          <Grid item xs={12} md={12} lg={12}>
+                            <div data-aos="fade-up" data-aos-duration="5000">
+                            <ArgonTypography style={{ marginBottom: "50px" }}>
+                                <div dangerouslySetInnerHTML={{ __html: html }} />
+                              </ArgonTypography>
+                            </div> 
                           </Grid>
                         </Grid>
                       </CardContent>

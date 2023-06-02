@@ -1,4 +1,4 @@
-import { CardContent, Grid, Stack } from "@mui/material";
+import { CardContent, CardMedia, Grid, Stack } from "@mui/material";
 import ArgonBadge from "components/ArgonBadge";
 import ArgonBox from "components/ArgonBox";
 import ArgonButton from "components/ArgonButton";
@@ -28,35 +28,45 @@ const DefiAnalysis = () => {
       <ArgonBox px={15} py={3}>
         <Grid container spacing={8}>
           <Grid item xs={12} md={6} lg={8} xl={8}>
-            <HoverCard>
-              <ArgonBox px={2} py={2}>
-                <CardContent>
-                  <Grid container>
-                    <Grid item xs={12} md={3} lg={5} xl={5}>
-                      <img src="https://picsum.photos/400/300" width="400px" height="300px"/>
-                    </Grid>
-                    <Grid item xs={12} md={9} lg={7} xl={7}>
-                      <ArgonBox> 
-                        <Stack direction="column" spacing={1}>
-                          <ArgonBadge badgeContent="Python" variant="contained" color="dark" container />
-                          <ArgonTypography variant="h2">DAI Mostly Centralized Even After Halving USDC Exposure</ArgonTypography>
-                        </Stack>
-                      </ArgonBox>
-                      <ArgonBox mt={2}>
-                        <Stack direction="row" alignItems="center" spacing={2}>
-                          <ArgonTypography variant="h5" style={{color: 'grey'}}>Samuel Haig</ArgonTypography>
-                          <ArgonTypography variant="body2" style={{color: 'grey'}}>• 2 hours ago</ArgonTypography>
-                      </Stack>
-                      </ArgonBox>
-                      <ArgonBox mt={2}>
-                      <ArgonTypography variant="body2" style={{color: "#B2B2B2"}}>The lion's share of MakerDAO's stablecoin is backed by centralized stablecoins and real-world assets.</ArgonTypography>
-                      
-                      </ArgonBox>
-                    </Grid>
-                  </Grid>
-                </CardContent>
-              </ArgonBox>
-            </HoverCard>
+          <HoverCard>
+  <ArgonBox px={2} py={2}>
+    <CardContent>
+      <Grid container spacing={5}> 
+        <Grid item xs={12} sm={12} md={12} lg={12} xl={5}>
+          <CardMedia
+            component="img"
+            image = " https://picsum.photos/700/400"
+            style={{
+              width: "100%",
+              height: "auto",
+              maxHeight: "300px",
+              objectFit: "cover"
+            }}
+            >
+          </CardMedia>
+        </Grid>
+        <Grid item xs={12} sm={12} md={12} lg={12} xl={7}>
+          <ArgonBox> 
+            <Stack direction="column" spacing={1}>
+              <ArgonBadge badgeContent="Python" variant="contained" color="dark" container />
+              <ArgonTypography variant="h2">DAI Mostly Centralized Even After Halving USDC Exposure</ArgonTypography>
+            </Stack>
+          </ArgonBox>
+          <ArgonBox mt={2}>
+            <Stack direction="row" alignItems="center" spacing={2}>
+              <ArgonTypography variant="h5" style={{color: 'grey'}}>Samuel Haig</ArgonTypography>
+              <ArgonTypography variant="body2" style={{color: 'grey'}}>• 2 hours ago</ArgonTypography>
+            </Stack>
+          </ArgonBox>
+          <ArgonBox mt={2}>
+            <ArgonTypography variant="body2" style={{color: "#B2B2B2"}}>The lion's share of MakerDAO's stablecoin is backed by centralized stablecoins and real-world assets.</ArgonTypography>
+          </ArgonBox>
+        </Grid>
+      </Grid>
+    </CardContent>
+  </ArgonBox>
+</HoverCard>
+
           </Grid>
           <Grid item xs={12} md={6} lg={4} xl={4}>
              <HoverCard> 
@@ -102,7 +112,18 @@ const DefiAnalysis = () => {
                             <ArgonBox px={1} py={1}>
                                 <Grid container>
                                   <Grid container item xs={12} md={3} lg={5} xl={5} >
-                                    <img src="https://picsum.photos/150/150" />
+                                  <CardMedia
+                                      component="img"
+                                      image = "https://picsum.photos/150/150"
+                                      style={{
+                                        objectFit: 'cover', 
+                                        maxHeight: '100%', 
+                                        maxWidth: '100%',
+                                        display: 'block',
+                                        marginLeft: 'auto',
+                                        marginRight: 'auto' 
+                                      }}
+                                      ></CardMedia>
                                   </Grid>
                                   <Grid item xs={12} md={9} lg={7} xl={7}>
                                     <ArgonBadge badgeContent="Defi News" variant="contained" color="dark" container />
@@ -118,7 +139,18 @@ const DefiAnalysis = () => {
                             <ArgonBox px={1} py={1}>
                                 <Grid container>
                                   <Grid container item xs={12} md={3} lg={5} xl={5} >
-                                    <img src="https://picsum.photos/150/150" />
+                                    <CardMedia
+                                      component="img"
+                                      image = "https://picsum.photos/150/150"
+                                      style={{
+                                        objectFit: 'cover', 
+                                        maxHeight: '100%', 
+                                        maxWidth: '100%',
+                                        display: 'block',
+                                        marginLeft: 'auto',
+                                        marginRight: 'auto' 
+                                      }}
+                                      ></CardMedia>
                                   </Grid>
                                   <Grid item xs={12} md={9} lg={7} xl={7}>
                                     <ArgonBadge badgeContent="Defi News" variant="contained" color="dark" container />
@@ -134,7 +166,18 @@ const DefiAnalysis = () => {
                             <ArgonBox px={1} py={1}>
                                 <Grid container>
                                   <Grid container item xs={12} md={3} lg={5} xl={5} >
-                                    <img src="https://picsum.photos/150/150" />
+                                  <CardMedia
+                                      component="img"
+                                      image = "https://picsum.photos/150/150"
+                                      style={{
+                                        objectFit: 'cover', 
+                                        maxHeight: '100%', 
+                                        maxWidth: '100%',
+                                        display: 'block',
+                                        marginLeft: 'auto',
+                                        marginRight: 'auto' 
+                                      }}
+                                      ></CardMedia>
                                   </Grid>
                                   <Grid item xs={12} md={9} lg={7} xl={7}>
                                     <ArgonBadge badgeContent="Defi News" variant="contained" color="dark" container />

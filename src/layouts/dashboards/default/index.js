@@ -83,6 +83,17 @@ function Default() {
   return (
     <DashboardLayout>
       <DashboardNavbar />
+
+      <ArgonBox py={3} px={15}> 
+         <Grid container justifyContent="center">  
+            <Grid item xs={8} lg={8} xl={8}>
+              <Slider/> 
+            </Grid>
+         </Grid>
+      </ArgonBox>
+
+
+
       <ArgonBox py={3} px={15}>
         <ArgonTypography variant="h2" style={{ marginBottom: "20px" }}>
           App Metrics
@@ -128,7 +139,7 @@ function Default() {
                 </Grid> 
                 <Grid container> 
                    <Grid item xs={12} md={6} lg={3}>
-                     <ArgonTypography variant="h1"> {post[0].cnt_dao} </ArgonTypography>
+                     <ArgonTypography variant="h1"> {post[0].jobs_disbursed} </ArgonTypography>
                     </Grid>
                 </Grid>
                 </ArgonBox>
@@ -151,7 +162,7 @@ function Default() {
                 </Grid> 
                 <Grid container> 
                    <Grid item xs={12} md={6} lg={3}>
-                     <ArgonTypography variant="h1"> {post[0].cnt_dao} </ArgonTypography>
+                     <ArgonTypography variant="h1"> {post[0].live_proposal} </ArgonTypography>
                     </Grid>
                 </Grid>
                 </ArgonBox>
@@ -174,7 +185,7 @@ function Default() {
                 </Grid> 
                 <Grid container> 
                    <Grid item xs={12} md={6} lg={3}>
-                     <ArgonTypography variant="h1"> {post[0].cnt_dao} </ArgonTypography>
+                     <ArgonTypography variant="h1"> {post[0].xp_earned} </ArgonTypography>
                     </Grid>
                 </Grid>
                 </ArgonBox>
@@ -223,10 +234,6 @@ function Default() {
                 <GrantCard></GrantCard>
               </CardContent>
             </HoverCard>
-          </Grid>
-
-          <Grid item xs={12} lg={6}>
-            <Slider />
           </Grid>
         </Grid>
       </ArgonBox>

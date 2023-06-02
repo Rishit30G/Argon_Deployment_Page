@@ -32,7 +32,7 @@ const ProposalList = () => {
             <HoverCard>
               <CardContent>
                  <ArgonTypography variant="h5" fontWeight="bold" style={{fontStyle: 'italic', direction: 'rtl', color: 'lightgrey'}}>
-                  Check out all the DAO protocols available, see what they are progressing towards and step up your dao knowledge even check the latest jobs that are added by these DAOs, isn't is amazing to work with your favorite protocol
+                    Check out all the DAO protocols available, see what they are progressing towards and step up your dao knowledge even check the latest jobs that are added by these DAOs, isn't is amazing to work with your favorite protocol
                  </ArgonTypography>
               </CardContent>
             </HoverCard>

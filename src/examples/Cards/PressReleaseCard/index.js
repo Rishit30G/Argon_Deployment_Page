@@ -99,7 +99,18 @@ const PressReleaseCard = () => {
         <Grid item xs={12} sm={6} md={3} key={testimonial.id}>
           <HoverCard>
             <CardActionArea>
-              <CardMedia component="img" image={testimonial.image} />
+            <CardMedia
+      component="img"
+      image={testimonial.image}
+      style={{ 
+        objectFit: 'cover', 
+        maxHeight: '100%', 
+        maxWidth: '100%',
+        display: 'block',
+        marginLeft: 'auto',
+        marginRight: 'auto' 
+      }}
+    />
               <CardContent>
                 <ArgonTypography>{testimonial.quote}</ArgonTypography>
               </CardContent>

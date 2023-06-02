@@ -16,18 +16,28 @@ import ArgonButton from "components/ArgonButton";
 import ArgonTypography from "components/ArgonTypography";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import HoverCard from "components/HoverCard";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import DefaultDivider from "components/Divider";
+import axios from "axios";
+
+
+const markdownIt = require("markdown-it");
+const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/article/?format=json";
 
 const GrantMainPage = () => {
   React.useEffect(() => {
     AOS.init();
   }, []);
+
+
+  
+  
+
 
   const [startIndex, setStartIndex] = useState(0);
   const items = [
@@ -86,6 +96,24 @@ const GrantMainPage = () => {
   };
 
   const visibleItems = items.slice(startIndex, startIndex + 4);
+
+  const [post, setPost] = useState(null);
+
+  useEffect(() => {
+    axios
+      .get(baseURL)
+      .then((response) => {
+        // console.log(response.data);
+        setPost(response.data);
+      })
+      .catch((error) => {
+        // console.log(error);
+      });
+  }, []);
+  if(!post) return null;
+
+  const md = new markdownIt();
+  const html = md.render(post[0].article_desc);
 
   return (
     <DashboardLayout>
@@ -210,7 +238,7 @@ const GrantMainPage = () => {
           <Grid item xs={12} lg={12} md={12} xl={4}>
             <div data-aos="fade-up" data-aos-duration="5000">
               <Stack direction="row" justifyContent="center" spacing={2} style={{ marginBottom: "20px" }}>
-                <ArgonTypography variant="h2">Team Description</ArgonTypography>
+                <ArgonTypography variant="h2">Protocol Description</ArgonTypography>
               </Stack>
               <Card style={{ border: "1px solid grey" }}>
                 <ArgonBox px={5} py={2}>
@@ -258,64 +286,39 @@ const GrantMainPage = () => {
 
       <ArgonBox mb={3} mx={20} my={3}>
         <div data-aos="fade-up" data-aos-duration="5000">
-          <Stack direction="row" spacing={2} style={{ marginBottom: "20px" }}>
-            <img src="https://picsum.photos/60/60" style={{ borderRadius: "50%" }} />
-            <ArgonTypography variant="h1">About</ArgonTypography>
-          </Stack>
           <Card style={{ border: "1px solid grey", boxShadow: "0px 0px 30px #B721BE", backgroundColor: '#212529' }}>
-            <ArgonBox px={10} py={3}>
+            <ArgonBox px={17} py={5}>
               <CardContent>
-                <Grid container direction="column" spacing={4}>
-                  <Grid item>
-                    <ArgonTypography variant="body2">
-                      Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetur adipiscing
-                      elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    </ArgonTypography>
-                    <ArgonBox
-                      px={5}
-                      py={5}
-                      style={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                      }}
-                    >
-                      <img src="https://picsum.photos/1100/600" style={{ borderRadius: "20px" }} />
-                    </ArgonBox>
-                    <ArgonTypography variant="body2" style={{ marginTop: "10px" }}>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                      nostrud Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                      commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                      minim veniam, quis nostrud Lorem ipsum dolor sit amet, consectetur adipiscing
-                      elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                      enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                      aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur
-                      adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud
-                    </ArgonTypography>
-                  </Grid>
-
-                  <Grid item>
-                    <ArgonTypography variant="body2">
-                      At the edges of our imagination lies a regenerative economy, a financial
-                      system that serves humanity and our collective home. Within web3, the ReFi
-                      movement aims to cultivate this vision within a new economic system. ReFi
-                      Spring exists to support its emergence across a rich diversity of global
-                      networks. At the edges of our imagination lies a regenerative economy, a
-                      financial system that serves humanity and our collective home. Within web3,
-                      the ReFi movement aims to cultivate this vision within a new economic system.
-                      ReFi Spring exists to support its emergence across a rich diversity of global
-                      networks.
-                    </ArgonTypography>
-                  </Grid>
-                </Grid>
+              <Grid container direction="column" justifyContainer="center"  alignItems="center" spacing={2} >
+                          <Grid item xs={12} md={12} lg={12}>
+                            <div data-aos="fade-up" data-aos-duration="5000">
+                              <img src="https://picsum.photos/1300/700" 
+                              alt="article"
+                              style={{ width: "100%", height: "auto", borderRadius: '14px' }}/>
+                            </div>
+                          </Grid>
+                          <Grid item xs={12} md={12} lg={12}>
+                            <div data-aos="fade-up" data-aos-duration="5000">
+                            <ArgonTypography style={{ marginBottom: "50px" }}>
+                                <div dangerouslySetInnerHTML={{ __html: html }} />
+                              </ArgonTypography>
+                            </div> 
+                          </Grid>
+                          <Grid item xs={12} md={12} lg={12}>
+                             <div data-aos="fade-up" data-aos-duration="5000">
+                              <img src="https://picsum.photos/700/400" 
+                              alt="article"
+                              style={{ width: "100%", height: "auto", borderRadius: '14px' }}/>
+                            </div>
+                          </Grid>
+                          <Grid item xs={12} md={12} lg={12}>
+                            <div data-aos="fade-up" data-aos-duration="5000">
+                            <ArgonTypography style={{ marginBottom: "50px" }}>
+                                <div dangerouslySetInnerHTML={{ __html: html }} />
+                              </ArgonTypography>
+                            </div> 
+                          </Grid>
+                        </Grid>
               </CardContent>
             </ArgonBox>
           </Card>
@@ -342,7 +345,14 @@ const GrantMainPage = () => {
                               <CardMedia
                                 component="img"
                                 image={item.image}
-                                style={{ justifyContent: "center", alignItems: "center" }}
+                                style={{ 
+                                  objectFit: 'cover', 
+                                  maxHeight: '100%', 
+                                  maxWidth: '100%',
+                                  display: 'block',
+                                  marginLeft: 'auto',
+                                  marginRight: 'auto' 
+                                 }}
                               />
                               <CardContent>
                                 <ArgonTypography

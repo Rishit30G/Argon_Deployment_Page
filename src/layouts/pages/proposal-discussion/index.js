@@ -6,18 +6,44 @@ import ArgonInput from "components/ArgonInput";
 import ArgonTypography from "components/ArgonTypography";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 import ArgonAvatar from "components/ArgonAvatar";
 import DefaultDivider from "components/Divider";
 import HoverCard from "components/HoverCard";
 import { LanguageOutlined, Share } from "@mui/icons-material";
+import axios from "axios";
+
+
+
+const markdownIt = require("markdown-it");
+
+const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/article/?format=json";
 
 const ProposalDiscussion = () => {
   React.useEffect(() => {
     AOS.init();
   },[]);
+
+  const [post, setPost] = useState(null);
+
+  useEffect(() => {
+    axios
+      .get(baseURL)
+      .then((response) => {
+        // console.log(response.data);
+        setPost(response.data);
+      })
+      .catch((error) => {
+        // console.log(error);
+      });
+  }, []);
+
+  if (!post) return null;
+
+  const md = new markdownIt();
+  const html = md.render(post[0].article_desc);
 
   const handleButtonClick = () => {
     window.open('https://www.google.com', '_blank');
@@ -68,35 +94,40 @@ const ProposalDiscussion = () => {
 
           </Grid>
           <Card style={{ marginTop: "30px", backgroundColor: '#2A2F34', marginLeft: '20px' }}>
-            <ArgonBox px={2} py={3}>
+            <ArgonBox px={17} py={5}>
             <CardContent>
-              <Grid item>
-                  <ArgonTypography variant="body2">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt, nisl
-                    eget aliquam tincidunt, nisl nisl aliquam tortor, eget aliquam nisl nisl sit
-                    amet nisl. Sed tincidunt, nisl eget aliquam tincidunt, nisl nisl aliquam tortor,
-                    eget aliquam nisl nisl sit amet nisl.
-                  </ArgonTypography>
-              </Grid>
-              <Grid container item justifyContent="center" alignItems="center" style={{marginTop: '60px', marginBottom: '60px'}}>
-                <img src="https://picsum.photos/900/500" style={{borderRadius: '20px'}}alt="Proposal Image" />
-              </Grid>
-              <Grid item>
-                <ArgonTypography variant="h3">Bored Town X Optimism Art Contest</ArgonTypography>
-              </Grid>
-              <Grid item>
-                <ArgonTypography variant="body2">
-                  Artists are invited to create Bored Town-inspired art featuring the OP logo. The
-                  contest will engage established members of the Optimism NFT community and attract
-                  new collectors to vote for their favorite artworks via Snapshot in multiple
-                  stages. The top vote-getting pieces will be showcased in a new NFT collection on
-                  Optimism. Additionally, a 1/1 art piece from each of the top 25 artists and
-                  exclusive NFT artwork from Bored Town will be presented in the collection, further
-                  enhancing the marketing prospects for both the artists and Optimism.
-                </ArgonTypography>
-              </Grid>
-            </CardContent>
-            </ArgonBox>
+                      <Grid container direction="column" justifyContainer="center"  alignItems="center" spacing={2} >
+                          <Grid item xs={12} md={12} lg={12}>
+                            <div data-aos="fade-up" data-aos-duration="5000">
+                              <img src="https://picsum.photos/1300/700" 
+                              alt="article"
+                              style={{ width: "100%", height: "auto", borderRadius: '14px' }}/>
+                            </div>
+                          </Grid>
+                          <Grid item xs={12} md={12} lg={12}>
+                            <div data-aos="fade-up" data-aos-duration="5000">
+                            <ArgonTypography style={{ marginBottom: "50px" }}>
+                                <div dangerouslySetInnerHTML={{ __html: html }} />
+                              </ArgonTypography>
+                            </div> 
+                          </Grid>
+                          <Grid item xs={12} md={12} lg={12}>
+                             <div data-aos="fade-up" data-aos-duration="5000">
+                              <img src="https://picsum.photos/700/400" 
+                              alt="article"
+                              style={{ width: "100%", height: "auto", borderRadius: '14px' }}/>
+                            </div>
+                          </Grid>
+                          <Grid item xs={12} md={12} lg={12}>
+                            <div data-aos="fade-up" data-aos-duration="5000">
+                            <ArgonTypography style={{ marginBottom: "50px" }}>
+                                <div dangerouslySetInnerHTML={{ __html: html }} />
+                              </ArgonTypography>
+                            </div> 
+                          </Grid>
+                        </Grid>
+              </CardContent>
+              </ArgonBox>
           </Card>
         </Grid>
         </ArgonBox>
