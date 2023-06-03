@@ -95,7 +95,7 @@ function Default() {
 
 
       <ArgonBox py={3} px={15}>
-        <ArgonTypography variant="h2" style={{ marginBottom: "20px" }}>
+        <ArgonTypography variant="h2" style={{ marginBottom: "20px", fontFamily:'Montserrat' }}>
           App Metrics
           <DefaultDivider />
         </ArgonTypography>
@@ -106,7 +106,7 @@ function Default() {
                 <ArgonBox px={1} py={1}>
                 <Grid container spacing={3} justifyContent="space-between">
                   <Grid item xs={12} md={8} lg={9} xl={9}>
-                  <ArgonTypography variant="h3"> DAOs Tracked </ArgonTypography>
+                  <ArgonTypography variant="h3" style={{fontFamily: 'Nunito Sans'}}> DAOs Tracked </ArgonTypography>
                   </Grid> 
                   <Grid item xs={12} md={4} lg={3} xl={3}>
                     <ArgonBox style={{display: "flex", justifyContent: "flex-end"}}>
@@ -116,7 +116,7 @@ function Default() {
                 </Grid> 
                 <Grid container> 
                    <Grid item xs={12} md={6} lg={3}>
-                     <ArgonTypography variant="h1"> {post[0].cnt_dao} </ArgonTypography>
+                     <ArgonTypography variant="h1" style={{fontFamily: 'Nunito Sans'}}> {post[0].cnt_dao} </ArgonTypography>
                     </Grid>
                 </Grid>
                 </ArgonBox>

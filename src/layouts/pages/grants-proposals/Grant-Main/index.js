@@ -234,53 +234,33 @@ const GrantMainPage = () => {
               </Grid>
             </Grid>
           </Grid>
+         
 
           <Grid item xs={12} lg={12} md={12} xl={4}>
-            <div data-aos="fade-up" data-aos-duration="5000">
-              <Stack direction="row" justifyContent="center" spacing={2} style={{ marginBottom: "20px" }}>
-                <ArgonTypography variant="h2">Protocol Description</ArgonTypography>
-              </Stack>
-              <Card style={{ border: "1px solid grey" }}>
-                <ArgonBox px={5} py={2}>
-                  <CardContent>
-                    <Grid container direction="column" spacing={2}>
-                      <Grid item xs={12} lg={12} md={12} xl={12}>
-                        <ArgonTypography variant="body2">
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-                          voluptatum, quibusdam, quia, quod voluptates voluptatem quos
-                          </ArgonTypography>
-                      </Grid>
-                      <Grid item xs={12} lg={12} md={12} xl={12} style={{marginTop: '30px'}}>
-                        <Grid container spacing={2} direction="row">
-                          <Grid item xl={4}>
-                            <img
-                              src="https://picsum.photos/80/80"
-                              style={{ borderRadius: "50%", boxShadow: "0px 0px 20px #D12CBD" }}
-                            />
-                            <ArgonTypography variant="h4"> David </ArgonTypography>
-                          </Grid>
-                          <Grid item xl={4}>
-                            <img
-                              src="https://picsum.photos/80/80"
-                              style={{ borderRadius: "50%", boxShadow: "0px 0px 20px #D12CBD" }}
-                            />
-                            <ArgonTypography variant="h4"> James </ArgonTypography>
-                          </Grid>
-                          <Grid item xl={4}>
-                            <img
-                              src="https://picsum.photos/80/80"
-                              style={{ borderRadius: "50%", boxShadow: "0px 0px 20px #D12CBD" }}
-                            />
-                            <ArgonTypography variant="h4"> Charlie </ArgonTypography>
-                          </Grid>
-                        </Grid>
-                      </Grid>
-                    </Grid>
-                  </CardContent>
-                </ArgonBox>
-              </Card>
-            </div>
-          </Grid>
+  <div data-aos="fade-up" data-aos-duration="5000">
+    <Stack direction="row" justifyContent="center" spacing={2} style={{ marginBottom: "20px" }}>
+      <ArgonTypography variant="h2">Protocol Description</ArgonTypography>
+    </Stack>
+    <ArgonBox width="100%">
+      <Card style={{ border: "1px solid grey", backgroundColor: '#212529'}}>
+        <ArgonBox px={2} py={2}>
+          <CardContent>
+            <Grid container direction="column" spacing={2}>
+              <Grid item xs={12} lg={12} md={12} xl={12}>
+                <ArgonTypography variant="body2" style={{ color: "lightgrey" }}>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                </ArgonTypography>
+              </Grid>
+            </Grid>
+          </CardContent>
+        </ArgonBox>
+      </Card>
+    </ArgonBox>
+  </div>
+</Grid>
+
+
+
         </Grid>
       </ArgonBox>
 

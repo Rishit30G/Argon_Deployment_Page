@@ -28,7 +28,7 @@ import pxToRem from "assets/theme-dark/functions/pxToRem";
 const { dark } = colors;
 
 const baseProperties = {
-  fontFamily: '"Poppins", "Open Sans", "Helvetica", "Arial", sans-serif',
+  fontFamily: 'Nunito Sans',
   fontWeightLight: 300,
   fontWeightRegular: 400,
   fontWeightMedium: 600,
@@ -42,50 +42,48 @@ const baseProperties = {
 };
 
 const baseHeadingProperties = {
-  fontFamily: baseProperties.fontFamily,
   color: dark.main,
   fontWeight: baseProperties.fontWeightMedium,
 };
 
 const baseDisplayProperties = {
-  fontFamily: baseProperties.fontFamily,
   color: dark.main,
   fontWeight: baseProperties.fontWeightLight,
   lineHeight: 1.2,
 };
 
 const typography = {
-  fontFamily: baseProperties.fontFamily,
-  fontWeightLight: baseProperties.fontWeightLight,
-  fontWeightRegular: baseProperties.fontWeightRegular,
-  fontWeightMedium: baseProperties.fontWeightMedium,
-  fontWeightBold: baseProperties.fontWeightBold,
 
   h1: {
     fontSize: pxToRem(48),
     lineHeight: 1.25,
+    fontFamily: 'Montserrat',
     ...baseHeadingProperties,
   },
 
   h2: {
     fontSize: pxToRem(36),
     lineHeight: 1.3,
+    fontFamily: 'Montserrat',
     ...baseHeadingProperties,
   },
 
   h3: {
     fontSize: pxToRem(30),
     lineHeight: 1.375,
+    fontFamily: 'Montserrat',
     ...baseHeadingProperties,
   },
 
   h4: {
+    fontFamily: 'Montserrat',
     fontSize: pxToRem(24),
     lineHeight: 1.375,
     ...baseHeadingProperties,
   },
 
   h5: {
+    fontFamily: 'Montserrat',
     fontSize: pxToRem(20),
     lineHeight: 1.375,
     ...baseHeadingProperties,
@@ -119,7 +117,7 @@ const typography = {
   },
 
   body2: {
-    fontFamily: baseProperties.fontFamily,
+    fontFamily: 'Poppins',
     fontSize: baseProperties.fontSizeMD,
     fontWeight: baseProperties.fontWeightRegular,
     lineHeight: 1.6,

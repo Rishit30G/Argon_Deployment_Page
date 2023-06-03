@@ -13,6 +13,7 @@ import axios from "axios";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import DefaultDivider from "components/Divider";
+import ArgonBadgeDot from "components/ArgonBadgeDot";
 const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/grant/?format=json";
 
 const Grants = () => {
@@ -50,8 +51,22 @@ const Grants = () => {
               <HoverCard>
                 <CardContent>
                   <Grid container spacing={4}>
-                    <Grid container item xs={12} sm={12} md={12} alignItems="center">
-                      <ArgonTypography variant="h2">Uniswap</ArgonTypography>
+                    <Grid container item xs={12} sm={12} md={12} alignItems="center" style={{marginBottom: '30px'}}>
+                      <Grid container justifyContent="space-between"> 
+                        <Grid item> 
+                         <Stack direction="row" spacing={2} justifyContent="center" alignItems="center">
+                            <ArgonTypography variant="h2">Uniswap</ArgonTypography>
+                            <ArgonButton variant="contained" color="dark" size="small" style={{width: '100px'}}>
+                               <ArgonBadgeDot color="primary" badgeContent="Discussion"></ArgonBadgeDot>
+                            </ArgonButton>
+                        </Stack>
+                        </Grid>
+                        <Grid item> 
+                           <ArgonTypography variant="h3">10th April</ArgonTypography>
+                        </Grid>
+                      
+                      </Grid>
+                      
                     </Grid>
                     <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
                       <Grid item xs={8} lg={7} sm={9} md={9}>
@@ -62,24 +77,16 @@ const Grants = () => {
                           Text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                           Morbi convallis mi ut quam dictum, eget rutrum ipsum ultrices.
                         </ArgonTypography>
-                        <Stack direction="row" spacing={2} style={{ marginTop: "25px" }}>
-                          <ArgonTypography variant="h5">
-                            <Heart style={{ marginRight: "10px" }}></Heart> 15
-                          </ArgonTypography>
-                          <ArgonTypography variant="h5">
-                            <ArrowUpward style={{ marginRight: "10px" }}></ArrowUpward> 5
-                          </ArgonTypography>
-                        </Stack>
                       </Grid>
                       <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
                         <img
                           src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png"
                           style={{
-                            width: "200px",
-                            height: "200px",
+                            width: "180px",
+                            height: "180px",
                             position: "absolute",
-                            bottom: 40,
-                            right: 0,
+                            bottom: -20,
+                            right: -20,
                           }}
                           alt="Uniswap logo"
                         />
@@ -95,8 +102,22 @@ const Grants = () => {
               <HoverCard>
                 <CardContent>
                   <Grid container spacing={4}>
-                    <Grid container item xs={12} sm={12} md={12} alignItems="center">
-                      <ArgonTypography variant="h2">Uniswap</ArgonTypography>
+                    <Grid container item xs={12} sm={12} md={12} alignItems="center" style={{marginBottom: '30px'}}>
+                      <Grid container justifyContent="space-between"> 
+                        <Grid item> 
+                         <Stack direction="row" spacing={2} justifyContent="center" alignItems="center">
+                            <ArgonTypography variant="h2">Uniswap</ArgonTypography>
+                            <ArgonButton variant="contained" color="dark" size="small" style={{width: '100px'}}>
+                               <ArgonBadgeDot color="primary" badgeContent="Active"></ArgonBadgeDot>
+                            </ArgonButton>
+                        </Stack>
+                        </Grid>
+                        <Grid item> 
+                           <ArgonTypography variant="h3">10th April</ArgonTypography>
+                        </Grid>
+                      
+                      </Grid>
+                      
                     </Grid>
                     <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
                       <Grid item xs={8} lg={7} sm={9} md={9}>
@@ -107,24 +128,16 @@ const Grants = () => {
                           Text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                           Morbi convallis mi ut quam dictum, eget rutrum ipsum ultrices.
                         </ArgonTypography>
-                        <Stack direction="row" spacing={2} style={{ marginTop: "25px" }}>
-                          <ArgonTypography variant="h5">
-                            <Heart style={{ marginRight: "10px" }}></Heart> 15
-                          </ArgonTypography>
-                          <ArgonTypography variant="h5">
-                            <ArrowUpward style={{ marginRight: "10px" }}></ArrowUpward> 5
-                          </ArgonTypography>
-                        </Stack>
                       </Grid>
                       <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
                         <img
                           src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png"
                           style={{
-                            width: "200px",
-                            height: "200px",
+                            width: "180px",
+                            height: "180px",
                             position: "absolute",
-                            bottom: 40,
-                            right: 0,
+                            bottom: -20,
+                            right: -20,
                           }}
                           alt="Uniswap logo"
                         />
@@ -140,8 +153,22 @@ const Grants = () => {
               <HoverCard>
                 <CardContent>
                   <Grid container spacing={4}>
-                    <Grid container item xs={12} sm={12} md={12} alignItems="center">
-                      <ArgonTypography variant="h2">Uniswap</ArgonTypography>
+                    <Grid container item xs={12} sm={12} md={12} alignItems="center" style={{marginBottom: '30px'}}>
+                      <Grid container justifyContent="space-between"> 
+                        <Grid item> 
+                         <Stack direction="row" spacing={2} justifyContent="center" alignItems="center">
+                            <ArgonTypography variant="h2">Uniswap</ArgonTypography>
+                            <ArgonButton variant="contained" color="dark" size="small" style={{width: '100px'}}>
+                               <ArgonBadgeDot color="success" badgeContent="Succeeded"></ArgonBadgeDot>
+                            </ArgonButton>
+                        </Stack>
+                        </Grid>
+                        <Grid item> 
+                           <ArgonTypography variant="h3">10th April</ArgonTypography>
+                        </Grid>
+                      
+                      </Grid>
+                      
                     </Grid>
                     <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
                       <Grid item xs={8} lg={7} sm={9} md={9}>
@@ -152,24 +179,16 @@ const Grants = () => {
                           Text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                           Morbi convallis mi ut quam dictum, eget rutrum ipsum ultrices.
                         </ArgonTypography>
-                        <Stack direction="row" spacing={2} style={{ marginTop: "25px" }}>
-                          <ArgonTypography variant="h5">
-                            <Heart style={{ marginRight: "10px" }}></Heart> 15
-                          </ArgonTypography>
-                          <ArgonTypography variant="h5">
-                            <ArrowUpward style={{ marginRight: "10px" }}></ArrowUpward> 5
-                          </ArgonTypography>
-                        </Stack>
                       </Grid>
                       <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
                         <img
                           src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png"
                           style={{
-                            width: "200px",
-                            height: "200px",
+                            width: "180px",
+                            height: "180px",
                             position: "absolute",
-                            bottom: 40,
-                            right: 0,
+                            bottom: -20,
+                            right: -20,
                           }}
                           alt="Uniswap logo"
                         />

@@ -35,7 +35,7 @@ import HoverCard from "components/HoverCard";
 import { useEffect, useState } from "react";
 import Proposals from "./Proposals";
 import { useNavigate } from "react-router-dom";
-import { ArrowBack, DiscFullOutlined, Twitter } from "@mui/icons-material";
+import { ArrowBack, DiscFullOutlined, FormatQuote, Twitter } from "@mui/icons-material";
 import Grants from "./Grant";
 import Jobs from "./Jobs";
 import DefaultDivider from "components/Divider";
@@ -70,31 +70,17 @@ function GrantsAndProposals() {
     <DashboardLayout>
       <DashboardNavbar />
       <ArgonBox px={10} py={3}>
-        <Grid container spacing={3} justifyContent="space-between" alignItems="center">
-          <Grid item xs={10} md={6} lg={4}>
+        <Grid container spacing={3}>
+          <Grid item xs={12} md={12} lg={12} xl={12}>
             <ArgonTypography variant="h2">Protocol Grants and Proposals</ArgonTypography>
           </Grid>
-          <Grid item xs={2} md={6} lg={6}>
-          <Card style={{boxShadow: '5px 5px 7px #B721BE ', border: "1px solid #8d8d8d"}}>
-          
-                  <CardContent>
-                    <ArgonTypography
-                      variant="h5"
-                      style={{
-                        marginTop: "10px",
-                        marginLeft: "10px",
-                        
-                        fontSize: "17.3px",
-                        color: "white",
-                      }}
-                    >
-                      Using this protocol? Analyze the effects of these proposals on your usability
-                      and profitability.
-                    </ArgonTypography>
-                  </CardContent>
-                  </Card>
-              </Grid>
+          <Grid item xs={12} md={12} lg={12} xl={12}>
+          <ArgonTypography variant="h5" style={{color: '#ced4da', fontStyle: 'italic'}}>
+  <q>Using this protocol? Analyze the effects of these proposals on your usability and profitability.</q>
+</ArgonTypography>
+          </Grid> 
         </Grid>
+
       <DefaultDivider />
       </ArgonBox>
 
