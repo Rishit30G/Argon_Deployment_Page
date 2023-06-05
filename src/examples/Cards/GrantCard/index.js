@@ -1,127 +1,179 @@
 import React from "react";
-import { Card, Grid, Stack, CardContent } from "@mui/material";
+import { Card, Grid, Stack, CardContent, Box } from "@mui/material";
 import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 import ArgonButton from "components/ArgonButton";
 import HoverCard from "components/HoverCard";
+import { Rocket } from "@web3uikit/icons";
+import ArgonBadgeDot from "components/ArgonBadgeDot";
+import DefaultDivider from "components/Divider";
 
 export const GrantCard = () => {
+  const cardStyle = {
+    height: "270px", // Or any specific height you want.
+  };
+
   return (
-    <Card>
-      <ArgonBox py={3} px={3}>
-        <Grid container spacing={5}>
-          <Grid item xs={12} sm={12} md={6} lg={12} xl={6}>
-            <HoverCard>
-              <ArgonBox my={1} mx={1}>
-                <CardContent>
-                  <Stack
-                    direction="row"
-                    justifyContent="space-between"
-                    alignItems="center"
-                    style={{ paddingRight: "10px", paddingLeft: "10px" }}
-                  >
-                    <ArgonTypography variant="h2">
-                      12 <ArgonTypography variant="h3">Apr</ArgonTypography>
-                    </ArgonTypography>
-                    <ArgonTypography variant="h3">Today</ArgonTypography>
-                  </Stack>
-                  <Stack
-                    spacing={2}
-                    justifyContent="center"
-                    alignItems="center"
-                    sx={{ marginTop: "35px" }}
-                  >
-                    <ArgonTypography variant="body2">Event 1 Started</ArgonTypography>
-                    <ArgonTypography variant="body2">Event 2 Tomorrow</ArgonTypography>
-                    <ArgonTypography variant="body2">Event 3 Completed</ArgonTypography>
-                  </Stack>
-                </CardContent>
-              </ArgonBox>
-            </HoverCard>
-          </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={12} xl={6}>
-            <HoverCard>
-              <ArgonBox my={1} mx={1}>
-                <CardContent>
-                  <Stack
-                    direction="row"
-                    justifyContent="space-between"
-                    alignItems="center"
-                    style={{ paddingRight: "10px", paddingLeft: "10px" }}
-                  >
-                    <ArgonTypography variant="h2">
-                      12 <ArgonTypography variant="h3">Apr</ArgonTypography>
-                    </ArgonTypography>
-                    <ArgonTypography variant="h3">Today</ArgonTypography>
-                  </Stack>
-                  <Stack
-                    spacing={2}
-                    justifyContent="center"
-                    alignItems="center"
-                    sx={{ marginTop: "35px" }}
-                  >
-                    <ArgonTypography variant="body2">Event 1 Started</ArgonTypography>
-                    <ArgonTypography variant="body2">Event 2 Tomorrow</ArgonTypography>
-                    <ArgonTypography variant="body2">Event 3 Completed</ArgonTypography>
-                  </Stack>
-                </CardContent>
-              </ArgonBox>
-            </HoverCard>
-          </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={12} xl={6}>
-            <HoverCard>
-              <ArgonBox my={1} mx={1}>
-                <CardContent>
-                  <Stack
-                    direction="row"
-                    justifyContent="space-between"
-                    alignItems="center"
-                    style={{ paddingRight: "10px", paddingLeft: "10px" }}
-                  >
-                    <ArgonTypography variant="h2">
-                      12 <ArgonTypography variant="h3">Apr</ArgonTypography>
-                    </ArgonTypography>
-                    <ArgonTypography variant="h3">Today</ArgonTypography>
-                  </Stack>
-                  <Stack
-                    spacing={2}
-                    justifyContent="center"
-                    alignItems="center"
-                    sx={{ marginTop: "35px" }}
-                  >
-                    <ArgonTypography variant="body2">Event 1 Started</ArgonTypography>
-                    <ArgonTypography variant="body2">Event 2 Tomorrow</ArgonTypography>
-                    <ArgonTypography variant="body2">Event 3 Completed</ArgonTypography>
-                  </Stack>
-                </CardContent>
-              </ArgonBox>
-            </HoverCard>
-          </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={12} xl={6}>
-            <HoverCard>
-              <ArgonBox my={4} mx={4}>
+    <ArgonBox py={3} px={3}>
+      <Grid container spacing={5}>
+        <Grid item xs={12} sm={12} md={6} lg={12} xl={3}>
+        <HoverCard>
+            <ArgonBox my={1} mx={1} style={cardStyle}>
               <CardContent>
-                  <Grid
-                    container
-                    justifyContent="center"
-                    alignItems="center"
-                    spacing={2}
-                  >
-                    <Grid item>
-                    <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}> Unlock for More </ArgonButton>
-                    </Grid>
-                    <Grid container item justifyContent="">
-                      <ArgonTypography variant="body2">
-                        KEEP UP WITH EVERYTHING GOING ON IN WEB 3.0 AND NEVER MISS ANY UPDATES
-                      </ArgonTypography>
-                    </Grid>
-                  </Grid>
+                <Stack
+                  direction="row"
+                  justifyContent="space-between"
+                  alignItems="center"
+                  style={{ paddingRight: "10px", paddingLeft: "10px" }}
+                >
+                  <ArgonTypography variant="h2">
+                    12 <ArgonTypography variant="h4">Apr</ArgonTypography>
+                  </ArgonTypography>
+                  <ArgonTypography variant="h4">Today</ArgonTypography>
+                </Stack>
+                <DefaultDivider/>
+                <Stack
+                  spacing={1.5}
+                  justifyContent="flex-start"
+                  direction="column"
+                  sx={{ marginTop: "25px" }}
+                >
+                  <Box display="flex" alignItems="center">
+                    <Box bgcolor="success.main" width={24} height={24} mr={2}></Box>
+                    <ArgonTypography variant="body2">Event 1 Completed</ArgonTypography>
+                  </Box>
+                  <Box display="flex" alignItems="center">
+                    <Box bgcolor="info.main" width={24} height={24} mr={2}></Box>
+                    <ArgonTypography variant="body2">Event 2 Starts</ArgonTypography>
+                  </Box>
+                  <Box display="flex" alignItems="center">
+                    <Box bgcolor="warning.main" width={24} height={24} mr={2}></Box>
+                    <ArgonTypography variant="body2">Event 3 Cancelled</ArgonTypography>
+                  </Box>
+                </Stack>
               </CardContent>
-              </ArgonBox>
-            </HoverCard>
-          </Grid>
+            </ArgonBox>
+          </HoverCard>
         </Grid>
-      </ArgonBox>
-    </Card>
+        <Grid item xs={12} sm={12} md={6} lg={12} xl={3}>
+        <HoverCard>
+            <ArgonBox my={1} mx={1} style={cardStyle}>
+              <CardContent>
+                <Stack
+                  direction="row"
+                  justifyContent="space-between"
+                  alignItems="center"
+                  style={{ paddingRight: "10px", paddingLeft: "10px" }}
+                >
+                  <ArgonTypography variant="h2">
+                    12 <ArgonTypography variant="h4">Apr</ArgonTypography>
+                  </ArgonTypography>
+                  <ArgonTypography variant="h4">Today</ArgonTypography>
+                </Stack>
+                <DefaultDivider/>
+                <Stack
+                  spacing={1.5}
+                  justifyContent="flex-start"
+                  direction="column"
+                  sx={{ marginTop: "25px" }}
+                >
+                  <Box display="flex" alignItems="center">
+                    <Box bgcolor="success.main" width={24} height={24} mr={2}></Box>
+                    <ArgonTypography variant="body2">Event 1 Completed</ArgonTypography>
+                  </Box>
+                  <Box display="flex" alignItems="center">
+                    <Box bgcolor="info.main" width={24} height={24} mr={2}></Box>
+                    <ArgonTypography variant="body2">Event 2 Starts</ArgonTypography>
+                  </Box>
+                  <Box display="flex" alignItems="center">
+                    <Box bgcolor="warning.main" width={24} height={24} mr={2}></Box>
+                    <ArgonTypography variant="body2">Event 3 Cancelled</ArgonTypography>
+                  </Box>
+                </Stack>
+              </CardContent>
+            </ArgonBox>
+          </HoverCard>
+        </Grid>
+        <Grid item xs={12} sm={12} md={6} lg={12} xl={3}>
+        <HoverCard>
+            <ArgonBox my={1} mx={1} style={cardStyle}>
+              <CardContent>
+                <Stack
+                  direction="row"
+                  justifyContent="space-between"
+                  alignItems="center"
+                  style={{ paddingRight: "10px", paddingLeft: "10px" }}
+                >
+                  <ArgonTypography variant="h2">
+                    12 <ArgonTypography variant="h4">Apr</ArgonTypography>
+                  </ArgonTypography>
+                  <ArgonTypography variant="h4">Today</ArgonTypography>
+                </Stack>
+                <DefaultDivider/>
+                <Stack
+                  spacing={1.5}
+                  justifyContent="flex-start"
+                  direction="column"
+                  sx={{ marginTop: "25px" }}
+                >
+                  <Box display="flex" alignItems="center">
+                    <Box bgcolor="success.main" width={24} height={24} mr={2}></Box>
+                    <ArgonTypography variant="body2">Event 1 Completed</ArgonTypography>
+                  </Box>
+                  <Box display="flex" alignItems="center">
+                    <Box bgcolor="info.main" width={24} height={24} mr={2}></Box>
+                    <ArgonTypography variant="body2">Event 2 Starts</ArgonTypography>
+                  </Box>
+                  <Box display="flex" alignItems="center">
+                    <Box bgcolor="warning.main" width={24} height={24} mr={2}></Box>
+                    <ArgonTypography variant="body2">Event 3 Cancelled</ArgonTypography>
+                  </Box>
+                </Stack>
+              </CardContent>
+            </ArgonBox>
+          </HoverCard>
+        </Grid>
+        <Grid item xs={12} sm={12} md={6} lg={12} xl={3}>
+          <HoverCard>
+            <ArgonBox my={1} mx={1} style={cardStyle}>
+              <CardContent>
+                <Grid container justifyContent="center" alignItems="center" spacing={2}>
+                  <Grid item>
+                    <ArgonButton
+                      style={{
+                        height: "58px",
+                        width: "180px",
+                        fontSize: "17px",
+                        fontWeight: "400",
+                        backgroundColor: "black",
+                        border: "1px solid #8d8d8d",
+                        color: "white",
+                        boxShadow: "5px 5px 10px  #B721BE",
+                        marginTop: "5px",
+                      }}
+                    >
+                      {" "}
+                      Unlock for More{" "}
+                    </ArgonButton>
+                  </Grid>
+                  <Grid container item justifyContent="center">
+                    <ArgonBox my={2}>
+                      <Stack direction="row" spacing={1}>
+                        <ArgonTypography variant="body2" style={{ justifyContent: "center" }}>
+                          Keep up with everything that's going around in Web 3.0 world
+                        </ArgonTypography>
+                        <ArgonTypography variant="body2" style={{ justifyContent: "center" }}>
+                          <Rocket style={{ color: "#fff", fontSize: "60px" }} />
+                        </ArgonTypography>
+                      </Stack>
+                    </ArgonBox>
+                  </Grid>
+                </Grid>
+              </CardContent>
+            </ArgonBox>
+          </HoverCard>
+        </Grid>
+      </Grid>
+    </ArgonBox>
   );
 };

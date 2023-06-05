@@ -7,6 +7,7 @@ import { Card, Grid, Stack } from "@mui/material";
 import ArgonButton from "components/ArgonButton";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import HoverCard from "components/HoverCard";
 
 const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/pastproject/?format=json";
 
@@ -14,20 +15,21 @@ const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/pastproject/?forma
 
 const PastExperience = () => {
 
-  const [post, setPost] = useState(null);
+ const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    axios.get(baseURL)
+    axios
+      .get(baseURL)
       .then((response) => {
-        // console.log(response.data);
-        setPost(response.data);
+        setPosts(response.data);
       })
       .catch((error) => {
-        // console.log(error);
+        console.error(error);
       });
   }, []);
 
-  if (!post) return null;
+
+  if(posts.length === 0) return null;
 
   return (
     <>
@@ -39,28 +41,30 @@ const PastExperience = () => {
         </Grid>
       </ArgonBox>
 
-      <Card sx={{ height: "100%", overflow: "hidden" }}>
+      {posts.map((post) => (
+      <HoverCard>
         <ArgonBox px={3} py={3}>
           <Grid container>
             <Grid item xs={12} md={4} lg={3} style={{ display: "flex", justifyContent: "center" }}>
               <img
-                src="https://via.placeholder.com/200"
+                src={post.image_url}
                 alt="placeholder"
                 style={{ marginRight: "20px" }}
               />
             </Grid>
             <Grid item xs={12} md={8} lg={9}>
               <Stack spacing={3}>
-                <ArgonTypography variant="h2">{post[0].project_title}</ArgonTypography>
+                <ArgonTypography variant="h2">{post.project_title}</ArgonTypography>
                 <ArgonTypography variant="subtitle2">
-                  {post[0].project_desc}
+                  {post.project_desc}
                 </ArgonTypography>
-                <ArgonButton href={post[0].project_url} style={{ height: "40px", width: "180px" }}>View Full Project</ArgonButton>
+                <ArgonButton href={post.project_url} style={{ height: "40px", width: "180px" }}>View Full Project</ArgonButton>
               </Stack>
             </Grid>
           </Grid>
         </ArgonBox>
-      </Card>
+      </HoverCard>
+   ))}
     </>
   );
 };

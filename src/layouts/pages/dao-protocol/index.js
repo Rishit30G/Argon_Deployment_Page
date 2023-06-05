@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Grid, Stack, Card, CardContent } from "@mui/material";
 import ArgonTypography from "components/ArgonTypography";
 import ArgonBox from "components/ArgonBox";
@@ -8,11 +8,31 @@ import ArgonButton from "components/ArgonButton";
 import HoverCard from "components/HoverCard";
 import "aos/dist/aos.css";
 import AOS from "aos";
+import axios from "axios";
+
+
+const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/protocol/?format=json";
 
 const NewDAOProtocol = () => {
   useEffect(() => {
     AOS.init();
   }, []);
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(baseURL)
+      .then((response) => {
+        setPosts(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
+
+  if(posts.length === 0) return null;
+
   return (
     <DashboardLayout>
       <DashboardNavbar />
@@ -92,6 +112,8 @@ const NewDAOProtocol = () => {
           </Grid>
         </Grid>
 
+
+     {posts.map((post) => (
         <ArgonBox px={3} py={3}>
           <Grid container style={{ marginTop: "20px" }} spacing={4}>
           <Grid item xs={12} xl={4} lg={12} md={12} sm={12}>
@@ -108,7 +130,8 @@ const NewDAOProtocol = () => {
                       justifyContent="space-between"
                       alignItems="center"
                     >
-                      <ArgonTypography variant="h2">Title</ArgonTypography>
+                      <ArgonTypography variant="h2">{post.name}</ArgonTypography>
+                      <a href={post.link}>
                       <ArgonButton
                         style={{
                           height: "52px",
@@ -121,9 +144,9 @@ const NewDAOProtocol = () => {
                           boxShadow: "5px 5px 10px  #B721BE",
                         }}
                       >
-                        {" "}
                         Check Proposal{" "}
                       </ArgonButton>
+                      </a>
                     </Grid>
                     <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
                       <Grid item xs={8} lg={7} sm={9} md={9}>
@@ -131,131 +154,12 @@ const NewDAOProtocol = () => {
                           variant="body2"
                           style={{ fontSize: "20px", color: "rgba(255, 255, 255, 0.7)" }}
                         >
-                          Text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                          Morbi convallis mi ut quam dictum
+                          {post.desc}
                         </ArgonTypography>
                       </Grid>
                       <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
                         <img
-                          src="https://picsum.photos/150/150"
-                          style={{
-                            position: "absolute",
-                            borderRadius: "50%",
-                            bottom: 0,
-                            right: 0,
-                          }}
-                          alt="Uniswap logo"
-                        />
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                  </ArgonBox>
-                </CardContent>
-              </HoverCard>
-            </Grid>
-            <Grid item xs={12} xl={4} lg={12} md={12} sm={12}>
-              <HoverCard>
-                <CardContent>
-                  <ArgonBox mx={2} my={2}>
-                  <Grid container spacing={8}>
-                    <Grid
-                      container
-                      item
-                      xs={12}
-                      sm={12}
-                      md={12}
-                      justifyContent="space-between"
-                      alignItems="center"
-                    >
-                      <ArgonTypography variant="h2">Title</ArgonTypography>
-                      <ArgonButton
-                        style={{
-                          height: "52px",
-                          width: "180px",
-                          fontSize: "15px",
-                          fontWeight: "400",
-                          backgroundColor: "black",
-                          border: "1px solid #8d8d8d",
-                          color: "white",
-                          boxShadow: "5px 5px 10px  #B721BE",
-                        }}
-                      >
-                        {" "}
-                        Check Proposal{" "}
-                      </ArgonButton>
-                    </Grid>
-                    <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
-                      <Grid item xs={8} lg={7} sm={9} md={9}>
-                        <ArgonTypography
-                          variant="body2"
-                          style={{ fontSize: "20px", color: "rgba(255, 255, 255, 0.7)" }}
-                        >
-                          Text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                          Morbi convallis mi ut quam dictum
-                        </ArgonTypography>
-                      </Grid>
-                      <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
-                        <img
-                          src="https://picsum.photos/150/150"
-                          style={{
-                            position: "absolute",
-                            borderRadius: "50%",
-                            bottom: 0,
-                            right: 0,
-                          }}
-                          alt="Uniswap logo"
-                        />
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                  </ArgonBox>
-                </CardContent>
-              </HoverCard>
-            </Grid>
-            <Grid item xs={12} xl={4} lg={12} md={12} sm={12}>
-              <HoverCard>
-                <CardContent>
-                  <ArgonBox mx={2} my={2}>
-                  <Grid container spacing={8}>
-                    <Grid
-                      container
-                      item
-                      xs={12}
-                      sm={12}
-                      md={12}
-                      justifyContent="space-between"
-                      alignItems="center"
-                    >
-                      <ArgonTypography variant="h2">Title</ArgonTypography>
-                      <ArgonButton
-                        style={{
-                          height: "52px",
-                          width: "180px",
-                          fontSize: "15px",
-                          fontWeight: "400",
-                          backgroundColor: "black",
-                          border: "1px solid #8d8d8d",
-                          color: "white",
-                          boxShadow: "5px 5px 10px  #B721BE",
-                        }}
-                      >
-                        {" "}
-                        Check Proposal{" "}
-                      </ArgonButton>
-                    </Grid>
-                    <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
-                      <Grid item xs={8} lg={7} sm={9} md={9}>
-                        <ArgonTypography
-                          variant="body2"
-                          style={{ fontSize: "20px", color: "rgba(255, 255, 255, 0.7)" }}
-                        >
-                          Text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                          Morbi convallis mi ut quam dictum
-                        </ArgonTypography>
-                      </Grid>
-                      <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
-                        <img
-                          src="https://picsum.photos/150/150"
+                          src= {post.logo}
                           style={{
                             position: "absolute",
                             borderRadius: "50%",
@@ -273,6 +177,7 @@ const NewDAOProtocol = () => {
             </Grid>
           </Grid>
         </ArgonBox>
+     ))}
       </ArgonBox>
     </DashboardLayout>
   );

@@ -3,7 +3,7 @@ import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ArgonButton from "components/ArgonButton";
 import ArgonInput from "components/ArgonInput";
 import { ArrowDown, Heart } from "@web3uikit/icons";
@@ -11,11 +11,33 @@ import HoverCard from "components/HoverCard";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import DefaultDivider from "components/Divider";
+import ReplyCard from "examples/Cards/ReplyCard";
 
 const ProtocolDiscussion = () => {
   useEffect(() => {
     AOS.init();
   }, []);
+
+  const [showReplies, setShowReplies] = useState(false);
+
+  const handleRepliesClick = () => {
+    setShowReplies(!showReplies);
+  };
+
+  const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState("");
+
+  const handleButtonClick = () => {
+    if (newComment.trim() !== "") {
+      const currentDate = new Date().toLocaleString();
+      const updatedComments = [
+        ...comments,
+        `${String.fromCharCode(0x2764)} ${newComment} (${currentDate})`,
+      ];
+      setComments(updatedComments);
+      setNewComment("");
+    }
+  };
 
   return (
     <DashboardLayout>
@@ -83,7 +105,7 @@ const ProtocolDiscussion = () => {
               </ArgonButton>
             </Grid>
 
-            <Card style={{ boxShadow: "0px 0px 40px purple" }}>
+            <Card style={{ boxShadow: "0px 0px 40px purple", backgroundColor: '#212529'}}>
               <CardContent>
                 <div data-aos="fade-up" data-aos-duration="5000">
                   <Grid container>
@@ -136,8 +158,10 @@ const ProtocolDiscussion = () => {
                   multiline
                   rows={3}
                   inputProps={{ style: { color: "grey", fontSize: "20px" } }}
+                  onChange={(e) => setNewComment(e.target.value)}
                 />
                 <ArgonButton
+                  onClick={handleButtonClick}
                   style={{
                     height: "58px",
                     width: "220px",
@@ -155,7 +179,14 @@ const ProtocolDiscussion = () => {
               </Stack>
             </div>
 
-            <Grid container spacing={2} style={{ marginTop: "30px" }}>
+            <div>
+        {comments.map((comment, index) => (
+          <ArgonTypography key={index} tag="p">
+            {comment}
+          </ArgonTypography>
+        ))}
+      </div>
+            {/* <Grid container spacing={2} style={{ marginTop: "30px" }}>
               <Grid item>
                 <ArgonTypography variant="h3" fontWeight="bold">
                   Replies and Comments
@@ -190,7 +221,7 @@ const ProtocolDiscussion = () => {
                             <ArgonTypography variant="body2">
                               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                               tincidunt, nisl eget aliquam tincidunt, nisl nisl aliquam tortor, eget
-                              aliquam nisl nisl sit amet nisl. Sed tincidunt, nisl eget aliquam
+                              aliquam nisl  nisl sit amet nisl. Sed tincidunt, nisl eget aliquam
                               tincidunt, nisl nisl aliquam tortor, eget aliquam nisl nisl sit amet
                               nisl.
                             </ArgonTypography>
@@ -203,10 +234,12 @@ const ProtocolDiscussion = () => {
                           alignItems="center"
                         >
                           <Grid item>
-                            <ArgonTypography variant="body1">
+                            <ArgonButton variant="text" onClick={handleRepliesClick}>
+                            <ArgonTypography variant="body2">
                               {" "}
                               <ArrowDown style={{ marginRight: "10px" }}></ArrowDown>Replies
                             </ArgonTypography>
+                            </ArgonButton>
                           </Grid>
                           <Grid item>
                             <ArgonTypography variant="body2" style={{ fontSize: "30px" }}>
@@ -221,7 +254,10 @@ const ProtocolDiscussion = () => {
                   </HoverCard>
                 </div>
               </Grid>
-            </Grid>
+              <Grid item> 
+              {showReplies && <ReplyCard />}
+              </Grid>
+            </Grid> */}
           </Grid>
         </Grid>
       </ArgonBox>

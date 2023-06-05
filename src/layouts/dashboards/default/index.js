@@ -196,6 +196,24 @@ function Default() {
       </ArgonBox>
 
       <ArgonBox py={3} px={15}>
+        <ArgonTypography variant="h2" style={{ marginBottom: "30px" , marginTop: "10px"}}>
+                  Grants & Proposal Calender
+            <DefaultDivider />
+                </ArgonTypography>
+        <Grid container spacing={3} mb={3}>
+          <Grid item xs={12} lg={9}>
+          
+            <HoverCard>
+              <CardContent>
+               
+                <GrantCard></GrantCard>
+              </CardContent>
+            </HoverCard>
+          </Grid>
+        </Grid>
+      </ArgonBox> 
+
+      <ArgonBox py={3} px={15}>
         <Grid container spacing={5} style={{ display: "flex" }}>
           {/* <Grid item xs={12} md={4} lg={4}>
             <ArgonTypography variant="h2" style={{ marginBottom: "20px" }}>
@@ -219,21 +237,6 @@ function Default() {
               <DefaultDivider />
             </ArgonTypography>
             <TodoList />
-          </Grid>
-        </Grid>
-      </ArgonBox>
-
-      <ArgonBox mt={5} py={3} px={15}>
-        <Grid container spacing={3} mb={3}>
-          <Grid item xs={12} lg={6}>
-            <HoverCard>
-              <CardContent>
-                <ArgonTypography variant="h2" style={{ marginBottom: "30px" , marginTop: "10px"}}>
-                  Grants & Proposal Calender
-                </ArgonTypography>
-                <GrantCard></GrantCard>
-              </CardContent>
-            </HoverCard>
           </Grid>
         </Grid>
       </ArgonBox>

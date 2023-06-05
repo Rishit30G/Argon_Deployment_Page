@@ -202,7 +202,7 @@ const Proposals = () => {
                             
                             <Stack direction="row" spacing={1} alignItems="center"> 
                               <ion-icon name="flame-outline" style={{color: 'lightblue', fontSize: '20px'}}></ion-icon>
-                              <ArgonTypography variant="h5">Medium</ArgonTypography>
+                              <ArgonTypography variant="h5">Low</ArgonTypography>
                             </Stack>
                           </ArgonButton>
                        </Grid>
