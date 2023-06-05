@@ -27,17 +27,12 @@ import axios from "axios";
 
 
 const markdownIt = require("markdown-it");
-const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/article/?format=json";
+const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/grant/?format=json&tag_name=demo";
 
 const GrantMainPage = () => {
   React.useEffect(() => {
     AOS.init();
   }, []);
-
-
-  
-  
-
 
   const [startIndex, setStartIndex] = useState(0);
   const items = [
@@ -97,35 +92,44 @@ const GrantMainPage = () => {
 
   const visibleItems = items.slice(startIndex, startIndex + 4);
 
-  const [post, setPost] = useState(null);
+
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     axios
       .get(baseURL)
       .then((response) => {
-        // console.log(response.data);
-        setPost(response.data);
+        setPosts(response.data);
       })
       .catch((error) => {
-        // console.log(error);
+        // console.error(error);
       });
   }, []);
-  if(!post) return null;
-
+  
+  if(posts.length === 0) return null;
   const md = new markdownIt();
-  const html = md.render(post[0].article_desc);
+  const html = md.render(posts[0].description);
 
+  
+  
   return (
     <DashboardLayout>
       <DashboardNavbar />
       <ArgonBox mb={3} px={20} py={3}>
+      {posts.map((post) => (
         <Grid container spacing={10}>
           <Grid item xs={12} lg={12} md={12} xl={8}>
             <Grid container>
               <Grid item xs={12} lg={12} md={12} xl={12}>
-                <ArgonTypography variant="h1">Refi Spring 2023</ArgonTypography>
-                <DefaultDivider />
+                <ArgonTypography variant="h1">{post.title}</ArgonTypography>
+               
               </Grid>
+              <Grid container direction="row-reverse" item xs={12} lg={12} md={12} xl={12}>
+                <ArgonTypography variant="h5">
+                  {post.author_name}
+                </ArgonTypography>
+                <DefaultDivider />
+              </Grid> 
             </Grid>
             <Grid container>
               <Grid item xs={12} lg={12} md={12} xl={12}>
@@ -135,7 +139,7 @@ const GrantMainPage = () => {
                       <Grid item xs={12} md={6} lg={5} xl={6}>
                         <ArgonTypography variant="h5">
                           {" "}
-                          <Link /> Website
+                          <Link /> {post.website_link}
                         </ArgonTypography>
                       </Grid>
                       <Grid item xs={12} md={6} lg={5} xl={6}>
@@ -149,7 +153,7 @@ const GrantMainPage = () => {
                       <Grid item xs={12} md={6} lg={5} xl={6}>
                         <ArgonTypography variant="h5">
                           {" "}
-                          <AccessTime /> Updated 3 months{" "}
+                          <AccessTime /> {post.date}
                         </ArgonTypography>
                       </Grid>
                       <Grid item xs={12} md={6} lg={5} xl={6}>
@@ -174,7 +178,7 @@ const GrantMainPage = () => {
                           <ArgonTypography varaint="h5">
                             Estimated lifetime funding received
                           </ArgonTypography>
-                          <ArgonTypography variant="h1">~$41,000</ArgonTypography>
+                          <ArgonTypography variant="h1">~{post.grant_amount}</ArgonTypography>
                         </Grid>
                       </CardContent>
                     </HoverCard>
@@ -262,6 +266,7 @@ const GrantMainPage = () => {
 
 
         </Grid>
+      ))}
       </ArgonBox>
 
       <ArgonBox mb={3} mx={20} my={3}>
@@ -272,7 +277,7 @@ const GrantMainPage = () => {
               <Grid container direction="column" justifyContainer="center"  alignItems="center" spacing={2} >
                           <Grid item xs={12} md={12} lg={12}>
                             <div data-aos="fade-up" data-aos-duration="5000">
-                              <img src="https://picsum.photos/1300/700" 
+                              <img src="https://picsum.photos/1300/700"
                               alt="article"
                               style={{ width: "100%", height: "auto", borderRadius: '14px' }}/>
                             </div>
@@ -376,6 +381,8 @@ const GrantMainPage = () => {
           </Card>
         </div>
       </ArgonBox>
+     
+     
     </DashboardLayout>
   );
 };

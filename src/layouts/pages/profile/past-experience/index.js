@@ -24,7 +24,7 @@ const PastExperience = () => {
         setPosts(response.data);
       })
       .catch((error) => {
-        console.error(error);
+        // console.error(error);
       });
   }, []);
 
