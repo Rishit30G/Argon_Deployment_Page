@@ -11,44 +11,40 @@ import DefaultDivider from "components/Divider";
 export const GrantCard = () => {
 
   return (
-    <ArgonBox py={3} px={3}>
+    <ArgonBox px={3}>
       <Grid container spacing={5}>
         <Grid item xs={12} sm={12} md={6} lg={12} xl={3}>
         <HoverCard>
             <ArgonBox my={1} mx={1}>
               <CardContent>
-                <Stack
-                  direction="row"
-                  justifyContent="space-around"
-                  alignItems="center"
-                  spacing={3}
-                  style={{ paddingRight: "10px", paddingLeft: "10px" }}
-                >
-                  <ArgonTypography variant="h1">
-                    12 <ArgonTypography variant="h5">Apr</ArgonTypography>
-                  </ArgonTypography>
-                  <Stack
-                  spacing={1}
-                  justifyContent="flex-start"
-                  direction="column"
-                  style={{marginTop: '5px'}}
-                >
-                  <Box display="flex" alignItems="center">
-                    <Box bgcolor="success.main" width={24} height={24} mr={2}></Box>
-                    <ArgonTypography variant="h6">Event 1 Completed</ArgonTypography>
-                  </Box>
-                    <DefaultDivider/>
-                  <Box display="flex" alignItems="center">
-                    <Box bgcolor="info.main" width={24} height={24} mr={2}></Box>
-                    <ArgonTypography variant="h6">Event 2 Starts</ArgonTypography>
-                  </Box>
-                    <DefaultDivider/>
-                  <Box display="flex" alignItems="center">
-                    <Box bgcolor="warning.main" width={24} height={24} mr={2}></Box>
-                    <ArgonTypography variant="h6">Event 3 Cancelled</ArgonTypography>
-                  </Box> 
-                </Stack>
-                </Stack>
+                <Grid container spacing={3}>
+                  <Grid item xl={2}>
+                      <ArgonTypography variant="h1">
+                        12 <ArgonTypography variant="h5">Apr</ArgonTypography>
+                      </ArgonTypography>
+                  </Grid>
+
+                  <Grid item xl={10}>
+                      <Stack
+                      style={{marginTop: '5px'}}
+                    >
+                      <Box display="flex" alignItems="center">
+                        <Box bgcolor="success.main" width={8} height={24} mr={2}></Box>
+                        <ArgonTypography variant="body2">Event 1 Completed</ArgonTypography>
+                      </Box>
+                        <DefaultDivider/>
+                      <Box display="flex" alignItems="center">
+                        <Box bgcolor="info.main" width={8} height={24} mr={2}></Box>
+                        <ArgonTypography variant="body2">Event 2 Starts</ArgonTypography>
+                      </Box>
+                        <DefaultDivider/>
+                      <Box display="flex" alignItems="center">
+                        <Box bgcolor="warning.main" width={8} height={24} mr={2}></Box>
+                        <ArgonTypography variant="body2">Event 3 Cancelled</ArgonTypography>
+                      </Box> 
+                      </Stack>
+                  </Grid>
+                </Grid>
                 
               </CardContent>
             </ArgonBox>
@@ -58,38 +54,34 @@ export const GrantCard = () => {
         <HoverCard>
             <ArgonBox my={1} mx={1}>
               <CardContent>
-                <Stack
-                  direction="row"
-                  justifyContent="space-around"
-                  alignItems="center"
-                  spacing={3}
-                  style={{ paddingRight: "10px", paddingLeft: "10px" }}
-                >
-                  <ArgonTypography variant="h1">
-                    12 <ArgonTypography variant="h5">Apr</ArgonTypography>
-                  </ArgonTypography>
-                  <Stack
-                  spacing={1}
-                  justifyContent="flex-start"
-                  direction="column"
-                  style={{marginTop: '5px'}}
-                >
-                  <Box display="flex" alignItems="center">
-                    <Box bgcolor="success.main" width={24} height={24} mr={2}></Box>
-                    <ArgonTypography variant="h6">Event 1 Completed</ArgonTypography>
-                  </Box>
-                    <DefaultDivider/>
-                  <Box display="flex" alignItems="center">
-                    <Box bgcolor="info.main" width={24} height={24} mr={2}></Box>
-                    <ArgonTypography variant="h6">Event 2 Starts</ArgonTypography>
-                  </Box>
-                    <DefaultDivider/>
-                  <Box display="flex" alignItems="center">
-                    <Box bgcolor="warning.main" width={24} height={24} mr={2}></Box>
-                    <ArgonTypography variant="h6">Event 3 Cancelled</ArgonTypography>
-                  </Box> 
-                </Stack>
-                </Stack>
+                <Grid container spacing={3}>
+                  <Grid item xl={2}>
+                      <ArgonTypography variant="h1">
+                        12 <ArgonTypography variant="h5">Apr</ArgonTypography>
+                      </ArgonTypography>
+                  </Grid>
+
+                  <Grid item xl={10}>
+                      <Stack
+                      style={{marginTop: '5px'}}
+                    >
+                      <Box display="flex" alignItems="center">
+                        <Box bgcolor="success.main" width={8} height={24} mr={2}></Box>
+                        <ArgonTypography variant="body2">Event 1 Completed</ArgonTypography>
+                      </Box>
+                        <DefaultDivider/>
+                      <Box display="flex" alignItems="center">
+                        <Box bgcolor="info.main" width={8} height={24} mr={2}></Box>
+                        <ArgonTypography variant="body2">Event 2 Starts</ArgonTypography>
+                      </Box>
+                        <DefaultDivider/>
+                      <Box display="flex" alignItems="center">
+                        <Box bgcolor="warning.main" width={8} height={24} mr={2}></Box>
+                        <ArgonTypography variant="body2">Event 3 Cancelled</ArgonTypography>
+                      </Box> 
+                      </Stack>
+                  </Grid>
+                </Grid>
                 
               </CardContent>
             </ArgonBox>
@@ -99,38 +91,34 @@ export const GrantCard = () => {
         <HoverCard>
             <ArgonBox my={1} mx={1}>
               <CardContent>
-                <Stack
-                  direction="row"
-                  justifyContent="space-around"
-                  alignItems="center"
-                  spacing={3}
-                  style={{ paddingRight: "10px", paddingLeft: "10px" }}
-                >
-                  <ArgonTypography variant="h1">
-                    12 <ArgonTypography variant="h5">Apr</ArgonTypography>
-                  </ArgonTypography>
-                  <Stack
-                  spacing={1}
-                  justifyContent="flex-start"
-                  direction="column"
-                  style={{marginTop: '5px'}}
-                >
-                  <Box display="flex" alignItems="center">
-                    <Box bgcolor="success.main" width={24} height={24} mr={2}></Box>
-                    <ArgonTypography variant="h6">Event 1 Completed</ArgonTypography>
-                  </Box>
-                    <DefaultDivider/>
-                  <Box display="flex" alignItems="center">
-                    <Box bgcolor="info.main" width={24} height={24} mr={2}></Box>
-                    <ArgonTypography variant="h6">Event 2 Starts</ArgonTypography>
-                  </Box>
-                    <DefaultDivider/>
-                  <Box display="flex" alignItems="center">
-                    <Box bgcolor="warning.main" width={24} height={24} mr={2}></Box>
-                    <ArgonTypography variant="h6">Event 3 Cancelled</ArgonTypography>
-                  </Box> 
-                </Stack>
-                </Stack>
+                <Grid container spacing={3}>
+                  <Grid item xl={2}>
+                      <ArgonTypography variant="h1">
+                        12 <ArgonTypography variant="h5">Apr</ArgonTypography>
+                      </ArgonTypography>
+                  </Grid>
+
+                  <Grid item xl={10}>
+                      <Stack
+                      style={{marginTop: '5px'}}
+                    >
+                      <Box display="flex" alignItems="center">
+                        <Box bgcolor="success.main" width={8} height={24} mr={2}></Box>
+                        <ArgonTypography variant="body2">Event 1 Completed</ArgonTypography>
+                      </Box>
+                        <DefaultDivider/>
+                      <Box display="flex" alignItems="center">
+                        <Box bgcolor="info.main" width={8} height={24} mr={2}></Box>
+                        <ArgonTypography variant="body2">Event 2 Starts</ArgonTypography>
+                      </Box>
+                        <DefaultDivider/>
+                      <Box display="flex" alignItems="center">
+                        <Box bgcolor="warning.main" width={8} height={24} mr={2}></Box>
+                        <ArgonTypography variant="body2">Event 3 Cancelled</ArgonTypography>
+                      </Box> 
+                      </Stack>
+                  </Grid>
+                </Grid>
                 
               </CardContent>
             </ArgonBox>
