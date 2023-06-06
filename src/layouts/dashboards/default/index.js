@@ -195,13 +195,13 @@ function Default() {
         </Grid>
       </ArgonBox>
 
-      <ArgonBox py={3} px={15}>
+      <ArgonBox py={1} px={15}>
         <ArgonTypography variant="h2" style={{ marginBottom: "30px" , marginTop: "10px"}}>
                   Grants & Proposal Calender
             <DefaultDivider />
                 </ArgonTypography>
         <Grid container spacing={3} mb={3}>
-          <Grid item xs={12} lg={9}>
+          <Grid item xs={12} lg={12}>
           
             <HoverCard>
               <CardContent>
