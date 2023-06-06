@@ -195,36 +195,36 @@ const routes = [
           },
         ],
       },
-      {
-        name: "Account",
-        key: "account",
-        collapse: [
-          {
-            name: "Settings",
-            key: "settings",
-            route: "/pages/account/settings",
-            component: <Settings />,
-          },
-          // {
-          //   name: "Billing",
-          //   key: "billing",
-          //   route: "/pages/account/billing",
-          //   component: <Billing />,
-          // },
-          // {
-          //   name: "Invoice",
-          //   key: "invoice",
-          //   route: "/pages/account/invoice",
-          //   component: <Invoice />,
-          // },
-          // {
-          //   name: "Security",
-          //   key: "security",
-          //   route: "/pages/account/security",
-          //   component: <Security />,
-          // },
-        ],
-      },
+      // {
+      //   name: "Account",
+      //   key: "account",
+      //   collapse: [
+      //     {
+      //       name: "Settings",
+      //       key: "settings",
+      //       route: "/pages/account/settings",
+      //       component: <Settings />,
+      //     },
+      //     // {
+      //     //   name: "Billing",
+      //     //   key: "billing",
+      //     //   route: "/pages/account/billing",
+      //     //   component: <Billing />,
+      //     // },
+      //     // {
+      //     //   name: "Invoice",
+      //     //   key: "invoice",
+      //     //   route: "/pages/account/invoice",
+      //     //   component: <Invoice />,
+      //     // },
+      //     // {
+      //     //   name: "Security",
+      //     //   key: "security",
+      //     //   route: "/pages/account/security",
+      //     //   component: <Security />,
+      //     // },
+      //   ],
+      // },
       {
         name: "Grants and Proposals",
         key: "grants and proposals",

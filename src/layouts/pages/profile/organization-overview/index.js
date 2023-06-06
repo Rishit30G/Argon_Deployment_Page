@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
+import DashboardLayout from "examples/LayoutContainers/DashboardLayout2";
 import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 import ArgonButton from "components/ArgonButton";

@@ -10,6 +10,7 @@ import "aos/dist/aos.css";
 import AOS from "aos";
 import HoverCard from "components/HoverCard";
 import ArgonBadge from "components/ArgonBadge";
+import DefaultDivider from "components/Divider";
 
 const ProposalList = () => {
   React.useEffect(() => {
@@ -23,19 +24,11 @@ const ProposalList = () => {
       <ArgonBox px={10} py={3}>
 
         <Grid container spacing={3} justifyContent="space-between" >
-          <Grid item xl={5}>
+          <Grid item xl={12}>
               <ArgonTypography variant="h3" fontWeight="bold">
                   Listing of DAOs
               </ArgonTypography>
-          </Grid>
-          <Grid item xl={7}>
-            <HoverCard>
-              <CardContent>
-                 <ArgonTypography variant="h5" fontWeight="bold" style={{fontStyle: 'italic', direction: 'rtl', color: 'lightgrey'}}>
-                    Check out all the DAO protocols available, see what they are progressing towards and step up your dao knowledge even check the latest jobs that are added by these DAOs, isn't is amazing to work with your favorite protocol
-                 </ArgonTypography>
-              </CardContent>
-            </HoverCard>
+          <DefaultDivider/>
           </Grid>
         </Grid>
       </ArgonBox>

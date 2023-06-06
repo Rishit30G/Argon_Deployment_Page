@@ -38,29 +38,22 @@ import Footer from "layouts/authentication/components/Footer";
 import pageRoutes from "page.routes";
 
 // Images
-import bgImage from "assets/images/illustrations/404.svg";
+import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 
 function Error404() {
   const { d1, d3, d4, d5 } = typography;
 
+  const handleGoToHomePage = () => {
+    window.location.href = '/';
+  };
+
   return (
-    <PageLayout white>
-      <DefaultNavbar
-        routes={pageRoutes}
-        action={{
-          type: "external",
-          route: "https://creative-tim.com/product/argon-dashboard-pro-material-ui",
-          label: "Buy Now",
-          color: "dark",
-          variant: "gradient",
-        }}
-      />
+    <DashboardLayout>
       <ArgonBox
         minHeight="100vh"
         sx={{
           display: "grid",
           placeItems: "center",
-          backgroundImage: `url(${bgImage})`,
           backgroundSize: "cover",
           backgroundPosition: "50%",
         }}
@@ -82,14 +75,13 @@ function Error404() {
             <ArgonTypography variant="body1" color="text">
               We suggest you to go to the homepage while we solve this issue.
             </ArgonTypography>
-            <ArgonButton variant="gradient" color="dark" sx={{ mt: 5 }}>
+            <ArgonButton variant="gradient" color="dark" sx={{ mt: 5 }} onClick={handleGoToHomePage}>
               Go to Homepage
             </ArgonButton>
           </Grid>
         </Grid>
       </ArgonBox>
-      <Footer />
-    </PageLayout>
+    </DashboardLayout>
   );
 }
 

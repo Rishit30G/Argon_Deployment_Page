@@ -51,19 +51,27 @@ function GrantsAndProposals() {
 
   
   const [showProposal, setShowProposal] = useState(false);
+  const [showGrant, setShowGrant] = useState(false);
+  const [showJobs, setShowJobs] = useState(false);
+
 
   const toggleProposal = () => {
     setShowProposal(!showProposal);
+    setShowGrant(false);
+    setShowJobs(false);
+
   };
 
-  const [showGrant, setShowGrant] = useState(false);
   const toggleGrant = () => {
     setShowGrant(!showGrant);
+    setShowProposal(false);
+    setShowJobs(false);
   };
 
-  const [showJobs, setShowJobs] = useState(false);
   const toggleJobs = () => {
     setShowJobs(!showJobs);
+    setShowProposal(false);
+    setShowGrant(false);
   };
   
   return (

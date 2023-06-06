@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, CardContent, Grid, Stack } from "@mui/material";
+import { Card, CardContent, CircularProgress, Grid, Stack } from "@mui/material";
 import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
@@ -11,6 +11,7 @@ import ArgonBadge from "components/ArgonBadge";
 import Footer from "examples/Footer";
 import DefaultDivider from "components/Divider";
 import { Helmet } from "react-helmet";
+import Error404 from "layouts/authentication/error/404";
 
 const markdownIt = require("markdown-it");
 
@@ -34,21 +35,21 @@ const Articles = () => {
       });
   }, []);
 
-  if (posts.length === 0) return null;
+  if (posts.length === 0) {
+    return null;
+  }
 
   const md = new markdownIt();
 
   return (
-
-    
     <DashboardLayout>
       <DashboardNavbar />
-            <Helmet>
-                <title>Articles</title>
-            </Helmet>
-            <Helmet>
-                <meta name="description" content="Articles" />
-            </Helmet>
+      <Helmet>
+        <title>Articles</title>
+      </Helmet>
+      <Helmet>
+        <meta name="description" content="Articles" />
+      </Helmet>
       {posts.map((post) => {
         const time = new Date();
         const timeOfPost = new Date(post.upload_time);
@@ -105,7 +106,11 @@ const Articles = () => {
 
                     <Grid container direction="column" spacing={4} style={{ marginTop: "10px" }}>
                       <Card
-                        style={{ marginTop: "30px", backgroundColor: "#2A2F34", marginLeft: "20px" }}
+                        style={{
+                          marginTop: "30px",
+                          backgroundColor: "#2A2F34",
+                          marginLeft: "20px",
+                        }}
                       >
                         <ArgonBox px={17} py={3}>
                           <CardContent>

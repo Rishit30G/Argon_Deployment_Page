@@ -28,7 +28,7 @@ import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 
 // Argon Dashboard 2 PRO MUI example components
-import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
+import DashboardLayout from "examples/LayoutContainers/DashboardLayout2";
 import Footer from "examples/Footer";
 import ProfileInfoCard from "examples/Cards/InfoCards/ProfileInfoCard";
 import ProfilesList from "examples/Lists/ProfilesList";
