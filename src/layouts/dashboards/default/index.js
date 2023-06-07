@@ -83,7 +83,8 @@ function Default() {
   return (
     <DashboardLayout>
       <DashboardNavbar />
-
+   
+  <ArgonBox >
       <ArgonBox py={3} px={15}> 
          <Grid container justifyContent="center">  
             <Grid item xs={8} lg={8} xl={8}>
@@ -100,15 +101,15 @@ function Default() {
           <DefaultDivider />
         </ArgonTypography>
         <Grid container spacing={3} mb={3}>
-          <Grid item xs={12} md={6} lg={3}>
+          <Grid item xs={12} sm={6} md={6} lg={3}>
             <HoverCard>
               <CardContent> 
                 <ArgonBox px={1} py={1}>
-                <Grid container spacing={3} justifyContent="space-between">
-                  <Grid item xs={12} md={8} lg={9} xl={9}>
+                <Grid container spacing={3} justifyContent="space-between" style={{display: 'flex'}}>
+                  <Grid item xs={8} md={8} sm={8} lg={9} xl={9}>
                   <ArgonTypography variant="h3" style={{fontFamily: 'Nunito Sans'}}> DAOs Tracked </ArgonTypography>
                   </Grid> 
-                  <Grid item xs={12} md={4} lg={3} xl={3}>
+                  <Grid item xs={4} md={4} sm={4} lg={3} xl={3}>
                     <ArgonBox style={{display: "flex", justifyContent: "flex-end"}}>
                       <img src="https://i.postimg.cc/76Y3GhZ6/DAO-Icon.png" style={{borderRadius: "50%", height: '60px', width: '60px'}} />
                     </ArgonBox>
@@ -123,7 +124,7 @@ function Default() {
               </CardContent>
             </HoverCard>
           </Grid>
-          <Grid item xs={12} md={6} lg={3}>
+          <Grid item xs={12} sm={6} md={6} lg={3}>
           <HoverCard>
               <CardContent> 
                 <ArgonBox px={1} py={1}>
@@ -146,7 +147,7 @@ function Default() {
               </CardContent>
             </HoverCard>
           </Grid>
-          <Grid item xs={12} md={6} lg={3}>
+          <Grid item xs={12}  sm={6} md={6} lg={3}>
           <HoverCard>
               <CardContent> 
                 <ArgonBox px={1} py={1}>
@@ -169,7 +170,7 @@ function Default() {
               </CardContent>
             </HoverCard>
           </Grid>
-          <Grid item xs={12} md={6} lg={3}>
+          <Grid item xs={12}  sm={6} md={6} lg={3}>
           <HoverCard>
               <CardContent> 
                 <ArgonBox px={1} py={1}>
@@ -236,6 +237,7 @@ function Default() {
           </Grid>
         </Grid>
       </ArgonBox>
+  </ArgonBox>
     </DashboardLayout>
   );
 }

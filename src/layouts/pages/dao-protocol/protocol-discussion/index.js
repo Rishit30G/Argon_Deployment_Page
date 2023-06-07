@@ -1,4 +1,4 @@
-import { Avatar, Card, CardContent, Grid, Stack } from "@mui/material";
+import { Avatar, Button, Card, CardContent, Grid, Stack } from "@mui/material";
 import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
@@ -12,31 +12,115 @@ import "aos/dist/aos.css";
 import AOS from "aos";
 import DefaultDivider from "components/Divider";
 import ReplyCard from "examples/Cards/ReplyCard";
+import axios from "axios";
+
+const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/protocol";
 
 const ProtocolDiscussion = () => {
+  
+  // Get data from the APIs - ID for Grant 
   useEffect(() => {
     AOS.init();
   }, []);
+  const [posts, setPosts] = useState([]);
+  const[threads, setThreads] = useState([]);
+    
+    useEffect(() => {
+      axios
+        .get(baseURL)
+        .then((response) => {
+          setPosts(response.data);
+        })
+        .catch((error) => {
+          // console.error(error);
+        });
+    }, []);
+  
 
-  const [showReplies, setShowReplies] = useState(false);
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const response = await axios.get('https://dolphin-app-qq7rr.ondigitalocean.app/discussionthread/?format=json');
+         
+            setThreads(response.data);
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      };
+  
+      fetchData();
+    }, []);
+  
+
+  // Post a comment ( User to backend )
+  const [comment, setComment] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  
+    const formData = {
+      comment,
+      username: "abhijit99",
+      secondary_buffer: "2,3",
+    };
+  
+    try {
+      const response = await fetch("https://dolphin-app-qq7rr.ondigitalocean.app/primarycomment/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (response.ok) {
+        const data = await response.json();
+  
+        console.log("Comment posted! ID:", data.id);
+        console.log("Protocol ID:",posts[0].id);
+        
+        // Update threads state
+        setThreads(prevThreads => [...prevThreads, {
+          id: data.id,
+          primary_comments: [{...data}]
+        }]);
+  
+        //! Make a POST Request here by pushing data.id and post.id to the discussion thread
+        const response2 = await fetch(`https://dolphin-app-qq7rr.ondigitalocean.app/discussionthread/?pro=${posts[0].id}`, {
+  
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: "Thread 45",
+            primary_comment_buffer: `${data.id}`,
+          })
+      })
+      
+      if(response2){
+        console.log("Thread created!");
+      }
+      else{
+        console.log("Thread not created!");
+      }
+    
+    }
+      else {
+        // Error occurred while posting the comment
+        console.error("Failed to post comment");
+      }
+    } catch (error) {
+      console.error("Error occurred:", error);
+    }
+  
+    if(posts.length === 0) {return null;}
+  };
+
+const [showReplies, setShowReplies] = useState(false);
 
   const handleRepliesClick = () => {
     setShowReplies(!showReplies);
-  };
-
-  const [comments, setComments] = useState([]);
-  const [newComment, setNewComment] = useState("");
-
-  const handleButtonClick = () => {
-    if (newComment.trim() !== "") {
-      const currentDate = new Date().toLocaleString();
-      const updatedComments = [
-        ...comments,
-        `${String.fromCharCode(0x2764)} ${newComment} (${currentDate})`,
-      ];
-      setComments(updatedComments);
-      setNewComment("");
-    }
   };
 
   return (
@@ -51,7 +135,6 @@ const ProtocolDiscussion = () => {
         </Grid>
        <DefaultDivider/>
       </ArgonBox>
-
       <ArgonBox px={15} py={3}>
         <Grid container spacing={3} direction="column">
           <Grid item xs={12} md={6}>
@@ -92,6 +175,7 @@ const ProtocolDiscussion = () => {
         </Grid>
       </ArgonBox>
 
+{posts.map((post) => (
       <ArgonBox px={15} py={3}>
         <Grid container direction="column">
           <Grid item xs={12} md={6} style={{ marginTop: "30px" }}>
@@ -111,27 +195,7 @@ const ProtocolDiscussion = () => {
                   <Grid container>
                     <ArgonBox mx={3} my={3}>
                       <ArgonTypography variant="body2">
-                        There are many variations of passages of Lorem Ipsum available, but the
-                        majority have suffered alteration in some form, by injected humour, or
-                        randomised words which don't look even slightly believable. If you are going
-                        to use a passage of Lorem Ipsum, you need to be sure there isn't anything
-                        embarrassing hidden in the middle of text. All the Lorem Ipsum generators on
-                        the Internet tend to repeat predefined chunks as necessary, making this the
-                        first true generator on the Internet. It uses a dictionary of over 200 Latin
-                        words, combined with a handful of model sentence structures, to generate
-                        Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore
-                        always free from repetition, injected humour, or non-characteristic words
-                        etc. Contrary to popular belief, Lorem Ipsum is not simply random text. It
-                        has roots in a piece of classical Latin literature from 45 BC, making it
-                        over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney
-                        College in Virginia, looked up one of the more obscure Latin words,
-                        consectetur, from a Lorem Ipsum passage, and going through the cites of the
-                        word in classical literature, discovered the undoubtable source. Lorem Ipsum
-                        comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
-                        (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a
-                        treatise on the theory of ethics, very popular during the Renaissance. The
-                        first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line
-                        in section 1.10.32.
+                        {post.desc}
                       </ArgonTypography>
                     </ArgonBox>
                   </Grid>
@@ -141,6 +205,7 @@ const ProtocolDiscussion = () => {
           </Grid>
         </Grid>
       </ArgonBox>
+      ))}
 
       <ArgonBox px={15} py={3}>
         <Grid container direction="column">
@@ -149,20 +214,24 @@ const ProtocolDiscussion = () => {
             
             <ArgonTypography variant="h3">Discussion Section</ArgonTypography>
             <div data-aos="fade-up" data-aos-duration="5000">
+              <form onSubmit={handleSubmit}>
               <Stack
                 direction="column"
                 spacing={2}
+                
                 style={{ marginTop: "15px", marginBottom: "40px" }}
               >
                 <ArgonInput
                   multiline
                   rows={3}
                   inputProps={{ style: { color: "grey", fontSize: "20px" } }}
-                  onChange={(e) => setNewComment(e.target.value)}
+                  onChange={(e) => setComment(e.target.value)}
                 />
-                <ArgonButton
-                  onClick={handleButtonClick}
+                <button
                   style={{
+                    type: "submit",
+                    cursor: "pointer",
+                    fontFamily: "Montserrat",
                     height: "58px",
                     width: "220px",
                     fontSize: "20px",
@@ -175,18 +244,11 @@ const ProtocolDiscussion = () => {
                 >
                   {" "}
                   Reply{" "}
-                </ArgonButton>
+                </button>
               </Stack>
+              </form>
             </div>
-
-            <div>
-        {comments.map((comment, index) => (
-          <ArgonTypography key={index} tag="p">
-            {comment}
-          </ArgonTypography>
-        ))}
-      </div>
-            {/* <Grid container spacing={2} style={{ marginTop: "30px" }}>
+            <Grid container spacing={2} direction="column" style={{ marginTop: "30px" }}>
               <Grid item>
                 <ArgonTypography variant="h3" fontWeight="bold">
                   Replies and Comments
@@ -194,7 +256,8 @@ const ProtocolDiscussion = () => {
               </Grid>
               <Grid item>
                 <div data-aos="fade-up" data-aos-duration="5000">
-                  <HoverCard>
+             {[...threads].reverse().map((thread) => (
+                  <HoverCard key={thread.id}>
                     <ArgonBox px={2} py={2}>
                       <CardContent>
                         <Grid
@@ -211,21 +274,17 @@ const ProtocolDiscussion = () => {
                               style={{ marginTop: "10px" }}
                             >
                               <Avatar style={{ marginRight: "10px" }}></Avatar>
-                              <ArgonTypography>Author Name</ArgonTypography>
+                              <ArgonTypography>{thread.primary_comments[thread.primary_comments.length - 1].username}</ArgonTypography>
                             </Grid>
                           </Grid>
                           <Grid item>
                             <ArgonTypography variant="h4">12th April</ArgonTypography>
                           </Grid>
-                          <Grid item>
-                            <ArgonTypography variant="body2">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                              tincidunt, nisl eget aliquam tincidunt, nisl nisl aliquam tortor, eget
-                              aliquam nisl  nisl sit amet nisl. Sed tincidunt, nisl eget aliquam
-                              tincidunt, nisl nisl aliquam tortor, eget aliquam nisl nisl sit amet
-                              nisl.
-                            </ArgonTypography>
-                          </Grid>
+                        </Grid>
+                        <Grid container style={{ marginTop: '20px', marginLeft: '35px' }}>
+                          <ArgonTypography variant="body2">
+                            {thread.primary_comments[thread.primary_comments.length - 1].comment}
+                          </ArgonTypography>
                         </Grid>
                         <Grid
                           container
@@ -235,34 +294,42 @@ const ProtocolDiscussion = () => {
                         >
                           <Grid item>
                             <ArgonButton variant="text" onClick={handleRepliesClick}>
-                            <ArgonTypography variant="body2">
-                              {" "}
-                              <ArrowDown style={{ marginRight: "10px" }}></ArrowDown>Replies
-                            </ArgonTypography>
+                              <ArgonTypography variant="body2">
+                                {" "}
+                                <ArrowDown style={{ marginRight: "10px" }}></ArrowDown>Replies
+                              </ArgonTypography>
                             </ArgonButton>
                           </Grid>
                           <Grid item>
                             <ArgonTypography variant="body2" style={{ fontSize: "30px" }}>
                               {" "}
                               <Heart style={{ marginRight: "10px" }}></Heart>
-                              12
+                              {thread.primary_comments[thread.primary_comments.length - 1].likes}
                             </ArgonTypography>
                           </Grid>
                         </Grid>
                       </CardContent>
                     </ArgonBox>
                   </HoverCard>
+                ))}
+
                 </div>
+                {showReplies && <ReplyCard 
+                   username={threads[0].primary_comments[0].secondary_comments[0].username}
+                    comment={threads[0].primary_comments[0].secondary_comments[0].comment}
+                  like={threads[0].primary_comments[0].secondary_comments[0].likes}
+                />}
               </Grid>
               <Grid item> 
-              {showReplies && <ReplyCard />}
               </Grid>
-            </Grid> */}
+            </Grid>
           </Grid>
         </Grid>
       </ArgonBox>
     </DashboardLayout>
   );
 };
+
+
 
 export default ProtocolDiscussion;

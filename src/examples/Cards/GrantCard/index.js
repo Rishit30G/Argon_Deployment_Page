@@ -13,18 +13,19 @@ export const GrantCard = () => {
   return (
     <ArgonBox px={3}>
       <Grid container spacing={5}>
-        <Grid item xs={12} sm={12} md={6} lg={12} xl={3}>
+        <Grid item xs={12} sm={6} md={6} lg={6} xl={3}>
         <HoverCard>
             <ArgonBox my={1} mx={1}>
               <CardContent>
                 <Grid container spacing={3}>
-                  <Grid item xl={2}>
-                      <ArgonTypography variant="h1">
-                        12 <ArgonTypography variant="h5">Apr</ArgonTypography>
-                      </ArgonTypography>
+                  <Grid item lg={12} sm={12} md={12} xs={12} xl={3}>
+                    <Stack> 
+                      <ArgonTypography variant="h1">12</ArgonTypography>
+                      <ArgonTypography variant="h5">Apr</ArgonTypography>
+                     </Stack>
                   </Grid>
 
-                  <Grid item xl={10}>
+                  <Grid item lg={12} sm={12} md={12} xs={12} xl={9}>
                       <Stack
                       style={{marginTop: '5px'}}
                     >
@@ -50,18 +51,19 @@ export const GrantCard = () => {
             </ArgonBox>
           </HoverCard>
         </Grid>
-        <Grid item xs={12} sm={12} md={6} lg={12} xl={3}>
+        <Grid item xs={12} sm={6} md={6} lg={6} xl={3}>
         <HoverCard>
             <ArgonBox my={1} mx={1}>
               <CardContent>
                 <Grid container spacing={3}>
-                  <Grid item xl={2}>
-                      <ArgonTypography variant="h1">
-                        12 <ArgonTypography variant="h5">Apr</ArgonTypography>
-                      </ArgonTypography>
+                  <Grid item lg={12} sm={12} md={12} xs={12} xl={3}>
+                    <Stack> 
+                      <ArgonTypography variant="h1">12</ArgonTypography>
+                      <ArgonTypography variant="h5">Apr</ArgonTypography>
+                     </Stack>
                   </Grid>
 
-                  <Grid item xl={10}>
+                  <Grid item lg={12} sm={12} md={12} xs={12} xl={9}>
                       <Stack
                       style={{marginTop: '5px'}}
                     >
@@ -87,18 +89,19 @@ export const GrantCard = () => {
             </ArgonBox>
           </HoverCard>
         </Grid>
-        <Grid item xs={12} sm={12} md={6} lg={12} xl={3}>
+        <Grid item xs={12} sm={6} md={6} lg={6} xl={3}>
         <HoverCard>
             <ArgonBox my={1} mx={1}>
               <CardContent>
                 <Grid container spacing={3}>
-                  <Grid item xl={2}>
-                      <ArgonTypography variant="h1">
-                        12 <ArgonTypography variant="h5">Apr</ArgonTypography>
-                      </ArgonTypography>
+                  <Grid item lg={12} sm={12} md={12} xs={12} xl={3}>
+                    <Stack> 
+                      <ArgonTypography variant="h1">12</ArgonTypography>
+                      <ArgonTypography variant="h5">Apr</ArgonTypography>
+                     </Stack>
                   </Grid>
 
-                  <Grid item xl={10}>
+                  <Grid item lg={12} sm={12} md={12} xs={12} xl={9}>
                       <Stack
                       style={{marginTop: '5px'}}
                     >
@@ -124,7 +127,7 @@ export const GrantCard = () => {
             </ArgonBox>
           </HoverCard>
         </Grid>
-        <Grid item xs={12} sm={12} md={6} lg={12} xl={3}>
+        <Grid item xs={12} sm={6} md={6} lg={6} xl={3}>
           <HoverCard>
             <ArgonBox my={1} mx={1} >
               <CardContent>
@@ -150,7 +153,7 @@ export const GrantCard = () => {
                   <Grid container item justifyContent="center">
                     <ArgonBox my={2}>
                       <Stack direction="row" spacing={1}>
-                        <ArgonTypography variant="h6" style={{ justifyContent: "center" }}>
+                        <ArgonTypography variant="body2" style={{ justifyContent: "center", fontSize: '16px'}}>
                           Keep up with everything that's going around in Web 3.0 world
                         </ArgonTypography>
                         <ArgonTypography variant="body2" style={{ justifyContent: "center" }}>

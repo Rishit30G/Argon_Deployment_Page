@@ -154,7 +154,8 @@ const NewDAOProtocol = () => {
                           variant="body2"
                           style={{ fontSize: "20px", color: "rgba(255, 255, 255, 0.7)" }}
                         >
-                          {post.desc}
+                           {post.desc.split(" ").slice(0,20).join(" ")}
+                           {post.desc.split(" ").length > 20 ? "..." : ""}
                         </ArgonTypography>
                       </Grid>
                       <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>

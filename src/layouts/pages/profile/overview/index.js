@@ -22,6 +22,7 @@ const Overview2 = () => {
         </Grid>
       </ArgonBox>
 
+    
       <Grid
         container
         spacing={3}
@@ -31,6 +32,7 @@ const Overview2 = () => {
       >
         <ArgonBox my={3} mx={3}>
           <Grid container>
+            <div style={{ width: "80%" }}>
             <HoverCard>
               <CardContent>
               <ArgonBox my={3} mx={3}>
@@ -73,6 +75,7 @@ const Overview2 = () => {
               </ArgonBox>
               </CardContent>
             </HoverCard>
+      </div>
           </Grid>
         </ArgonBox>
       </Grid>

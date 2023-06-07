@@ -36,7 +36,7 @@ function Footer({ company, links }) {
     ));
 
   return (
-    <ArgonBox mx={9} my={2} style={{ position:"realtive", bottom: 0, left: 0, width: "90%" }}>
+    <ArgonBox mx={9} my={2} style={{bottom: 0, left: 0, width: "90%" }}>
       <DashboardLayout>
       <Grid container direction="row" justifyContent="space-between" alignItems="flex-end">
         <Grid item>
