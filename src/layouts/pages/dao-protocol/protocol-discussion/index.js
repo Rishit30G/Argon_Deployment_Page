@@ -76,8 +76,8 @@ const ProtocolDiscussion = () => {
       if (response.ok) {
         const data = await response.json();
   
-        console.log("Comment posted! ID:", data.id);
-        console.log("Protocol ID:",posts[0].id);
+//        console.log("Comment posted! ID:", data.id);
+//        console.log("Protocol ID:",posts[0].id);
         
         // Update threads state
         setThreads(prevThreads => [...prevThreads, {
@@ -99,10 +99,10 @@ const ProtocolDiscussion = () => {
       })
       
       if(response2){
-        console.log("Thread created!");
+//        console.log("Thread created!");
       }
       else{
-        console.log("Thread not created!");
+//        console.log("Thread not created!");
       }
     
     }
