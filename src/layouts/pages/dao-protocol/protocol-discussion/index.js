@@ -44,7 +44,7 @@ const ProtocolDiscussion = () => {
          
             setThreads(response.data);
         } catch (error) {
-          console.error('Error fetching data:', error);
+          //console.error('Error fetching data:', error);
         }
       };
   
@@ -76,8 +76,8 @@ const ProtocolDiscussion = () => {
       if (response.ok) {
         const data = await response.json();
   
-//        console.log("Comment posted! ID:", data.id);
-//        console.log("Protocol ID:",posts[0].id);
+      //  console.log("Comment posted! ID:", data.id);
+      //  console.log("Protocol ID:",posts[0].id);
         
         // Update threads state
         setThreads(prevThreads => [...prevThreads, {
@@ -99,19 +99,19 @@ const ProtocolDiscussion = () => {
       })
       
       if(response2){
-//        console.log("Thread created!");
+      //  console.log("Thread created!");
       }
       else{
-//        console.log("Thread not created!");
+      //  console.log("Thread not created!");
       }
     
     }
       else {
         // Error occurred while posting the comment
-        console.error("Failed to post comment");
+        //console.error("Failed to post comment");
       }
     } catch (error) {
-      console.error("Error occurred:", error);
+      //console.error("Error occurred:", error);
     }
   
     if(posts.length === 0) {return null;}
