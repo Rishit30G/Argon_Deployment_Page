@@ -90,6 +90,18 @@ export const GrantCard = () => {
           </HoverCard>
         </Grid>
         <Grid item xs={12} sm={6} md={6} lg={6} xl={3}>
+        <div style={{ position: 'relative' }}>
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backdropFilter: 'blur(8px)', /* Apply a blur effect to the background */
+            zIndex: -1,
+          }}
+        ></div>
         <HoverCard>
             <ArgonBox my={1} mx={1}>
               <CardContent>
@@ -125,10 +137,14 @@ export const GrantCard = () => {
                 
               </CardContent>
             </ArgonBox>
-          </HoverCard>
+            </HoverCard>
+</div>
+
         </Grid>
         <Grid item xs={12} sm={6} md={6} lg={6} xl={3}>
-          <HoverCard>
+          <Card style={{  background: 'rgba(33, 37, 41, 0.7)', /* Set a semi-transparent background color */
+  border: '1px solid #7B848D',
+  boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)', /* Add a subtle shadow */ }}>
             <ArgonBox my={1} mx={1} >
               <CardContent>
                 <Grid container justifyContent="center" alignItems="center" spacing={2}>
@@ -151,21 +167,16 @@ export const GrantCard = () => {
                     </ArgonButton>
                   </Grid>
                   <Grid container item justifyContent="center">
-                    <ArgonBox my={2}>
-                      <Stack direction="row" spacing={1}>
-                        <ArgonTypography variant="body2" style={{ justifyContent: "center", fontSize: '16px'}}>
+                    <ArgonBox my={1} mx={7} pl={3}>
+                        <ArgonTypography variant="body2" style={{ justifyContent: "center", fontSize: '18px'}}>
                           Keep up with everything that's going around in Web 3.0 world
                         </ArgonTypography>
-                        <ArgonTypography variant="body2" style={{ justifyContent: "center" }}>
-                          <Rocket style={{ color: "#fff", fontSize: "40px" }} />
-                        </ArgonTypography>
-                      </Stack>
                     </ArgonBox>
                   </Grid>
                 </Grid>
               </CardContent>
             </ArgonBox>
-          </HoverCard>
+          </Card>
         </Grid>
       </Grid>
     </ArgonBox>

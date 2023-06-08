@@ -35,6 +35,7 @@
     "@mui/styled-engine": "5.4.1",
     "@mui/styles": "^5.12.0",
     "@pathofdev/react-tag-input": "1.0.7",
+    "@phosphor-icons/react": "^2.0.9",
     "@react-jvectormap/core": "1.0.1",
     "@react-jvectormap/world": "1.0.0",
     "@react-leaflet/core": "2.0.0",

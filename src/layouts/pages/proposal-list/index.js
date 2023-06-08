@@ -3,7 +3,7 @@ import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 import ArgonButton from "components/ArgonButton";
-import { Avatar, Badge, Card, CardContent, Divider, Grid, Stack } from "@mui/material";
+import { Avatar, Badge, Card, CardContent, Divider, Grid, Input, Stack } from "@mui/material";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import { Verified } from "@mui/icons-material";
 import "aos/dist/aos.css";
@@ -11,6 +11,7 @@ import AOS from "aos";
 import HoverCard from "components/HoverCard";
 import ArgonBadge from "components/ArgonBadge";
 import DefaultDivider from "components/Divider";
+import ArgonInput from "components/ArgonInput";
 
 const ProposalList = () => {
   React.useEffect(() => {
@@ -31,7 +32,13 @@ const ProposalList = () => {
           <DefaultDivider/>
           </Grid>
         </Grid>
+        <Grid container direction="row-reverse" style={{marginTop: '20px'}}>  
+        <Grid item xs={4} sm={4} md={4} lg={4} xl={4}>
+           <ArgonInput placeholder="Search DAOs"/>
+        </Grid> 
+        </Grid>
       </ArgonBox>
+
       <ArgonBox px={{ xs: 2, sm: 3, md: 5, lg: 10 }} py={3}>
         <Grid container spacing={3}>
       
@@ -83,7 +90,7 @@ const ProposalList = () => {
                           lorem Ipsum is simply dummy text of the printing and typesetting industry.
                       </ArgonTypography>
                       <ArgonButton variant="outlined" style={{marginTop: '30px', width: '180px'}} > 
-                        <ArgonTypography variant="h6" >Join Now</ArgonTypography>
+                        <ArgonTypography variant="h6" >Track</ArgonTypography>
                       </ArgonButton>
                     {/* <ArgonButton style={{ height: "48px", width: "150px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE', marginTop: '20px'}}> Join Now </ArgonButton> */}
 

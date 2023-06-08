@@ -95,7 +95,7 @@ function Default() {
 
 
 
-      <ArgonBox  px={15}>
+      <ArgonBox px={2}>
         <ArgonTypography variant="h2" style={{ marginBottom: "20px", fontFamily:'Montserrat' }}>
           App Metrics
           <DefaultDivider />
@@ -196,7 +196,7 @@ function Default() {
         </Grid>
       </ArgonBox>
 
-      <ArgonBox py={2} px={15}>
+      <ArgonBox px={2}>
         <ArgonTypography variant="h2" style={{ marginBottom: "30px" , marginTop: "10px"}}>
                   Grants & Proposal Calender
             <DefaultDivider />
@@ -210,7 +210,7 @@ function Default() {
         </Grid>
       </ArgonBox> 
 
-      <ArgonBox py={3} px={15}>
+      <ArgonBox py={8} px={2}>
         <Grid container spacing={5} style={{ display: "flex" }}>
           {/* <Grid item xs={12} md={4} lg={4}>
             <ArgonTypography variant="h2" style={{ marginBottom: "20px" }}>

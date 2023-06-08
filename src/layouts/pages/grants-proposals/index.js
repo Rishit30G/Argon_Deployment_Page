@@ -40,6 +40,7 @@ import Grants from "./Grant";
 import Jobs from "./Jobs";
 import DefaultDivider from "components/Divider";
 import Footer from "examples/Footer";
+import { TwitterLogo, Globe } from "@phosphor-icons/react";
 
 
 // Data
@@ -50,7 +51,7 @@ function GrantsAndProposals() {
   },[]);
 
   
-  const [showProposal, setShowProposal] = useState(false);
+  const [showProposal, setShowProposal] = useState(true);
   const [showGrant, setShowGrant] = useState(false);
   const [showJobs, setShowJobs] = useState(false);
 
@@ -115,15 +116,15 @@ function GrantsAndProposals() {
                       convallis mi ut quam dictum, eget rutrum ipsum ultrices. 
                      
                     </ArgonTypography>
-                    <Grid container style={{marginTop: '10px'}}> 
+                    <Grid container style={{marginTop: '10px'}} alignItems="center"> 
                       <Grid item> 
-                        <TwitterIcon style={{color: '#1DA1F2', marginRight: '10px'}}/>
+                        <TwitterLogo size={32} color="#1DA1F2" weight="fill" style={{marginRight: '10px'}}/>
                       </Grid>
                       <Grid item> 
-                       <LanguageIcon style={{color: '#8d8d8d', marginRight: '10px'}}/>
+                        <Globe size={32} color="#8c8c8c" style={{marginRight: '10px'}}/>
                       </Grid>
                       <Grid item> 
-                          <img src="https://i.postimg.cc/hPXgrGBb/defi-lama-logo-freelogovectors-net.png" style={{width: '18px', height: '20px'}}/>
+                          <img src="https://i.postimg.cc/hPXgrGBb/defi-lama-logo-freelogovectors-net.png" style={{width: '23px', height: '26px'}}/>
                       </Grid>
                     </Grid>
                   </Grid>

@@ -4,7 +4,7 @@ import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 import Grid from "@material-ui/core/Grid";
-import { Box, Card, CardActionArea, CardContent, Tab } from "@mui/material";
+import { Box, Card, CardActionArea, CardContent, Divider, Tab } from "@mui/material";
 import { Stack } from "@mui/material";
 import { styled } from "@mui/styles";
 import { TabContext, TabList, TabPanel } from "@material-ui/lab";
@@ -42,11 +42,15 @@ const JobListing = () => {
         <CardContent> */}
           <ArgonBox px={1} py={1}>
             <TabContext value={value}>
-              <Box sx={{ borderBottom: 1, borderColor: "divider", marginBottom: '40px' }}>
-                <TabList onChange={handleChange}>
+              <Box sx={{ marginBottom: '40px' }}>
+                <Card style={{backgroundColor: '#212529'}}>
+                  <CardContent>
+                <TabList onChange={handleChange} TabIndicatorProps={{ style: { backgroundColor: 'grey'} }}> 
                   <Tab label="Organization" value="1" style={{fontSize: '30px', fontStyle: 'italic'}}/>
                   <Tab label="Individual" value="2" style={{fontSize: '30px', fontStyle: 'italic'}}/>
                 </TabList>
+                </CardContent>
+                </Card>
               </Box>
               <TabPanel value="1">
                 <Grid container spacing={4}>
