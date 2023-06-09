@@ -64,6 +64,7 @@
     "react-circular-slider-svg": "0.1.5",
     "react-countup": "^6.4.2",
     "react-dom": "^18.2.0",
+    "react-dropdown": "^1.11.0",
     "react-flatpickr": "3.10.7",
     "react-github-btn": "1.2.1",
     "react-github-calendar": "^4.0.0",

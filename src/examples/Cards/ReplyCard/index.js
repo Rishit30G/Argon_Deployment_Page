@@ -5,11 +5,41 @@ import ArgonTypography from "components/ArgonTypography";
 import { Heart, ArrowDown } from "@web3uikit/icons";
 import HoverCard from "components/HoverCard";
 import ArgonButton from 'components/ArgonButton';
+import ArgonInput from 'components/ArgonInput';
 
 const ReplyCard = ({username, comment, like}) => {
   return (
     <div style={{marginLeft: '160px'}}>
      <div data-aos="fade-up" data-aos-duration="5000">
+      <Grid container spacing={4}  direction="column" style={{marginTop: '10px'}}> 
+        <Grid item> 
+        <ArgonInput
+                  multiline
+                  rows={3}
+                  inputProps={{ style: { color: "grey", fontSize: "20px" } }}       
+          />
+      </Grid>
+      <Grid container item direction="row-reverse" style={{marginBottom: '20px'}}> 
+              <button
+                          style={{
+                            type: "submit",
+                            cursor: "pointer",
+                            fontFamily: "Montserrat",
+                            height: "38px",
+                            width: "150px",
+                            fontSize: "15px",
+                            fontWeight: "400",
+                            backgroundColor: "black",
+                            border: "1px solid #8d8d8d",
+                            color: "white",
+                            boxShadow: "5px 5px 10px  #B721BE",
+                          }}
+                        >
+                          {" "}
+                          Reply{" "}
+                        </button>
+          </Grid>
+        </Grid> 
      <HoverCard>
                     <ArgonBox px={2} py={2}>
                       <CardContent>

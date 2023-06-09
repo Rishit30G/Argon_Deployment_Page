@@ -52,7 +52,7 @@ const Jobs = () => {
                     <Grid item>
                     <div style={{border: '1px solid grey', padding: '10px', display: 'inline-block', borderRadius: '10px'}}>
                         
-                        <ArgonTypography variant="h5"> <Eye size={17} style={{marginRight: '10px'}}/> 234</ArgonTypography>
+                        <ArgonTypography variant="h5"> <Eye size={17} style={{marginRight: '10px'}}/> 234 Views</ArgonTypography>
                     </div>
                   </Grid> 
                   </Grid> 
@@ -101,7 +101,7 @@ const Jobs = () => {
                     <Grid item>
                     <div style={{border: '1px solid grey', padding: '10px', display: 'inline-block', borderRadius: '10px'}}>
                         
-                        <ArgonTypography variant="h5"> <Eye size={17} style={{marginRight: '10px'}}/> 234</ArgonTypography>
+                        <ArgonTypography variant="h5"> <Eye size={17} style={{marginRight: '10px'}}/> 234 Views</ArgonTypography>
                     </div>
                   </Grid> 
                   </Grid> 
@@ -150,7 +150,7 @@ const Jobs = () => {
                     <Grid item>
                     <div style={{border: '1px solid grey', padding: '10px', display: 'inline-block', borderRadius: '10px'}}>
                         
-                        <ArgonTypography variant="h5"> <Eye size={17} style={{marginRight: '10px'}}/> 234</ArgonTypography>
+                        <ArgonTypography variant="h5"> <Eye size={17} style={{marginRight: '10px'}}/> 234 Views</ArgonTypography>
                     </div>
                   </Grid> 
                   </Grid> 

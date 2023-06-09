@@ -14,8 +14,6 @@ import DefaultDivider from "components/Divider";
 import ReplyCard from "examples/Cards/ReplyCard";
 import axios from "axios";
 
-const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/protocol";
-
 const ProtocolDiscussion = () => {
   
   // Get data from the APIs - ID for Grant 
@@ -24,10 +22,12 @@ const ProtocolDiscussion = () => {
   }, []);
   const [posts, setPosts] = useState([]);
   const[threads, setThreads] = useState([]);
-    
+  const[comments, setComments] = useState('');
+  const[secondaryComments, setSecondaryComments] = useState([]);
+  var data1 = null;
     useEffect(() => {
       axios
-        .get(baseURL)
+        .get('https://dolphin-app-qq7rr.ondigitalocean.app/protocol/?format=json')
         .then((response) => {
           setPosts(response.data);
         })
@@ -50,19 +50,71 @@ const ProtocolDiscussion = () => {
   
       fetchData();
     }, []);
+
+
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const response = await axios.get('https://dolphin-app-qq7rr.ondigitalocean.app/secondarycomment/?format=json');
+         
+            setSecondaryComments(response.data);
+        } catch (error) {
+          //console.error('Error fetching data:', error);
+        }
+      };
+  
+      fetchData();
+    }, []);
   
 
   // Post a comment ( User to backend )
-  const [comment, setComment] = useState("");
+
+
+  const handleSubmit2 = async(e) => {
+    e.preventDefault();
+
+    const formData = {
+         comment: secondaryComments,
+         username: 'abhijit100'
+    }
+
+      try {
+          const response = await fetch('https://dolphin-app-qq7rr.ondigitalocean.app/secondarycomment/', {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            }, 
+            body: JSON.stringify(formData),
+
+          })
+
+            if(response.ok){
+              const responseData = await response.json();
+              const id = responseData.id;
+              console.log('Secondary comment posted! ID:', id);
+            }
+          else{
+            console.log('Secondary comment not posted!');
+          }
+      }
+      catch (error){
+        //Console.log("Error occurred:", error);
+      }
+  };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
   
     const formData = {
-      comment,
+      comment: comments,
       username: "abhijit99",
-      secondary_buffer: "2,3",
+      // secondary_buffer:  `${data1.id}`,
     };
+
+    if (secondaryComments.length > 0) {
+      formData.secondary_buffer = `${secondaryComments[secondaryComments.length -1].id}`;
+    }
   
     try {
       const response = await fetch("https://dolphin-app-qq7rr.ondigitalocean.app/primarycomment/", {
@@ -93,7 +145,7 @@ const ProtocolDiscussion = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            name: "Thread 45",
+            name: "Thread 57",
             primary_comment_buffer: `${data.id}`,
           })
       })
@@ -116,6 +168,12 @@ const ProtocolDiscussion = () => {
   
     if(posts.length === 0) {return null;}
   };
+
+ 
+
+
+
+  
 
 const [showReplies, setShowReplies] = useState(false);
 
@@ -225,7 +283,7 @@ const [showReplies, setShowReplies] = useState(false);
                   multiline
                   rows={3}
                   inputProps={{ style: { color: "grey", fontSize: "20px" } }}
-                  onChange={(e) => setComment(e.target.value)}
+                  onChange={(e) => setComments(e.target.value)}
                 />
                 <button
                   style={{
@@ -257,6 +315,7 @@ const [showReplies, setShowReplies] = useState(false);
               <Grid item>
                 <div data-aos="fade-up" data-aos-duration="5000">
              {[...threads].reverse().map((thread) => (
+                 
                   <HoverCard key={thread.id}>
                     <ArgonBox px={2} py={2}>
                       <CardContent>
@@ -311,14 +370,102 @@ const [showReplies, setShowReplies] = useState(false);
                       </CardContent>
                     </ArgonBox>
                   </HoverCard>
+                 
                 ))}
-
+                 
                 </div>
-                {showReplies && <ReplyCard 
-                   username={threads[0].primary_comments[0].secondary_comments[0].username}
-                    comment={threads[0].primary_comments[0].secondary_comments[0].comment}
-                  like={threads[0].primary_comments[0].secondary_comments[0].likes}
-                />}
+                {showReplies && 
+                    <div style={{marginLeft: '160px'}}>
+                      <div data-aos="fade-up" data-aos-duration="5000">
+                      <form onSubmit={handleSubmit2}>
+                        <Grid container spacing={4}  direction="column" style={{marginTop: '10px'}}> 
+                          <Grid item> 
+                          <ArgonInput
+                                    multiline
+                                    rows={3}
+                                    inputProps={{ style: { color: "grey", fontSize: "20px" } }}      
+                                    onChange={(e) =>  setSecondaryComments(e.target.value)} 
+                            />
+                        </Grid>
+                        <Grid container item direction="row-reverse" style={{marginBottom: '20px'}}> 
+                                      <button
+                                            style={{
+                                              type: "submit",
+                                              cursor: "pointer",
+                                              fontFamily: "Montserrat",
+                                              height: "38px",
+                                              width: "150px",
+                                              fontSize: "15px",
+                                              fontWeight: "400",
+                                              backgroundColor: "black",
+                                              border: "1px solid #8d8d8d",
+                                              color: "white",
+                                              boxShadow: "5px 5px 10px  #B721BE",
+                                            }}
+                                          >
+                                            {" "}
+                                            Reply{" "}
+                                          </button>
+                            </Grid>
+                          </Grid> 
+                          </form>
+                      <HoverCard>
+                    <ArgonBox px={2} py={2}>
+                      <CardContent>
+                        <Grid
+                          container
+                          spacing={3}
+                          justifyContent="space-between"
+                          alignItems="center"
+                        >
+                          <Grid item>
+                            <Grid
+                              container
+                              spacing={2}
+                              direction="row"
+                              style={{ marginTop: "10px" }}
+                            >
+                              <Avatar style={{ marginRight: "10px" }}></Avatar>
+                              <ArgonTypography>{secondaryComments[0].username}  </ArgonTypography>
+                            </Grid>
+                          </Grid>
+                          <Grid item>
+                            <ArgonTypography variant="h4">12th April</ArgonTypography>
+                          </Grid> 
+                        </Grid>
+                        <Grid container style={{marginTop: '20px', marginLeft: '35px'}}> 
+                           <ArgonTypography variant="body2" >
+                           {secondaryComments[0].comment}
+                            </ArgonTypography>
+                        </Grid>
+                        <Grid
+                          container
+                          justifyContent="space-between"
+                          sx={{ marginTop: "20px" }}
+                          alignItems="center"
+                        >
+                          <Grid item>
+                            <ArgonButton variant="text">
+                            <ArgonTypography variant="body2">
+                              {" "}
+                              <ArrowDown style={{ marginRight: "10px" }}></ArrowDown>Replies
+                            </ArgonTypography>
+                            </ArgonButton>
+                          </Grid>
+                          <Grid item>
+                            <ArgonTypography variant="body2" style={{ fontSize: "30px" }}>
+                              {" "}
+                              <Heart style={{ marginRight: "10px" }}></Heart>
+                              {secondaryComments[0].likes}
+                            </ArgonTypography>
+                          </Grid>
+                        </Grid>
+                      </CardContent>
+                    </ArgonBox>
+                      </HoverCard>
+                      </div>
+                   </div>
+                }
               </Grid>
               <Grid item> 
               </Grid>
