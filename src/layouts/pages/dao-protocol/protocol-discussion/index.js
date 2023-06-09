@@ -91,10 +91,10 @@ const ProtocolDiscussion = () => {
             if(response.ok){
               const responseData = await response.json();
               const id = responseData.id;
-              console.log('Secondary comment posted! ID:', id);
+              // console.log('Secondary comment posted! ID:', id);
             }
           else{
-            console.log('Secondary comment not posted!');
+            // console.log('Secondary comment not posted!');
           }
       }
       catch (error){
