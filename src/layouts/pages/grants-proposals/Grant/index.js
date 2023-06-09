@@ -57,7 +57,7 @@ const Grants = () => {
                          <Stack direction="row" spacing={2} justifyContent="center" alignItems="center">
                             <ArgonTypography variant="h2">Uniswap</ArgonTypography>
                             <ArgonButton variant="contained" color="dark" size="small" style={{width: '100px'}}>
-                               <ArgonBadgeDot color="primary" badgeContent="Discussion"></ArgonBadgeDot>
+                               <ArgonBadgeDot color="primary" badgeContent="Discussion" container></ArgonBadgeDot>
                             </ArgonButton>
                         </Stack>
                         </Grid>
@@ -108,7 +108,7 @@ const Grants = () => {
                          <Stack direction="row" spacing={2} justifyContent="center" alignItems="center">
                             <ArgonTypography variant="h2">Uniswap</ArgonTypography>
                             <ArgonButton variant="contained" color="dark" size="small" style={{width: '100px'}}>
-                               <ArgonBadgeDot color="primary" badgeContent="Active"></ArgonBadgeDot>
+                               <ArgonBadgeDot color="primary" badgeContent="Active" container></ArgonBadgeDot>
                             </ArgonButton>
                         </Stack>
                         </Grid>
@@ -159,7 +159,7 @@ const Grants = () => {
                          <Stack direction="row" spacing={2} justifyContent="center" alignItems="center">
                             <ArgonTypography variant="h2">Uniswap</ArgonTypography>
                             <ArgonButton variant="contained" color="dark" size="small" style={{width: '100px'}}>
-                               <ArgonBadgeDot color="success" badgeContent="Succeeded"></ArgonBadgeDot>
+                               <ArgonBadgeDot color="success" badgeContent="Successed" container></ArgonBadgeDot>
                             </ArgonButton>
                         </Stack>
                         </Grid>
