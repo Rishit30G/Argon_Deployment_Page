@@ -4,10 +4,11 @@ import DashboardNavbar from 'examples/Navbars/DashboardNavbar';
 import ArgonTypography from 'components/ArgonTypography';
 import ArgonBox from 'components/ArgonBox';
 import ArgonInput from 'components/ArgonInput';
-import { Grid } from '@mui/material';
+import { CardContent, Grid } from '@mui/material';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 import ArgonButton from 'components/ArgonButton';
+import HoverCard from 'components/HoverCard';
 
 const JobPosting = () => {
 
@@ -55,8 +56,10 @@ const JobPosting = () => {
        <ArgonBox px={15} py={3}> 
            <ArgonTypography variant="h2">Job Posting</ArgonTypography>
        </ArgonBox>
-
-       <ArgonBox px={15} py={3}> 
+       
+       <ArgonBox px={50} py={3}> 
+       <HoverCard>
+        <ArgonBox px={7} py={5}>
             <Grid container spacing={3} direction="column">
                 <Grid item xs={12} md={12} lg={12} xl={4}>
                    <ArgonTypography variant="h4">Job Title</ArgonTypography>
@@ -109,7 +112,33 @@ const JobPosting = () => {
                   placeholder="Educational Qualification"/> 
                 </Grid>
             </Grid>
+
+     
+
+      <Grid container spacing={3} direction="column" style={{marginTop: '20px'}}>
+                <Grid item xs={12} md={12} lg={12} xl={4}>
+                   <ArgonTypography variant="h4">Contact Email</ArgonTypography>
+                </Grid> 
+                <Grid item xs={12} md={12} lg={12} xl={4}>
+                   <ArgonInput
+                  inputProps={{ style: { color: "grey", fontSize: "20px" } }}
+                  placeholder="Email"/> 
+                </Grid>
+            </Grid>
+
             <Grid container spacing={3} direction="column" style={{marginTop: '20px'}}>
+                <Grid item xs={12} md={12} lg={12} xl={4}>
+                   <ArgonTypography variant="h4">Contact Website</ArgonTypography>
+                </Grid> 
+                <Grid item xs={12} md={12} lg={12} xl={4}>
+                   <ArgonInput 
+                  inputProps={{ style: { color: "#a6a6a6", fontSize: "16px" } }}
+                  placeholder="Website"/> 
+                </Grid>
+            </Grid>
+
+
+        <Grid container spacing={3} direction="column" style={{marginTop: '20px'}}>
                 <Grid item xs={12} md={12} lg={12} xl={4}>
                    <ArgonTypography variant="h4">Location</ArgonTypography>
                 </Grid> 
@@ -150,9 +179,8 @@ const JobPosting = () => {
             controlProps={{ style: { backgroundColor: 'black', color: 'white' } }}
           />
         </Grid>
-      </Grid>
 
-      <Grid container justifyContent="center" style={{marginTop: '20px'}}> 
+        <Grid container justifyContent="center" style={{marginTop: '60px'}}> 
          <Grid item> 
          <ArgonButton
                 style={{
@@ -170,7 +198,10 @@ const JobPosting = () => {
               </ArgonButton>
          </Grid>
       </Grid>
-
+       
+      </Grid>
+      </ArgonBox>
+</HoverCard>
        </ArgonBox>
     </DashboardLayout>
   )

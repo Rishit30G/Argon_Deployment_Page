@@ -269,15 +269,15 @@ const routes = [
         ],
       },
       {
-        name:"Article Main",
-        key: "article main", 
-        route: "/pages/article-main",
+        name:"Defi Analysis",
+        key: "defi analysis", 
+        route: "/pages/defi-analysis",
         component: <ArticleMain/>
       }, 
       {
-        name: "Defi Analysis",
-        key: "defi analysis",
-        route: "/pages/defi-analysis",
+        name: "Latest Happenings",
+        key: "latest happenings",
+        route: "/pages/latest-happenings",
         component: <DefiAnalysis/>
       },
       {

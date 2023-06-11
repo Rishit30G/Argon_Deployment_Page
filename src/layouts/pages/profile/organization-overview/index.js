@@ -12,6 +12,7 @@ import { TabContext, TabList, TabPanel} from "@material-ui/lab";
 import Hackathon from "layouts/pages/organisation-overview/Hackathon";
 import OrganizationJobs from "layouts/pages/organisation-overview/Organisation-Jobs";
 import OrgOverview from "layouts/pages/organisation-overview/Org-Overview";
+import { TwitterLogo, Globe } from "@phosphor-icons/react";
 
 
 const bgImage = "https://picsum.photos/2500/500?grayscale";
@@ -44,6 +45,7 @@ const OrganizationOverview = () => {
                 xs={12}
                 md={2}
                 lg={2}
+                xl={1.5}
                 style={{ display: "flex", justifyContent: "center" }}
               >
                 <img
@@ -52,35 +54,38 @@ const OrganizationOverview = () => {
                   style={{
                     marginRight: "20px",
                     borderRadius: "50%",
-                    height: "200px",
-                    width: "200px",
+                    height: "170px",
+                    width: "170px",
                   }}
                 />
               </Grid>
-              <Grid item xs={12} md={10} lg={10}>
-                <Stack spacing={3}>
-                  <Grid
-                    container
-                    direction="row"
-                    justifyContent="space-between"
-                    alignItems="flex-start"
-                  >
-                    <ArgonTypography variant="h2">Uniswap</ArgonTypography>
-                  </Grid>
-                  <ArgonTypography variant="body2">
+              <Grid item xs={12} md={10} lg={10} xl={10.5}>
+                 <Stack direction="row" spacing={3} alignItems="center"> 
+                   <ArgonTypography variant="h2">Uniswap</ArgonTypography>
+                    <ArgonBox>
+                    <Stack direction="row" alignItems="center" style={{marginTop: '10px'}}> 
+                      <a href="https://twitter.com/Uniswap" target="_blank">
+                        <TwitterLogo size={25} color="#1DA1F2" weight="fill" style={{marginRight: '10px'}}/>
+                      </a>
+                      <a href="https://uniswap.org/" target="_blank">
+                        <Globe size={25} color="#8c8c8c" style={{marginRight: '10px'}}/>
+                      </a>
+                      <a href="https://defillama.com/protocol/uniswap" target="_blank">
+                          <img src="https://i.postimg.cc/hPXgrGBb/defi-lama-logo-freelogovectors-net.png" style={{width: '21px', height: '24px'}}/>
+                      </a>
+                    </Stack>
+                    </ArgonBox>
+                 </Stack>
+                 <Stack direction="row" spacing={3} alignItems="center" style={{marginTop: '20px'}}>
+                 <ArgonTypography variant="h5" style={{fontStyle: 'italic'}}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                    incididunt ut labore et dolore magna aliqua. 
                   </ArgonTypography>
-                  <Stack direction="row" spacing={2}>
-                  <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}> <Star></Star> 4 star Rating</ArgonButton>
-                  <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}> <People/> 50-100 Size</ArgonButton>
                   </Stack>
-                </Stack>
-              </Grid>
+                  <Stack direction="row" spacing={2} style={{marginTop: '40px'}}>
+                  <ArgonButton variant="outlined" size="medium" style={{fontSize: '15px'}}> <People style={{marginRight: '10px'}}/> 50-100 Size</ArgonButton>
+                  </Stack>
+              </Grid> 
             </Grid>
           </CardContent>
         </HoverCard>

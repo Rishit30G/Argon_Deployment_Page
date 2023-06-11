@@ -42,7 +42,6 @@ const PastExperience = () => {
       </ArgonBox>
 
       {posts.map((post) => (
-        <div style={{width: '80%'}}>
       <HoverCard>
         <ArgonBox px={3} py={3}>
           <Grid container>
@@ -65,7 +64,6 @@ const PastExperience = () => {
           </Grid>
         </ArgonBox>
       </HoverCard>
-      </div>
    ))}
     </>
   );

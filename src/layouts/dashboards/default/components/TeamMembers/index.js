@@ -1,13 +1,15 @@
 import { Fragment, useState } from "react";
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
-import { CardContent } from "@mui/material";
+import { CardContent, Stack } from "@mui/material";
 import ArgonAvatar from "components/ArgonAvatar";
 import ArgonTypography from "components/ArgonTypography";
 import team1 from "assets/images/team-1.jpg";
 import team2 from "assets/images/team-2.jpg";
 import team3 from "assets/images/team-3.jpg";
 import team4 from "assets/images/team-4.jpg";
+import { Eye } from "@web3uikit/icons";
+import { ThumbsUp } from "@phosphor-icons/react";
 
 const data = [
   {
@@ -87,12 +89,13 @@ function TeamMembers() {
                             <ArgonAvatar src={img} alt={name} />
                           </Grid>
                           <Grid item ml="auto">
-                            <ArgonTypography
-                              variant="h2"
-                              style={{ opacity: 1, color: "black" }}
-                            >
-                              {count}
-                            </ArgonTypography>
+                              <Stack direction="row" spacing={1}>
+                                  <ThumbsUp  size={28} weight="bold" style={{marginRight: '7px', marginTop: '10px'}}/> 
+                                  <ArgonTypography
+                                    variant="h2"
+                                    style={{ opacity: 1, color: "black" }}
+                                  > {count}  </ArgonTypography>
+                              </Stack>
                           </Grid>
                           <Grid item lineHeight={1.4}>
                             <ArgonTypography

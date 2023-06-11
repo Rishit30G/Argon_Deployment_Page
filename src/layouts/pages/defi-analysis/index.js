@@ -19,7 +19,7 @@ const DefiAnalysis = () => {
       <ArgonBox px={15} py={3}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
-            <ArgonTypography variant="h2">Defi Analysis</ArgonTypography>
+            <ArgonTypography variant="h2">Latest Happenings</ArgonTypography>
           </Grid>
         </Grid>
         <DefaultDivider />

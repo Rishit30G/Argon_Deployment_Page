@@ -20,7 +20,6 @@ const Reputation = () => {
       </ArgonBox>
 
       <ArgonBox px={3} py={3}>
-        <div style={{width: '80%'}}>
         <HoverCard>
           <CardContent>
           <ArgonBox px={3} py={3}>
@@ -87,7 +86,6 @@ const Reputation = () => {
           </ArgonBox>
           </CardContent>
         </HoverCard>
-        </div>
       </ArgonBox>
     </>
   );

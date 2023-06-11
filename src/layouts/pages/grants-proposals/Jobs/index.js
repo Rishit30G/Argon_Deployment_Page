@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Card, CardContent, Grid, Stack } from "@mui/material";
 import ArgonBox from "components/ArgonBox";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
@@ -10,8 +10,20 @@ import 'aos/dist/aos.css';
 import AOS from 'aos';
 import ArgonBadge from "components/ArgonBadge";
 import { Eye } from "@phosphor-icons/react";
+import axios from "axios";
 
 const Jobs = () => {
+
+  const [posts, setPosts] = React.useState([]);
+  useEffect(() => {
+    axios.get("https://dolphin-app-qq7rr.ondigitalocean.app/joblisting/?format=json&org=Balancer")
+    .then((response) => {
+      setPosts(response.data);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+  }, []);
 
   React.useEffect(() => {
     AOS.init();
@@ -39,36 +51,36 @@ const Jobs = () => {
 
       <ArgonBox px={4} py={3}>
         <Grid container spacing={4}>
-          <Grid item xs={12} md={6} lg={4}>
+          {posts.map((post) => {
+          return (<Grid item xs={12} md={6} lg={4}>
             
             <div data-aos="fade-up" data-aos-duration="5000">
             <HoverCard>
               <ArgonBox px={3} py={3}>
                 <Grid container justifyContent="space-between" alignItems="center">
                   <Grid item>
-                        <ArgonTypography variant="h3">Algorithm Trader</ArgonTypography>
+                        <ArgonTypography variant="h3">{post.positions}</ArgonTypography>
                     </Grid> 
 
                     <Grid item>
                     <div style={{border: '1px solid grey', padding: '10px', display: 'inline-block', borderRadius: '10px'}}>
                         
-                        <ArgonTypography variant="h5"> <Eye size={17} style={{marginRight: '10px'}}/> 234 Views</ArgonTypography>
+                        <ArgonTypography variant="h5"> <Eye size={17} style={{marginRight: '10px'}}/> {post.views} Views</ArgonTypography>
                     </div>
                   </Grid> 
                   </Grid> 
                 <Stack spacing={3}>
                   <ArgonTypography variant="body2" style={{color: "rgba(255, 255, 255, 0.7)", marginTop: '30px'}}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                    {post.job_description}
                   </ArgonTypography>
                   <Stack spacing={3} direction="row" justifyContent="space-between" alignItems="center" style={{marginTop: '40px'}} >
                 
                       <div style={{border: '1px solid grey', padding: '15px', display: 'inline-block', borderRadius: '10px'}}>
                         <ArgonTypography variant="h4">
-                        $2000 - $3000
+                         ${post.salary_offered}
                         </ArgonTypography>
                         </div>
+                      <a href={post.organisations.link} target="_blank" rel="noreferrer" style={{textDecoration: 'none'}} >
                     <ArgonButton
                       style={{
                         height: "58px",
@@ -83,110 +95,15 @@ const Jobs = () => {
                     >
                       Connect
                     </ArgonButton>
+                    </a> 
                   </Stack>
                 </Stack>
               </ArgonBox>
             </HoverCard>
             </div>
           </Grid>
-          <Grid item xs={12} md={6} lg={4}>
-            <div data-aos="fade-up" data-aos-duration="5000">
-            <HoverCard>
-              <ArgonBox px={3} py={3}>
-                <Grid container justifyContent="space-between" alignItems="center">
-                  <Grid item>
-                        <ArgonTypography variant="h3">Algorithm Trader</ArgonTypography>
-                    </Grid> 
-
-                    <Grid item>
-                    <div style={{border: '1px solid grey', padding: '10px', display: 'inline-block', borderRadius: '10px'}}>
-                        
-                        <ArgonTypography variant="h5"> <Eye size={17} style={{marginRight: '10px'}}/> 234 Views</ArgonTypography>
-                    </div>
-                  </Grid> 
-                  </Grid> 
-                <Stack spacing={3}>
-                  <ArgonTypography variant="body2" style={{color: "rgba(255, 255, 255, 0.7)", marginTop: '30px'}}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
-                  </ArgonTypography>
-                  <Stack spacing={3} direction="row" justifyContent="space-between" alignItems="center" style={{marginTop: '40px'}} >
-                
-                      <div style={{border: '1px solid grey', padding: '15px', display: 'inline-block', borderRadius: '10px'}}>
-                        <ArgonTypography variant="h4">
-                        $2000 - $3000
-                        </ArgonTypography>
-                        </div>
-                    <ArgonButton
-                      style={{
-                        height: "58px",
-                        width: "220px",
-                        fontSize: "20px",
-                        fontWeight: "400",
-                        backgroundColor: "black",
-                        border: "1px solid #8d8d8d",
-                        color: "white",
-                        boxShadow: "5px 5px 10px  #B721BE",
-                      }}
-                    >
-                      Connect
-                    </ArgonButton>
-                  </Stack>
-                </Stack>
-              </ArgonBox>
-            </HoverCard>
-            </div>
-          </Grid>
-          <Grid item xs={12} md={6} lg={4}>
-            <div data-aos="fade-up" data-aos-duration="5000">
-            <HoverCard>
-              <ArgonBox px={3} py={3}>
-                <Grid container justifyContent="space-between" alignItems="center">
-                  <Grid item>
-                        <ArgonTypography variant="h3">Algorithm Trader</ArgonTypography>
-                    </Grid> 
-
-                    <Grid item>
-                    <div style={{border: '1px solid grey', padding: '10px', display: 'inline-block', borderRadius: '10px'}}>
-                        
-                        <ArgonTypography variant="h5"> <Eye size={17} style={{marginRight: '10px'}}/> 234 Views</ArgonTypography>
-                    </div>
-                  </Grid> 
-                  </Grid> 
-                <Stack spacing={3}>
-                  <ArgonTypography variant="body2" style={{color: "rgba(255, 255, 255, 0.7)", marginTop: '30px'}}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
-                  </ArgonTypography>
-                  <Stack spacing={3} direction="row" justifyContent="space-between" alignItems="center" style={{marginTop: '40px'}} >
-                
-                      <div style={{border: '1px solid grey', padding: '15px', display: 'inline-block', borderRadius: '10px'}}>
-                        <ArgonTypography variant="h4">
-                        $2000 - $3000
-                        </ArgonTypography>
-                        </div>
-                    <ArgonButton
-                      style={{
-                        height: "58px",
-                        width: "220px",
-                        fontSize: "20px",
-                        fontWeight: "400",
-                        backgroundColor: "black",
-                        border: "1px solid #8d8d8d",
-                        color: "white",
-                        boxShadow: "5px 5px 10px  #B721BE",
-                      }}
-                    >
-                      Connect
-                    </ArgonButton>
-                  </Stack>
-                </Stack>
-              </ArgonBox>
-            </HoverCard>
-            </div>
-          </Grid>
+          );
+        })}
         </Grid>
       </ArgonBox>
       </>

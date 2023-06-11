@@ -215,7 +215,7 @@ const ArticleMain = () => {
 
       <ArgonBox pt={5} mx={15} my={3}>
         <ArgonTypography variant="h2" style={{ marginBottom: "10px" }}>
-          Defi Analysis
+          Latest Happenings
         </ArgonTypography>
         <DefaultDivider />
       </ArgonBox>

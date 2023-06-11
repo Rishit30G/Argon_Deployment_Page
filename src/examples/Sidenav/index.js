@@ -212,33 +212,31 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
             <Icon sx={{ fontWeight: "bold" }}>close</Icon>
           </ArgonTypography>
         </ArgonBox>
-        <ArgonBox component={NavLink} to="/" display="flex" alignItems="center">
+        <ArgonBox component={NavLink} to="/" display="flex" style={{marginLeft: '25px'}}>
           {brand && (
             <ArgonBox
               component="img"
               //Add picsum.photos/200/300 to the src attribute to add a random image
               src = "https://i.postimg.cc/4dkvfGYL/Final-Logo-Concept-Dice-2-Extended.png"
-              height="40px"
-              width="40px"
-              style={{marginRight: '5px'}}
-              /> 
+              height="100px"
+              width="100px"
+            /> 
               
           )}
-          <ArgonBox
+        </ArgonBox>
+        <ArgonBox component={NavLink} to="/" display="flex" style={{marginTop: '12px'}}
             width={!brandName && "100%"}
             sx={(theme) => sidenavLogoLabel(theme, { miniSidenav })}
           >
             <ArgonTypography
-              component="h4"
-              variant="button"
+              variant="h2"
               fontWeight="medium"
               color={darkSidenav ? "white" : "dark"}
-              style={{ fontSize: '25px'}}
+              style={{ fontSize: '30px'}}
             >
               {brandName}
             </ArgonTypography>
           </ArgonBox>
-        </ArgonBox>
       </ArgonBox>
       <Divider light={darkSidenav} />
       <List>{renderRoutes}</List>

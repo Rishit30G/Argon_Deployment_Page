@@ -118,13 +118,19 @@ function GrantsAndProposals() {
                     </ArgonTypography>
                     <Grid container style={{marginTop: '10px'}} alignItems="center"> 
                       <Grid item> 
+                      <a href="https://twitter.com/Uniswap" target="_blank">
                         <TwitterLogo size={32} color="#1DA1F2" weight="fill" style={{marginRight: '10px'}}/>
+                      </a>
                       </Grid>
                       <Grid item> 
+                      <a href="https://uniswap.org/" target="_blank">
                         <Globe size={32} color="#8c8c8c" style={{marginRight: '10px'}}/>
+                      </a>
                       </Grid>
                       <Grid item> 
+                      <a href="https://defillama.com/protocol/uniswap" target="_blank">
                           <img src="https://i.postimg.cc/hPXgrGBb/defi-lama-logo-freelogovectors-net.png" style={{width: '23px', height: '26px'}}/>
+                      </a> 
                       </Grid>
                     </Grid>
                   </Grid>
