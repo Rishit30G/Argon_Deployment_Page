@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
@@ -12,11 +12,18 @@ import HoverCard from "components/HoverCard";
 import ArgonBadge from "components/ArgonBadge";
 import DefaultDivider from "components/Divider";
 import ArgonInput from "components/ArgonInput";
+import { Star } from "@phosphor-icons/react";
 
 const ProposalList = () => {
   React.useEffect(() => {
     AOS.init();
   }, []);
+
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleStarClick = () => {
+    setIsClicked(!isClicked);
+  }
 
   return (
     <DashboardLayout>
@@ -89,11 +96,12 @@ const ProposalList = () => {
                       <ArgonTypography variant="body2"> 
                           lorem Ipsum is simply dummy text of the printing and typesetting industry.
                       </ArgonTypography>
-                      <ArgonButton variant="outlined" style={{marginTop: '30px', width: '180px'}} > 
-                        <ArgonTypography variant="h6" >Track</ArgonTypography>
-                      </ArgonButton>
-                    {/* <ArgonButton style={{ height: "48px", width: "150px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE', marginTop: '20px'}}> Join Now </ArgonButton> */}
-
+                        <Stack direction="row" spacing={2} alignItems="center">
+                            <ArgonButton variant="outlined" style={{marginTop: '30px', width: '180px'}} > 
+                                <ArgonTypography variant="h6">Track</ArgonTypography>
+                            </ArgonButton>
+                            <Star size={28} color={isClicked ? '#ffd700' : '#b5a22c'} weight={isClicked ? 'fill' : 'bold'} style={{ marginTop: '26px', cursor: 'pointer' }} onClick={handleStarClick} />
+                        </Stack>
                     </Grid>
                     <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
                     <img

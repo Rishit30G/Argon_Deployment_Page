@@ -15,8 +15,6 @@ import OrgOverview from "layouts/pages/organisation-overview/Org-Overview";
 import { TwitterLogo, Globe } from "@phosphor-icons/react";
 
 
-const bgImage = "https://picsum.photos/2500/500?grayscale";
-
 const OrganizationOverview = () => {
 
   const [value, setValue] = useState('1');
@@ -24,6 +22,8 @@ const OrganizationOverview = () => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  const bgImage = "https://i.postimg.cc/x8jqtTDb/Untitled-design-9.png";
 
   return (
     <DashboardLayout
@@ -33,7 +33,7 @@ const OrganizationOverview = () => {
             rgba(gradients.dark.main, 0.6),
             rgba(gradients.dark.state, 0.6)
           )}, url(${bgImage})`,
-        backgroundPositionY: "50%",
+        backgroundPositionY: "100%",
       }}
     >
       <ArgonBox px={3} py={3} sx={{ marginTop: "170px" }}>

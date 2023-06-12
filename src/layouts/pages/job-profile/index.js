@@ -43,7 +43,7 @@ const JobProfile = () => {
                     </Grid>
                 
                         <Grid item>
-                          <ArgonTypography variant="body2">
+                          <ArgonTypography variant="body2" style={{color: '#a7a7a7'}}>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -52,7 +52,7 @@ const JobProfile = () => {
                             veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
                             commodo consequat
                           </ArgonTypography>
-                          <ArgonTypography variant="body2">
+                          <ArgonTypography variant="body2" style={{color: '#a7a7a7'}}>
                             There are many variations of passages of Lorem Ipsum available, but the
                             majority have suffered alteration in some form, by injected humour, or
                             randomised words which don't look even slightly believable. If you are going
@@ -68,10 +68,10 @@ const JobProfile = () => {
                         </Grid>
                         <Divider />
                     <Grid item>
-                      <ArgonTypography variant="h3" style={{ marginBottom: "7px" }}>
+                      <ArgonTypography variant="h3" style={{ marginBottom: "7px"}}>
                         Educational Qualifications
                       </ArgonTypography>
-                      <ArgonTypography variant="body2">
+                      <ArgonTypography variant="body2" style={{color: '#a7a7a7'}}>
                         B.Tech, BCA, MCA, M. Tech (Graduated in 2021, 2022).
                       </ArgonTypography>
                     </Grid>
@@ -80,7 +80,7 @@ const JobProfile = () => {
                       <ArgonTypography variant="h3" style={{ marginBottom: "7px" }}>
                         What are we looking for ?
                       </ArgonTypography>
-                      <ArgonTypography variant="body2">
+                      <ArgonTypography variant="body2" style={{color: '#a7a7a7'}}>
                         The primary attribute we are looking for is ATTITUDE, a willingness to learn, a
                         hunger to experiment and not be afraid to fail, be a team player and do whatever
                         is needed to make our customers use our solutions effectively. In addition to
@@ -98,7 +98,7 @@ const JobProfile = () => {
                       <ArgonTypography variant="h3" style={{ marginBottom: "7px" }}>
                         How are we going to select you ?
                       </ArgonTypography>
-                      <ArgonTypography variant="body2">
+                      <ArgonTypography variant="body2" style={{color: '#a7a7a7'}}>
                         The recruitment process would include online tests and interviews. The final
                         announcement on choosing the candidates will be made at the end of the
                         recruitment process.
@@ -106,18 +106,18 @@ const JobProfile = () => {
                     </Grid>
                     <Divider />
                     <Grid item>
-                      <Stack direction="row" style={{ marginBottom: "10px" }}>
+                      <Stack direction="row" style={{ marginBottom: "10px" }}> 
                         <ArgonTypography variant="h3" fontWeight="bold">
                           Contact Details
                         </ArgonTypography>
                       </Stack>
-                      <Stack direction="row" spacing={2}>
+                      <Stack direction="row" spacing={2} alignItems="center" >
                         <ContactMail style={{ color: "white" }}></ContactMail>
-                        <ArgonTypography variant="body2" fontWeight="bold">
+                        <ArgonTypography variant="body2" fontWeight="bold" style={{color: '#a7a7a7'}}>
                           uniswap@gmail.com
                         </ArgonTypography>
                         <Language style={{ color: "white" }}></Language>
-                        <ArgonTypography variant="body2" fontWeight="bold">
+                        <ArgonTypography variant="body2" fontWeight="bold" style={{color: '#a7a7a7'}}>
                           uniswap.com
                         </ArgonTypography>
                       </Stack>
@@ -128,33 +128,36 @@ const JobProfile = () => {
                 <Grid item xl={2}>
                     <Grid container justifyContent="center" style={{marginBottom: '20px'}}>
                       <Grid item>
-                      <ArgonButton style={{ height: "68px", width: "280px", fontSize: '20px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>Apply Now</ArgonButton>
+                        <ArgonButton variant="outlined" style={{marginBottom: '10px', fontSize: '20px', borderRadius: '20px', height: '60px', width: '240px'}}> Apply Now </ArgonButton>
                       </Grid>
-                    </Grid>
-                    <Stack>
-                         <ArgonTypography variant="h5" fontWeight="bold" style={{ marginTop: "20px" }}>
+                      <Grid conatiner item justifyContent="center"> 
+                      <Stack spacing={1}>
+                         <ArgonTypography variant="h5" fontWeight="bold" style={{ marginTop: "20px", color: '#a7a7a7' }}>
                           <MapPin></MapPin> Location
                           </ArgonTypography>
-                          <ArgonTypography variant="body2" fontWeight="bold"> 
+                          <ArgonTypography variant="h4" fontWeight="bold"> 
                           Bangalore, India
                           </ArgonTypography>
                   </Stack>
-                  <Stack style={{marginTop: '10px'}}> 
-                         <ArgonTypography variant="h5" fontWeight="bold" style={{ marginTop: "20px" }}>
+                  <Stack style={{marginTop: '20px'}} spacing={1}> 
+                         <ArgonTypography variant="h5" fontWeight="bold" style={{ marginTop: "20px", color: '#a7a7a7' }}>
                           <Briefcase></Briefcase> Job Type
                           </ArgonTypography>
-                          <ArgonTypography variant="body2" fontWeight="bold"> 
+                          <ArgonTypography variant="h4" fontWeight="bold"> 
                           Full Time
                           </ArgonTypography>
                   </Stack>
-                  <Stack style={{marginTop: '10px'}}>
-                         <ArgonTypography variant="h5" fontWeight="bold" style={{ marginTop: "20px" }}>
+                  <Stack style={{marginTop: '20px'}} spacing={1}>
+                         <ArgonTypography variant="h5" fontWeight="bold" style={{ marginTop: "20px", color: '#a7a7a7' }}>
                          <User></User> Role
                           </ArgonTypography>
-                          <ArgonTypography variant="body2" fontWeight="bold"> 
+                          <ArgonTypography variant="h4" fontWeight="bold"> 
                           Engineering
                           </ArgonTypography>
                   </Stack>
+                      </Grid>
+                    </Grid>
+                  
               </Grid>
               </Grid>
             </ArgonBox>

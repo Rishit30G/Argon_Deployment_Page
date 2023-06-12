@@ -18,6 +18,7 @@ const data = [
     status:
       "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo",
     count: "44",
+    backgroundImg: 'https://i.postimg.cc/66nssm8T/optimism-img-1-11zon-1024x439.jpg',
   },
   {
     img: team2,
@@ -25,6 +26,7 @@ const data = [
     status:
       "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo",
     count: "34",
+    backgroundImg: 'https://i.postimg.cc/434ZXkKX/625d532e65c4f7d05747c765-Full.png',
   },
   {
     img: team3,
@@ -32,6 +34,7 @@ const data = [
     status:
       "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo",
     count: "54",
+    backgroundImg: 'https://i.postimg.cc/x1hy2Ypz/Polygon-logo-resized-jpeg.jpg',
   },
   {
     img: team4,
@@ -39,6 +42,7 @@ const data = [
     status:
       "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo",
     count: "65",
+    backgroundImg: 'https://i.postimg.cc/SsF01JB1/image.jpg'
   },
 ];
 
@@ -57,15 +61,17 @@ function TeamMembers() {
     <Card style={{ backgroundColor: "#212529", border: "1px solid #7B848D" }}>
       <CardContent>
         <ul style={{ listStyle: "none", padding: 0 }}>
-          {data.map(({ img, name, status, count }, index) => (
+          {data.map(({ img, name, status, count, backgroundImg }, index) => (
             <Fragment key={index}>
               <li style={{ marginTop: "30px" }}>
                 <Card
                   style={{
-                    backgroundImage: "url('https://picsum.photos/1000/400')",
+                    backgroundImage: `url(${backgroundImg})`,
+                    backgroundSize: "contain",
+                    backgroundPosition: "center calc(50% - 110px)",
                     boxShadow:
                       index === hoveredIndex
-                        ? "3px 3px 20px #a7a7a7"
+                        ? "7px 7px 16px #4e4e4e"
                         : "none",
                   }}
                   onMouseEnter={() => handleMouseEnter(index)}
@@ -77,8 +83,8 @@ function TeamMembers() {
                     <Card
                       style={{
                         background:
-                          "linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6))",
-                        boxShadow: "0 0 20px 10px rgba(255, 255, 255, 0.6)",
+                          "linear-gradient(rgba(22, 24, 26, 0.7), rgba( 22, 24, 26, 0.7))",
+                        boxShadow: "7px 7px 16px rgba(17, 18, 18, 0.8)",
                         borderRadius: "10px",
                         marginTop: "100px",
                       }}
@@ -90,23 +96,23 @@ function TeamMembers() {
                           </Grid>
                           <Grid item ml="auto">
                               <Stack direction="row" spacing={1}>
-                                  <ThumbsUp  size={28} weight="bold" style={{marginRight: '7px', marginTop: '10px'}}/> 
+                                  <ThumbsUp size={28} color="#f0f0f0" weight="bold" style={{marginRight: '7px', marginTop: '10px'}}/> 
                                   <ArgonTypography
                                     variant="h2"
-                                    style={{ opacity: 1, color: "black" }}
+                                    style={{ opacity: 1, color: "white" }}
                                   > {count}  </ArgonTypography>
                               </Stack>
                           </Grid>
                           <Grid item lineHeight={1.4}>
                             <ArgonTypography
                               variant="h3"
-                              style={{ opacity: 1, color: "black" }}
+                              style={{ opacity: 1, color: "white" }}
                             >
                               {name}
                             </ArgonTypography>
                             <ArgonTypography
                               variant="body2"
-                              style={{ opacity: 1, color: "black" }}
+                              style={{ opacity: 1, color: "white" }}
                             >
                               {status}
                             </ArgonTypography>

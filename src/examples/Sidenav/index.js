@@ -43,6 +43,7 @@ import sidenavLogoLabel from "examples/Sidenav/styles/sidenav";
 
 // Argon Dashboard 2 PRO MUI context
 import { useArgonController, setMiniSidenav } from "context";
+import DefaultDivider from "components/Divider";
 
 function Sidenav({ color, brand, brandName, routes, ...rest }) {
   const [openCollapse, setOpenCollapse] = useState(false);
@@ -212,19 +213,19 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
             <Icon sx={{ fontWeight: "bold" }}>close</Icon>
           </ArgonTypography>
         </ArgonBox>
-        <ArgonBox component={NavLink} to="/" display="flex" style={{marginLeft: '25px'}}>
+        <ArgonBox component={NavLink} to="/">
           {brand && (
             <ArgonBox
               component="img"
               //Add picsum.photos/200/300 to the src attribute to add a random image
               src = "https://i.postimg.cc/4dkvfGYL/Final-Logo-Concept-Dice-2-Extended.png"
-              height="100px"
-              width="100px"
+              height="120px"
+              width="120px"
             /> 
               
           )}
         </ArgonBox>
-        <ArgonBox component={NavLink} to="/" display="flex" style={{marginTop: '12px'}}
+        <ArgonBox component={NavLink} to="/"  style={{marginTop: '12px'}}
             width={!brandName && "100%"}
             sx={(theme) => sidenavLogoLabel(theme, { miniSidenav })}
           >
@@ -237,6 +238,7 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
               {brandName}
             </ArgonTypography>
           </ArgonBox>
+          <DefaultDivider/> 
       </ArgonBox>
       <Divider light={darkSidenav} />
       <List>{renderRoutes}</List>
