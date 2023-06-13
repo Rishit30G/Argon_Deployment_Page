@@ -4,6 +4,7 @@ import { Briefcase, MapPin, User } from "@phosphor-icons/react";
 import ArgonBox from "components/ArgonBox";
 import ArgonButton from "components/ArgonButton";
 import ArgonTypography from "components/ArgonTypography";
+import DefaultDivider from "components/Divider";
 import HoverCard from "components/HoverCard";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
@@ -125,39 +126,49 @@ const JobProfile = () => {
                     <Divider />
                     </Grid>
                 </Grid>
-                <Grid item xl={2}>
-                    <Grid container justifyContent="center" style={{marginBottom: '20px'}}>
-                      <Grid item>
-                        <ArgonButton variant="outlined" style={{marginBottom: '10px', fontSize: '20px', borderRadius: '20px', height: '60px', width: '240px'}}> Apply Now </ArgonButton>
-                      </Grid>
-                      <Grid conatiner item justifyContent="center"> 
-                      <Stack spacing={1}>
-                         <ArgonTypography variant="h5" fontWeight="bold" style={{ marginTop: "20px", color: '#a7a7a7' }}>
-                          <MapPin></MapPin> Location
-                          </ArgonTypography>
-                          <ArgonTypography variant="h4" fontWeight="bold"> 
-                          Bangalore, India
-                          </ArgonTypography>
-                  </Stack>
-                  <Stack style={{marginTop: '20px'}} spacing={1}> 
-                         <ArgonTypography variant="h5" fontWeight="bold" style={{ marginTop: "20px", color: '#a7a7a7' }}>
-                          <Briefcase></Briefcase> Job Type
-                          </ArgonTypography>
-                          <ArgonTypography variant="h4" fontWeight="bold"> 
-                          Full Time
-                          </ArgonTypography>
-                  </Stack>
-                  <Stack style={{marginTop: '20px'}} spacing={1}>
-                         <ArgonTypography variant="h5" fontWeight="bold" style={{ marginTop: "20px", color: '#a7a7a7' }}>
-                         <User></User> Role
-                          </ArgonTypography>
-                          <ArgonTypography variant="h4" fontWeight="bold"> 
-                          Engineering
-                          </ArgonTypography>
-                  </Stack>
-                      </Grid>
+                <Grid container item xl={2} justifyContent="space-between" direction="column" alignItems="center">
+                    <Grid item >
+                        <Grid container justifyContent="center" style={{marginBottom: '20px'}}>
+                          <Grid item>
+                            <ArgonButton variant="outlined" style={{marginBottom: '10px', fontSize: '20px', borderRadius: '20px', height: '60px', width: '240px'}}> Apply Now </ArgonButton>
+                          </Grid>
+            
+                          <Grid item style={{justifyContent: "center"}}> 
+                          <Stack spacing={1}>
+                            <ArgonTypography variant="h5" fontWeight="bold" style={{ marginTop: "20px", color: '#a7a7a7' }}>
+                              <MapPin></MapPin> Location
+                              </ArgonTypography>
+                              <ArgonTypography variant="h4" fontWeight="bold"> 
+                              Bangalore, India
+                              </ArgonTypography>
+                              <DefaultDivider/>
+                      </Stack>
+                      <Stack style={{marginTop: '20px'}} spacing={1}> 
+                            <ArgonTypography variant="h5" fontWeight="bold" style={{ color: '#a7a7a7' }}>
+                              <Briefcase></Briefcase> Job Type
+                              </ArgonTypography>
+                              <ArgonTypography variant="h4" fontWeight="bold"> 
+                              Full Time
+                              </ArgonTypography>
+                              <DefaultDivider/>
+                      </Stack>
+                      <Stack style={{marginTop: '20px'}} spacing={1}>
+                            <ArgonTypography variant="h5" fontWeight="bold" style={{ color: '#a7a7a7' }}>
+                            <User></User> Role
+                              </ArgonTypography>
+                              <ArgonTypography variant="h4" fontWeight="bold"> 
+                              Engineering
+                              </ArgonTypography>
+                      <DefaultDivider/> 
+
+                      </Stack>
+                          </Grid>
+                        
+                        </Grid>
                     </Grid>
-                  
+                    <Grid item> 
+                       <img src="https://i.postimg.cc/4dkvfGYL/Final-Logo-Concept-Dice-2-Extended.png" height= '100px'  width='100px' /> 
+                    </Grid>
               </Grid>
               </Grid>
             </ArgonBox>

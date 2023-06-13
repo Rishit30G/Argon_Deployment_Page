@@ -3,12 +3,12 @@ import DashboardLayout from "examples/LayoutContainers/DashboardLayout2";
 import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 import ArgonButton from "components/ArgonButton";
-import { Box, Card, CardContent, Grid, Stack, Tab } from "@mui/material";
+import { Box, Card, CardContent, Grid, Stack, Tab, Tabs } from "@mui/material";
 import { ContactMail, People, Star } from "@mui/icons-material";
 import ArgonBadgeDot from "components/ArgonBadgeDot";
 import { Language } from "@material-ui/icons";
 import HoverCard from "components/HoverCard";
-import { TabContext, TabList, TabPanel} from "@material-ui/lab";
+import { TabContext, TabList, TabPanel, } from "@material-ui/lab";
 import Hackathon from "layouts/pages/organisation-overview/Hackathon";
 import OrganizationJobs from "layouts/pages/organisation-overview/Organisation-Jobs";
 import OrgOverview from "layouts/pages/organisation-overview/Org-Overview";
@@ -93,11 +93,11 @@ const OrganizationOverview = () => {
         <ArgonBox mt={3}>
           <TabContext value={value}>
             <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-              <TabList onChange={handleChange} aria-label="lab API tabs example">
+            <Tabs value={value} onChange={handleChange} TabIndicatorProps={{ style: { backgroundColor: '#212529'} }} style={{padding: '20px'}}>
                 <Tab label="Overview" value="1" />
                 <Tab label="Jobs" value="2" />
                 <Tab label="Hackathon" value="3" />
-              </TabList>
+              </Tabs>
             </Box>
             <TabPanel value="1">
               <OrgOverview />

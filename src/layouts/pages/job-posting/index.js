@@ -65,7 +65,10 @@ const JobPosting = () => {
                    <ArgonTypography variant="h4">Job Title</ArgonTypography>
                 </Grid> 
                 <Grid item xs={12} md={12} lg={12} xl={4}>
-                   <ArgonInput placeholder="Job Title" />
+                   <ArgonInput 
+                   multiline
+                   row={1}
+                   placeholder="Job Title" />
                 </Grid>
             </Grid>
             <Grid container spacing={3} direction="column" style={{marginTop: '20px'}}>
@@ -98,7 +101,7 @@ const JobPosting = () => {
                    <ArgonInput  multiline
                   rows={3}
                   inputProps={{ style: { color: "grey", fontSize: "20px" } }}
-                  placeholder="Educational Qualification"/> 
+                  placeholder="Looking for ?"/> 
                 </Grid>
             </Grid>
             <Grid container spacing={3} direction="column" style={{marginTop: '20px'}}>
@@ -109,7 +112,7 @@ const JobPosting = () => {
                    <ArgonInput  multiline
                   rows={3}
                   inputProps={{ style: { color: "grey", fontSize: "20px" } }}
-                  placeholder="Educational Qualification"/> 
+                  placeholder="Selection Process"/> 
                 </Grid>
             </Grid>
 
@@ -120,7 +123,8 @@ const JobPosting = () => {
                    <ArgonTypography variant="h4">Contact Email</ArgonTypography>
                 </Grid> 
                 <Grid item xs={12} md={12} lg={12} xl={4}>
-                   <ArgonInput
+                <ArgonInput  multiline
+                  rows={1}
                   inputProps={{ style: { color: "grey", fontSize: "20px" } }}
                   placeholder="Email"/> 
                 </Grid>
@@ -131,8 +135,9 @@ const JobPosting = () => {
                    <ArgonTypography variant="h4">Contact Website</ArgonTypography>
                 </Grid> 
                 <Grid item xs={12} md={12} lg={12} xl={4}>
-                   <ArgonInput 
-                  inputProps={{ style: { color: "#a6a6a6", fontSize: "16px" } }}
+                <ArgonInput  multiline
+                  rows={1}
+                  inputProps={{ style: { color: "grey", fontSize: "20px" } }}
                   placeholder="Website"/> 
                 </Grid>
             </Grid>

@@ -146,11 +146,11 @@ function Overview() {
       <ArgonBox mt={3} >
         <TabContext value={value}>
           <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-            <TabList onChange={handleChange}>
+          <Tabs value={value} onChange={handleChange} TabIndicatorProps={{ style: { backgroundColor: '#212529'} }} style={{padding: '20px'}}>
               <Tab label="Overview" value="1" />
               <Tab label="Reputation" value="2" />
               <Tab label="Past Experience" value="3" />
-            </TabList>
+            </Tabs>
           </Box>
           <TabPanel value="1"><Overview2/></TabPanel>
           <TabPanel value="2"><Reputation/></TabPanel>

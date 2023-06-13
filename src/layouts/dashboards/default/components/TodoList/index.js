@@ -17,7 +17,8 @@ import team2 from "assets/images/team-2.jpg";
 import team3 from "assets/images/team-3.jpg";
 import team4 from "assets/images/team-4.jpg";
 import HoverCard from "components/HoverCard";
-import { CardContent } from "@mui/material";
+import { CardContent, Stack } from "@mui/material";
+import { UserCircle } from "@phosphor-icons/react";
 
 // Data
 const data = [
@@ -27,6 +28,7 @@ const data = [
     status:
       "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo",
     author: "JK Rowling",
+    backgroundImg: "https://i.postimg.cc/Y2Nkxtsx/adobestock-vladimir-kazak-media-library-original-1033-581.jpg",
   },
   {
     img: team2,
@@ -34,6 +36,7 @@ const data = [
     status:
       "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo",
     author: "Kevin Pet",
+    backgroundImg: "https://i.postimg.cc/DwkMpG4J/maple-media-library-original-1920-1280.jpg",
   },
   {
     img: team3,
@@ -41,6 +44,7 @@ const data = [
     status:
       "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo",
     author: "James Clear",
+    backgroundImg: "https://i.postimg.cc/QCqJ6F25/adobestock-sashkin-1-media-library-original-1284-778-media-library-original-1284-778-media-library.jpg",
   },
   {
     img: team4,
@@ -48,6 +52,7 @@ const data = [
     status:
       "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo",
     author: "Lorem Ipsum",
+    backgroundImg: "https://i.postimg.cc/HxzrRbLp/meta-image-2-media-library-original-1041-630.jpg",
   },
 ];
 
@@ -68,12 +73,14 @@ function TodoList() {
     <Card style={{ backgroundColor: "#212529", border: "1px solid #7B848D" }}>
     <CardContent>
       <ul style={{ listStyle: "none", padding: 0 }}>
-        {data.map(({ img, name, status, author}, index) => (
+        {data.map(({ img, name, status, author, backgroundImg}, index) => (
           <Fragment key={index}>
             <li style={{ marginTop: "30px" }}>
               <Card
                 style={{
-                  backgroundImage: "url('https://picsum.photos/1000/400')",
+                  backgroundImage:  `url(${backgroundImg})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center calc(50% - 40px)",
                   boxShadow:
                     index === hoveredIndex
                       ? "3px 3px 20px #a7a7a7"
@@ -88,10 +95,10 @@ function TodoList() {
                   <Card
                     style={{
                       background:
-                        "linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6))",
-                      boxShadow: "0 0 20px 10px rgba(255, 255, 255, 0.6)",
-                      borderRadius: "10px",
-                      marginTop: "100px",
+                          "linear-gradient(rgba(22, 24, 26, 0.7), rgba( 22, 24, 26, 0.7))",
+                        boxShadow: "7px 7px 16px rgba(17, 18, 18, 0.8)",
+                        borderRadius: "10px",
+                        marginTop: "100px",
                     }}
                   >
                     <CardContent>
@@ -100,23 +107,26 @@ function TodoList() {
                           <ArgonAvatar src={img} alt={name} />
                         </Grid>
                         <Grid item ml="auto">
+                          <Stack direction="row" alignItems="center"  spacing={2}>
+                          <UserCircle size={33} weight="bold" color="#f5f5f5" />
                           <ArgonTypography
-                            variant="h2"
-                            style={{ opacity: 1, color: "black" }}
+                            variant="h3"
+                            style={{ opacity: 1, color: "white" }}
                           >
                             {author}
                           </ArgonTypography>
+                          </Stack> 
                         </Grid>
                         <Grid item lineHeight={1.4}>
                           <ArgonTypography
                             variant="h3"
-                            style={{ opacity: 1, color: "black" }}
+                            style={{ opacity: 1, color: "white" }}
                           >
                             {name}
                           </ArgonTypography>
                           <ArgonTypography
                             variant="body2"
-                            style={{ opacity: 1, color: "black" }}
+                            style={{ opacity: 1, color: "white" }}
                           >
                             {status}
                           </ArgonTypography>
