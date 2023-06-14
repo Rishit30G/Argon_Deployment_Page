@@ -116,22 +116,21 @@ function GrantsAndProposals() {
                       convallis mi ut quam dictum, eget rutrum ipsum ultrices. 
                      
                     </ArgonTypography>
-                    <Grid container style={{marginTop: '10px'}} alignItems="center"> 
-                      <Grid item> 
-                      <a href="https://twitter.com/Uniswap" target="_blank">
-                        <TwitterLogo size={32} color="#1DA1F2" weight="fill" style={{marginRight: '10px'}}/>
-                      </a>
-                      </Grid>
-                      <Grid item> 
-                      <a href="https://uniswap.org/" target="_blank">
-                        <Globe size={32} color="#8c8c8c" style={{marginRight: '10px'}}/>
-                      </a>
-                      </Grid>
-                      <Grid item> 
-                      <a href="https://defillama.com/protocol/uniswap" target="_blank">
-                          <img src="https://i.postimg.cc/hPXgrGBb/defi-lama-logo-freelogovectors-net.png" style={{width: '23px', height: '26px'}}/>
-                      </a> 
-                      </Grid>
+                    <Grid container style={{marginTop: '10px'}} > 
+                      <Stack alignItems="center" direction="row" spacing={1}>
+                          <a href="https://twitter.com/Uniswap" target="_blank">
+                            <TwitterLogo size={32} color="#1DA1F2" weight="fill" style={{marginRight: '10px'}}/>
+                          </a>
+                          <div style={{ width: '1px', height: '50%', backgroundColor: '#a6a6a6', marginBottom: '7px' }}></div>
+                          <a href="https://uniswap.org/" target="_blank">
+                            <Globe size={32} color="#8c8c8c" style={{marginRight: '10px'}}/>
+                          </a>
+                          <div style={{ width: '1px', height: '50%', backgroundColor: '#a6a6a6', marginBottom: '7px' }}></div>
+
+                          <a href="https://defillama.com/protocol/uniswap" target="_blank">
+                              <img src="https://i.postimg.cc/hPXgrGBb/defi-lama-logo-freelogovectors-net.png" style={{width: '23px', height: '26px'}}/>
+                          </a> 
+                      </Stack>
                     </Grid>
                   </Grid>
                 
