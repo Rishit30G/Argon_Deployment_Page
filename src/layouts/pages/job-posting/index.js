@@ -15,41 +15,46 @@ const JobPosting = () => {
     const [location, setLocation] = useState('');
     const [type, setType] = useState('');
     const [role, setRole] = useState('');
+    const [jobTitle, setJobTitle] = useState('');
+    const [aboutJob, setAboutJob] = useState('');
+    const [jobApplyMail, setJobApplyMail] = useState('');
   
-    const handleLocationChange = (selectedOption) => {
-      setLocation(selectedOption.value);
-    };
-  
-    const handleTypeChange = (selectedOption) => {
-      setType(selectedOption.value);
-    };
-  
-    const handleRoleChange = (selectedOption) => {
-      setRole(selectedOption.value);
-    };
-  
-    const locationOptions = [
-      { value: 'Delhi', label: 'Delhi' },
-      { value: 'Bangalore', label: 'Bangalore' },
-      { value: 'Noida', label: 'Noida' },
-    ];
-  
-    const roleOptions = [
-      { value: 'Full Time', label: 'Engineering' },
-      { value: 'Part Time', label: 'Management' },
-      { value: 'Internship', label: 'Sales' },
-      { value: 'Marketing', label: 'Marketing' },
-    ];
-  
-    const typeOptions = [
-      { value: 'Full Time', label: 'Full Time' },
-      { value: 'Part Time', label: 'Part Time' },
-      { value: 'Internship', label: 'Internship' },
-      { value: 'Freelance', label: 'Freelance' },
-      { value: 'Contract', label: 'Contract' },
-    ];
-  
-  
+   
+
+    const handleSubmit = async(e) => {
+        e.preventDefault();
+        const formData = {
+          job_title: jobTitle,
+          job_description: aboutJob,
+          location: location, 
+          type_of_position: type, 
+          role: role, 
+          job_apply_mail: jobApplyMail,
+          
+        }
+
+    try {
+      const response = await fetch( 'https://dolphin-app-qq7rr.ondigitalocean.app/joblisting/', {
+         method: 'POST', 
+         headers: {
+          'Content-Type': 'application/json',
+         },
+         body: JSON.stringify(formData)
+      });
+
+      if(response.ok) {
+         //  console.log('Success!')
+      } 
+      else{
+          throw new Error('Request failed!');
+      }
+    }
+    catch(error) {
+      // console.log(error);
+    }
+};
+
+
   return (
     <DashboardLayout>
     <DashboardNavbar />
@@ -59,6 +64,7 @@ const JobPosting = () => {
        
        <ArgonBox px={50} py={3}> 
        <HoverCard>
+          <form>
         <ArgonBox px={7} py={5}>
             <Grid container spacing={3} direction="column">
                 <Grid item xs={12} md={12} lg={12} xl={4}>
@@ -66,8 +72,10 @@ const JobPosting = () => {
                 </Grid> 
                 <Grid item xs={12} md={12} lg={12} xl={4}>
                    <ArgonInput 
+                   onChange={(e) => setJobTitle(e.target.value)}
                    multiline
                    row={1}
+                  inputProps={{ style: { color: "grey", fontSize: "20px" } }}
                    placeholder="Job Title" />
                 </Grid>
             </Grid>
@@ -76,7 +84,9 @@ const JobPosting = () => {
                    <ArgonTypography variant="h4">About the Job</ArgonTypography>
                 </Grid> 
                 <Grid item xs={12} md={12} lg={12} xl={4}>
-                   <ArgonInput  multiline
+                   <ArgonInput  
+                   onChange={(e) => setAboutJob(e.target.value)}
+                   multiline
                   rows={3}
                   inputProps={{ style: { color: "grey", fontSize: "20px" } }}
                   placeholder="About the Job"/> 
@@ -87,10 +97,11 @@ const JobPosting = () => {
                    <ArgonTypography variant="h4">Educational Qualification</ArgonTypography>
                 </Grid> 
                 <Grid item xs={12} md={12} lg={12} xl={4}>
-                   <ArgonInput  multiline
-                  rows={2}
-                  inputProps={{ style: { color: "grey", fontSize: "20px" } }}
-                  placeholder="Educational Qualification"/> 
+                   <ArgonInput  
+                    multiline
+                    rows={2}
+                    inputProps={{ style: { color: "grey", fontSize: "20px" } }}
+                    placeholder="Educational Qualification"/> 
                 </Grid>
             </Grid>
             <Grid container spacing={3} direction="column" style={{marginTop: '20px'}}>
@@ -109,7 +120,9 @@ const JobPosting = () => {
                    <ArgonTypography variant="h4">Selection Process</ArgonTypography>
                 </Grid> 
                 <Grid item xs={12} md={12} lg={12} xl={4}>
-                   <ArgonInput  multiline
+                   <ArgonInput  
+                   
+                   multiline
                   rows={3}
                   inputProps={{ style: { color: "grey", fontSize: "20px" } }}
                   placeholder="Selection Process"/> 
@@ -123,7 +136,9 @@ const JobPosting = () => {
                    <ArgonTypography variant="h4">Contact Email</ArgonTypography>
                 </Grid> 
                 <Grid item xs={12} md={12} lg={12} xl={4}>
-                <ArgonInput  multiline
+                <ArgonInput 
+                  onChange={(e) => setJobApplyMail(e.target.value)}
+                  multiline
                   rows={1}
                   inputProps={{ style: { color: "grey", fontSize: "20px" } }}
                   placeholder="Email"/> 
@@ -135,7 +150,9 @@ const JobPosting = () => {
                    <ArgonTypography variant="h4">Contact Website</ArgonTypography>
                 </Grid> 
                 <Grid item xs={12} md={12} lg={12} xl={4}>
-                <ArgonInput  multiline
+                <ArgonInput  
+                
+                  multiline
                   rows={1}
                   inputProps={{ style: { color: "grey", fontSize: "20px" } }}
                   placeholder="Website"/> 
@@ -143,51 +160,52 @@ const JobPosting = () => {
             </Grid>
 
 
-        <Grid container spacing={3} direction="column" style={{marginTop: '20px'}}>
+            <Grid container spacing={3} direction="column" style={{marginTop: '20px'}}>
                 <Grid item xs={12} md={12} lg={12} xl={4}>
-                   <ArgonTypography variant="h4">Location</ArgonTypography>
+                   <ArgonTypography variant="h4">Select Location</ArgonTypography>
                 </Grid> 
                 <Grid item xs={12} md={12} lg={12} xl={4}>
-                <Dropdown
-                    options={locationOptions}
-                    value={location}
-                    onChange={handleLocationChange}
-                    placeholder="Select Location"
-                />
+                <ArgonInput  
+                  onChange={(e) => setLocation(e.target.value)}
+                  multiline
+                  rows={1}
+                  inputProps={{ style: { color: "grey", fontSize: "20px" } }}
+                  placeholder="Select Location"/> 
+                </Grid>
+            </Grid>
+
+       <Grid container spacing={3} direction="column" style={{marginTop: '20px'}}>
+                <Grid item xs={12} md={12} lg={12} xl={4}>
+                   <ArgonTypography variant="h4">Select Position</ArgonTypography>
                 </Grid> 
-           </Grid>
+                <Grid item xs={12} md={12} lg={12} xl={4}>
+                <ArgonInput  
+                  onChange={(e) => setType(e.target.value)}
+                  multiline
+                  rows={1}
+                  inputProps={{ style: { color: "grey", fontSize: "20px" } }}
+                  placeholder="Select Position"/> 
+                </Grid>
+            </Grid>
 
-           <Grid container spacing={3} direction="column" style={{ marginTop: '20px' }}>
-        <Grid item xs={12} md={12} lg={12} xl={4}>
-          <ArgonTypography variant="h4">Type of Position</ArgonTypography>
-        </Grid>
-        <Grid item xs={12} md={12} lg={12} xl={4}>
-          <Dropdown
-            options={typeOptions}
-            value={type}
-            onChange={handleTypeChange}
-            placeholder="Select Position"
-          />
-        </Grid>
-      </Grid>
-
-      <Grid container spacing={3} direction="column" style={{ marginTop: '20px' }}>
-        <Grid item xs={12} md={12} lg={12} xl={4}>
-          <ArgonTypography variant="h4">Role</ArgonTypography>
-        </Grid>
-        <Grid item xs={12} md={12} lg={12} xl={4}>
-          <Dropdown
-            options={roleOptions}
-            value={role}
-            onChange={handleRoleChange}
-            placeholder="Select Role"
-            controlProps={{ style: { backgroundColor: 'black', color: 'white' } }}
-          />
-        </Grid>
+            <Grid container spacing={3} direction="column" style={{marginTop: '20px'}}>
+                <Grid item xs={12} md={12} lg={12} xl={4}>
+                   <ArgonTypography variant="h4">Role</ArgonTypography>
+                </Grid> 
+                <Grid item xs={12} md={12} lg={12} xl={4}>
+                <ArgonInput  
+                  onChange={(e) => setRole(e.target.value)}
+                  multiline
+                  rows={1}
+                  inputProps={{ style: { color: "grey", fontSize: "20px" } }}
+                  placeholder="Role"/> 
+                </Grid>
+            </Grid>
 
         <Grid container justifyContent="center" style={{marginTop: '60px'}}> 
          <Grid item> 
          <ArgonButton
+                onClick={handleSubmit}
                 style={{
                   height: "58px",
                   width: "220px",
@@ -203,9 +221,8 @@ const JobPosting = () => {
               </ArgonButton>
          </Grid>
       </Grid>
-       
-      </Grid>
       </ArgonBox>
+      </form> 
 </HoverCard>
        </ArgonBox>
     </DashboardLayout>

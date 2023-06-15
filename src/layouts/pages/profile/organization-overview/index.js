@@ -65,11 +65,14 @@ const OrganizationOverview = () => {
                     <ArgonBox>
                     <Stack direction="row" alignItems="center" style={{marginTop: '10px'}}> 
                       <a href="https://twitter.com/Uniswap" target="_blank">
-                        <TwitterLogo size={25} color="#1DA1F2" weight="fill" style={{marginRight: '10px'}}/>
+                        <TwitterLogo size={25} color="#1DA1F2" weight="fill" style={{marginRight: '5px'}}/>
+                        
                       </a>
+                        <div style={{ width: '1px', height: '22px', backgroundColor: '#a6a6a6', marginBottom: '10px', marginRight: '5px'}}></div>
                       <a href="https://uniswap.org/" target="_blank">
-                        <Globe size={25} color="#8c8c8c" style={{marginRight: '10px'}}/>
+                        <Globe size={25} color="#8c8c8c" style={{marginRight: '5px'}}/>
                       </a>
+                      <div style={{ width: '1px', height: '22px', backgroundColor: '#a6a6a6', marginBottom: '10px', marginRight: '5px' }}></div>
                       <a href="https://defillama.com/protocol/uniswap" target="_blank">
                           <img src="https://i.postimg.cc/hPXgrGBb/defi-lama-logo-freelogovectors-net.png" style={{width: '21px', height: '24px'}}/>
                       </a>

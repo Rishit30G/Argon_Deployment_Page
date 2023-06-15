@@ -58,14 +58,19 @@ import Reputation from "../reputation";
 import PastExperience from "../past-experience";
 import HoverCard from "components/HoverCard";
 import axios from "axios";
+import { useLocation } from "react-router-dom";
 
-
-const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/profile/?format=json";
+const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/joblisting/?format=json";
 const bgImage =
   "https://picsum.photos/2600/700?grayscale";
 
-function Overview() {
+ 
 
+function Overview() {
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const id = searchParams.get('id');
+  
   const [value, setValue] = React.useState('1');
 
   const handleChange = (event, newValue) => {
@@ -77,13 +82,15 @@ function Overview() {
   useEffect(() => {
     axios.get(baseURL)
       .then((response) => {
-        // console.log(response.data);
-        setPost(response.data);
+        // Assuming the response is an array of posts
+        // Find the post with the matching ID
+        const selectedPost = response.data.find((item) => item.id === Number(id));
+        setPost(selectedPost);
       })
       .catch((error) => {
-        // console.log(error);
+        // Handle the error
       });
-  }, []);
+  }, [id]);
 
   if (!post) return null;
 
@@ -116,25 +123,25 @@ function Overview() {
                   justifyContent="space-between"
                   alignItems="flex-start"
                 >
-                  <ArgonTypography variant="h2">{post[0].User_name}</ArgonTypography>
+                  <ArgonTypography variant="h2">{post.profile.User_name}</ArgonTypography>
                   <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>Contact</ArgonButton>
                  
                 </Grid>
-                <ArgonTypography variant="h5">{post[0].User_profession}</ArgonTypography>
+                <ArgonTypography variant="h5">{post.profile.User_profession}</ArgonTypography>
                 <ArgonTypography variant="subtitle2">
-                  {post[0].desc}
+                  {post.profile.desc}
                 </ArgonTypography>
                 <Stack direction="row" spacing={2}>
                  
-                <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>${post[0].salary}</ArgonButton>
+                <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>${post.profile.salary}</ArgonButton>
               
                 
                 <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>View</ArgonButton>
                 
               
-                <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>{post[0].badges} Badge</ArgonButton>
+                <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>{post.profile.badges} Badge</ArgonButton>
                 
-                <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>{post[0].xp_earned} XP Earned</ArgonButton>
+                <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>{post.profile.xp_earned} XP Earned</ArgonButton>
               
                 </Stack>
               </Stack>

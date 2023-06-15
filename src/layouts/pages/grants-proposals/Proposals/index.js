@@ -98,8 +98,8 @@ const Proposals = () => {
       </ArgonBox>
 
       <ArgonBox px={4} py={2}>
-        <Grid container spacing={4} alignItems="stretch">
-          <Grid item xs={12} md={8} lg={8} style={{ display: 'flex' }}>
+        <Grid container spacing={4}>
+          <Grid item xs={12} md={8} lg={8}>
             <HoverCard>
               <CardContent>
                 <Grid container spacing={4}>
@@ -130,10 +130,10 @@ const Proposals = () => {
               </CardContent>
             </HoverCard>
           </Grid>
-          <Grid item xs={12} md={4} lg={4}  style={{ display: 'flex'}}>
+          <Grid container item xs={12} md={4} lg={4} justifyContent="center">
             <HoverCard>
               <CardContent style={{ display: 'flex', height: '100%', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-                    <Grid container spacing={4} justifyContent="space-between">
+                    <Grid container spacing={4} justifyContent="space-between" >
                        <Grid container item xl={4} justifyContent="center">  
                            <ArgonTypography variant="h6">Prelimniary Discussion</ArgonTypography>
                        </Grid>
@@ -155,7 +155,7 @@ const Proposals = () => {
           </Grid>
         </Grid>
 
-        <Grid container spacing={4} alignItems="stretch" style={{marginTop: '10px'}}>
+        {/* <Grid container spacing={4} alignItems="stretch" style={{marginTop: '10px'}}>
           <Grid item xs={12} md={8} lg={8} style={{ display: 'flex' }}>
             <HoverCard>
               <CardContent>
@@ -210,7 +210,7 @@ const Proposals = () => {
                 </CardContent>
             </HoverCard>
           </Grid>
-        </Grid>
+        </Grid> */}
       </ArgonBox>
     </>   
   );

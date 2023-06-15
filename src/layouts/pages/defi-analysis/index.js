@@ -1,4 +1,5 @@
 import { CardContent, CardMedia, Grid, Stack } from "@mui/material";
+import { EnvelopeSimple } from "@phosphor-icons/react";
 import ArgonBadge from "components/ArgonBadge";
 import ArgonBox from "components/ArgonBox";
 import ArgonButton from "components/ArgonButton";
@@ -10,9 +11,25 @@ import DefiAnalysisCard from "examples/Cards/DefiAnalysisCard";
 import PressReleaseCard from "examples/Cards/PressReleaseCard";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import React from "react";
+import React, { useState } from "react";
 
 const DefiAnalysis = () => {
+
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  const iconStyle = {
+    transform: isHovered ? 'translateY(-5px)' : 'translateY(0)',
+    transition: 'transform 0.3s ease',
+  };
+
   return (
     <DashboardLayout>
       <DashboardNavbar />
@@ -71,9 +88,9 @@ const DefiAnalysis = () => {
           <Grid item xs={12} md={6} lg={4} xl={4}>
              <HoverCard> 
               <CardContent> 
-                <ArgonBox px={2} py={2}>
+                <ArgonBox px={2}>
                     <Grid container direction="row" spacing={4}>
-                        <Grid item> 
+                        <Grid item style={{marginTop: '10px'}}> 
                            <ArgonTypography variant="h1">Subscribe to the best Newsletter</ArgonTypography>
                         </Grid>
                         <Grid item> 
@@ -83,6 +100,16 @@ const DefiAnalysis = () => {
                           </Stack>
                         </Grid>
                     </Grid> 
+                    <Grid container direction="row-reverse">
+                    <div
+      style={{ display: 'flex', justifyContent: 'flex-end' }}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <EnvelopeSimple size={82} color="#b5b5b5" weight="light" style={iconStyle} />
+    </div>
+
+                    </Grid>
                 </ArgonBox>
               </CardContent>
              </HoverCard>
