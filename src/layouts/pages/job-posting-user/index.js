@@ -10,7 +10,7 @@ import 'react-dropdown/style.css';
 import ArgonButton from 'components/ArgonButton';
 import HoverCard from 'components/HoverCard';
 
-const JobPostingOrg = () => {
+const JobPostingUser = () => {
 
     const [location, setLocation] = useState('');
     const [type, setType] = useState('');
@@ -229,4 +229,4 @@ const JobPostingOrg = () => {
   )
 }
 
-export default JobPostingOrg
+export default JobPostingUser

@@ -54,25 +54,28 @@ function GrantsAndProposals() {
   const [showProposal, setShowProposal] = useState(true);
   const [showGrant, setShowGrant] = useState(false);
   const [showJobs, setShowJobs] = useState(false);
+  const [activeButton, setActiveButton] = useState(null);
 
 
   const toggleProposal = () => {
     setShowProposal(!showProposal);
     setShowGrant(false);
     setShowJobs(false);
-
+    setActiveButton('proposal');
   };
-
+  
   const toggleGrant = () => {
     setShowGrant(!showGrant);
     setShowProposal(false);
     setShowJobs(false);
+    setActiveButton('grant');
   };
-
+  
   const toggleJobs = () => {
     setShowJobs(!showJobs);
     setShowProposal(false);
     setShowGrant(false);
+    setActiveButton('jobs');
   };
   
   return (
@@ -152,9 +155,54 @@ function GrantsAndProposals() {
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} justifyContent="space-around" >
                 <Stack spacing={3} direction="row" >
-                    <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}} onClick={toggleProposal}>Proposals</ArgonButton>
-                    <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}} onClick={toggleGrant}>Grants</ArgonButton>
-                    <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}} onClick={toggleJobs}>Jobs</ArgonButton>
+                <ArgonButton
+  style={{
+    height: "58px",
+    width: "180px",
+    fontSize: '17px',
+    fontWeight: '400',
+    backgroundColor: "black",
+    border: "1px solid #8d8d8d",
+    color: 'white',
+    boxShadow: activeButton === 'proposal' ? '8px 8px 15px #B721BE' : '5px 5px 10px #B721BE'
+  }}
+  onClick={toggleProposal}
+>
+  Proposals
+</ArgonButton>
+
+<ArgonButton
+  style={{
+    height: "58px",
+    width: "180px",
+    fontSize: '17px',
+    fontWeight: '400',
+    backgroundColor: "black",
+    border: "1px solid #8d8d8d",
+    color: 'white',
+    boxShadow: activeButton === 'grant' ? '8px 8px 15px #B721BE' : '5px 5px 10px #B721BE'
+  }}
+  onClick={toggleGrant}
+>
+  Grants
+</ArgonButton>
+
+<ArgonButton
+  style={{
+    height: "58px",
+    width: "180px",
+    fontSize: '17px',
+    fontWeight: '400',
+    backgroundColor: "black",
+    border: "1px solid #8d8d8d",
+    color: 'white',
+    boxShadow: activeButton === 'jobs' ? '8px 8px 15px #B721BE' : '5px 5px 10px #B721BE'
+  }}
+  onClick={toggleJobs}
+>
+  Jobs
+</ArgonButton>
+
                   </Stack>
                 </Grid> 
               </Grid>

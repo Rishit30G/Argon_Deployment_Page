@@ -115,7 +115,8 @@ import GrantMainPage from "layouts/pages/grants-proposals/Grant-Main";
 import OrganizationJobs from "layouts/pages/organisation-overview/Organisation-Jobs";
 import DefiAnalysis from "layouts/pages/defi-analysis";
 import NewDAOUser from "layouts/pages/users/DAO-new-user";
-import JobPosting from "layouts/pages/job-posting";
+import JobPostingOrg from "layouts/pages/job-posting";
+import JobPostingUser from "layouts/pages/job-posting-user";
 
 
 const routes = [
@@ -164,10 +165,16 @@ const routes = [
             component: <JobProfile />,
           },
           {
-            name: "Job Posting", 
-            key: "job-posting",
-            route: "/pages/profile/job-posting",
-            component: <JobPosting/>
+            name: "Job Posting (Org)", 
+            key: "job-posting-org",
+            route: "/pages/profile/job-posting-org",
+            component: <JobPostingOrg/>
+          }, 
+          {
+            name: "Job Posting (User)", 
+            key: "job-posting-user",
+            route: "/pages/profile/job-posting-user",
+            component: <JobPostingUser/>
           }
           
           // {

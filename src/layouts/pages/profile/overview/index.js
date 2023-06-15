@@ -11,7 +11,9 @@ import { ContentPaste, PersonOffOutlined } from "@mui/icons-material";
 import HoverCard from "components/HoverCard";
 import DefaultDivider from "components/Divider";
 
-const Overview2 = () => {
+const Overview2 = (props) => {
+
+  const {desc} = props;
   return (
     <>
       <ArgonBox mb={3}>
@@ -69,7 +71,7 @@ const Overview2 = () => {
                   </Grid>
                 </Grid>
                 <Grid item>
-                  <ArgonTypography variant="body2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vulputate, leo at pharetra finibus, nisi nibh commodo turpis, quis tincidunt elit elit ut magna. Sed ut ipsum enim. Sed fermentum magna quis turpis varius, ac aliquet ipsum auctor. Sed lacinia purus id nisl pharetra, nec congue sapien pulvinar</ArgonTypography>
+                  <ArgonTypography variant="body2">{desc.split('?')[1]}</ArgonTypography>
                 </Grid>
               </ArgonBox>
               </CardContent>

@@ -284,6 +284,7 @@ const JobListing = () => {
                     <Grid item xs={12} lg={4} xl={4} md={12} key={post.id} onClick={() => handleCardClick(post.id)}>
                       <HoverCard>
                         <CardContent>
+                          <CardActionArea> 
                           <ArgonBox pt={1}>
                             <Grid container spacing={8}>
                               <Grid container item xs={12} sm={12} md={12} justifyContent="space-between" alignItems="center">
@@ -296,7 +297,7 @@ const JobListing = () => {
                                     variant="body2"
                                     style={{ color: "rgba(255, 255, 255, 0.7)" }}
                                   >
-                                    {post.profile.desc}
+                                    {post.profile.desc.split('?')[0]}
                                   </ArgonTypography>
                                 </Grid>
                                 <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
@@ -315,6 +316,7 @@ const JobListing = () => {
                               </Grid>
                             </Grid>
                           </ArgonBox>
+                          </CardActionArea>
                         </CardContent>
                       </HoverCard>
                     </Grid>

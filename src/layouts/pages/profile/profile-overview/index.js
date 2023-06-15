@@ -129,7 +129,7 @@ function Overview() {
                 </Grid>
                 <ArgonTypography variant="h5">{post.profile.User_profession}</ArgonTypography>
                 <ArgonTypography variant="subtitle2">
-                  {post.profile.desc}
+                  {post.profile.desc.split('?')[0]}
                 </ArgonTypography>
                 <Stack direction="row" spacing={2}>
                  
@@ -159,7 +159,7 @@ function Overview() {
               <Tab label="Past Experience" value="3" />
             </Tabs>
           </Box>
-          <TabPanel value="1"><Overview2/></TabPanel>
+          <TabPanel value="1"><Overview2 desc={post.profile.desc}/></TabPanel>
           <TabPanel value="2"><Reputation/></TabPanel>
           <TabPanel value="3"><PastExperience/></TabPanel>
         </TabContext>
