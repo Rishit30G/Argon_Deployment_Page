@@ -5,10 +5,11 @@ import ArgonTypography from 'components/ArgonTypography';
 import ArgonBox from 'components/ArgonBox';
 import ArgonInput from 'components/ArgonInput';
 import { CardContent, Grid } from '@mui/material';
-import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 import ArgonButton from 'components/ArgonButton';
 import HoverCard from 'components/HoverCard';
+import ArgonDropzone from 'components/ArgonDropzone';
+
 
 const JobPostingOrg = () => {
 
@@ -19,7 +20,7 @@ const JobPostingOrg = () => {
     const [aboutJob, setAboutJob] = useState('');
     const [jobApplyMail, setJobApplyMail] = useState('');
   
-   
+  
 
     const handleSubmit = async(e) => {
         e.preventDefault();
@@ -59,13 +60,15 @@ const JobPostingOrg = () => {
     <DashboardLayout>
     <DashboardNavbar />
        <ArgonBox px={15} py={3}> 
-           <ArgonTypography variant="h2">Job Posting</ArgonTypography>
+           <ArgonTypography variant="h2">Job Posting - Organization</ArgonTypography>
        </ArgonBox>
        
        <ArgonBox px={50} py={3}> 
        <HoverCard>
           <form>
         <ArgonBox px={7} py={5}>
+
+
             <Grid container spacing={3} direction="column">
                 <Grid item xs={12} md={12} lg={12} xl={4}>
                    <ArgonTypography variant="h4">Job Title</ArgonTypography>
@@ -79,6 +82,7 @@ const JobPostingOrg = () => {
                    placeholder="Job Title" />
                 </Grid>
             </Grid>
+           
             <Grid container spacing={3} direction="column" style={{marginTop: '20px'}}>
                 <Grid item xs={12} md={12} lg={12} xl={4}>
                    <ArgonTypography variant="h4">About the Job</ArgonTypography>

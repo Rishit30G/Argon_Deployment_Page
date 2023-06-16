@@ -115,7 +115,7 @@ import GrantMainPage from "layouts/pages/grants-proposals/Grant-Main";
 import OrganizationJobs from "layouts/pages/organisation-overview/Organisation-Jobs";
 import DefiAnalysis from "layouts/pages/defi-analysis";
 import NewDAOUser from "layouts/pages/users/DAO-new-user";
-import JobPostingOrg from "layouts/pages/job-posting";
+import JobPostingOrg from "layouts/pages/job-posting-org";
 import JobPostingUser from "layouts/pages/job-posting-user";
 
 

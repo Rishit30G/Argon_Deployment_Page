@@ -11,7 +11,7 @@ import ArgonButton from "components/ArgonButton";
 import { makeStyles } from "@mui/styles";
 import { AddPhotoAlternate, Delete } from "@mui/icons-material";
 import HoverCard from "components/HoverCard";
-
+import { useDropzone } from "react-dropzone";
 
 
 const useStyles = makeStyles({
@@ -39,8 +39,18 @@ const useStyles = makeStyles({
 
 const NewDAOUser = () => {
   
+   const [selectedImage, setSelectedImage] = useState(null);
+    const { getRootProps, getInputProps } = useDropzone({
+      accept: 'image/*',
+      multiple: false,
+      onDrop: (acceptedFiles) => {
+        const file = acceptedFiles[0];
+        setSelectedImage(URL.createObjectURL(file));
+      },
+    });
+
+
   const classes = useStyles();
-  const [selectedImage, setSelectedImage] = useState(null);
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -62,38 +72,18 @@ const NewDAOUser = () => {
         <HoverCard>
           <CardContent>
             <ArgonBox px={4} py={4}>
-              <Grid container>
-                <Grid item xl={2}>
-                <input
-                    type="file"
-                    accept="image/*"
-                    onChange={handleImageChange}
-                    style={{ display: 'none' }}
-                    id="image-uploader"
-                  />
-                  <label htmlFor="image-uploader">
-                    {!selectedImage && (
-                      <Card className={classes.card}>
-                        <CardMedia className={classes.media} />
-                        <CardContent className={classes.controls}>
-                          <IconButton component="span">
-                            <AddPhotoAlternate style={{color: 'white'}}/>
-                          </IconButton>
-                        </CardContent>
-                      </Card>
-                    )}
-                  </label>
-
-                  {selectedImage && (
-                    <Card className={classes.card}>
-                      <CardMedia className={classes.media} image={selectedImage} />
-                      <CardContent className={classes.controls}>
-                        <IconButton component="span" className={classes.button} onClick={handleImageRemove}>
-                          <Delete style={{color: 'white'}}/>
-                        </IconButton>
-                      </CardContent>
-                    </Card>
-                  )}
+              <Grid container spacing={4}>
+                <Grid container item xl={2} justifyContent="center" alignItems="center">
+                <div {...getRootProps()} style={{ textAlign: 'center' }}>
+               <input {...getInputProps()} />
+               {selectedImage ? (
+                 <img src={selectedImage} alt="Selected Profile" style={{ width: '200px', height: '200px', borderRadius: '50%', objectFit: 'cover', marginBottom: '16px' }} />
+               ) : (
+                 <div style={{ padding: '70px 0', border: '1px solid grey', borderRadius: '10px', marginBottom: '30px'}}>
+                       <ArgonTypography variant="body2" style={{color: 'grey', fontSize: '13px'}} >Drag and drop an image here or click to select an image.</ArgonTypography>
+                  </div>
+               )}
+               </div>
                 </Grid>
                 <Grid item xl={10}>
                   <Grid container spacing={8} style={{ marginBottom: "30px" }}>

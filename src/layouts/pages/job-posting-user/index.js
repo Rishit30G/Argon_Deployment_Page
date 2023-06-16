@@ -4,22 +4,36 @@ import DashboardNavbar from 'examples/Navbars/DashboardNavbar';
 import ArgonTypography from 'components/ArgonTypography';
 import ArgonBox from 'components/ArgonBox';
 import ArgonInput from 'components/ArgonInput';
-import { CardContent, Grid } from '@mui/material';
+import { CardContent, Grid, Stack } from '@mui/material';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 import ArgonButton from 'components/ArgonButton';
 import HoverCard from 'components/HoverCard';
+import { useDropzone } from 'react-dropzone';
+import Toggle from 'react-toggle';
+import 'react-toggle/style.css';
+import ArgonTagInput from 'components/ArgonTagInput';
 
 const JobPostingUser = () => {
 
-    const [location, setLocation] = useState('');
-    const [type, setType] = useState('');
-    const [role, setRole] = useState('');
     const [jobTitle, setJobTitle] = useState('');
     const [aboutJob, setAboutJob] = useState('');
     const [jobApplyMail, setJobApplyMail] = useState('');
+    const [isSwitchOn, setIsSwitchOn] = useState(false);
+    const [tags, setTags] = useState(["html", "css", "js"]);
+    const updateTags = (newTags) => setTags(newTags);
   
    
+
+   const [selectedImage, setSelectedImage] = useState(null);
+    const { getRootProps, getInputProps } = useDropzone({
+      accept: 'image/*',
+      multiple: false,
+      onDrop: (acceptedFiles) => {
+        const file = acceptedFiles[0];
+        setSelectedImage(URL.createObjectURL(file));
+      },
+    });
 
     const handleSubmit = async(e) => {
         e.preventDefault();
@@ -59,16 +73,36 @@ const JobPostingUser = () => {
     <DashboardLayout>
     <DashboardNavbar />
        <ArgonBox px={15} py={3}> 
-           <ArgonTypography variant="h2">Job Posting</ArgonTypography>
+           <ArgonTypography variant="h2">Job Posting - User</ArgonTypography>
        </ArgonBox>
        
        <ArgonBox px={50} py={3}> 
        <HoverCard>
           <form>
         <ArgonBox px={7} py={5}>
+           <Grid container spacing={3} direction="column">
+
+         <Grid item xs={12} md={12} lg={12} xl={4}>
+             <ArgonTypography variant="h4">Upload Image</ArgonTypography>
+         </Grid>
+        <Grid item xs={12} md={12} lg={12} xl={4}>
+               <div {...getRootProps()} style={{ textAlign: 'center' }}>
+               <input {...getInputProps()} />
+               {selectedImage ? (
+                  <img src={selectedImage} alt="Selected Profile" style={{ width: '200px', height: '200px', borderRadius: '50%', objectFit: 'cover', marginBottom: '16px' }} />
+               ) : (
+                  <div style={{ padding: '50px 0', border: '1px solid grey', borderRadius: '10px', marginBottom: '30px' }}>
+                       <ArgonTypography variant="body2" style={{color: 'grey'}}>Drag and drop an image here or click to select an image.</ArgonTypography>
+                  </div>
+               )}
+               </div>
+        
+        </Grid>
+        
+      </Grid>
             <Grid container spacing={3} direction="column">
                 <Grid item xs={12} md={12} lg={12} xl={4}>
-                   <ArgonTypography variant="h4">Job Title</ArgonTypography>
+                   <ArgonTypography variant="h4">Position</ArgonTypography>
                 </Grid> 
                 <Grid item xs={12} md={12} lg={12} xl={4}>
                    <ArgonInput 
@@ -81,7 +115,7 @@ const JobPostingUser = () => {
             </Grid>
             <Grid container spacing={3} direction="column" style={{marginTop: '20px'}}>
                 <Grid item xs={12} md={12} lg={12} xl={4}>
-                   <ArgonTypography variant="h4">About the Job</ArgonTypography>
+                   <ArgonTypography variant="h4">About Yourself</ArgonTypography>
                 </Grid> 
                 <Grid item xs={12} md={12} lg={12} xl={4}>
                    <ArgonInput  
@@ -89,7 +123,7 @@ const JobPostingUser = () => {
                    multiline
                   rows={3}
                   inputProps={{ style: { color: "grey", fontSize: "20px" } }}
-                  placeholder="About the Job"/> 
+                  placeholder="About yourself"/> 
                 </Grid>
             </Grid>
             <Grid container spacing={3} direction="column" style={{marginTop: '20px'}}>
@@ -106,29 +140,30 @@ const JobPostingUser = () => {
             </Grid>
             <Grid container spacing={3} direction="column" style={{marginTop: '20px'}}>
                 <Grid item xs={12} md={12} lg={12} xl={4}>
-                   <ArgonTypography variant="h4">Looking for ?</ArgonTypography>
-                </Grid> 
-                <Grid item xs={12} md={12} lg={12} xl={4}>
-                   <ArgonInput  multiline
-                  rows={3}
-                  inputProps={{ style: { color: "grey", fontSize: "20px" } }}
-                  placeholder="Looking for ?"/> 
-                </Grid>
-            </Grid>
-            <Grid container spacing={3} direction="column" style={{marginTop: '20px'}}>
-                <Grid item xs={12} md={12} lg={12} xl={4}>
-                   <ArgonTypography variant="h4">Selection Process</ArgonTypography>
+                   <ArgonTypography variant="h4">Skiils and Experience</ArgonTypography>
                 </Grid> 
                 <Grid item xs={12} md={12} lg={12} xl={4}>
                    <ArgonInput  
-                   
-                   multiline
-                  rows={3}
-                  inputProps={{ style: { color: "grey", fontSize: "20px" } }}
-                  placeholder="Selection Process"/> 
+                    multiline
+                    rows={2}
+                    inputProps={{ style: { color: "grey", fontSize: "20px" } }}
+                    placeholder="Skills and Experience"/> 
                 </Grid>
             </Grid>
 
+            <Grid container spacing={3} direction="column" style={{marginTop: '20px'}}>
+                <Grid item xs={12} md={12} lg={12} xl={4}>
+                   <ArgonTypography variant="h4">Salary</ArgonTypography>
+                </Grid> 
+                <Grid item xs={12} md={12} lg={12} xl={4}>
+                <ArgonInput  
+                
+                  multiline
+                  rows={1}
+                  inputProps={{ style: { color: "grey", fontSize: "20px" } }}
+                  placeholder="Salary"/> 
+                </Grid>
+            </Grid>
      
 
       <Grid container spacing={3} direction="column" style={{marginTop: '20px'}}>
@@ -159,48 +194,72 @@ const JobPostingUser = () => {
                 </Grid>
             </Grid>
 
-
             <Grid container spacing={3} direction="column" style={{marginTop: '20px'}}>
-                <Grid item xs={12} md={12} lg={12} xl={4}>
-                   <ArgonTypography variant="h4">Select Location</ArgonTypography>
-                </Grid> 
-                <Grid item xs={12} md={12} lg={12} xl={4}>
-                <ArgonInput  
-                  onChange={(e) => setLocation(e.target.value)}
-                  multiline
-                  rows={1}
-                  inputProps={{ style: { color: "grey", fontSize: "20px" } }}
-                  placeholder="Select Location"/> 
-                </Grid>
-            </Grid>
+               <Grid item xs={12} md={12} lg={12} xl={4}>
+               <Stack direction="row" spacing={1}>
+              
+               <ArgonTypography variant="h4">Web 3.0 Contribution </ArgonTypography>
+               <Toggle
+                  checked={isSwitchOn}
+                  onChange={() => setIsSwitchOn(!isSwitchOn)}
+               />
+               </Stack> 
+               {isSwitchOn && (
+                  <div>
+                      <Grid container style={{marginTop: '10px'}} spacing={4}>
+                         <Grid item xs={12} md={12} lg={12} xl={6}>
+                           <ArgonTypography variant="h4"> Position </ArgonTypography>
+                           <ArgonInput  
+                              multiline
+                              rows={1}
+                              inputProps={{ style: { color: "grey", fontSize: "20px" } }}
+                              placeholder="Position"/> 
+                         </Grid>
+                         <Grid item xs={12} md={12} lg={12} xl={6}>
+                         <ArgonTypography variant="h4"> Company Name </ArgonTypography>
+                           <ArgonInput  
+                              multiline
+                              rows={1}
+                              inputProps={{ style: { color: "grey", fontSize: "20px" } }}
+                              placeholder="Company Name"/> 
+                         </Grid>
+                         <Grid item xs={12} md={12} lg={12} xl={6}>
+                         <ArgonTypography variant="h4"> Duration </ArgonTypography>
+                           <ArgonInput  
+                              multiline
+                              rows={1}
+                              inputProps={{ style: { color: "grey", fontSize: "20px" } }}
+                              placeholder="Duration"/> 
+                         </Grid>
+                         <Grid item xs={12} md={12} lg={12} xl={6}>
+                         <ArgonTypography variant="h4"> Location </ArgonTypography>
+                           <ArgonInput  
+                              multiline
+                              rows={1}
+                              inputProps={{ style: { color: "grey", fontSize: "20px" } }}
+                              placeholder="Location"/> 
+                         </Grid>
 
-       <Grid container spacing={3} direction="column" style={{marginTop: '20px'}}>
-                <Grid item xs={12} md={12} lg={12} xl={4}>
-                   <ArgonTypography variant="h4">Select Position</ArgonTypography>
-                </Grid> 
-                <Grid item xs={12} md={12} lg={12} xl={4}>
-                <ArgonInput  
-                  onChange={(e) => setType(e.target.value)}
-                  multiline
-                  rows={1}
-                  inputProps={{ style: { color: "grey", fontSize: "20px" } }}
-                  placeholder="Select Position"/> 
-                </Grid>
-            </Grid>
+                         <Grid item xs={12} md={12} lg={12} xl={6}> 
+                            <ArgonTypography variant="h4">Skills</ArgonTypography>
+                            <ArgonTagInput
+                              placeholder="Add new tag."
+                              tags={tags}
+                              onChange={updateTags}
+                           />
+                         </Grid>
 
-            <Grid container spacing={3} direction="column" style={{marginTop: '20px'}}>
-                <Grid item xs={12} md={12} lg={12} xl={4}>
-                   <ArgonTypography variant="h4">Role</ArgonTypography>
-                </Grid> 
-                <Grid item xs={12} md={12} lg={12} xl={4}>
-                <ArgonInput  
-                  onChange={(e) => setRole(e.target.value)}
-                  multiline
-                  rows={1}
-                  inputProps={{ style: { color: "grey", fontSize: "20px" } }}
-                  placeholder="Role"/> 
-                </Grid>
-            </Grid>
+
+                         </Grid>
+                         
+
+
+                  </div>
+               )}
+               </Grid> 
+          </Grid> 
+            
+
 
         <Grid container justifyContent="center" style={{marginTop: '60px'}}> 
          <Grid item> 

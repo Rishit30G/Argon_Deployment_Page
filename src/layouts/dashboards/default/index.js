@@ -87,7 +87,7 @@ function Default() {
   <ArgonBox >
       <ArgonBox py={3} px={15}> 
          <Grid container justifyContent="center">  
-            <Grid item xs={8} lg={8} xl={8}>
+            <Grid item xs={12} lg={12} xl={12}>
               <Slider/> 
             </Grid>
          </Grid>
@@ -95,7 +95,7 @@ function Default() {
 
 
 
-      <ArgonBox px={2}>
+      <ArgonBox px={2} mt={2}>
         <ArgonTypography variant="h2" style={{ marginBottom: "20px", fontFamily:'Montserrat' }}>
           App Metrics
           <DefaultDivider />
