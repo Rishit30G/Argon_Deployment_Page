@@ -91,7 +91,7 @@ const PressReleaseCard = () => {
   };
 
   return (
-    <Card style={{ border: "1px solid grey" }}>
+    <Card style={{ border: "1px solid grey",  backgroundColor: '#282D31' }}>
       <CardContent> 
         <ArgonBox px={3} py={3}>
       <Grid container spacing={2}>

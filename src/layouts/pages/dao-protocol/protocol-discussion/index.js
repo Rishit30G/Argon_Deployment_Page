@@ -186,6 +186,11 @@ const [showReplies, setShowReplies] = useState(false);
                 <ArgonTypography variant="h2">Protocol Discussion</ArgonTypography>
               
           </Grid>
+          <Grid item xs={12} md={12} lg={12} xl={12} >
+          <ArgonTypography variant="h5" style={{color: '#ced4da', fontStyle: 'italic'}}>
+            <q>Using this protocol? Analyze the effects of these proposals on your usability and profitability.</q>
+          </ArgonTypography>
+        </Grid>
         </Grid>
        <DefaultDivider/>
       </ArgonBox>
@@ -243,7 +248,7 @@ const [showReplies, setShowReplies] = useState(false);
               </ArgonButton>
             </Grid>
 
-            <Card style={{ boxShadow: "0px 0px 40px purple", backgroundColor: '#212529'}}>
+            <Card style={{ boxShadow: "0px 0px 40px purple", backgroundColor: '#282D31'}}>
               <CardContent>
                 <div data-aos="fade-up" data-aos-duration="5000">
                   <Grid container>

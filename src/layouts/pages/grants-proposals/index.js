@@ -155,16 +155,14 @@ function GrantsAndProposals() {
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} justifyContent="space-around" >
                 <Stack spacing={3} direction="row" >
-                <ArgonButton
+                <ArgonButton variant="outlined"
   style={{
     height: "58px",
     width: "180px",
     fontSize: '17px',
-    fontWeight: '400',
-    backgroundColor: "black",
-    border: "1px solid #8d8d8d",
-    color: 'white',
-    boxShadow: activeButton === 'proposal' ? '8px 8px 15px #B721BE' : '5px 5px 10px #B721BE'
+    borderRadius: '20px',
+    backgroundColor: '#212429',
+    boxShadow: activeButton === 'proposal' ? '6px 6px 2px #B721BE' : '',
   }}
   onClick={toggleProposal}
 >
@@ -172,15 +170,14 @@ function GrantsAndProposals() {
 </ArgonButton>
 
 <ArgonButton
+variant="outlined"
   style={{
     height: "58px",
     width: "180px",
     fontSize: '17px',
-    fontWeight: '400',
-    backgroundColor: "black",
-    border: "1px solid #8d8d8d",
-    color: 'white',
-    boxShadow: activeButton === 'grant' ? '8px 8px 15px #B721BE' : '5px 5px 10px #B721BE'
+    borderRadius: '20px',
+    backgroundColor: '#212429',
+    boxShadow: activeButton === 'grant' ? '6px 6px 2px #B721BE' : '',
   }}
   onClick={toggleGrant}
 >
@@ -188,15 +185,14 @@ function GrantsAndProposals() {
 </ArgonButton>
 
 <ArgonButton
+variant="outlined"
   style={{
     height: "58px",
     width: "180px",
     fontSize: '17px',
-    fontWeight: '400',
-    backgroundColor: "black",
-    border: "1px solid #8d8d8d",
-    color: 'white',
-    boxShadow: activeButton === 'jobs' ? '8px 8px 15px #B721BE' : '5px 5px 10px #B721BE'
+    borderRadius: '20px',
+    backgroundColor: '#212429',
+    boxShadow: activeButton === 'jobs' ? '6px 6px 2px #B721BE' : '',
   }}
   onClick={toggleJobs}
 >

@@ -61,12 +61,12 @@ const ProposalDiscussion = () => {
       </ArgonBox> */}
 
       <ArgonBox mb={3} px={20} py={3}>
-        <Card style={{boxShadow: '0px 0px 80px purple', backgroundColor: ' #212529'}}> 
+        <Card style={{boxShadow: '0px 0px 80px purple', backgroundColor: '#282D31'}}> 
           <CardContent>
             <ArgonBox px={3} py={3}>
           <Grid container spacing={3} direction="column">
           <Grid item>
-            <ArgonTypography style={{ fontFamily: "Lora", fontSize: "50px"}}>
+            <ArgonTypography variant="h1" style={{ fontSize: "50px"}}>
               Growth Experiment: Bored Town NFT Art Community
             </ArgonTypography>
             <DefaultDivider/>
@@ -93,7 +93,7 @@ const ProposalDiscussion = () => {
             </Grid>
 
           </Grid>
-          <Card style={{ marginTop: "30px", backgroundColor: '#2A2F34', marginLeft: '20px' }}>
+          <Card style={{ marginTop: "30px", backgroundColor: '#3E4349', marginLeft: '20px' }}>
             <ArgonBox px={17} py={5}>
             <CardContent>
                       <Grid container direction="column" justifyContainer="center"  alignItems="center" spacing={2} >

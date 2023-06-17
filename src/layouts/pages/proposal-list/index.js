@@ -34,10 +34,15 @@ const ProposalList = () => {
         <Grid container spacing={3} justifyContent="space-between" >
           <Grid item xl={12}>
               <ArgonTypography variant="h3" fontWeight="bold">
-                  Listing of DAOs
+                  Proposal Listing
               </ArgonTypography>
-          <DefaultDivider/>
           </Grid>
+          <Grid item xs={12} md={12} lg={12} xl={12}>
+            <ArgonTypography variant="h5" style={{color: '#ced4da', fontStyle: 'italic'}}>
+              <q>Using this protocol? Analyze the effects of these proposals on your usability and profitability.</q>
+            </ArgonTypography>
+          </Grid> 
+          <DefaultDivider/>
         </Grid>
         <Grid container direction="row-reverse" style={{marginTop: '20px'}}>  
         <Grid item xs={4} sm={4} md={4} lg={4} xl={4}>

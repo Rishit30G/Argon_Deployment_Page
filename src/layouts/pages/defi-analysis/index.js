@@ -1,4 +1,4 @@
-import { CardContent, CardMedia, Grid, Stack } from "@mui/material";
+import { CardContent, CardMedia, Grid, Stack, Card } from "@mui/material";
 import { EnvelopeSimple } from "@phosphor-icons/react";
 import ArgonBadge from "components/ArgonBadge";
 import ArgonBox from "components/ArgonBox";
@@ -35,9 +35,14 @@ const DefiAnalysis = () => {
       <DashboardNavbar />
       <ArgonBox px={15} py={3}>
         <Grid container spacing={3}>
-          <Grid item xs={12} md={6}>
-            <ArgonTypography variant="h2">Latest Happenings</ArgonTypography>
-          </Grid>
+              <Grid item xs={12} md={12} lg={12} xl={12}>
+                <ArgonTypography variant="h2">Latest Happenings</ArgonTypography>
+              </Grid>
+              <Grid item xs={12} md={12} lg={12} xl={12}>
+              <ArgonTypography variant="h5" style={{color: '#ced4da', fontStyle: 'italic'}}>
+                <q>Using this protocol? Analyze the effects of these proposals on your usability and profitability.</q>
+              </ArgonTypography>
+            </Grid>
         </Grid>
         <DefaultDivider />
       </ArgonBox>
@@ -128,7 +133,7 @@ const DefiAnalysis = () => {
           <Grid item xs={12} md={6} lg={4} xl={4}>
           <DefaultDivider/>
           <ArgonTypography variant="h2" style={{marginBottom: '20px'}}>Trending Posts</ArgonTypography>
-            <HoverCard> 
+            <Card style={{ backgroundColor: '#282D31', border: "1px solid grey" }}> 
               <CardContent>
                 <ArgonBox px={2} py={2}>
                     
@@ -219,7 +224,7 @@ const DefiAnalysis = () => {
                        </ArgonBox> 
                  </ArgonBox>
                 </CardContent> 
-            </HoverCard>
+            </Card>
           </Grid> 
         </Grid> 
 

@@ -28,7 +28,7 @@ import pxToRem from "assets/theme-dark/functions/pxToRem";
 const { dark } = colors;
 
 const baseProperties = {
-  fontFamily: 'Nunito Sans',
+  fontFamily: 'DM Sans',
   fontWeightLight: 300,
   fontWeightRegular: 400,
   fontWeightMedium: 600,
@@ -57,42 +57,50 @@ const typography = {
   h1: {
     fontSize: pxToRem(48),
     lineHeight: 1.25,
-    fontFamily: 'Montserrat',
+    fontFamily: 'Poppins',
     ...baseHeadingProperties,
   },
 
   h2: {
     fontSize: pxToRem(36),
     lineHeight: 1.3,
-    fontFamily: 'Montserrat',
+    fontFamily: 'Poppins',
     ...baseHeadingProperties,
   },
 
   h3: {
     fontSize: pxToRem(30),
     lineHeight: 1.375,
-    fontFamily: 'Montserrat',
+    fontFamily: 'Poppins',
     ...baseHeadingProperties,
   },
 
   h4: {
-    fontFamily: 'Montserrat',
+    fontFamily: 'Poppins',
     fontSize: pxToRem(24),
     lineHeight: 1.375,
     ...baseHeadingProperties,
   },
 
   h5: {
-    fontFamily: 'Montserrat',
+    fontFamily: 'Poppins',
     fontSize: pxToRem(20),
     lineHeight: 1.375,
     ...baseHeadingProperties,
   },
 
   h6: {
+    fontFamily: 'Poppins',
     fontSize: pxToRem(16),
     lineHeight: 1.625,
     ...baseHeadingProperties,
+  },
+
+  body2: {
+    fontFamily: baseProperties.fontFamily,
+    fontSize: pxToRem(19),
+    fontWeight: baseProperties.fontWeightRegular,
+    lineHeight: 1.6,
   },
 
   subtitle1: {
@@ -114,13 +122,6 @@ const typography = {
     fontSize: baseProperties.fontSizeXL,
     fontWeight: baseProperties.fontWeightRegular,
     lineHeight: 1.925,
-  },
-
-  body2: {
-    fontFamily: 'Poppins',
-    fontSize: baseProperties.fontSizeMD,
-    fontWeight: baseProperties.fontWeightRegular,
-    lineHeight: 1.6,
   },
 
   button: {

@@ -20,10 +20,14 @@ const RelatedProtocols = () => {
       <ArgonBox px={15} py={3}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={12} xl={12} lg={12}>
-       
             <ArgonTypography variant="h2">Related Protocols</ArgonTypography>
-            <DefaultDivider/> 
           </Grid>
+          <Grid item xs={12} md={12} lg={12} xl={12} >
+          <ArgonTypography variant="h5" style={{color: '#ced4da', fontStyle: 'italic'}}>
+            <q>Using this protocol? Analyze the effects of these proposals on your usability and profitability.</q>
+          </ArgonTypography>
+        </Grid>
+            <DefaultDivider/> 
         </Grid>
       </ArgonBox>
      

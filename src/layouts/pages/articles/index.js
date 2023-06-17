@@ -61,13 +61,13 @@ const Articles = () => {
         return (
           <ArgonBox key={post.id} px={20} py={3}>
             <div data-aos="fade-up" data-aos-duration="5000">
-              <Card style={{ boxShadow: "0px 0px 80px purple", backgroundColor: "#212529" }}>
+              <Card style={{ boxShadow: "0px 0px 80px purple", backgroundColor: "#282D31" }}>
                 <ArgonBox px={10} py={3}>
                   <CardContent>
                     <Grid container direction="column" spacing={2}>
                       <Grid item xs={12} md={12} lg={12}>
                         <div data-aos="fade-up" data-aos-duration="5000">
-                          <ArgonTypography style={{ fontFamily: "Lora", fontSize: "50px" }}>
+                          <ArgonTypography variant="h1" style={{ fontSize: "50px" }}>
                             {post.title}
                           </ArgonTypography>
                         </div>
@@ -110,7 +110,7 @@ const Articles = () => {
                       <Card
                         style={{
                           marginTop: "30px",
-                          backgroundColor: "#2A2F34",
+                          backgroundColor: "#3E4349",
                           marginLeft: "20px",
                         }}
                       >

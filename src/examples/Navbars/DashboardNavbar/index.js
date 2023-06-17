@@ -122,6 +122,11 @@ function DashboardNavbar({ absolute, light, isMini }) {
               <ArrowBackIosRounded style={{ color: "white", marginRight: "10px" }} />
               <ArgonTypography style={{ color: "white" }}>Back</ArgonTypography>
             </ArgonButton>
+            <a href="https://argon-deployment-page.vercel.app/pages/joblisting">
+            <ArgonButton variant="contained" style={{marginLeft: '20px'}}>
+              Looking for New Job ? 
+            </ArgonButton>
+            </a>
           </ArgonBox>
           {/* <Breadcrumbs
             icon="home"

@@ -140,7 +140,7 @@ const ArticleMain = () => {
 
       <ArgonBox mx={15} my={3}>
         <div data-aos="fade-up" data-aos-duration="5000">
-          <Card style={{ border: "1px solid grey" }}>
+          <Card style={{ border: "1px solid grey", backgroundColor: '#282D31' }}>
             <ArgonBox px={3} py={3}>
               <CardContent>
                 <Grid container direction="column" spacing={3}>
@@ -222,7 +222,7 @@ const ArticleMain = () => {
 
       <ArgonBox mb={3} mx={15} my={3}>
         <div data-aos="fade-up" data-aos-duration="5000">
-          <Card style={{ border: "1px solid grey" }}>
+          <Card style={{ border: "1px solid grey",  backgroundColor: '#282D31' }}>
             <ArgonBox px={3} py={3}>
               <CardContent>
                 <Grid container direction="column" spacing={3}>

@@ -41,7 +41,12 @@ const NewDAOProtocol = () => {
           <Grid item xs={12} md={12} lg={12}>
             <ArgonTypography variant="h2">New DAO Protocols</ArgonTypography>
           </Grid>
+          <Grid item xs={12} md={12} lg={12} xl={12}>
+          <ArgonTypography variant="h5" style={{color: '#ced4da', fontStyle: 'italic'}}>
+            <q>Using this protocol? Analyze the effects of these proposals on your usability and profitability.</q>
+          </ArgonTypography>
         </Grid>
+        </Grid> 
         <div
           style={{
             borderBottom: "1px solid rgba(128, 128, 128, 0.3)",
@@ -131,7 +136,7 @@ const NewDAOProtocol = () => {
                       alignItems="center"
                     >
                       <ArgonTypography variant="h2">{post.name}</ArgonTypography>
-                      <a href={post.link}>
+                      <a href="https://argon-deployment-page.vercel.app/pages/dao-protocol-discussion">
                       <ArgonButton
                         style={{
                           height: "52px",
@@ -155,7 +160,7 @@ const NewDAOProtocol = () => {
                           style={{ fontSize: "20px", color: "rgba(255, 255, 255, 0.7)" }}
                         >
                            {post.desc.split(" ").slice(0,20).join(" ")}
-                           {post.desc.split(" ").length > 20 ? "..." : ""}
+                           {post.desc.split(" ").length > 20 ? <a href="https://argon-deployment-page.vercel.app/pages/dao-protocol-discussion" style={{color: '#B721BE'}}> Read More</a> : ""}
                         </ArgonTypography>
                       </Grid>
                       <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>

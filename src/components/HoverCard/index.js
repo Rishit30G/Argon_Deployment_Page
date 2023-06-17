@@ -21,7 +21,7 @@ function HoverCard({
   return (
     <Card
       style={{
-         backgroundColor: "#212529", 
+         backgroundColor: "#282D31", 
          boxShadow: isHovering ? "0px 0px 10px #545454" : "0px 0px 50px #303030",
 
           // linear-gradient(to right, #131313, #7303c0, #ec38bc)
