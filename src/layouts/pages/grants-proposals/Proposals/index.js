@@ -100,7 +100,7 @@ const Proposals = () => {
       <ArgonBox px={4} py={2}>
         <Grid container spacing={4}>
           <Grid item xs={12} md={8} lg={8}>
-            <HoverCard>
+          <HoverCard style={{backgroundColor: '#3E3D3E'}}> 
               <CardContent>
                 <Grid container spacing={4}>
                   <Grid
@@ -131,7 +131,7 @@ const Proposals = () => {
             </HoverCard>
           </Grid>
           <Grid container item xs={12} md={4} lg={4} justifyContent="center">
-            <HoverCard>
+            <HoverCard style={{backgroundColor: '#3E3D3E'}}>
               <CardContent style={{ display: 'flex', height: '100%', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
                     <Grid container spacing={4} justifyContent="space-between" >
                        <Grid container item xl={4} justifyContent="center">  

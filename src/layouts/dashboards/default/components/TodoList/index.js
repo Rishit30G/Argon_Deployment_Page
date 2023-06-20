@@ -83,7 +83,7 @@ function TodoList() {
                   backgroundPosition: "center calc(50% - 40px)",
                   boxShadow:
                     index === hoveredIndex
-                      ? "3px 3px 20px #a7a7a7"
+                      ? "7px 7px 16px #4e4e4e"
                       : "none",
                 }}
                 onMouseEnter={() => handleMouseEnter(index)}

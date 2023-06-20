@@ -167,7 +167,7 @@ export const GrantCard = () => {
                     </ArgonButton>
                   </Grid>
                   <Grid container item justifyContent="center">
-                    <ArgonBox my={1} mx={7} pl={3}>
+                    <ArgonBox mx={1}>
                         <ArgonTypography variant="body2" style={{ justifyContent: "center", fontSize: '18px'}}>
                           Keep up with everything that's going around in Web 3.0 world
                         </ArgonTypography>

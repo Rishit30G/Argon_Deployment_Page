@@ -140,7 +140,7 @@ const ArticleMain = () => {
 
       <ArgonBox mx={15} my={3}>
         <div data-aos="fade-up" data-aos-duration="5000">
-          <Card style={{ border: "1px solid grey", backgroundColor: '#282D31' }}>
+          <Card style={{ border: "1px solid grey", backgroundColor: "#222122" }}>
             <ArgonBox px={3} py={3}>
               <CardContent>
                 <Grid container direction="column" spacing={3}>
@@ -148,7 +148,7 @@ const ArticleMain = () => {
                     <Grid container spacing={4}>
                       {visibleItems.map((item, index) => (
                         <Grid item xs={12} md={6} lg={3} key={index}>
-                          <HoverCard>
+                          <HoverCard style={{backgroundColor: '#3E3D3E'}}>
                             <CardActionArea>
                               <CardMedia
                                 component="img"
@@ -222,7 +222,7 @@ const ArticleMain = () => {
 
       <ArgonBox mb={3} mx={15} my={3}>
         <div data-aos="fade-up" data-aos-duration="5000">
-          <Card style={{ border: "1px solid grey",  backgroundColor: '#282D31' }}>
+          <Card style={{ border: "1px solid grey",  backgroundColor: "#222122" }}>
             <ArgonBox px={3} py={3}>
               <CardContent>
                 <Grid container direction="column" spacing={3}>
@@ -230,7 +230,7 @@ const ArticleMain = () => {
                     <Grid container spacing={4}>
                       {visibleItems.map((item, index) => (
                         <Grid item xs={12} md={6} lg={3} key={index}>
-                          <HoverCard>
+                         <HoverCard style={{backgroundColor: '#3E3D3E'}}>
                             <CardActionArea>
                               <CardMedia
                                 component="img"

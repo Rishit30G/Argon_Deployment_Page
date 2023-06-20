@@ -118,7 +118,7 @@ const OrganizationOverview = () => {
         <ArgonBox mt={3}>
           <TabContext value={value}>
             <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-            <Tabs value={value} onChange={handleChange} TabIndicatorProps={{ style: { backgroundColor: '#3E4349'} }} style={{padding: '20px'}}>
+            <Tabs value={value} onChange={handleChange} TabIndicatorProps={{ style: { backgroundColor: "#222122"} }} style={{padding: '20px'}}>
                 <Tab label="Overview" value="1" />
                 <Tab label="Jobs" value="2" />
                 <Tab label="Hackathon" value="3" />

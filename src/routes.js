@@ -117,671 +117,251 @@ import DefiAnalysis from "layouts/pages/defi-analysis";
 import NewDAOUser from "layouts/pages/users/DAO-new-user";
 import JobPostingOrg from "layouts/pages/job-posting-org";
 import JobPostingUser from "layouts/pages/job-posting-user";
+import { Article, ArticleMedium, Briefcase, CalendarBlank, FileText, Gauge, ListBullets, Newspaper, Scroll, User, UsersFour, UsersThree } from "@phosphor-icons/react";
+import { List } from "@mui/material";
+import { ListAlt } from "@mui/icons-material";
+
+const styles = {
+  container: {
+    display: "flex",
+    alignItems: "center",
+  },
+  icon: {
+    marginRight: "5px", // Adjust the spacing between the icon and the text as needed
+  },
+};
 
 
 const routes = [
+ 
   {
     type: "collapse",
-    name: "Dashboards",
-    key: "dashboards",
-    icon: <ArgonBox component="i" color="primary" fontSize="14px" className="ni ni-shop" />,
+    name: "DAO Pages",
+    key: "pages",
+    icon: <ListBullets size={25} color="#828282"  style={styles.icon} />,
     collapse: [
       {
-        name: "Default",
+        name: (
+          <div style={styles.container}>
+            <Gauge size={25} color="#828282"  style={styles.icon} />
+            <span style={{fontSize: '15px'}}>Dashboard</span>
+          </div>
+        ),
         key: "default",
         route: "/dashboards/default",
         component: <Default />,
       },
-      { name: "Calender", key: "crm", route: "/dashboards/crm", component: <CRM /> },
-    ],
-  },
-  { type: "title", title: "Pages", key: "title-pages" },
-  {
-    type: "collapse",
-    name: "Pages",
-    key: "pages",
-    icon: <ArgonBox component="i" color="warning" fontSize="14px" className="ni ni-ungroup" />,
-    collapse: [
+      { 
+        name: (
+          <div style={styles.container}>
+            <CalendarBlank size={25} color="#828282"  style={styles.icon} />
+            <span style={{fontSize: '15px'}}>Calendar</span>
+          </div>
+        ),
+        key: "crm", 
+        route: "/dashboards/crm", 
+        component: <CRM /> 
+      },
       {
-        name: "Profile",
+        name: "Jobs",
         key: "profile",
         collapse: [
+         
+          // {
+          //   name: "Profile Overview",
+          //   key: "profile-overview",
+          //   route: "/pages/profile/profile-overview",
+          //   component: <ProfileOverview />,
+          // },
+          // {
+          //   name: "Organization Overview", 
+          //   key: "organization-overview", 
+          //   route: "/pages/profile/organization-overview",
+          //   component: <OrganizationOverview/>
+          // }, 
           {
-            name: "Profile Overview",
-            key: "profile-overview",
-            route: "/pages/profile/profile-overview",
-            component: <ProfileOverview />,
-          },
-          {
-            name: "Organization Overview", 
-            key: "organization-overview", 
-            route: "/pages/profile/organization-overview",
-            component: <OrganizationOverview/>
-          }, 
-          {
-            name: "Job Description",
+            name: (
+              <div style={styles.container}>
+                <FileText size={25} color="#828282"  style={styles.icon} />
+                <span style={{fontSize: '15px'}}>Job Description</span>
+              </div>
+            ),
             key: "job-description",
             route: "/pages/profile/job-description",
             component: <JobProfile />,
           },
           {
-            name: "Job Posting (Org)", 
+            name: (
+              <div style={styles.container}>
+                <Briefcase size={25} color="#828282"  style={styles.icon} />
+                <span style={{fontSize: '15px'}}>Job Posting (Org)</span>
+              </div>
+            ),
             key: "job-posting-org",
             route: "/pages/profile/job-posting-org",
             component: <JobPostingOrg/>
           }, 
           {
-            name: "Job Posting (User)", 
+            name: (
+              <div style={styles.container}>
+                <Briefcase size={25} color="#828282"  style={styles.icon} />
+                <span style={{fontSize: '15px'}}>Job Posting (User)</span>
+              </div>
+            ),
             key: "job-posting-user",
             route: "/pages/profile/job-posting-user",
             component: <JobPostingUser/>
           }
-          
-          // {
-          //   name: "Teams",
-          //   key: "teams",
-          //   route: "/pages/profile/teams",
-          //   component: <Teams />,
-          // },
-          // {
-          //   name: "All Projects",
-          //   key: "all-projects",
-          //   route: "/pages/profile/all-projects",
-          //   component: <AllProjects />,
-          // },
         ],
       },
       {
         name: "Users",
         key: "users",
         collapse: [
-          // {
-          //   name: "Reports",
-          //   key: "reports",
-          //   route: "/pages/users/reports",
-          //   component: <Reports />,
-          // },
           {
-            name: "New User",
+            name: (
+              <div style={styles.container}>
+                <User size={25} color="#828282"  style={styles.icon} />
+                <span style={{fontSize: '15px'}}>New User</span>
+              </div>
+            ),
             key: "new-user",
             route: "/pages/users/new-user",
             component: <NewDAOUser/> 
           },
         ],
       },
-      // {
-      //   name: "Account",
-      //   key: "account",
-      //   collapse: [
-      //     {
-      //       name: "Settings",
-      //       key: "settings",
-      //       route: "/pages/account/settings",
-      //       component: <Settings />,
-      //     },
-      //     // {
-      //     //   name: "Billing",
-      //     //   key: "billing",
-      //     //   route: "/pages/account/billing",
-      //     //   component: <Billing />,
-      //     // },
-      //     // {
-      //     //   name: "Invoice",
-      //     //   key: "invoice",
-      //     //   route: "/pages/account/invoice",
-      //     //   component: <Invoice />,
-      //     // },
-      //     // {
-      //     //   name: "Security",
-      //     //   key: "security",
-      //     //   route: "/pages/account/security",
-      //     //   component: <Security />,
-      //     // },
-      //   ],
-      // },
+      
       {
         name: "Grants and Proposals",
         key: "grants and proposals",
         collapse: [
           {
-            name: "Grants and Proposal",
+            name: (
+              <div style={styles.container}>
+                <Article size={25} color="#828282"  style={styles.icon} />
+                <span style={{fontSize: '15px'}}>Grants and Proposals</span>
+              </div>
+            ),
             key: "protocol grants and proposals",
             route: "/pages/grantsandproposals",
             component: <GrantsandProposals />,
           },
-          // {
-          //   name: "Proposals",
-          //   key: "proposals",
-          //   route: "/pages/grantsandproposals/grantproposals",
-          //   component: <Proposals />,
-          // }, 
-          // {
-          //   name: "Grants",
-          //   key: "grants",
-          //   route: "/pages/grantsandproposals/grants",
-          //   component: <Grants />,
-          // }, 
           {
-            name: "Grants Main Page", 
+            name: (
+              <div style={styles.container}>
+                <Article size={25} color="#828282"  style={styles.icon} />
+                <span style={{fontSize: '15px'}}>Grants Main page</span>
+              </div>
+            ),
             key: "grants main page", 
             route: "/pages/grants-main-page", 
             component: <GrantMainPage/>
           },
-          // {
-          //   name: "Jobs",
-          //   key: "jobs",
-          //   route: "/pages/grantsandproposals/jobs",
-          //   component: <Jobs />,
-          // }
         ],
       },
       {
-        name:"Defi Analysis",
+        name: (
+          <div style={styles.container}>
+            <Newspaper size={25} color="#828282"  style={styles.icon} />
+            <span style={{fontSize: '15px'}}>Defi Analysis</span>
+          </div>
+        ),
         key: "defi analysis", 
         route: "/pages/defi-analysis",
         component: <ArticleMain/>
       }, 
       {
-        name: "Latest Happenings",
+        name: (
+          <div style={styles.container}>
+            <Newspaper size={25} color="#828282"  style={styles.icon} />
+            <span style={{fontSize: '15px'}}>Latest Happenings</span>
+          </div>
+        ),
         key: "latest happenings",
         route: "/pages/latest-happenings",
         component: <DefiAnalysis/>
       },
       {
-        name:"Article",
+        name: (
+          <div style={styles.container}>
+            <ArticleMedium size={25} color="#828282"  style={styles.icon} />
+            <span style={{fontSize: '15px'}}>Article</span>
+          </div>
+        ),
         key: "article",
         route: "/pages/article",
         component: <Articles/>
       }, 
       {
-        name:"Proposal Discussion",
+        name: (
+          <div style={styles.container}>
+            <UsersThree size={25} color="#828282"  style={styles.icon} />
+            <span style={{fontSize: '15px'}}>Proposal Disucssion</span>
+          </div>
+        ),
         key: "proposal discussion",
         route: "/pages/proposal-disucssion",
         component: <ProposalDiscussion/>
       }, 
       {
-        name:"Proposal Listing",
+        name: (
+          <div style={styles.container}>
+            <Scroll size={25} color="#828282"  style={styles.icon} />
+            <span style={{fontSize: '15px'}}>Proposal Listing</span>
+          </div>
+        ),
         key: "proposal listing",
         route: "/pages/proposal-listing",
         component: <ProposalList/>
       }, 
       {
-        name:"New DAO Protocol", 
-        key: "new dao job",
-        route: "/pages/new-dao-job",
+        name: (
+          <div style={styles.container}>
+            <Article size={25} color="#828282"  style={styles.icon} />
+            <span style={{fontSize: '15px'}}>DAO Protocols</span>
+          </div>
+        ),
+        key: "dao protocols",
+        route: "/pages/new-dao-protocols",
         component: <NewDAOProtocol/>
       },
       {
-        name: "DAO Protocol Discussion",
+        name: (
+          <div style={styles.container}>
+            <UsersFour size={25} color="#828282"  style={styles.icon} />
+            <span style={{fontSize: '15px'}}>Protocol Discussion</span>
+          </div>
+        ),
         key: "dao protocol discussion",
         route: "/pages/dao-protocol-discussion",
         component: <ProtocolDiscussion/>
       },
       {
-        name: "Related Protocols", 
+        name: (
+          <div style={styles.container}>
+            <Scroll size={25} color="#828282"  style={styles.icon} />
+            <span style={{fontSize: '15px'}}>Related Protocols</span>
+          </div>
+        ),
         key: "related protocols", 
         route: "/pages/related-protocols",
         component: <RelatedProtocols/>
       }, 
       {
-        name: "Job Listing",
+        name: (
+          <div style={styles.container}>
+            <ListBullets size={25} color="#828282"  style={styles.icon} />
+            <span style={{fontSize: '15px'}}>Job Listing</span>
+          </div>
+        ),
         key: "job listing",
         route: "/pages/joblisting",
         component: <JobListing/>
       }, 
-      // {
-      //   name: "Pricing Page",
-      //   key: "pricing-page",
-      //   route: "/pages/pricing-page",
-      //   component: <PricingPage />,
-      // },
-      // { name: "RTL", key: "rtl", route: "/pages/rtl", component: <RTL /> },
-      // { name: "Widgets", key: "widgets", route: "/pages/widgets", component: <Widgets /> },
-      // { name: "Charts", key: "charts", route: "/pages/charts", component: <Charts /> },
-      // {
-      //   name: "Sweet Alerts",
-      //   key: "sweet-alerts",
-      //   route: "/pages/sweet-alerts",
-      //   component: <SweetAlerts />,
-      // },
-      // {
-      //   name: "Notfications",
-      //   key: "notifications",
-      //   route: "/pages/notifications",
-      //   component: <Notifications />,
-      // },
     ],
   },
-  {
-    type: "collapse",
-    name: "Applications",
-    key: "applications",
-    icon: <ArgonBox component="i" color="info" fontSize="14px" className="ni ni-ui-04" />,
-    collapse: [
-      {
-        name: "Kanban",
-        key: "kanban",
-        route: "/applications/kanban",
-        component: <Kanban />,
-      },
-      {
-        name: "Wizard",
-        key: "wizard",
-        route: "/applications/wizard",
-        component: <Wizard />,
-      },
-      // {
-      //   name: "Data Tables",
-      //   key: "data-tables",
-      //   route: "/applications/data-tables",
-      //   component: <DataTables />,
-      // },
-      {
-        name: "Calendar",
-        key: "calendar",
-        route: "/applications/calendar",
-        component: <Calendar />,
-      },
-      // {
-      //   name: "Analytics",
-      //   key: "analytics",
-      //   route: "/applications/analytics",
-      //   component: <Analytics />,
-      // },
-    ],
-  },
-  // {
-  //   type: "collapse",
-  //   name: "Ecommerce",
-  //   key: "ecommerce",
-  //   icon: <ArgonBox component="i" color="success" fontSize="14px" className="ni ni-archive-2" />,
-  //   collapse: [
-  //     {
-  //       name: "Overview",
-  //       key: "overview",
-  //       route: "/ecommerce/overview",
-  //       component: <Overview />,
-  //     },
-  //     {
-  //       name: "Products",
-  //       key: "products",
-  //       collapse: [
-  //         {
-  //           name: "New Product",
-  //           key: "new-product",
-  //           route: "/ecommerce/products/new-product",
-  //           component: <NewProduct />,
-  //         },
-  //         {
-  //           name: "Edit Product",
-  //           key: "edit-product",
-  //           route: "/ecommerce/products/edit-product",
-  //           component: <EditProduct />,
-  //         },
-  //         {
-  //           name: "Product Page",
-  //           key: "product-page",
-  //           route: "/ecommerce/products/product-page",
-  //           component: <ProductPage />,
-  //         },
-  //         {
-  //           name: "Products List",
-  //           key: "products-list",
-  //           route: "/ecommerce/products/products-list",
-  //           component: <ProductsList />,
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       name: "Orders",
-  //       key: "orders",
-  //       collapse: [
-  //         {
-  //           name: "Order List",
-  //           key: "order-list",
-  //           route: "/ecommerce/orders/order-list",
-  //           component: <OrderList />,
-  //         },
-  //         {
-  //           name: "Order Details",
-  //           key: "order-details",
-  //           route: "/ecommerce/orders/order-details",
-  //           component: <OrderDetails />,
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       name: "Referral",
-  //       key: "referral",
-  //       route: "/ecommerce/referral",
-  //       component: <Referral />,
-  //     },
-  //   ],
-  // },
-  {
-    type: "collapse",
-    name: "Authentication",
-    key: "authentication",
-    icon: <ArgonBox component="i" color="error" fontSize="14px" className="ni ni-single-copy-04" />,
-    collapse: [
-      {
-        name: "Sign In",
-        key: "sign-in",
-        collapse: [
-          {
-            name: "Basic",
-            key: "basic",
-            route: "/authentication/sign-in/basic",
-            component: <SignInBasic />,
-          },
-          {
-            name: "Cover",
-            key: "cover",
-            route: "/authentication/sign-in/cover",
-            component: <SignInCover />,
-          },
-          {
-            name: "Illustration",
-            key: "illustration",
-            route: "/authentication/sign-in/illustration",
-            component: <SignInIllustration />,
-          },
-        ],
-      },
-      {
-        name: "Sign Up",
-        key: "sign-up",
-        collapse: [
-          {
-            name: "Basic",
-            key: "basic",
-            route: "/authentication/sign-up/basic",
-            component: <SignUpBasic />,
-          },
-          {
-            name: "Cover",
-            key: "cover",
-            route: "/authentication/sign-up/cover",
-            component: <SignUpCover />,
-          },
-          {
-            name: "Illustration",
-            key: "illustration",
-            route: "/authentication/sign-up/illustration",
-            component: <SignUpIllustration />,
-          },
-        ],
-      },
-      {
-        name: "Reset Password",
-        key: "reset-password",
-        collapse: [
-          {
-            name: "Basic",
-            key: "basic",
-            route: "/authentication/reset-password/basic",
-            component: <ResetBasic />,
-          },
-          {
-            name: "Cover",
-            key: "cover",
-            route: "/authentication/reset-password/cover",
-            component: <ResetCover />,
-          },
-          {
-            name: "Illustration",
-            key: "illustration",
-            route: "/authentication/reset-password/illustration",
-            component: <ResetIllustration />,
-          },
-        ],
-      },
-      {
-        name: "Lock",
-        key: "lock",
-        collapse: [
-          {
-            name: "Basic",
-            key: "basic",
-            route: "/authentication/lock/basic",
-            component: <LockBasic />,
-          },
-          {
-            name: "Cover",
-            key: "cover",
-            route: "/authentication/lock/cover",
-            component: <LockCover />,
-          },
-          {
-            name: "Illustration",
-            key: "illustration",
-            route: "/authentication/lock/illustration",
-            component: <LockIllustration />,
-          },
-        ],
-      },
-      {
-        name: "2-Step Verification",
-        key: "2-step-verification",
-        collapse: [
-          {
-            name: "Basic",
-            key: "basic",
-            route: "/authentication/verification/basic",
-            component: <VerificationBasic />,
-          },
-          {
-            name: "Cover",
-            key: "cover",
-            route: "/authentication/verification/cover",
-            component: <VerificationCover />,
-          },
-          {
-            name: "Illustration",
-            key: "illustration",
-            route: "/authentication/verification/illustration",
-            component: <VerificationIllustration />,
-          },
-        ],
-      },
-      {
-        name: "Error",
-        key: "error",
-        collapse: [
-          {
-            name: "Error 404",
-            key: "error-404",
-            route: "/authentication/error/404",
-            component: <Error404 />,
-          },
-          {
-            name: "Error 500",
-            key: "error-500",
-            route: "/authentication/error/500",
-            component: <Error500 />,
-          },
-        ],
-      },
-    ],
-  },
-  // { type: "divider", key: "divider-1" },
-  // { type: "title", title: "Docs", key: "title-docs" },
-  // {
-  //   type: "collapse",
-  //   name: "Basic",
-  //   key: "basic",
-  //   icon: <ArgonBox component="i" color="inherit" fontSize="14px" className="ni ni-spaceship" />,
-  //   collapse: [
-  //     {
-  //       name: "Getting Started",
-  //       key: "getting-started",
-  //       collapse: [
-  //         {
-  //           name: "Overview",
-  //           key: "overview",
-  //           href: "https://www.creative-tim.com/learning-lab/react/overview/argon-dashboard/",
-  //         },
-  //         {
-  //           name: "License",
-  //           key: "license",
-  //           href: "https://www.creative-tim.com/learning-lab/react/license/argon-dashboard/",
-  //         },
-  //         {
-  //           name: "Quick Start",
-  //           key: "quick-start",
-  //           href: "https://www.creative-tim.com/learning-lab/react/quick-start/argon-dashboard/",
-  //         },
-  //         {
-  //           name: "Build Tools",
-  //           key: "build-tools",
-  //           href: "https://www.creative-tim.com/learning-lab/react/build-tools/argon-dashboard/",
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       name: "Foundation",
-  //       key: "foundation",
-  //       collapse: [
-  //         {
-  //           name: "Colors",
-  //           key: "colors",
-  //           href: "https://www.creative-tim.com/learning-lab/react/colors/argon-dashboard/",
-  //         },
-  //         {
-  //           name: "Grid",
-  //           key: "grid",
-  //           href: "https://www.creative-tim.com/learning-lab/react/grid/argon-dashboard/",
-  //         },
-  //         {
-  //           name: "Typography",
-  //           key: "base-typography",
-  //           href: "https://www.creative-tim.com/learning-lab/react/base-typography/argon-dashboard/",
-  //         },
-  //         {
-  //           name: "Borders",
-  //           key: "borders",
-  //           href: "https://www.creative-tim.com/learning-lab/react/borders/argon-dashboard/",
-  //         },
-  //         {
-  //           name: "Box Shadows",
-  //           key: "box-shadows",
-  //           href: "https://www.creative-tim.com/learning-lab/react/box-shadows/argon-dashboard/",
-  //         },
-  //         {
-  //           name: "Functions",
-  //           key: "functions",
-  //           href: "https://www.creative-tim.com/learning-lab/react/functions/argon-dashboard/",
-  //         },
-  //         {
-  //           name: "Routing System",
-  //           key: "routing-system",
-  //           href: "https://www.creative-tim.com/learning-lab/react/routing-system/argon-dashboard/",
-  //         },
-  //       ],
-  //     },
-  //   ],
-  // },
-  // {
-  //   type: "collapse",
-  //   name: "Components",
-  //   key: "components",
-  //   icon: <ArgonBox component="i" color="inherit" fontSize="14px" className="ni ni-app" />,
-  //   collapse: [
-  //     {
-  //       name: "Alerts",
-  //       key: "alerts",
-  //       href: "https://www.creative-tim.com/learning-lab/react/alerts/argon-dashboard/",
-  //     },
-  //     {
-  //       name: "Avatar",
-  //       key: "avatar",
-  //       href: "https://www.creative-tim.com/learning-lab/react/avatar/argon-dashboard/",
-  //     },
-  //     {
-  //       name: "Badge",
-  //       key: "badge",
-  //       href: "https://www.creative-tim.com/learning-lab/react/badge/argon-dashboard/",
-  //     },
-  //     {
-  //       name: "Badge Dot",
-  //       key: "badge-dot",
-  //       href: "https://www.creative-tim.com/learning-lab/react/badge-dot/argon-dashboard/",
-  //     },
-  //     {
-  //       name: "Box",
-  //       key: "box",
-  //       href: "https://www.creative-tim.com/learning-lab/react/box/argon-dashboard/",
-  //     },
-  //     {
-  //       name: "Buttons",
-  //       key: "buttons",
-  //       href: "https://www.creative-tim.com/learning-lab/react/buttons/argon-dashboard/",
-  //     },
-  //     {
-  //       name: "Date Picker",
-  //       key: "date-picker",
-  //       href: "https://www.creative-tim.com/learning-lab/react/datepicker/argon-dashboard/",
-  //     },
-  //     {
-  //       name: "Dropzone",
-  //       key: "dropzone",
-  //       href: "https://www.creative-tim.com/learning-lab/react/dropzone/argon-dashboard/",
-  //     },
-  //     {
-  //       name: "Editor",
-  //       key: "editor",
-  //       href: "https://www.creative-tim.com/learning-lab/react/quill/argon-dashboard/",
-  //     },
-  //     {
-  //       name: "Input",
-  //       key: "input",
-  //       href: "https://www.creative-tim.com/learning-lab/react/input/argon-dashboard/",
-  //     },
-  //     {
-  //       name: "Pagination",
-  //       key: "pagination",
-  //       href: "https://www.creative-tim.com/learning-lab/react/pagination/argon-dashboard/",
-  //     },
-  //     {
-  //       name: "Progress",
-  //       key: "progress",
-  //       href: "https://www.creative-tim.com/learning-lab/react/progress/argon-dashboard/",
-  //     },
-  //     {
-  //       name: "Select",
-  //       key: "select",
-  //       href: "https://www.creative-tim.com/learning-lab/react/select/argon-dashboard/",
-  //     },
-  //     {
-  //       name: "Snackbar",
-  //       key: "snackbar",
-  //       href: "https://www.creative-tim.com/learning-lab/react/snackbar/argon-dashboard/",
-  //     },
-  //     {
-  //       name: "Social Button",
-  //       key: "social-button",
-  //       href: "https://www.creative-tim.com/learning-lab/react/social-buttons/argon-dashboard/",
-  //     },
-  //     {
-  //       name: "Tag Input",
-  //       key: "tag-input",
-  //       href: "https://www.creative-tim.com/learning-lab/react/tag-input/argon-dashboard/",
-  //     },
-  //     {
-  //       name: "Typography",
-  //       key: "typography",
-  //       href: "https://www.creative-tim.com/learning-lab/react/typography/argon-dashboard/",
-  //     },
-  //   ],
-  // },
-  // {
-  //   type: "collapse",
-  //   name: "Change Log",
-  //   key: "changelog",
-  //   href: "https://github.com/creativetimofficial/ct-argon-dashboard-pro-material-ui/blob/main/CHANGELOG.md",
-  //   icon: <ArgonBox component="i" color="inherit" fontSize="14px" className="ni ni-align-left-2" />,
-  //   noCollapse: true,
-  // },
+  
 ];
 
 export default routes;

@@ -61,7 +61,7 @@ const ProposalDiscussion = () => {
       </ArgonBox> */}
 
       <ArgonBox mb={3} px={20} py={3}>
-        <Card style={{boxShadow: '0px 0px 80px purple', backgroundColor: '#282D31'}}> 
+        <Card style={{boxShadow: '0px 0px 80px purple', backgroundColor: "#222122"}}> 
           <CardContent>
             <ArgonBox px={3} py={3}>
           <Grid container spacing={3} direction="column">
@@ -93,7 +93,7 @@ const ProposalDiscussion = () => {
             </Grid>
 
           </Grid>
-          <Card style={{ marginTop: "30px", backgroundColor: '#3E4349', marginLeft: '20px' }}>
+          <Card style={{ marginTop: "30px", backgroundColor: "#3E3D3E", marginLeft: '20px' }}>
             <ArgonBox px={17} py={5}>
             <CardContent>
                       <Grid container direction="column" justifyContainer="center"  alignItems="center" spacing={2} >

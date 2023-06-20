@@ -91,13 +91,13 @@ const PressReleaseCard = () => {
   };
 
   return (
-    <Card style={{ border: "1px solid grey",  backgroundColor: '#282D31' }}>
+    <Card style={{ border: "1px solid grey",  backgroundColor: "#222122" }}>
       <CardContent> 
         <ArgonBox px={3} py={3}>
       <Grid container spacing={2}>
       {visibleTestimonials.map((testimonial) => (
         <Grid item xs={12} sm={6} md={3} key={testimonial.id}>
-          <HoverCard>
+          <HoverCard style={{backgroundColor: '#3E3D3E'}}>
             <CardActionArea>
             <CardMedia
       component="img"

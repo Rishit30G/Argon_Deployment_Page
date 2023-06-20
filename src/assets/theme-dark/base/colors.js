@@ -22,7 +22,7 @@ Coded by www.creative-tim.com
 const colors = {
   background: {
     default: "#000000",
-    dark: "#212429",
+    dark: "#222122",
   },
 
   text: {

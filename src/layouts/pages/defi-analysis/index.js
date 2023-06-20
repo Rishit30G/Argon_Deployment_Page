@@ -133,13 +133,13 @@ const DefiAnalysis = () => {
           <Grid item xs={12} md={6} lg={4} xl={4}>
           <DefaultDivider/>
           <ArgonTypography variant="h2" style={{marginBottom: '20px'}}>Trending Posts</ArgonTypography>
-            <Card style={{ backgroundColor: '#282D31', border: "1px solid grey" }}> 
+            <Card style={{ backgroundColor: "#222122", border: "1px solid grey" }}> 
               <CardContent>
                 <ArgonBox px={2} py={2}>
                     
                         <ArgonBox mt={2}>
                       <Stack spacing={2}>
-                        <HoverCard> 
+                        <HoverCard style={{backgroundColor: '#3E3D3E'}}> 
                           <CardContent> 
                             <ArgonBox px={1} py={1}>
                                 <Grid container>
@@ -166,7 +166,7 @@ const DefiAnalysis = () => {
                               </ArgonBox>
                           </CardContent>
                         </HoverCard>
-                        <HoverCard> 
+                        <HoverCard style={{backgroundColor: '#3E3D3E'}}> 
                           <CardContent> 
                             <ArgonBox px={1} py={1}>
                                 <Grid container>
@@ -193,7 +193,7 @@ const DefiAnalysis = () => {
                               </ArgonBox>
                           </CardContent>
                         </HoverCard>
-                        <HoverCard> 
+                        <HoverCard style={{backgroundColor: '#3E3D3E'}}> 
                           <CardContent> 
                             <ArgonBox px={1} py={1}>
                                 <Grid container>

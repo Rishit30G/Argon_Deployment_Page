@@ -248,7 +248,7 @@ const [showReplies, setShowReplies] = useState(false);
               </ArgonButton>
             </Grid>
 
-            <Card style={{ boxShadow: "0px 0px 40px purple", backgroundColor: '#282D31'}}>
+            <Card style={{ boxShadow: "0px 0px 40px purple", backgroundColor: "#222122"}}>
               <CardContent>
                 <div data-aos="fade-up" data-aos-duration="5000">
                   <Grid container>

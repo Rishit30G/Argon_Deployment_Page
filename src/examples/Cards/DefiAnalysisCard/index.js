@@ -91,13 +91,13 @@ const DefiAnalysisCard = () => {
   };
 
   return (
-    <Card style={{ border: "1px solid grey",  backgroundColor: '#282D31' }}>
+    <Card style={{ border: "1px solid grey",  backgroundColor: "#222122" }}>
       <CardContent> 
         <ArgonBox px={3} py={3}>
           <Grid container spacing={3} >
       {visibleTestimonials.map((testimonial) => (
         <Grid item xs={12} sm={6} md={6} lg={6} xl={6} key={testimonial.id}>
-          <HoverCard>
+        <HoverCard style={{backgroundColor: '#3E3D3E'}}> 
           <CardContent>
               <Grid container direction="column" spacing={2}>
                 <Grid item>

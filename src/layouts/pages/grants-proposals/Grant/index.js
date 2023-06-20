@@ -48,7 +48,7 @@ const Grants = () => {
         <Grid container spacing={4}>
           <Grid item xs={12} md={4} lg={4}>
             <div data-aos="fade-up" data-aos-duration="5000">
-              <HoverCard>
+            <HoverCard style={{backgroundColor: '#3E3D3E'}}> 
                 <CardContent>
                   <Grid container spacing={4}>
                     <Grid container item xs={12} sm={12} md={12} alignItems="center" style={{marginBottom: '30px'}}>
@@ -99,7 +99,7 @@ const Grants = () => {
           </Grid>
           <Grid item xs={12} md={4} lg={4}>
             <div data-aos="fade-up" data-aos-duration="5000">
-              <HoverCard>
+            <HoverCard style={{backgroundColor: '#3E3D3E'}}> 
                 <CardContent>
                   <Grid container spacing={4}>
                     <Grid container item xs={12} sm={12} md={12} alignItems="center" style={{marginBottom: '30px'}}>
@@ -150,7 +150,7 @@ const Grants = () => {
           </Grid>
           <Grid item xs={12} md={4} lg={4}>
             <div data-aos="fade-up" data-aos-duration="5000">
-              <HoverCard>
+            <HoverCard style={{backgroundColor: '#3E3D3E'}}> 
                 <CardContent>
                   <Grid container spacing={4}>
                     <Grid container item xs={12} sm={12} md={12} alignItems="center" style={{marginBottom: '30px'}}>

@@ -61,7 +61,7 @@ const Articles = () => {
         return (
           <ArgonBox key={post.id} px={20} py={3}>
             <div data-aos="fade-up" data-aos-duration="5000">
-              <Card style={{ boxShadow: "0px 0px 80px purple", backgroundColor: "#282D31" }}>
+              <Card style={{ boxShadow: "0px 0px 80px purple", backgroundColor: "#222122" }}>
                 <ArgonBox px={10} py={3}>
                   <CardContent>
                     <Grid container direction="column" spacing={2}>
@@ -110,7 +110,7 @@ const Articles = () => {
                       <Card
                         style={{
                           marginTop: "30px",
-                          backgroundColor: "#3E4349",
+                          backgroundColor: "#3E3D3E",
                           marginLeft: "20px",
                         }}
                       >

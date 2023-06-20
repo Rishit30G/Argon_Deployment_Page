@@ -177,7 +177,7 @@ const ProposalList = () => {
                           lorem Ipsum is simply dummy text of the printing and typesetting industry.
                       </ArgonTypography>
                       <ArgonButton variant="outlined" style={{marginTop: '30px', width: '180px'}} > 
-                        <ArgonTypography variant="h6" >Join Now</ArgonTypography>
+                        <ArgonTypography variant="h6" >Track</ArgonTypography>
                       </ArgonButton>
                     {/* <ArgonButton style={{ height: "48px", width: "150px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE', marginTop: '20px'}}> Join Now </ArgonButton> */}
 
@@ -251,7 +251,7 @@ const ProposalList = () => {
                           lorem Ipsum is simply dummy text of the printing and typesetting industry.
                       </ArgonTypography>
                       <ArgonButton variant="outlined" style={{marginTop: '30px', width: '180px'}} > 
-                        <ArgonTypography variant="h6" >Join Now</ArgonTypography>
+                        <ArgonTypography variant="h6" >Track</ArgonTypography>
                       </ArgonButton>
                     {/* <ArgonButton style={{ height: "48px", width: "150px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE', marginTop: '20px'}}> Join Now </ArgonButton> */}
 

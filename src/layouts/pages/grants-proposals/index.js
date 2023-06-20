@@ -97,12 +97,12 @@ function GrantsAndProposals() {
       </ArgonBox>
 
       <ArgonBox px={10} py={3}>
-        <Card>
+        <Card style={{backgroundColor: '#222122'}}>
           <CardContent>
           <Grid container spacing={3}>
         <Grid item xs={12} md={12} lg={12} xl={12}>
           <div data-aos="fade-up" data-aos-duration="5000">
-          <HoverCard>
+          <HoverCard style={{backgroundColor: '#3E3D3E'}}>
             <CardContent>
             <ArgonBox px={1} py={1}> 
               <Grid container spacing={4}>
@@ -161,8 +161,8 @@ function GrantsAndProposals() {
     width: "180px",
     fontSize: '17px',
     borderRadius: '20px',
-    backgroundColor: '#212429',
-    boxShadow: activeButton === 'proposal' ? '6px 6px 2px #B721BE' : '',
+    backgroundColor: '#3E3D3E',
+    boxShadow: activeButton === 'proposal' ? '5px 5px 8px #B721BE' : '',
   }}
   onClick={toggleProposal}
 >
@@ -176,7 +176,7 @@ variant="outlined"
     width: "180px",
     fontSize: '17px',
     borderRadius: '20px',
-    backgroundColor: '#212429',
+    backgroundColor: '#3E3D3E',
     boxShadow: activeButton === 'grant' ? '6px 6px 2px #B721BE' : '',
   }}
   onClick={toggleGrant}
@@ -191,7 +191,7 @@ variant="outlined"
     width: "180px",
     fontSize: '17px',
     borderRadius: '20px',
-    backgroundColor: '#212429',
+    backgroundColor: '#3E3D3E',
     boxShadow: activeButton === 'jobs' ? '6px 6px 2px #B721BE' : '',
   }}
   onClick={toggleJobs}

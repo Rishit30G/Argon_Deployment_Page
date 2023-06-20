@@ -95,7 +95,7 @@ const JobListing = () => {
             <TabContext value={value}>
               <Box sx={{ marginBottom: '40px' }}>
                  <div>
-      <Tabs value={value} onChange={handleChange} TabIndicatorProps={{ style: { backgroundColor: '#3E4349'} }}>
+      <Tabs value={value} onChange={handleChange} TabIndicatorProps={{ style: { backgroundColor: "#222122"} }}>
         <Tab label="Organization" value="1" style={{fontSize: '30px', fontStyle: 'italic'}}/>
         <Tab label="Individual" value="2" style={{fontSize: '30px', fontStyle: 'italic'}}/>
       </Tabs>

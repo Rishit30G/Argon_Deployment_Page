@@ -55,11 +55,11 @@ const Jobs = () => {
           return (<Grid item xs={12} md={6} lg={4}>
             
             <div data-aos="fade-up" data-aos-duration="5000">
-            <HoverCard>
+            <HoverCard style={{backgroundColor: '#3E3D3E'}}>
               <ArgonBox px={3} py={3}>
                 <Grid container justifyContent="space-between" alignItems="center">
                   <Grid item>
-                        <ArgonTypography variant="h3">{post.positions}</ArgonTypography>
+                        <ArgonTypography variant="h3">{post.job_title}</ArgonTypography>
                     </Grid> 
 
                     <Grid item>
@@ -77,7 +77,7 @@ const Jobs = () => {
                 
                       <div style={{border: '1px solid grey', padding: '15px', display: 'inline-block', borderRadius: '10px'}}>
                         <ArgonTypography variant="h4">
-                         ${post.salary_offered}
+                         ${post.salary_offered.split('-')[0]} - ${post.salary_offered.split('-')[1]}
                         </ArgonTypography>
                         </div>
                       <a href={post.organisations.link} target="_blank" rel="noreferrer" style={{textDecoration: 'none'}} >
