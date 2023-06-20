@@ -29,10 +29,10 @@ import { css } from "@emotion/react";
 import ivancik from "assets/images/ivancik.jpg";
 import kalVisualsSquare from "assets/images/kal-visuals-square.jpg";
 
-const API_KEY = "AIzaSyCHjtA3QUkLo34MGEAp8bBqBwWEHqBpdqE";
+const API_KEY = "AIzaSyCHjtA3QUkLo34MGEAp8bBqBwWEHqBpd";
 let calendars = [
   {
-    calendarId: "rishitgupta2013@gmail.com",
+    calendarId: "yourgmailid@gmail.com",
     color: '#00FFFF'
   },
 ];
