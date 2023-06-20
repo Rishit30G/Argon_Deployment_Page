@@ -128,7 +128,7 @@ const JobListing = () => {
                             <Grid item xs={8} lg={7} sm={9} md={9}>
                               <ArgonTypography variant="body2">
                             {post.organisations.description.split(" ").slice(0,18).join(" ")}
-                            {post.organisations.description.split(" ").length > 18 ? <a href="https://argon-deployment-page.vercel.app/pages/dao-protocol-discussion" style={{color: '#B721BE'}}> Read More</a> : ""}
+                            {post.organisations.description.split(" ").length > 18 ?  "Read More" : ""}
                             </ArgonTypography>
                             </Grid>
                             <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
