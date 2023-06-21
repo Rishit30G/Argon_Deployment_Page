@@ -166,19 +166,6 @@ const routes = [
         name: "Jobs",
         key: "profile",
         collapse: [
-         
-          {
-            // name: "Profile Overview",
-            // key: "profile-overview",
-            route: "/pages/profile/profile-overview",
-            component: <ProfileOverview />,
-          },
-          {
-            // name: "Organization Overview", 
-            // key: "organization-overview", 
-            route: "/pages/profile/organization-overview",
-            component: <OrganizationOverview/>
-          }, 
           {
             name: (
               <div style={styles.container}>
@@ -283,17 +270,6 @@ const routes = [
         component: <DefiAnalysis/>
       },
       {
-        // name: (
-        //   <div style={styles.container}>
-        //     <ArticleMedium size={25} color="#828282"  style={styles.icon} />
-        //     <span style={{fontSize: '15px'}}>Article</span>
-        //   </div>
-        // ),
-        // key: "article",
-        route: "/pages/article",
-        component: <Articles/>
-      }, 
-      {
         name: (
           <div style={styles.container}>
             <UsersThree size={25} color="#828282"  style={styles.icon} />
@@ -359,6 +335,23 @@ const routes = [
         route: "/pages/joblisting",
         component: <JobListing/>
       }, 
+      {
+        route: "/pages/article",
+        component: <Articles/>
+      }, 
+      {
+        // name: "Profile Overview",
+        // key: "profile-overview",
+        route: "/pages/profile/profile-overview",
+        component: <ProfileOverview />,
+      },
+      {
+        // name: "Organization Overview", 
+        // key: "organization-overview", 
+        route: "/pages/profile/organization-overview",
+        component: <OrganizationOverview/>
+      }, 
+
     ],
   },
   
