@@ -12,53 +12,51 @@ import Footer from "examples/Footer";
 import DefaultDivider from "components/Divider";
 import { Helmet } from "react-helmet";
 import Error404 from "layouts/authentication/error/404";
+import { useLocation } from "react-router-dom";
 
 const markdownIt = require("markdown-it");
 
 const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/article/?format=json";
 
 const Articles = () => {
+
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const id = searchParams.get('id');
+
+
   useEffect(() => {
     AOS.init();
   }, []);
 
-  const [posts, setPosts] = useState([]);
+  const [post, setPosts] = useState([]);
 
   useEffect(() => {
     axios
       .get(baseURL)
       .then((response) => {
-        setPosts(response.data);
+        const selectedPost = response.data.find((item) => item.id === Number(id));
+        setPosts(selectedPost);
       })
       .catch((error) => {
         // console.error(error);
       });
-  }, []);
+  }, [id]);
 
-  if (posts.length === 0) {
+  if (post.length === 0) {
     return null;
   }
 
   const md = new markdownIt();
 
+  const time = new Date();
+  const timeOfPost = new Date(post.upload_time);
+  const hoursSinceUpload = (time - timeOfPost) / (1000 * 60 * 60);
+  const html = md.render(post.article_desc);
+
   return (
     <DashboardLayout>
       <DashboardNavbar />
-      <Helmet>
-        <title>Articles</title>
-      </Helmet>
-      <Helmet>
-        <meta name="description" content="Articles" />
-      </Helmet>
-      
-      
-      {posts.map((post) => {
-        const time = new Date();
-        const timeOfPost = new Date(post.upload_time);
-        const hoursSinceUpload = (time - timeOfPost) / (1000 * 60 * 60);
-        const html = md.render(post.article_desc);
-
-        return (
           <ArgonBox key={post.id} px={20} py={3}>
             <div data-aos="fade-up" data-aos-duration="5000">
               <Card style={{ boxShadow: "0px 0px 80px purple", backgroundColor: "#222122" }}>
@@ -126,7 +124,7 @@ const Articles = () => {
                               <Grid item xs={12} md={12} lg={12}>
                                 <div data-aos="fade-up" data-aos-duration="5000">
                                   <img
-                                    src="https://picsum.photos/1300/700"
+                                    src={post.image_url.split("?")[1]}
                                     alt="article"
                                     style={{ width: "100%", height: "auto", borderRadius: "14px" }}
                                   />
@@ -165,8 +163,6 @@ const Articles = () => {
               </Card>
             </div>
           </ArgonBox>
-        );
-      })}
     </DashboardLayout>
   );
 };

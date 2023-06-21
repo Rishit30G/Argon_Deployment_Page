@@ -27,7 +27,7 @@ import axios from "axios";
 
 
 const markdownIt = require("markdown-it");
-const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/grant/?format=json&tag_name=demo";
+const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/grant/?format=json";
 
 const GrantMainPage = () => {
   React.useEffect(() => {
@@ -178,7 +178,7 @@ const GrantMainPage = () => {
                           <ArgonTypography varaint="h5">
                             Estimated lifetime funding received
                           </ArgonTypography>
-                          <ArgonTypography variant="h1">~{post.grant_amount}</ArgonTypography>
+                          <ArgonTypography variant="h1">~${post.grant_amount}</ArgonTypography>
                         </Grid>
                       </CardContent>
                     </HoverCard>
@@ -325,7 +325,7 @@ const GrantMainPage = () => {
                     <Grid container spacing={4}>
                       {visibleItems.map((item, index) => (
                         <Grid item xs={12} md={6} lg={3} key={index}>
-                          <HoverCard>
+                          <HoverCard  style={{backgroundColor: '#3E3D3E'}}>
                             <CardActionArea>
                               <CardMedia
                                 component="img"

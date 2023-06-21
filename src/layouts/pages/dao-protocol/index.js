@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Grid, Stack, Card, CardContent } from "@mui/material";
+import { Grid, Stack, Card, CardContent, CardActionArea } from "@mui/material";
 import ArgonTypography from "components/ArgonTypography";
 import ArgonBox from "components/ArgonBox";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
@@ -9,6 +9,7 @@ import HoverCard from "components/HoverCard";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 
 const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/protocol/?format=json";
@@ -17,6 +18,7 @@ const NewDAOProtocol = () => {
   useEffect(() => {
     AOS.init();
   }, []);
+  const navigate = useNavigate();
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -30,6 +32,9 @@ const NewDAOProtocol = () => {
       });
   }, []);
 
+  const handleCardClick = (id) => {
+    navigate(`/pages/dao-protocol-discussion/?id=${id}`);
+  }
 
   if(posts.length === 0) return null;
 
@@ -118,11 +123,12 @@ const NewDAOProtocol = () => {
         </Grid>
 
 
-     {posts.map((post) => (
         <ArgonBox px={3} py={3}>
           <Grid container style={{ marginTop: "20px" }} spacing={4}>
-          <Grid item xs={12} xl={4} lg={12} md={12} sm={12}>
+     {posts.map((post) => (
+          <Grid item xs={12} xl={4} lg={12} md={12} sm={12} key={post.id} onClick = {() => handleCardClick(post.id)}>
               <HoverCard>
+                  <CardActionArea> 
                 <CardContent>
                   <ArgonBox mx={2} my={2}>
                   <Grid container spacing={8}>
@@ -136,22 +142,6 @@ const NewDAOProtocol = () => {
                       alignItems="center"
                     >
                       <ArgonTypography variant="h2">{post.name}</ArgonTypography>
-                      <a href="https://argon-deployment-page.vercel.app/pages/dao-protocol-discussion">
-                      <ArgonButton
-                        style={{
-                          height: "52px",
-                          width: "180px",
-                          fontSize: "15px",
-                          fontWeight: "400",
-                          backgroundColor: "black",
-                          border: "1px solid #8d8d8d",
-                          color: "white",
-                          boxShadow: "5px 5px 10px  #B721BE",
-                        }}
-                      >
-                        Check Proposal{" "}
-                      </ArgonButton>
-                      </a>
                     </Grid>
                     <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
                       <Grid item xs={8} lg={7} sm={9} md={9}>
@@ -160,7 +150,7 @@ const NewDAOProtocol = () => {
                           style={{ fontSize: "20px", color: "rgba(255, 255, 255, 0.7)" }}
                         >
                            {post.desc.split(" ").slice(0,20).join(" ")}
-                           {post.desc.split(" ").length > 20 ? <a href="https://argon-deployment-page.vercel.app/pages/dao-protocol-discussion" style={{color: '#B721BE'}}> Read More</a> : ""}
+                           {post.desc.split(" ").length > 20 ? <span style={{color: '#B721BE'}}> Read More</span> : ""}
                         </ArgonTypography>
                       </Grid>
                       <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
@@ -179,11 +169,12 @@ const NewDAOProtocol = () => {
                   </Grid>
                   </ArgonBox>
                 </CardContent>
+                  </CardActionArea>
               </HoverCard>
             </Grid>
+          ))}
           </Grid>
         </ArgonBox>
-     ))}
       </ArgonBox>
     </DashboardLayout>
   );

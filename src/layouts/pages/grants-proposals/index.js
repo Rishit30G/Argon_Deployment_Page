@@ -177,7 +177,7 @@ variant="outlined"
     fontSize: '17px',
     borderRadius: '20px',
     backgroundColor: '#3E3D3E',
-    boxShadow: activeButton === 'grant' ? '6px 6px 2px #B721BE' : '',
+    boxShadow: activeButton === 'grant' ? '5px 5px 8px #B721BE' : '',
   }}
   onClick={toggleGrant}
 >
@@ -192,7 +192,7 @@ variant="outlined"
     fontSize: '17px',
     borderRadius: '20px',
     backgroundColor: '#3E3D3E',
-    boxShadow: activeButton === 'jobs' ? '6px 6px 2px #B721BE' : '',
+    boxShadow: activeButton === 'jobs' ? '5px 5px 8px #B721BE' : '',
   }}
   onClick={toggleJobs}
 >

@@ -1,5 +1,5 @@
 import { Avatar, Card, CardContent, Grid, Stack, TextField } from "@mui/material";
-import { ArrowDown, Heart } from "@web3uikit/icons";
+import { ArrowDown } from "@web3uikit/icons";
 import ArgonBox from "components/ArgonBox";
 import ArgonButton from "components/ArgonButton";
 import ArgonInput from "components/ArgonInput";
@@ -14,6 +14,7 @@ import DefaultDivider from "components/Divider";
 import HoverCard from "components/HoverCard";
 import { LanguageOutlined, Share } from "@mui/icons-material";
 import axios from "axios";
+import { Lightning,ShareNetwork, Globe, Heart} from "@phosphor-icons/react";
 
 
 
@@ -21,12 +22,17 @@ const markdownIt = require("markdown-it");
 
 const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/article/?format=json";
 
+
+ 
 const ProposalDiscussion = () => {
+
   React.useEffect(() => {
     AOS.init();
   },[]);
 
   const [post, setPost] = useState(null);
+  const [isLiked, setIsLiked] = useState(false);
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     axios
@@ -48,6 +54,16 @@ const ProposalDiscussion = () => {
   const handleButtonClick = () => {
     window.open('https://www.google.com', '_blank');
   };
+
+  const handleLike = () => {
+    if (isLiked) {
+      setCount(count - 1);
+    } else {
+      setCount(count + 1);
+    }
+    setIsLiked(!isLiked);
+  };
+
 
   return (
     <DashboardLayout>
@@ -81,11 +97,12 @@ const ProposalDiscussion = () => {
               </Grid>
               <Grid item> 
                   <Stack direction="row" spacing={3} alignItems="center">
+                        <ArgonTypography variant="h4">  3 Days Left to Vote <Lightning size={30} color="#ffe01a" weight="fill"/> </ArgonTypography>
                         <ArgonButton variant="outlined" style={{marginRight: '10px', marginTop: '10px'}} onClick={handleButtonClick}>  
-                            <LanguageOutlined style={{marginRight: '10px'}}/> 
+                             <Globe size={30} color="#e2dfca" style={{marginRight: '10px'}}/>
                             <ArgonTypography variant="h4">  Forum Discussion  </ArgonTypography> 
                          </ArgonButton>
-                       <Share style={{color: 'white', fontSize: '40px', marginRight: '10px'}}/>
+                         <a href="https://google.com"> <ShareNetwork size={30} color="#e2dfca" style={{marginTop: '15px'}}/> </a> 
                   </Stack>
               </Grid>
 
@@ -196,10 +213,18 @@ const ProposalDiscussion = () => {
                     </ArgonTypography>
                   </Grid>
                   <Grid item>
-                    <ArgonTypography variant="h3">
-                      {" "}
-                      <Heart></Heart>
-                      12
+                    <ArgonTypography variant="h3" onClick={handleLike}>
+                      {isLiked ? (
+                        <>
+                          <Heart size={28} color="#e2dfca" weight="fill" style={{marginRight: '10px'}}/>
+                          {count}
+                        </>
+                      ) : (
+                        <>
+                          <Heart size={28} color="#e2dfca" style={{marginRight: '10px'}}/>
+                          {count}
+                        </>
+                      )}
                     </ArgonTypography>
                   </Grid>
                 </Grid>
@@ -209,7 +234,7 @@ const ProposalDiscussion = () => {
           </Grid>
         </Grid>
       </ArgonBox>
-
+        
       <ArgonBox mb={3} px={15} py={3}>
         <ArgonTypography variant="h2" fontWeight="bold" style={{ marginBottom: "20px" }}>
           Related Proposals
@@ -257,5 +282,4 @@ const ProposalDiscussion = () => {
     </DashboardLayout>
   );
 };
-
 export default ProposalDiscussion;

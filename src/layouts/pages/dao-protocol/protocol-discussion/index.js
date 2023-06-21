@@ -13,28 +13,35 @@ import AOS from "aos";
 import DefaultDivider from "components/Divider";
 import ReplyCard from "examples/Cards/ReplyCard";
 import axios from "axios";
+import { useLocation } from "react-router-dom";
+
+const baseURL = 'https://dolphin-app-qq7rr.ondigitalocean.app/protocol/?format=json';
 
 const ProtocolDiscussion = () => {
+
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const id = searchParams.get('id');
   
   // Get data from the APIs - ID for Grant 
   useEffect(() => {
     AOS.init();
   }, []);
-  const [posts, setPosts] = useState([]);
+  const [post, setPosts] = useState([]);
   const[threads, setThreads] = useState([]);
   const[comments, setComments] = useState('');
   const[secondaryComments, setSecondaryComments] = useState([]);
   // var data1 = null;
-    useEffect(() => {
-      axios
-        .get('https://dolphin-app-qq7rr.ondigitalocean.app/protocol/?format=json')
-        .then((response) => {
-          setPosts(response.data);
-        })
-        .catch((error) => {
-          // console.error(error);
-        });
-    }, []);
+  useEffect(() => {
+    axios.get(baseURL)
+    .then((response) => {
+      const selectedPost = response.data.find((item) => item.id === Number(id));
+      setPosts(selectedPost);
+    })
+    .catch((error) => {
+      //console.log(error)
+    });
+  }, [id]); 
   
 
     useEffect(() => {
@@ -134,7 +141,7 @@ const ProtocolDiscussion = () => {
         }]);
   
         //! Make a POST Request here by pushing data.id and post.id to the discussion thread
-        const response2 = await fetch(`https://dolphin-app-qq7rr.ondigitalocean.app/discussionthread/?pro=${posts[0].id}`, {
+        const response2 = await fetch(`https://dolphin-app-qq7rr.ondigitalocean.app/discussionthread/?pro=${post.id}`, {
   
           method: "POST",
           headers: {
@@ -162,7 +169,7 @@ const ProtocolDiscussion = () => {
       //console.error("Error occurred:", error);
     }
   
-    if(posts.length === 0) {return null;}
+    if(post.length === 0) {return null;}
   };
 
  
@@ -209,7 +216,7 @@ const [showReplies, setShowReplies] = useState(false);
                       style={{ display: "flex", justifyContent: "center" }}
                     >
                       <img
-                        src="https://picsum.photos/200/200"
+                        src={post.logo}
                         alt="placeholder"
                         style={{ marginRight: "20px", borderRadius: "50%" }}
                       />
@@ -234,7 +241,6 @@ const [showReplies, setShowReplies] = useState(false);
         </Grid>
       </ArgonBox>
 
-{posts.map((post) => (
       <ArgonBox px={15} py={3}>
         <Grid container direction="column">
           <Grid item xs={12} md={6} style={{ marginTop: "30px" }}>
@@ -264,7 +270,6 @@ const [showReplies, setShowReplies] = useState(false);
           </Grid>
         </Grid>
       </ArgonBox>
-      ))}
 
       <ArgonBox px={15} py={3}>
         <Grid container direction="column">
