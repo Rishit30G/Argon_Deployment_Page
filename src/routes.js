@@ -269,17 +269,7 @@ const routes = [
         route: "/pages/latest-happenings",
         component: <DefiAnalysis/>
       },
-      {
-        name: (
-          <div style={styles.container}>
-            <UsersThree size={25} color="#828282"  style={styles.icon} />
-            <span style={{fontSize: '15px'}}>Proposal Disucssion</span>
-          </div>
-        ),
-        key: "proposal discussion",
-        route: "/pages/proposal-disucssion",
-        component: <ProposalDiscussion/>
-      }, 
+     
       {
         name: (
           <div style={styles.container}>
@@ -302,17 +292,7 @@ const routes = [
         route: "/pages/new-dao-protocols",
         component: <NewDAOProtocol/>
       },
-      {
-        name: (
-          <div style={styles.container}>
-            <UsersFour size={25} color="#828282"  style={styles.icon} />
-            <span style={{fontSize: '15px'}}>Protocol Discussion</span>
-          </div>
-        ),
-        key: "dao protocol discussion",
-        route: "/pages/dao-protocol-discussion",
-        component: <ProtocolDiscussion/>
-      },
+     
       {
         name: (
           <div style={styles.container}>
@@ -350,6 +330,28 @@ const routes = [
         // key: "organization-overview", 
         route: "/pages/profile/organization-overview",
         component: <OrganizationOverview/>
+      }, 
+      {
+        // name: (
+        //   <div style={styles.container}>
+        //     <UsersFour size={25} color="#828282"  style={styles.icon} />
+        //     <span style={{fontSize: '15px'}}>Protocol Discussion</span>
+        //   </div>
+        // ),
+        key: "dao protocol discussion",
+        route: "/pages/dao-protocol-discussion",
+        component: <ProtocolDiscussion/>
+      },
+      {
+        // name: (
+        //   <div style={styles.container}>
+        //     <UsersThree size={25} color="#828282"  style={styles.icon} />
+        //     <span style={{fontSize: '15px'}}>Proposal Disucssion</span>
+        //   </div>
+        // ),
+        key: "proposal discussion",
+        route: "/pages/proposal-disucssion",
+        component: <ProposalDiscussion/>
       }, 
 
     ],

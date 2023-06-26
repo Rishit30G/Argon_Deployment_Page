@@ -126,7 +126,7 @@ const JobListing = () => {
                       <Grid item>
                            <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
                             <Grid item xs={8} lg={7} sm={9} md={9}>
-                              <ArgonTypography variant="body2">
+                              <ArgonTypography variant="body2"  style={{ color: "rgba(255, 255, 255, 0.7)" }}>
                             {post.organisations.description.split(" ").slice(0,18).join(" ")}
                             {post.organisations.description.split(" ").length > 18 ? <span style={{color: '#B721BE'}}> Read More </span>: ""}
                             </ArgonTypography>

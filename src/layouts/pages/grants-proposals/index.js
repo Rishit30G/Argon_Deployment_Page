@@ -58,25 +58,41 @@ function GrantsAndProposals() {
 
 
   const toggleProposal = () => {
-    setShowProposal(!showProposal);
-    setShowGrant(false);
-    setShowJobs(false);
-    setActiveButton('proposal');
+    if (activeButton === 'proposal') {
+      setShowProposal(false);
+      setActiveButton(null);
+    } else {
+      setShowProposal(true);
+      setShowGrant(false);
+      setShowJobs(false);
+      setActiveButton('proposal');
+    }
   };
-  
+    
   const toggleGrant = () => {
-    setShowGrant(!showGrant);
-    setShowProposal(false);
-    setShowJobs(false);
-    setActiveButton('grant');
+    if (activeButton === 'grant') {
+      setShowGrant(false);
+      setActiveButton(null);
+    } else {
+      setShowGrant(true);
+      setShowProposal(false);
+      setShowJobs(false);
+      setActiveButton('grant');
+    }
+  };
+    
+  const toggleJobs = () => {
+    if (activeButton === 'jobs') {
+      setShowJobs(false);
+      setActiveButton(null);
+    } else {
+      setShowJobs(true);
+      setShowProposal(false);
+      setShowGrant(false);
+      setActiveButton('jobs');
+    }
   };
   
-  const toggleJobs = () => {
-    setShowJobs(!showJobs);
-    setShowProposal(false);
-    setShowGrant(false);
-    setActiveButton('jobs');
-  };
   
   return (
     <DashboardLayout>
@@ -231,102 +247,6 @@ variant="outlined"
 
         
       </ArgonBox>
-      {/* <ArgonBox px={10} py={3}>
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={4} lg={4} xl={4}>
-          <div data-aos="fade-up" data-aos-duration="5000">
-          <HoverCard>
-            <CardContent>
-            <ArgonBox px={1} py={1}> 
-              <Grid container spacing={4}>
-                <Grid container item xs={12} sm={12} md={12} justifyContent="space-between" alignItems="center">
-                  <ArgonTypography variant="h2">Uniswap</ArgonTypography>
-                </Grid>
-                <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
-                  <Grid item xs={8} lg={7} sm={9} md={9}>
-                    <ArgonTypography
-                      variant="body2"
-                      style={{ fontSize: "20px", color: "rgba(255, 255, 255, 0.7)" }}
-                    >
-                      Text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                      convallis mi ut quam dictum, eget rutrum ipsum ultrices. 
-                    </ArgonTypography>
-                  </Grid>
-                  <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
-                    <img
-                      src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png"
-                      style={{
-                        width: "200px",
-                        height: "200px",
-                        position: "absolute",
-                        bottom: 0,
-                        right: 0,
-                      }}
-                      alt="Uniswap logo"
-                    />
-                  </Grid>
-                </Grid>
-                <Grid item xs={12} sm={12} md={12} justifyContent="space-around" >
-                <Stack spacing={3} direction="row" >
-                    <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}} onClick={toggleProposal}>Proposals</ArgonButton>
-                    <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>Grants</ArgonButton>
-                    <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>Jobs</ArgonButton>
-                  </Stack>
-                </Grid> 
-              </Grid>
-            </ArgonBox>
-            </CardContent>
-          </HoverCard>
-          </div>
-          </Grid>
-          <Grid item xs={12} md={4} lg={4} xl={4}>
-          <div data-aos="fade-up" data-aos-duration="5000">
-          <HoverCard>
-            <CardContent>
-            <ArgonBox px={1} py={1}> 
-              <Grid container spacing={4}>
-                <Grid container item xs={12} sm={12} md={12} justifyContent="space-between" alignItems="center">
-                  <ArgonTypography variant="h2">Uniswap</ArgonTypography>
-                </Grid>
-                <Grid container item xs={12} sm={12} md={12} justifyContent="space-between">
-                  <Grid item xs={8} lg={7} sm={9} md={9}>
-                    <ArgonTypography
-                      variant="body2"
-                      style={{ fontSize: "20px", color: "rgba(255, 255, 255, 0.7)" }}
-                    >
-                      Text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                      convallis mi ut quam dictum, eget rutrum ipsum ultrices. 
-                    </ArgonTypography>
-                  </Grid>
-                  <Grid item xs={4} lg={5} sm={3} md={3} style={{ position: "relative" }}>
-                    <img
-                      src="https://i.postimg.cc/CL0H2938/1026px-Uniswap-Logo-svg-1.png"
-                      style={{
-                        width: "200px",
-                        height: "200px",
-                        position: "absolute",
-                        bottom: 0,
-                        right: 0,
-                      }}
-                      alt="Uniswap logo"
-                    />
-                  </Grid>
-                </Grid>
-                <Grid item xs={12} sm={12} md={12} justifyContent="space-around" >
-                <Stack spacing={3} direction="row" >
-                    <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}} onClick={toggleProposal}>Proposals</ArgonButton>
-                    <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>Grants</ArgonButton>
-                    <ArgonButton style={{ height: "58px", width: "180px", fontSize: '17px', fontWeight: '400', backgroundColor: "black", border: "1px solid #8d8d8d", color: 'white', boxShadow: '5px 5px 10px  #B721BE'}}>Jobs</ArgonButton>
-                  </Stack>
-                </Grid> 
-              </Grid>
-            </ArgonBox>
-            </CardContent>
-          </HoverCard>
-          </div>
-          </Grid>
-            </Grid>
-      </ArgonBox> */}
     </DashboardLayout>
   );
 }

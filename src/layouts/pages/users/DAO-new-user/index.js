@@ -14,29 +14,6 @@ import HoverCard from "components/HoverCard";
 import { useDropzone } from "react-dropzone";
 
 
-const useStyles = makeStyles({
-  card: {
-    height: 200,
-    width: 200,
-    marginTop: 20,
-    borderRadius: 8,
-    overflow: 'hidden',
-    position: 'relative',
-    backgroundColor: '#212529',
-    border: '1px solid #8d8d8d',
-  },
-  media: {
-    width: '80%',
-    height: '80%', // 1:1 aspect ratio
-  },
-  placeholder: {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-  },
-});
-
 const NewDAOUser = () => {
   
    const [selectedImage, setSelectedImage] = useState(null);
@@ -50,7 +27,6 @@ const NewDAOUser = () => {
     });
 
 
-  const classes = useStyles();
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -73,17 +49,18 @@ const NewDAOUser = () => {
           <CardContent>
             <ArgonBox px={4} py={4}>
               <Grid container spacing={4}>
-                <Grid container item xl={2} justifyContent="center" alignItems="center">
-                <div {...getRootProps()} style={{ textAlign: 'center' }}>
-               <input {...getInputProps()} />
-               {selectedImage ? (
-                 <img src={selectedImage} alt="Selected Profile" style={{ width: '200px', height: '200px', borderRadius: '50%', objectFit: 'cover', marginBottom: '16px' }} />
-               ) : (
-                 <div style={{ padding: '70px 0', border: '1px solid grey', borderRadius: '10px', marginBottom: '30px'}}>
-                       <ArgonTypography variant="body2" style={{color: 'grey', fontSize: '13px'}} >Drag and drop an image here or click to select an image.</ArgonTypography>
-                  </div>
-               )}
-               </div>
+                <Grid item xl={2}>
+                  <ArgonTypography variant="h4" style={{marginBottom: '12px'}}>Profile Image</ArgonTypography>
+                        <div {...getRootProps()} style={{ textAlign: 'center' }}>
+                      <input {...getInputProps()} />
+                      {selectedImage ? (
+                        <img src={selectedImage} alt="Selected Profile" style={{ width: '180px', height: '180px', borderRadius: '50%', objectFit: 'cover', marginBottom: '16px' }} />
+                      ) : (
+                        <div style={{ padding: '70px 0', border: '1px solid grey', borderRadius: '10px', marginBottom: '30px'}}>
+                              <ArgonTypography variant="body2" style={{color: 'grey', fontSize: '13px'}} >Drag and drop an image here or click to select an image.</ArgonTypography>
+                          </div>
+                      )}
+                      </div>
                 </Grid>
                 <Grid item xl={10}>
                   <Grid container spacing={8} style={{ marginBottom: "30px" }}>

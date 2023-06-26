@@ -21,7 +21,7 @@ const ProtocolDiscussion = () => {
 
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
-  const id = searchParams.get('id');
+  const hashid = searchParams.get('id');
   
   // Get data from the APIs - ID for Grant 
   useEffect(() => {
@@ -35,13 +35,13 @@ const ProtocolDiscussion = () => {
   useEffect(() => {
     axios.get(baseURL)
     .then((response) => {
-      const selectedPost = response.data.find((item) => item.id === Number(id));
+      const selectedPost = response.data.find((item) => item.id === Number(hashid));
       setPosts(selectedPost);
     })
     .catch((error) => {
       //console.log(error)
     });
-  }, [id]); 
+  }, [hashid]);
   
 
     useEffect(() => {
@@ -115,7 +115,7 @@ const ProtocolDiscussion = () => {
   
     const formData = {
       comment: comments,
-      username: "abhijit99",
+      username: "abhijit100",
       secondary_buffer: secondaryComments.length > 0 ? secondaryComments[secondaryComments.length - 1].id : null
     };
   
@@ -148,7 +148,7 @@ const ProtocolDiscussion = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            name: "Thread 57",
+            name: "Thread 88",
             primary_comment_buffer: `${data.id}`,
           })
       })
@@ -215,11 +215,11 @@ const [showReplies, setShowReplies] = useState(false);
                       lg={2}
                       style={{ display: "flex", justifyContent: "center" }}
                     >
-                      <img
-                        src={post.logo}
-                        alt="placeholder"
-                        style={{ marginRight: "20px", borderRadius: "50%" }}
-                      />
+                        <img
+                          src={post?.logo}
+                          alt="placeholder"
+                          style={{ marginRight: "20px", borderRadius: "50%" }}
+                        />
                     </Grid>
                     <Grid item xs={12} md={10} lg={10}>
                       <Stack spacing={3}>
@@ -260,7 +260,7 @@ const [showReplies, setShowReplies] = useState(false);
                   <Grid container>
                     <ArgonBox mx={3} my={3}>
                       <ArgonTypography variant="body2">
-                        {post.desc}
+                        {post?.desc}
                       </ArgonTypography>
                     </ArgonBox>
                   </Grid>

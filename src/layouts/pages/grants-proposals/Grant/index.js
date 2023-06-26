@@ -14,22 +14,22 @@ import "aos/dist/aos.css";
 import AOS from "aos";
 import DefaultDivider from "components/Divider";
 import ArgonBadgeDot from "components/ArgonBadgeDot";
-const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/grant/?format=json";
+// const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/grant/?format=json";
 
 const Grants = () => {
   React.useEffect(() => {
     AOS.init();
   }, []);
 
-  const [post, setPost] = React.useState(null);
+  // const [post, setPost] = React.useState(null);
 
-  React.useEffect(() => {
-    axios.get(baseURL).then((response) => {
-      setPost(response.data);
-    });
-  }, []);
+  // React.useEffect(() => {
+  //   axios.get(baseURL).then((response) => {
+  //     setPost(response.data);
+  //   });
+  // }, []);
 
-  if (!post) return null;
+  // if (!post) return null;
 
   return (
     <>

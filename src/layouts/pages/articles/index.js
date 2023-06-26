@@ -22,7 +22,7 @@ const Articles = () => {
 
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
-  const id = searchParams.get('id');
+  const hashId = searchParams.get('id');
 
 
   useEffect(() => {
@@ -35,13 +35,13 @@ const Articles = () => {
     axios
       .get(baseURL)
       .then((response) => {
-        const selectedPost = response.data.find((item) => item.id === Number(id));
+        const selectedPost = response.data.find((item) => item.id === Number(hashId));
         setPosts(selectedPost);
       })
       .catch((error) => {
         // console.error(error);
       });
-  }, [id]);
+  }, [hashId]);
 
   if (post.length === 0) {
     return null;

@@ -15,41 +15,47 @@ import HoverCard from "components/HoverCard";
 import { LanguageOutlined, Share } from "@mui/icons-material";
 import axios from "axios";
 import { Lightning,ShareNetwork, Globe, Heart} from "@phosphor-icons/react";
+import { useLocation } from "react-router-dom";
 
 
 
 const markdownIt = require("markdown-it");
 
-const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/article/?format=json";
+const baseURL = "https://dolphin-app-qq7rr.ondigitalocean.app/proposals/?tag_name=demo";
 
 
  
 const ProposalDiscussion = () => {
 
+   const location = useLocation();
+   const searchParams = new URLSearchParams(location.search);
+    const hashId = searchParams.get('id');
+
+    const [posts1, setPosts1] = useState([]);
+    const [isLiked, setIsLiked] = useState(false);
+    const [count, setCount] = useState(0);
+
+
+    useEffect(() => {
+      axios
+        .get(baseURL)
+        .then((response) => {
+          const selectedPost = response.data.find((item) => item.id === Number(hashId));
+          setPosts1(selectedPost);
+        })
+        .catch((error) => {
+          // console.error(error);
+        });
+    }, [hashId]);
+
+
   React.useEffect(() => {
     AOS.init();
   },[]);
 
-  const [post, setPost] = useState(null);
-  const [isLiked, setIsLiked] = useState(false);
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    axios
-      .get(baseURL)
-      .then((response) => {
-        // console.log(response.data);
-        setPost(response.data);
-      })
-      .catch((error) => {
-        // console.log(error);
-      });
-  }, []);
-
-  if (!post) return null;
 
   const md = new markdownIt();
-  const html = md.render(post[0].article_desc);
+const html = md.render(posts1.description ?? "");
 
   const handleButtonClick = () => {
     window.open('https://www.google.com', '_blank');
@@ -83,7 +89,7 @@ const ProposalDiscussion = () => {
           <Grid container spacing={3} direction="column">
           <Grid item>
             <ArgonTypography variant="h1" style={{ fontSize: "50px"}}>
-              Growth Experiment: Bored Town NFT Art Community
+              {posts1.title}
             </ArgonTypography>
             <DefaultDivider/>
           </Grid>
@@ -92,7 +98,7 @@ const ProposalDiscussion = () => {
               <Grid item> 
                   <Stack direction="row" spacing={2} alignItems="center">
                   <Avatar></Avatar>
-                    <ArgonTypography variant="h4">Author Name</ArgonTypography>
+                    <ArgonTypography variant="h4">{posts1.creator_name}</ArgonTypography>
                   </Stack>
               </Grid>
               <Grid item> 
@@ -100,7 +106,9 @@ const ProposalDiscussion = () => {
                         <ArgonTypography variant="h4">  3 Days Left to Vote <Lightning size={30} color="#ffe01a" weight="fill"/> </ArgonTypography>
                         <ArgonButton variant="outlined" style={{marginRight: '10px', marginTop: '10px'}} onClick={handleButtonClick}>  
                              <Globe size={30} color="#e2dfca" style={{marginRight: '10px'}}/>
+                             <a href={posts1.proposal_category}>
                             <ArgonTypography variant="h4">  Forum Discussion  </ArgonTypography> 
+                            </a>
                          </ArgonButton>
                          <a href="https://google.com"> <ShareNetwork size={30} color="#e2dfca" style={{marginTop: '15px'}}/> </a> 
                   </Stack>
@@ -116,7 +124,7 @@ const ProposalDiscussion = () => {
                       <Grid container direction="column" justifyContainer="center"  alignItems="center" spacing={2} >
                           <Grid item xs={12} md={12} lg={12}>
                             <div data-aos="fade-up" data-aos-duration="5000">
-                              <img src="https://picsum.photos/1300/700" 
+                              <img src={posts1.potential_benefits}
                               alt="article"
                               style={{ width: "100%", height: "auto", borderRadius: '14px' }}/>
                             </div>
